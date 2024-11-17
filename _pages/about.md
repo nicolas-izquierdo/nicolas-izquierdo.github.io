@@ -7,8 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-Example: editing a markdown file for a talk
-![Editing a markdown file for a talk](/images/editing-talk.png)
-
-Example: 
 ![FOTO](/images/Klee,_Angelus_novus.png)
+
+<img src="https://github.com/nicolas-izquierdo/nicolas-izquierdo.github.io/blob/7d6098351435d2f589949a699f27435e3da3ef23/images/Klee%2C_Angelus_novus.png" width="100" height="40">
+
