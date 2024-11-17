@@ -10,7 +10,7 @@
 locale                   : "en-US"
 title                    : "Nicolás Izquierdo / Political Scientist"
 title_separator          : "-"
-name                     : &name "Your Name"
+name                     : &name "Nicolás Izquierdo"
 description              : &description "personal description"
 url                      : https://nicolas-izquierdo.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -22,13 +22,13 @@ repository               : "nicolas-izquierdo/nicolas-izquierdo.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "Your Sidebar Name"
-  pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
-  location         : "Earth"
-  employer         : "Red Brick University"
+  name             : "Nicolás Izquierdo"
+  pronouns         : "he/him"  
+  bio              : "Master's student in Social Sciences at the Carlos III-Juan March Institute"
+  location         : "Madrid, Spain"
+  employer         : "University Carlos III of Madrid"
   uri              : # URL
-  email            : "none@example.org" 
+  email            : "paizquie@clio.uc3m.es" 
 
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile
