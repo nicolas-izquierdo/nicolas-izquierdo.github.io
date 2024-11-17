@@ -1,11 +1,11 @@
 ---
 permalink: /
-title: "Welcome!"
+title: ""
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
 
-<img src="/images/1200px-Klee-angelus-novus.png" width="640" height="110">
+<img src="/images/1200px-Klee-angelus-novus.png" width="625" height="95">
 
