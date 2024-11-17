@@ -9,5 +9,5 @@ redirect_from:
 
 ![FOTO](/images/Klee,_Angelus_novus.png)
 
-<img src="https://github.com/nicolas-izquierdo/nicolas-izquierdo.github.io/blob/7d6098351435d2f589949a699f27435e3da3ef23/images/Klee%2C_Angelus_novus.png" width="600" height="150">
+<img src="/images/Klee%2C_Angelus_novus.png" width="600" height="150">
 
