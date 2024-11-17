@@ -7,7 +7,5 @@ redirect_from:
   - /about.html
 ---
 
-![FOTO](/images/Klee,_Angelus_novus.png)
-
 <img src="/images/1200px-Klee-angelus-novus.png" width="700" height="140">
 
