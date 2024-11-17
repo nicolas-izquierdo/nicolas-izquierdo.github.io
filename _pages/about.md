@@ -9,5 +9,5 @@ redirect_from:
 
 ![FOTO](/images/Klee,_Angelus_novus.png)
 
-<img src="/images/Klee%2C_Angelus_novus.png" width="600" height="150">
+<img src="/images/Klee%2C_Angelus_novus.png" width="800" height="140">
 
