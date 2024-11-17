@@ -7,5 +7,5 @@ redirect_from:
   - /about.html
 ---
 
-<img src="/images/1200px-Klee-angelus-novus.png" width="700" height="140">
+<img src="/images/1200px-Klee-angelus-novus.png" width="650" height="105">
 
