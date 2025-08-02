@@ -7,8 +7,9 @@
 main:
   ## - title: "Publications"
    ## url: /publications/
-
-  -  title: "CV"
+   
+- title: "CV"
+    url: /cv/
     
  ## - title: "Teaching"
   ##  url: /teaching/    
