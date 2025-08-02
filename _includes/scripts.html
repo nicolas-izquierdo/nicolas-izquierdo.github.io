@@ -1,3 +1,21 @@
 <script src="{{ base_path }}/assets/js/main.min.js"></script>
 
 {% include analytics.html %}
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Find all links pointing to the CV
+  const links = document.querySelectorAll('a[href$="Izquierdo_CV.pdf"]');
+  links.forEach(link => {
+    link.addEventListener("click", function(e) {
+      e.preventDefault();
+      const a = document.createElement("a");
+      a.href = link.href;
+      a.setAttribute("download", "");
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+    });
+  });
+});
+</script>
