@@ -7,7 +7,8 @@ redirect_from:
   - /resume
 ---
 
-{% include base_path %}
-
-[Download](https://github.com/nicolas-izquierdo/nicolas-izquierdo.github.io/raw/9bddb3f71c1ef425dda11882263ba7e907f699a6/assets/Nicolás%20Izquierdo%20-%20CV.pdf)
+<script>
+  // Redirect directly to the raw PDF file, forcing a download
+  window.location.href = "https://nicolas-izquierdo.github.io/assets/Nicolás%20Izquierdo%20-%20CV.pdf";
+</script>
 
