@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Nicolás Izquierdo / Political Scientist"
+title                    : "Nicolás Izquierdo"
 title_separator          : "-"
 name                     : &name "Nicolás Izquierdo"
 description              : &description "personal description"
