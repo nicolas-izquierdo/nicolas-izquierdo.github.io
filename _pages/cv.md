@@ -1,14 +1,8 @@
 ---
-layout: archive
-title: "CV"
+layout: blank
 permalink: /cv/
-author_profile: true
-redirect_from:
-  - /resume
 ---
-
 <script>
-  // Redirect directly to the raw PDF file, forcing a download
-  window.location.href = "https://nicolas-izquierdo.github.io/assets/Nicolás%20Izquierdo%20-%20CV.pdf";
+  // Automatically redirect to the PDF and trigger download
+  window.location.replace("/assets/Nicolás%20Izquierdo%20-%20CV.pdf");
 </script>
-
