@@ -7,10 +7,15 @@ redirect_from:
   - /about.html
 ---
 
-<h1>Nicolás Izquierdo</h1>
+<div style="text-align:center;">
+  <h1 style="margin-bottom: 0.3em;">Nicolás Izquierdo</h1>
+  <h3 style="margin-top: 0;">Political Scientist & Social Sciences Researcher</h3>
+  <img src="/images/cybersyn-room.jpg" alt="Cybersyn Room" style="width:100%; max-width:800px; height:auto; border-radius:8px; margin-top: 1em;">
+</div>
 
-<img src="/images/cybersyn-room.jpg" style="width:600px; height:185px; object-fit:cover;">
+<p>
+Welcome! I'm a Master's student in Social Sciences at the Carlos III–Juan March Institute (IC3JM). I also hold degrees in Law (LL.B.) and Political Science (B.A.) from the University Carlos III of Madrid.
+</p>
 
-Welcome! I'm a Master's student in Social Sciences at the Carlos III–Juan March Institute (IC3JM). I also hold both degrees in Law (LL.B.) and Political Science (B.A.) from the University Carlos III of Madrid.
 
 
