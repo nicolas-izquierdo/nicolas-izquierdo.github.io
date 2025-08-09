@@ -1,11 +1,22 @@
 ---
 permalink: /
-title: "Nicolás Izquierdo / Political Scientist"
+title: ""
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
+
+<h1 style="
+  position:absolute;
+  left:-9999px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+">
+  Nicolás Izquierdo
+</h1>
 
 <img src="/images/cybersyn-room.jpg" style="width:600px; height:185px; object-fit:cover;">
 
