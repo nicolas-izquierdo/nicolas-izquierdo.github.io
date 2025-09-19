@@ -19,10 +19,10 @@ redirect_from:
   Nicolás Izquierdo
 </h1>
 
-<figure style="text-align:center; margin:0;">
+<figure style="margin:0;">
   <img src="marx-painting.jpg"
        alt="Worker’s Delegation Before the Magistrate by Johann Peter Hasenclever"
-       style="width:650px; height:200px; object-fit:cover; display:block; margin:0 auto;">
+       style="width:660px; height:200px; object-fit:cover; display:block;">
   <figcaption style="font-size:0.9em; margin-top:2px;">
     <a href="/marx-anecdote.html#anecdote" target="_blank"><em>Worker’s Delegation Before the Magistrate</em></a> by Johann Peter Hasenclever
   </figcaption>
