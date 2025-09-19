@@ -22,8 +22,7 @@ redirect_from:
 <figure style="text-align:center;">
   <img src="marx-painting.jpg" alt="Worker’s Delegation Before the Magistrate by Johann Peter Hasenclever" style="width:650px; height:200px; object-fit:cover;">
   <figcaption style="font-size:0.9em; margin-top:6px;">
-    Karl Marx’s favorite painting, <em>Worker’s Delegation Before the Magistrate</em> by Johann Peter Hasenclever — 
-    <a href="/marx-anecdote.html#anecdote" target="_blank">see the anecdote</a>.
+    <a href="/marx-anecdote.html#anecdote" target="_blank"><em>Worker’s Delegation Before the Magistrate</em></a> by Johann Peter Hasenclever
   </figcaption>
 </figure>
 
