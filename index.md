@@ -19,7 +19,7 @@ redirect_from:
   Nicolás Izquierdo
 </h1>
 
-<img src="/images/cybersyn-room.jpg" style="width:600px; height:185px; object-fit:cover;">
+<img src="/images/marx-painting.jpg" style="width:600px; height:185px; object-fit:cover;">
 
 Welcome! I'm Nicolás Izquierdo and I'm a Master's student in Social Sciences at the [Carlos III–Juan March Institute (IC3JM)](https://ic3jm.es/en/postgraduates/master-degree-social-sciences/). I also hold both a degree in [Law (LL.B.)](https://www.uc3m.es/bachelor-degree/law-political-science) and a degree in [Political Science (B.A.)](https://www.uc3m.es/bachelor-degree/law-political-science) from the University Carlos III of Madrid.  
 
