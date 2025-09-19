@@ -22,3 +22,5 @@ redirect_from:
 <img src="/images/cybersyn-room.jpg" style="width:600px; height:185px; object-fit:cover;">
 
 Welcome! I'm Nicolás Izquierdo and I'm a Master's student in Social Sciences at the Carlos III–Juan March Institute (IC3JM). I also hold both degrees in Law (LL.B.) and Political Science (B.A.) from the University Carlos III of Madrid.
+
+My research interests lie in comparative political economy, with a particular focus on how elite economic interests shape political institutions and policy outcomes in contemporary democracies. In particular, I am interested in how elite economic interests and broader economic conditions shape judicial decision-making.
