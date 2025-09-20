@@ -18,17 +18,17 @@ redirect_from:
 ">
   Nicolás Izquierdo
 </h1>
-
 <figure style="margin:0;">
   <img src="marx-painting.jpg"
        alt="Workers’ Delegation Before the Magistrate by Johann Peter Hasenclever"
        style="width:660px; height:200px; object-fit:cover; display:block;">
   <figcaption style="font-size:0.9em; margin-top:-13px; margin-bottom:20px;">
-    <a href="/marx-anecdote.html#anecdote" target="_blank"><em>Workers’ Delegation Before the Magistrate</em></a> 
+    <a href="/marx-anecdote.html#anecdote" target="_blank" style="text-decoration:underline;">
+      <em style="text-decoration:none;">Workers’ Delegation Before the Magistrate</em>
+    </a> 
     by Johann Peter Hasenclever
   </figcaption>
 </figure>
-
 
 Welcome! Ny name is Nicolás Izquierdo and I am a Master's student in Social Sciences at the [Carlos III–Juan March Institute (IC3JM)](https://ic3jm.es/en/postgraduates/master-degree-social-sciences/). I also hold both a degree in [Law (LL.B.)](https://www.uc3m.es/bachelor-degree/law) and a degree in [Political Science (B.A.)](https://www.uc3m.es/bachelor-degree/political-science) from the University Carlos III of Madrid.  
 
