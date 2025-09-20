@@ -16,8 +16,9 @@ redirect_from:
   height:1px;
   overflow:hidden;
 ">
-  Nicolás Izquierdo
+  Nicolás Izquierdo, Political Science, Political Scientist, Political Economy
 </h1>
+
 <figure style="margin:0;">
   <img src="marx-painting.jpg"
        alt="Workers’ Delegation Before the Magistrate by Johann Peter Hasenclever"
