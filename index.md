@@ -20,7 +20,7 @@ redirect_from:
 </h1>
 
 <figure style="margin:0;">
-  <img src="marx-painting.jpg"
+  <img src="marx-painting-HD.jpg"
        alt="Workers’ Delegation Before the Magistrate by Johann Peter Hasenclever"
        style="width:660px; height:200px; object-fit:cover; display:block;">
   <figcaption style="font-size:0.9em; margin-top:-13px; margin-bottom:20px;">
