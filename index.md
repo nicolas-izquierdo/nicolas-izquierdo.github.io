@@ -30,7 +30,6 @@ redirect_from:
   </figcaption>
 </figure>
 
-<div style="font-size:1.15em;">
 Welcome! My name is Nicolás Izquierdo and I am a Master's student in Social Sciences at the 
 [Carlos III–Juan March Institute (IC3JM)](https://ic3jm.es/en/postgraduates/master-degree-social-sciences/). 
 I also hold both a degree in [Law (LL.B.)](https://www.uc3m.es/bachelor-degree/law) 
@@ -41,4 +40,3 @@ My research interests fall in the intersection of comparative and historical pol
 My work focuses on the political economy of democratic class conflict — how the competing interests 
 of workers, firms, and the state shape institutional design, patterns of representation, 
 and distributive outcomes.
-</div>
