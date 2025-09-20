@@ -23,8 +23,9 @@ redirect_from:
        alt="Workers’ Delegation Before the Magistrate by Johann Peter Hasenclever"
        style="width:660px; height:200px; object-fit:cover; display:block;">
   <figcaption style="font-size:0.9em; margin-top:-13px; margin-bottom:20px;">
-    <a href="/marx-anecdote.html#anecdote" target="_blank" style="text-decoration:underline;">
-      <em style="text-decoration:none;">Workers’ Delegation Before the Magistrate</em>
+    <a href="/marx-anecdote.html#anecdote" target="_blank" 
+       style="text-decoration: underline; text-decoration-skip-ink: auto; font-style: italic;">
+      Workers’ Delegation Before the Magistrate
     </a> 
     by Johann Peter Hasenclever
   </figcaption>
