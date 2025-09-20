@@ -33,8 +33,8 @@ redirect_from:
 
 Welcome! My name is Nicolás Izquierdo and I am a Master's student in Social Sciences at the 
 [Carlos III–Juan March Institute (IC3JM)](https://ic3jm.es/en/postgraduates/master-degree-social-sciences/). 
-I also hold both a degree in [Law (LL.B.)](https://www.uc3m.es/bachelor-degree/law) 
-and a degree in [Political Science (B.A.)](https://www.uc3m.es/bachelor-degree/political-science) 
+I also hold both degrees in [Law (LL.B.)](https://www.uc3m.es/bachelor-degree/law) 
+and [Political Science (B.A.)](https://www.uc3m.es/bachelor-degree/political-science) 
 from the University Carlos III of Madrid.  
 
 My research interests fall in the intersection of comparative and historical political economy. 
