@@ -3,6 +3,6 @@ layout: blank
 permalink: /cv/
 ---
 <script>
-  window.location.replace("/Nicolas_Izquierdo_CV.pdf");
+  window.location.replace("/cv-nicolas-izquierdo-9-25.pdf");
 </script>
 
