@@ -37,7 +37,4 @@ I also hold both degrees in [Law (LL.B.)](https://www.uc3m.es/bachelor-degree/la
 and [Political Science (B.A.)](https://www.uc3m.es/bachelor-degree/political-science) 
 from the University Carlos III of Madrid.  
 
-My research interests fall in the intersection of comparative and historical political economy. 
-My work focuses on the political economy of democratic class conflict — how the competing interests 
-of workers, firms, and the state shape institutional design, patterns of representation, 
-and distributive outcomes.
+My research interests fall in the intersection of comparative political economy and judicial behavior. 
