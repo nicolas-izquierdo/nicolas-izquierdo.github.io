@@ -37,5 +37,4 @@ I also hold both degrees in [Law (LL.B.)](https://www.uc3m.es/bachelor-degree/la
 and [Political Science (B.A.)](https://www.uc3m.es/bachelor-degree/political-science) 
 from the University Carlos III of Madrid.  
 
-My research interests fall in the intersection of comparative political economy and judicial behavior. In particular, I am interested in how private economic interests and organized groups shape judicial decision-making, and how courts influence distributive politics and policy outcomes.
-
+My research interests lie in comparative political economy and labor politics, encompassing issues of workers’ political representation, redistribution, and unequal policy responsiveness. In particular, I am interested in how labor mobilization and industrial conflict shape policy outcomes and redistributive patterns across advanced capitalist democracies. A complementary line of interest concerns judicial behavior, especially the role of private economic interests and distributive conflicts in shaping judicial decision-making. . 
