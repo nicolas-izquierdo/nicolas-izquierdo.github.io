@@ -76,7 +76,7 @@ Here you can find some (hopefully useful) datasets I have collected and maintain
     <p>This dataset covers the full universe of <em>amparo</em> rulings issued by the Spanish Constitutional Court since its inception until June 2025, with each observation providing structured case-level data on parties, constitutional rights, outcomes, and dissenting opinions, together with the ruling's full text.</p>
     <div class="actions">
       <a href="https://doi.org/10.17605/OSF.IO/2A4WG" target="_blank">⬇ Download</a>
-      <a href="./codebook-amparo.pdf">📄 Codebook</a>
+      <a href="/data/codebook_amparo_dataset.pdf" target="_blank">📄 Codebook</a>
     </div>
   </div>
 
