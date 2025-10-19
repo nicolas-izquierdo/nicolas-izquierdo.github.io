@@ -4,10 +4,11 @@ layout: page
 ---
 
 <style>
-/* Center container slightly with left padding */
+/* Wrapper with subtle left + top breathing room */
 .data-wrapper {
-  padding-left: 40px;
+  padding-left: 20px;   /* moved slightly left (was 40px) */
   padding-right: 20px;
+  padding-top: 30px;    /* extra space from nav bar */
   max-width: 900px;
   margin: auto;
 }
@@ -17,7 +18,7 @@ layout: page
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 16px;
-  margin-top: 8px;
+  margin-top: 16px;
 }
 
 .card {
@@ -61,6 +62,8 @@ layout: page
 </style>
 
 <div class="data-wrapper">
+
+# Data Archive
 
 Here you can find datasets I have collected and maintain.
 
