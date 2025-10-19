@@ -6,7 +6,7 @@ layout: page
 <style>
 /* Wrapper with subtle left + top breathing room */
 .data-wrapper {
-  padding-left: 15px;  
+  padding-left: 5px;  
   padding-right: 20px;
   padding-top: 45px;    
   max-width: 900px;
