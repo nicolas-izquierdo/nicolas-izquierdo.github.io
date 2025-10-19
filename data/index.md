@@ -70,6 +70,7 @@ Here you can find some (hopefully useful) datasets I have collected and maintain
   <div class="card">
     <h3>Spanish Constitutional Court Amparo Dataset</h3>
     <div class="meta">Scope: 1980–2025 · 7,434 rulings</div>
+    <div class="meta">judicial behavior, constitutional courts</div>
     <span class="badge">RData</span>
     <span class="badge">Docs</span>
     <p>Case-level data on <em>amparo</em> rulings from the Spanish Constitutional Court.</p>
