@@ -6,9 +6,9 @@ layout: page
 <style>
 /* Wrapper with subtle left + top breathing room */
 .data-wrapper {
-  padding-left: 20px;   /* moved slightly left (was 40px) */
+  padding-left: 15px;  
   padding-right: 20px;
-  padding-top: 30px;    /* extra space from nav bar */
+  padding-top: 45px;    
   max-width: 900px;
   margin: auto;
 }
@@ -63,9 +63,7 @@ layout: page
 
 <div class="data-wrapper">
 
-# Data Archive
-
-Here you can find datasets I have collected and maintain.
+Here you can find some (hopefully useful) datasets I have collected and maintain.
 
 <div class="data-grid">
 
