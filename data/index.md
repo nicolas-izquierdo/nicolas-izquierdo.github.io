@@ -63,16 +63,16 @@ layout: page
 
 <div class="data-wrapper">
 
-Here you can find some (hopefully useful) datasets I have collected and maintain.
+Here you can find some (hopefully useful) datasets I have collected and maintain!
 
 <div class="data-grid">
 
   <div class="card">
-    <h3>Spanish Constitutional Court Amparo Dataset (v2025-10)</h3>
-    <div class="meta">Scope: 1981–2025 · 7,434 decisions</div>
-    <span class="badge">CSV</span>
+    <h3>Spanish Constitutional Court Amparo Dataset</h3>
+    <div class="meta">Scope: 1980–2025 · 7,434 rulings</div>
+    <span class="badge">RData</span>
     <span class="badge">Docs</span>
-    <p>Case-level data on <em>amparo</em> rulings (rights, outcomes, dissents, litigants, metadata).</p>
+    <p>Case-level data on <em>amparo</em> rulings from the Spanish Constitutional Court.</p>
     <div class="actions">
       <a href="./dataset-amparo.csv" download>⬇ Download CSV</a>
       <a href="./codebook-amparo.pdf">📄 Codebook</a>
