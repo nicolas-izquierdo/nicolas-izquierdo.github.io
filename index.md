@@ -37,4 +37,4 @@ I also hold both degrees in [Law (LL.B.)](https://www.uc3m.es/bachelor-degree/la
 and [Political Science (B.A.)](https://www.uc3m.es/bachelor-degree/political-science) 
 from the University Carlos III of Madrid.  
 
-My research interests lie in comparative political economy and labor politics, encompassing issues of workers’ political representation, industrial conflict, and public policy. In particular, I am interested in how labor mobilization shapes public policy across advanced capitalist democracies. I also study topics in judicial behavior, focusing on how private economic interests affect judicial decision-making.
+My research interests lie in comparative political economy and labor politics, encompassing issues of workers’ political representation, industrial conflict, and redistribution. In particular, I am interested in how labor mobilization shapes policy outcomes and public opinion across democracies. I also study topics in judicial behavior, focusing on how private economic interests affect judicial decision-making.
