@@ -73,7 +73,7 @@ Here you can find some (hopefully useful) datasets I have collected and maintain
     <div class="meta">judicial behavior, constitutional courts, Spain</div>
     <span class="badge">RData</span>
     <span class="badge">Docs</span>
-    <p>Case-level data on <em>amparo</em> rulings from the Spanish Constitutional Court.</p>
+    <p>This dataset covers the full universe of <em>amparo</em> rulings issued by the Spanish Constitutional Court since its inception until June 2025, with each observation providing structured case-level data on parties, constitutional rights, outcomes, and dissenting opinions, together with the ruling's full text.</p>
     <div class="actions">
       <a href="./dataset-amparo.csv" download>⬇ Download CSV</a>
       <a href="./codebook-amparo.pdf">📄 Codebook</a>
