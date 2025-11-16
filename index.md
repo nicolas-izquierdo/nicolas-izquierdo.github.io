@@ -27,8 +27,7 @@ redirect_from:
     <span style="font-style:italic;
                  text-decoration:underline;
                  text-decoration-skip-ink:auto;">
-      Workers’ Delegation Before the Magistrate
-    </span>
+      Workers’ Delegation Before the Magistrate</span>
     by Johann Peter Hasenclever
   </figcaption>
 </figure>
