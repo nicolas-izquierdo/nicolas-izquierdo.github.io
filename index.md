@@ -26,8 +26,7 @@ redirect_from:
   <figcaption style="font-size:0.9em; margin-top:-13px; margin-bottom:20px;">
     <span style="font-style:italic;
                  text-decoration:underline;
-                 text-decoration-skip-ink:auto;
-                 white-space:nowrap;">
+                 text-decoration-skip-ink:auto;">
       Workers’ Delegation Before the Magistrate
     </span>
     by Johann Peter Hasenclever
