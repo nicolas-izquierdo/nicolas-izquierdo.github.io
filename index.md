@@ -40,4 +40,4 @@ from the University Carlos III of Madrid.
 
 My research interests lie in comparative political economy and labor politics, encompassing issues of workers’ political representation, collective actions, and redistribution. In particular, I am interested in how labor mobilization shapes policy outcomes and public opinion across democracies. I also study topics in judicial behavior, focusing on how private economic interests affect judicial decision-making.
 
-You can find my full CV [here](/CV-nicolas-izquierdo-10-25.pdf).
+You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
