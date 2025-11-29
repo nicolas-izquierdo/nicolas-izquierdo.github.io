@@ -1,15 +1,10 @@
 ---
-layout: single
+layout: page
 title: "Resources"
 permalink: /resources/
-author_profile: true
 ---
 
-# Resources
-
-Welcome!  
-This page collects materials I find useful or inspiring for research in political economy, labor politics, and comparative politics.  
-I will gradually expand it as I come across resources worth sharing.
+This page collects materials I find useful or inspiring for research in comparative political economy and labor politics.
 
 ---
 
@@ -17,6 +12,6 @@ I will gradually expand it as I come across resources worth sharing.
 
 ### **APSA Labor Politics – Teaching Resource Collection** — **[Click here](https://educate.apsanet.org/labor-politics-teaching-resource-collection)**
 
-A curated set of syllabi on labor politics across Comparative and American Politics, maintained by the American Political Science Association.
+A set of syllabi on labor politics across comparative and american Politics, maintained by the American Political Science Association (APSA).
 
 ---
