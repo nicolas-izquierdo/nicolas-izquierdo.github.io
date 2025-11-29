@@ -65,8 +65,6 @@ layout: page
 
 Here you can find some (hopefully useful) datasets I have collected and maintain.
 
----
-
 <div class="data-grid">
 
   <div class="card">
