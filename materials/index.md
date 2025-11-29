@@ -20,5 +20,3 @@ I will gradually expand it as I come across resources worth sharing.
 A curated set of syllabi on labor politics across Comparative and American Politics, maintained by the American Political Science Association.
 
 ---
-
-More materials will be added soon.
