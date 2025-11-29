@@ -14,8 +14,8 @@ main:
   - title: "Data"
     url: /data/ 
 
-  # - title: "Teaching"
-  #   url: /teaching/
+   - title: "Selected Resources"
+     url: /materials/
 
   # - title: "Guide"
   #   url: /markdown/
