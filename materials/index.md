@@ -23,7 +23,7 @@ This page collects materials I find useful or inspiring for research in comparat
 
 ### **APSA Labor Politics – Teaching Resource Collection** — **[Click here](https://educate.apsanet.org/labor-politics-teaching-resource-collection)**
 
-A set of syllabi on labor politics maintained by the American Political Science Association (APSA).
+A collection of syllabi and podcasts on labor politics gathered by the APSA's Labor Politics Group.
 
 ---
 
