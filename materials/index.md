@@ -17,7 +17,7 @@ permalink: /resources/
 
 <div class="data-wrapper" markdown="1">
 
-This page collects materials I find useful or inspiring for research in comparative political economy and labor politics.
+This page collects materials I find useful or inspiring for research in labor politics.
 
 ---
 
