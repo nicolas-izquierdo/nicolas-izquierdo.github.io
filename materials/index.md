@@ -28,10 +28,10 @@ A curated set of syllabi, podcasts, and teaching materials compiled by APSA’s 
 
 ---
 
-### Rutgers Labor Studies Research Guide  
+### Rutgers U.S. Labor and Working Class History Guide
 **Link:** <https://libguides.rutgers.edu/c.php?g=336652&p=2266813>  
 
-A research guide highlighting key books, databases, and archival collections in labor studies.
+A research guide highlighting key books, databases, and archival collections in U.S. Labor and Working Class History
 
 ---
 
