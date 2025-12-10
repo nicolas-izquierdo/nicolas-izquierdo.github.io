@@ -90,7 +90,7 @@ This page collects materials I find useful or inspiring for research in labor po
 </details>
 
 <details class="resource-card">
-  <summary>UnionStats.com (Hirsch & Macpherson)</summary>
+  <summary>UnionStats.com (Hirsch, Macpherson and Even)</summary>
   <div class="resource-content">
     <p><a href="https://unionstats.com/">https://unionstats.com/</a></p>
     <p>The standard reference for yearly U.S. union membership and coverage statistics derived from the CPS.</p>
