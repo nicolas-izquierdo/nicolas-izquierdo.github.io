@@ -381,58 +381,22 @@ const links = resources.map(r => {
 const svg = d3.select("#graph");
 const tooltip = d3.select("#tooltip");
 
-const width = svg.node().clientWidth;
-const height = svg.node().clientHeight;
+function size() {
+  const r = svg.node().getBoundingClientRect();
+  return { w: Math.max(320, r.width), h: Math.max(420, r.height) };
+}
 
-const color = (g) => {
-  if (g === "red") return getComputedStyle(document.documentElement).getPropertyValue('--red').trim();
-  if (g === "blue") return getComputedStyle(document.documentElement).getPropertyValue('--blue').trim();
-  if (g === "green") return getComputedStyle(document.documentElement).getPropertyValue('--green').trim();
-  return getComputedStyle(document.documentElement).getPropertyValue('--gray').trim();
-};
+function initOrResize() {
+  const { w, h } = size();
+  // fija un viewBox para que D3 tenga un sistema de coordenadas estable
+  svg.attr("viewBox", `0 0 ${w} ${h}`);
 
-const gZoom = svg.append("g");
+  sim.force("center", d3.forceCenter(w * 0.52, h * 0.52));
+  sim.alpha(0.9).restart();
+}
 
-const link = gZoom.append("g")
-  .attr("stroke", "rgba(255,255,255,0.14)")
-  .attr("stroke-width", 1)
-  .selectAll("line")
-  .data(links)
-  .join("line")
-  .attr("stroke-linecap", "round");
-
-const node = gZoom.append("g")
-  .selectAll("circle")
-  .data(nodes)
-  .join("circle")
-  .attr("r", d => d.id.startsWith("hub_") ? 16 : 8)
-  .attr("fill", d => color(d.group))
-  .attr("stroke", "rgba(255,255,255,0.16)")
-  .attr("stroke-width", d => d.id.startsWith("hub_") ? 2 : 1)
-  .style("cursor", d => d.url ? "pointer" : "grab");
-
-const label = gZoom.append("g")
-  .selectAll("text")
-  .data(nodes)
-  .join("text")
-  .text(d => d.label)
-  .attr("font-size", d => d.id.startsWith("hub_") ? 12.5 : 11)
-  .attr("font-weight", d => d.id.startsWith("hub_") ? 800 : 600)
-  .attr("fill", "rgba(255,255,255,0.88)")
-  .attr("stroke", "rgba(0,0,0,0.55)")
-  .attr("stroke-width", 3)
-  .attr("paint-order", "stroke")
-  .attr("dx", d => d.id.startsWith("hub_") ? 20 : 14)
-  .attr("dy", 4)
-  .style("user-select", "none")
-  .style("pointer-events", "none");
-
-const sim = d3.forceSimulation(nodes)
-  .force("link", d3.forceLink(links).id(d => d.id).distance(d => d.source.id.startsWith("hub_") ? 90 : 70).strength(0.9))
-  .force("charge", d3.forceManyBody().strength(-320))
-  .force("center", d3.forceCenter(width * 0.52, height * 0.52))
-  .force("collide", d3.forceCollide().radius(d => d.id.startsWith("hub_") ? 26 : 14))
-  .on("tick", ticked);
+window.addEventListener("load", initOrResize);
+window.addEventListener("resize", initOrResize);
 
 function ticked(){
   link
