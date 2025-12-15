@@ -42,7 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
   { id:"umd_labor_guide", label:"University of Maryland – Labor History Research Guide", group:"green", url:"https://lib.guides.umd.edu/labor" },
   { id:"lawcha_books", label:"LAWCHA – Twenty Best Labor Books", group:"blue", url:"https://lawcha.org/2015/06/08/twenty-best-labor-books-first-cut/" },
   { id:"boston_review_list", label:"Boston Review – “Solidarity Makes Us Strong” Reading List", group:"blue", url:"https://www.bostonreview.net/reading-list/solidarity-makes-us-strong/" },
-
   { id:"fec_data", label:"FEC Campaign Finance Data", group:"red", url:"https://www.fec.gov/data/" },
   { id:"ncsl_cba", label:"NCSL – Unions & Collective Bargaining Legislation Database", group:"red", url:"https://www.ncsl.org/labor-and-employment/unions-and-collective-bargaining-legislation-database" },
   { id:"accountability_money", label:"Public Accountability – Money in Politics Datasets", group:"red", url:"https://publicaccountability.org/data/" },
