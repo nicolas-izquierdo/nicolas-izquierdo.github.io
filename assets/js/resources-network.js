@@ -174,7 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
           if (Math.abs(dx) < minX && Math.abs(dy) < minY) {
             const sx = (minX - Math.abs(dx)) * (dx === 0 ? (Math.random() - 0.5) : Math.sign(dx));
             const sy = (minY - Math.abs(dy)) * (dy === 0 ? (Math.random() - 0.5) : Math.sign(dy));
-            const push = 0.015;
+            const push = 0.01;
 
             a.node.vx -= sx * push;
             a.node.vy -= sy * push;
@@ -186,8 +186,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     sim = d3.forceSimulation(nodes)
-      .alphaDecay(0.09)
-      .velocityDecay(0.38)
+      .alphaDecay(0.15)
+      .velocityDecay(0.45)
       .force("link", d3.forceLink(links).id(d => d.id)
         .distance(() => 85 + Math.random() * 120)
         .strength(0.85)
