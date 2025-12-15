@@ -6,11 +6,9 @@ permalink: /resources/
 
 <style>
 :root{
-  /* COLORS */
-  --bg-soft:#f6f7f9;          /* SOFT background for graph */
+  --bg-soft:#f6f7f9;
   --bg-panel:#ffffff;
   --stroke:#d9dce1;
-
   --text:#000000;
   --muted:#444444;
 
@@ -20,7 +18,6 @@ permalink: /resources/
   --gray:#999999;
 }
 
-/* LAYOUT */
 .resources-wrap{
   max-width:1100px;
   margin:24px auto;
@@ -28,7 +25,6 @@ permalink: /resources/
   color:var(--text);
 }
 
-/* HEADER / HERO */
 .resources-hero{
   border:1px solid var(--stroke);
   border-radius:14px;
@@ -37,43 +33,41 @@ permalink: /resources/
   background:var(--bg-panel);
 }
 
-.resources-hero h2{
-  margin:0 0 6px 0;
-  color:var(--text);
-}
+.resources-hero h2{margin:0 0 6px 0;color:var(--text)}
+.resources-hero p{margin:0;color:var(--muted)}
 
-.resources-hero p{
-  margin:0;
-  color:var(--muted);
-}
-
-/* LEGEND */
 .legend{
   display:flex;
-  gap:18px;
+  gap:10px;
+  flex-wrap:wrap;
   margin-top:12px;
   font-size:.95rem;
-  color:var(--text);
 }
 
-.legend div{
+.legend button{
   display:flex;
   align-items:center;
-  gap:6px;
+  gap:8px;
+  padding:8px 10px;
+  border-radius:999px;
+  border:1px solid var(--stroke);
+  background:#fff;
+  color:#000;
+  cursor:pointer;
 }
 
-.dot{
-  width:10px;
-  height:10px;
-  border-radius:50%;
+.legend button:hover{background:#f2f3f5}
+.legend button.active{
+  border-color:#000;
+  box-shadow:0 0 0 2px rgba(0,0,0,.08) inset;
 }
 
+.dot{width:10px;height:10px;border-radius:50%}
 .red{background:var(--red)}
 .blue{background:var(--blue)}
 .green{background:var(--green)}
 .gray{background:var(--gray)}
 
-/* CONTROLS */
 .controls{
   display:flex;
   gap:10px;
@@ -89,7 +83,6 @@ permalink: /resources/
   color:#000000;
 }
 
-/* GRAPH CONTAINER */
 .graph-card{
   border:1px solid var(--stroke);
   border-radius:14px;
@@ -97,7 +90,6 @@ permalink: /resources/
   background:var(--bg-panel);
 }
 
-/* GRAPH ITSELF */
 #graph{
   width:100%;
   height:640px;
@@ -113,18 +105,29 @@ permalink: /resources/
 
   <div class="resources-hero">
     <h2>Labor politics resources — interactive map</h2>
-    <p>Drag nodes, zoom, click to open resources.</p>
+    <p>Click a category to view its network. Drag nodes, zoom, click to open resources.</p>
 
-    <div class="legend">
-      <div><span class="dot red"></span> Data</div>
-      <div><span class="dot blue"></span> Teaching</div>
-      <div><span class="dot green"></span> Archives</div>
-      <div><span class="dot gray"></span> Other</div>
+    <div class="legend" id="legend">
+      <button type="button" class="filter active" data-filter="all">
+        <span class="dot gray"></span> All
+      </button>
+      <button type="button" class="filter" data-filter="red">
+        <span class="dot red"></span> Data
+      </button>
+      <button type="button" class="filter" data-filter="blue">
+        <span class="dot blue"></span> Teaching
+      </button>
+      <button type="button" class="filter" data-filter="green">
+        <span class="dot green"></span> Archives
+      </button>
+      <button type="button" class="filter" data-filter="gray">
+        <span class="dot gray"></span> Other
+      </button>
     </div>
   </div>
 
   <div class="controls">
-    <input id="search" placeholder="Search…" />
+    <input id="search" placeholder="Search inside the selected category…" />
     <button id="reset" type="button">Reset</button>
   </div>
 
