@@ -17,34 +17,34 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const resources = [
-  { id:"apsa_labor_teach", label:"APSA Labor Politics – Teaching Resource Collection", group:"blue", url:"https://educate.apsanet.org/labor-politics-teaching-resource-collection" },
-  { id:"unionstats", label:"UnionStats.com – CPS Union Membership & Coverage", group:"red", url:"https://unionstats.com" },
-  { id:"oecd_ictwss", label:"OECD/AIAS ICTWSS Database", group:"red", url:"https://www.oecd.org/en/data/datasets/oecdaias-ictwss-database.html" },
-  { id:"ilostat_ir_desc", label:"ILOSTAT – Industrial Relations Data (concepts & definitions)", group:"red", url:"https://ilostat.ilo.org/methods/concepts-and-definitions/description-industrial-relations-data/" },
-  { id:"ilostat_ir_download", label:"ILOSTAT – Industrial Relations (topic page & data)", group:"red", url:"https://ilostat.ilo.org/topics/industrial-relations/" },
-  { id:"bls_wsp", label:"BLS Work Stoppages Dataset (US)", group:"red", url:"https://www.bls.gov/wsp/" },
-  { id:"ilr_lat", label:"Cornell ILR – Labor Action Tracker", group:"red", url:"https://striketracker.ilr.cornell.edu/" },
-  { id:"aflcio_strikemap", label:"AFL-CIO Strike Map", group:"red", url:"https://aflcio.org/strike-map" },
-  { id:"clb", label:"China Labour Bulletin", group:"red", url:"https://clb.org.hk/" },
-  { id:"labour_rights_indicators", label:"Labour Rights Indicators (Penn State)", group:"red", url:"https://labour-rights-indicators.la.psu.edu/" },
-  { id:"ituc_rights", label:"ITUC Global Rights Index", group:"red", url:"https://www.ituc-csi.org/global-rights-index" },
-  { id:"wcml", label:"Working Class Movement Library (UK)", group:"green", url:"https://www.wcml.org.uk/" },
-  { id:"lawcha_books", label:"LAWCHA – Twenty Best Labor Books", group:"blue", url:"https://lawcha.org/2015/06/08/twenty-best-labor-books-first-cut/" },
-  { id:"boston_review_list", label:"Boston Review – “Solidarity Makes Us Strong” Reading List", group:"blue", url:"https://www.bostonreview.net/reading-list/solidarity-makes-us-strong/" },
-  { id:"fec_data", label:"FEC Campaign Finance Data", group:"red", url:"https://www.fec.gov/data/" },
-  { id:"ncsl_cba", label:"NCSL – Unions & Collective Bargaining Legislation Database", group:"red", url:"https://www.ncsl.org/labor-and-employment/unions-and-collective-bargaining-legislation-database" },
-  { id:"strikemap_org", label:"Strikemap.org (crowd-sourced)", group:"red", url:"https://strikemap.org/" },
-  { id:"opm_cba", label:"OPM – Federal Collective Bargaining Agreements", group:"red", url:"https://www.opm.gov/policy-data-oversight/labor-management-relations/collective-bargaining-agreements/" },
-  { id:"candid_unions", label:"Candid – U.S. Labor Unions: Facts & Financials", group:"red", url:"https://blog.candid.org/post/key-facts-figures-and-trends-among-u-s-labor-unions/" },
-  { id:"elors", label:"DOL OLMS – Online Public Disclosure Room", group:"red", url:"https://www.dol.gov/agencies/olms/public-disclosure-room" },
-  { id:"kaggle_union_membership", label:"Union Membership & Coverage (Kaggle / CPS)", group:"red", url:"https://www.kaggle.com/datasets/mrisdal/union-membership-coverage" },
-  { id:"unionfacts", label:"UnionFacts.com Database", group:"red", url:"https://unionfacts.com" },
-  { id:"sa_union_list", label:"South Africa – Registered Trade Unions List", group:"red", url:"https://labourguide.co.za/general/trade-unions-in-south-africa" },
-  { id:"hbs_union_hist", label:"HBS – Trade Union Membership Historical Data (1880–2010)", group:"red", url:"https://www.hbs.edu/businesshistory/courses/teaching-resources/historical-data-visualization/details" },
-  { id:"loc_afl", label:"Library of Congress – American Federation of Labor Records", group:"green", url:"https://www.loc.gov/collections/american-federation-of-labor-records/" },
-  { id:"gdads", label:"Global Digital Activism Data Set (ICPSR)", group:"red", url:"https://www.icpsr.umich.edu/web/ICPSR/studies/34625" },
-  { id:"labor_in_america", label:"UMD Digital Collections – Labor", group:"green", url:"https://digital.lib.umd.edu/collecting-areas/labor" }
-];
+    { id:"apsa_labor_teach", label:"APSA Labor Politics – Teaching Resource Collection", group:"blue", url:"https://educate.apsanet.org/labor-politics-teaching-resource-collection" },
+    { id:"unionstats", label:"UnionStats.com – CPS Union Membership & Coverage", group:"red", url:"https://unionstats.com" },
+    { id:"oecd_ictwss", label:"OECD/AIAS ICTWSS Database", group:"red", url:"https://www.oecd.org/en/data/datasets/oecdaias-ictwss-database.html" },
+    { id:"ilostat_ir_desc", label:"ILOSTAT – Industrial Relations Data (concepts & definitions)", group:"red", url:"https://ilostat.ilo.org/methods/concepts-and-definitions/description-industrial-relations-data/" },
+    { id:"ilostat_ir_download", label:"ILOSTAT – Industrial Relations (topic page & data)", group:"red", url:"https://ilostat.ilo.org/topics/industrial-relations/" },
+    { id:"bls_wsp", label:"BLS Work Stoppages Dataset (US)", group:"red", url:"https://www.bls.gov/wsp/" },
+    { id:"ilr_lat", label:"Cornell ILR – Labor Action Tracker", group:"red", url:"https://striketracker.ilr.cornell.edu/" },
+    { id:"aflcio_strikemap", label:"AFL-CIO Strike Map", group:"red", url:"https://aflcio.org/strike-map" },
+    { id:"clb", label:"China Labour Bulletin", group:"red", url:"https://clb.org.hk/" },
+    { id:"labour_rights_indicators", label:"Labour Rights Indicators (Penn State)", group:"red", url:"https://labour-rights-indicators.la.psu.edu/" },
+    { id:"ituc_rights", label:"ITUC Global Rights Index", group:"red", url:"https://www.ituc-csi.org/global-rights-index" },
+    { id:"wcml", label:"Working Class Movement Library (UK)", group:"green", url:"https://www.wcml.org.uk/" },
+    { id:"lawcha_books", label:"LAWCHA – Twenty Best Labor Books", group:"blue", url:"https://lawcha.org/2015/06/08/twenty-best-labor-books-first-cut/" },
+    { id:"boston_review_list", label:"Boston Review – “Solidarity Makes Us Strong” Reading List", group:"blue", url:"https://www.bostonreview.net/reading-list/solidarity-makes-us-strong/" },
+    { id:"fec_data", label:"FEC Campaign Finance Data", group:"red", url:"https://www.fec.gov/data/" },
+    { id:"ncsl_cba", label:"NCSL – Unions & Collective Bargaining Legislation Database", group:"red", url:"https://www.ncsl.org/labor-and-employment/unions-and-collective-bargaining-legislation-database" },
+    { id:"strikemap_org", label:"Strikemap.org (crowd-sourced)", group:"red", url:"https://strikemap.org/" },
+    { id:"opm_cba", label:"OPM – Federal Collective Bargaining Agreements", group:"red", url:"https://www.opm.gov/policy-data-oversight/labor-management-relations/collective-bargaining-agreements/" },
+    { id:"candid_unions", label:"Candid – U.S. Labor Unions: Facts & Financials", group:"red", url:"https://blog.candid.org/post/key-facts-figures-and-trends-among-u-s-labor-unions/" },
+    { id:"elors", label:"DOL OLMS – Online Public Disclosure Room", group:"red", url:"https://www.dol.gov/agencies/olms/public-disclosure-room" },
+    { id:"kaggle_union_membership", label:"Union Membership & Coverage (Kaggle / CPS)", group:"red", url:"https://www.kaggle.com/datasets/mrisdal/union-membership-coverage" },
+    { id:"unionfacts", label:"UnionFacts.com Database", group:"red", url:"https://unionfacts.com" },
+    { id:"sa_union_list", label:"South Africa – Registered Trade Unions List", group:"red", url:"https://labourguide.co.za/general/trade-unions-in-south-africa" },
+    { id:"hbs_union_hist", label:"HBS – Trade Union Membership Historical Data (1880–2010)", group:"red", url:"https://www.hbs.edu/businesshistory/courses/teaching-resources/historical-data-visualization/details" },
+    { id:"loc_afl", label:"Library of Congress – American Federation of Labor Records", group:"green", url:"https://www.loc.gov/collections/american-federation-of-labor-records/" },
+    { id:"gdads", label:"Global Digital Activism Data Set (ICPSR)", group:"red", url:"https://www.icpsr.umich.edu/web/ICPSR/studies/34625" },
+    { id:"labor_in_america", label:"UMD Digital Collections – Labor", group:"green", url:"https://digital.lib.umd.edu/collecting-areas/labor" }
+  ];
 
   let currentFilter = "red";
   let currentQuery = "";
@@ -74,6 +74,11 @@ document.addEventListener("DOMContentLoaded", () => {
     return Math.max(28, L * (size * 0.58));
   }
 
+  function cmToPx(cm) {
+    // CSS px típicos: 96dpi => 1in = 2.54cm = 96px
+    return (cm * 96) / 2.54;
+  }
+
   function buildGraph(filter, query) {
     g.selectAll("*").remove();
 
@@ -81,17 +86,13 @@ document.addEventListener("DOMContentLoaded", () => {
     svg.attr("viewBox", `0 0 ${w} ${h}`);
 
     const hub = hubs[filter] || hubs.gray;
-
     const base = resources.filter(r => r.group === filter);
 
     const q = (query || "").trim().toLowerCase();
-    const filtered =
-      (!q)
-        ? base
-        : base.filter(r =>
-            (r.label || "").toLowerCase().includes(q) ||
-            (r.url || "").toLowerCase().includes(q)
-          );
+    const filtered = !q ? base : base.filter(r =>
+      (r.label || "").toLowerCase().includes(q) ||
+      (r.url || "").toLowerCase().includes(q)
+    );
 
     const nodes = [hub].concat(filtered);
     const links = filtered.map(r => ({ source: hub.id, target: r.id }));
@@ -149,38 +150,59 @@ document.addEventListener("DOMContentLoaded", () => {
       .attr("stroke-linejoin", "round")
       .style("pointer-events", "none");
 
+    // --- LABEL BOXES (aprox) + padding de 0.8cm desde el perímetro ---
+    const PERIM_PAD_PX = cmToPx(0.8); // ~30.24px
     const labelBoxes = nodes.map(n => {
       const isHub = String(n.id).startsWith("hub_");
       const wBox = approxTextWidth(n.label, isHub) + (isHub ? 34 : 26);
       const hBox = (isHub ? 18 : 16) + 8;
-      return { node: n, w: wBox, h: hBox };
+
+      const dx = isHub ? 22 : 14; // mismo offset que en el text
+      // Representamos la caja del label centrada en (node.x + dx + w/2, node.y)
+      return {
+        node: n,
+        dx,
+        w: wBox,
+        h: hBox
+      };
     });
 
     function forceLabelCollide() {
+      // Empuja rectángulos inflados por PERIM_PAD_PX (desde el perímetro)
       for (let i = 0; i < labelBoxes.length; i++) {
         for (let j = i + 1; j < labelBoxes.length; j++) {
           const a = labelBoxes[i], b = labelBoxes[j];
-          const ax = a.node.x + (String(a.node.id).startsWith("hub_") ? 22 : 14);
-          const ay = a.node.y;
-          const bx = b.node.x + (String(b.node.id).startsWith("hub_") ? 22 : 14);
-          const by = b.node.y;
 
-          const dx = bx - ax;
-          const dy = by - ay;
+          // Centros de cajas de texto (aprox) en coords del grafo
+          const aCx = a.node.x + a.dx + a.w / 2;
+          const aCy = a.node.y;
+          const bCx = b.node.x + b.dx + b.w / 2;
+          const bCy = b.node.y;
 
-          const minX = ((a.w + b.w) / 2 + 14) * 1.35;
-          const minY = ((a.h + b.h) / 2 + 10) * 1.35;
+          // “Semiextensiones” (half sizes) con padding de 0.8cm por lado
+          const aHx = a.w / 2 + PERIM_PAD_PX;
+          const aHy = a.h / 2 + PERIM_PAD_PX;
+          const bHx = b.w / 2 + PERIM_PAD_PX;
+          const bHy = b.h / 2 + PERIM_PAD_PX;
 
+          const dx = bCx - aCx;
+          const dy = bCy - aCy;
 
-          if (Math.abs(dx) < minX && Math.abs(dy) < minY) {
-            const sx = (minX - Math.abs(dx)) * (dx === 0 ? (Math.random() - 0.5) : Math.sign(dx));
-            const sy = (minY - Math.abs(dy)) * (dy === 0 ? (Math.random() - 0.5) : Math.sign(dy));
-            const push = 0.01;
+          const overlapX = (aHx + bHx) - Math.abs(dx);
+          const overlapY = (aHy + bHy) - Math.abs(dy);
 
-            a.node.vx -= sx * push;
-            a.node.vy -= sy * push;
-            b.node.vx += sx * push;
-            b.node.vy += sy * push;
+          if (overlapX > 0 && overlapY > 0) {
+            // Separar por el eje con menor penetración (sale más rápido y estable)
+            const push = 0.012; // fuerza suave (ajusta si quieres más “dura”)
+            if (overlapX < overlapY) {
+              const sx = (dx === 0 ? (Math.random() - 0.5) : Math.sign(dx)) * overlapX;
+              a.node.vx -= sx * push;
+              b.node.vx += sx * push;
+            } else {
+              const sy = (dy === 0 ? (Math.random() - 0.5) : Math.sign(dy)) * overlapY;
+              a.node.vy -= sy * push;
+              b.node.vy += sy * push;
+            }
           }
         }
       }
@@ -196,7 +218,10 @@ document.addEventListener("DOMContentLoaded", () => {
       .force("charge", d3.forceManyBody().strength(-520))
       .force("center", d3.forceCenter(w/2, h/2))
       .force("collide", d3.forceCollide().radius(d => String(d.id).startsWith("hub_") ? 34 : 24).iterations(3))
-      .force("radial", d3.forceRadial(d => String(d.id).startsWith("hub_") ? 5 : 170 + Math.random() * 40, w/2, h/2).strength(0.03))
+      .force("radial", d3.forceRadial(
+        d => String(d.id).startsWith("hub_") ? 5 : 170 + Math.random() * 40,
+        w/2, h/2
+      ).strength(0.03))
       .force("jitterX", d3.forceX(w/2 + (Math.random() - 0.5) * 40).strength(0.02))
       .force("jitterY", d3.forceY(h/2 + (Math.random() - 0.5) * 40).strength(0.02))
       .on("tick", () => {
