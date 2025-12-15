@@ -1,3 +1,9 @@
+---
+title: "Resources"
+layout: page
+permalink: /resources/
+---
+
 <style>
 :root{
   --bg: #0b0f17;
