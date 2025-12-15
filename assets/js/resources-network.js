@@ -95,6 +95,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  function approxTextWidth(label, isHub) {
+    const L = (label || "").length;
+    const size = isHub ? 12 : 11;
+    return Math.max(28, L * (size * 0.58));
+  }
+
   function buildGraph(filter, query) {
     g.selectAll("*").remove();
 
@@ -117,13 +123,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const nodes = [hub].concat(filtered);
     const links = filtered.map(r => ({ source: hub.id, target: r.id }));
 
+    nodes.forEach(n => {
+      n.x = w/2 + (Math.random() - 0.5) * w * 0.35;
+      n.y = h/2 + (Math.random() - 0.5) * h * 0.35;
+    });
+
     const link = g.selectAll("line")
       .data(links)
       .enter()
       .append("line")
       .attr("stroke", "#b5b5b5")
       .attr("stroke-width", 1)
-      .attr("opacity", 0.85);
+      .attr("opacity", 0.80);
 
     let sim;
 
@@ -131,13 +142,13 @@ document.addEventListener("DOMContentLoaded", () => {
       .data(nodes)
       .enter()
       .append("circle")
-      .attr("r", d => String(d.id).startsWith("hub_") ? 16 : 9)
+      .attr("r", d => String(d.id).startsWith("hub_") ? 17 : 9)
       .attr("fill", d => colors[d.group] || colors.gray)
       .attr("stroke", "#ffffff")
       .attr("stroke-width", d => String(d.id).startsWith("hub_") ? 2 : 1)
       .call(d3.drag()
         .on("start", (e,d) => {
-          if (!e.active && sim) sim.alphaTarget(0.3).restart();
+          if (!e.active && sim) sim.alphaTarget(0.35).restart();
           d.fx = d.x; d.fy = d.y;
         })
         .on("drag", (e,d) => { d.fx = e.x; d.fy = e.y; })
@@ -153,30 +164,70 @@ document.addEventListener("DOMContentLoaded", () => {
       .enter()
       .append("text")
       .text(d => d.label)
-      .attr("font-size", "11px")
-      .attr("dx", d => String(d.id).startsWith("hub_") ? 20 : 14)
+      .attr("font-size", d => String(d.id).startsWith("hub_") ? "12px" : "11px")
+      .attr("dx", d => String(d.id).startsWith("hub_") ? 22 : 14)
       .attr("dy", 4)
       .attr("fill", "#000000")
-      .attr("font-weight", d => String(d.id).startsWith("hub_") ? 800 : 600)
+      .attr("font-weight", d => String(d.id).startsWith("hub_") ? 900 : 650)
       .attr("paint-order", "stroke")
       .attr("stroke", "white")
-      .attr("stroke-width", 3)
+      .attr("stroke-width", 4)
       .attr("stroke-linecap", "round")
       .attr("stroke-linejoin", "round")
       .style("pointer-events", "none");
 
+    const labelBoxes = nodes.map(n => {
+      const isHub = String(n.id).startsWith("hub_");
+      const wBox = approxTextWidth(n.label, isHub) + (isHub ? 34 : 26);
+      const hBox = (isHub ? 18 : 16) + 8;
+      return { node: n, w: wBox, h: hBox };
+    });
+
+    function forceLabelCollide() {
+      for (let i = 0; i < labelBoxes.length; i++) {
+        for (let j = i + 1; j < labelBoxes.length; j++) {
+          const a = labelBoxes[i], b = labelBoxes[j];
+          const ax = a.node.x + (String(a.node.id).startsWith("hub_") ? 22 : 14);
+          const ay = a.node.y;
+          const bx = b.node.x + (String(b.node.id).startsWith("hub_") ? 22 : 14);
+          const by = b.node.y;
+
+          const dx = bx - ax;
+          const dy = by - ay;
+
+          const minX = (a.w + b.w) / 2 + 14;
+          const minY = (a.h + b.h) / 2 + 10;
+
+          if (Math.abs(dx) < minX && Math.abs(dy) < minY) {
+            const sx = (minX - Math.abs(dx)) * (dx === 0 ? (Math.random() - 0.5) : Math.sign(dx));
+            const sy = (minY - Math.abs(dy)) * (dy === 0 ? (Math.random() - 0.5) : Math.sign(dy));
+            const push = 0.035;
+
+            a.node.vx -= sx * push;
+            a.node.vy -= sy * push;
+            b.node.vx += sx * push;
+            b.node.vy += sy * push;
+          }
+        }
+      }
+    }
+
     sim = d3.forceSimulation(nodes)
+      .alphaDecay(0.03)
+      .velocityDecay(0.28)
       .force("link", d3.forceLink(links).id(d => d.id)
-        .distance(() => 70 + Math.random() * 80)
-        .strength(0.9)
+        .distance(() => 85 + Math.random() * 120)
+        .strength(0.85)
       )
-      .force("charge", d3.forceManyBody().strength(-420))
+      .force("charge", d3.forceManyBody().strength(-520))
       .force("center", d3.forceCenter(w/2, h/2))
-      .force("collide", d3.forceCollide().radius(d => String(d.id).startsWith("hub_") ? 30 : 20).iterations(2))
-      .force("radial", d3.forceRadial(d => String(d.id).startsWith("hub_") ? 10 : 150, w/2, h/2).strength(0.04))
-      .force("jitterX", d3.forceX(w/2).strength(0.015))
-      .force("jitterY", d3.forceY(h/2).strength(0.015))
+      .force("collide", d3.forceCollide().radius(d => String(d.id).startsWith("hub_") ? 34 : 24).iterations(3))
+      .force("radial", d3.forceRadial(d => String(d.id).startsWith("hub_") ? 5 : 170 + Math.random() * 40, w/2, h/2).strength(0.03))
+      .force("jitterX", d3.forceX(w/2 + (Math.random() - 0.5) * 40).strength(0.02))
+      .force("jitterY", d3.forceY(h/2 + (Math.random() - 0.5) * 40).strength(0.02))
       .on("tick", () => {
+        forceLabelCollide();
+
         link
           .attr("x1", d => d.source.x)
           .attr("y1", d => d.source.y)
