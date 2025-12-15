@@ -6,72 +6,106 @@ permalink: /resources/
 
 <style>
 :root{
-  --bg:#0b0f17;
-  --stroke:rgba(255,255,255,.14);
-  --text:rgba(255,255,255,.92);
-  --muted:rgba(255,255,255,.7);
-  --red:#ff4d4d;
-  --blue:#4da3ff;
-  --green:#2ecc71;
-  --gray:#aaa;
+  /* COLORS */
+  --bg-soft:#f6f7f9;          /* SOFT background for graph */
+  --bg-panel:#ffffff;
+  --stroke:#d9dce1;
+
+  --text:#000000;
+  --muted:#444444;
+
+  --red:#d9534f;
+  --blue:#357edd;
+  --green:#2ca25f;
+  --gray:#999999;
 }
 
+/* LAYOUT */
 .resources-wrap{
   max-width:1100px;
   margin:24px auto;
   padding:0 14px;
+  color:var(--text);
 }
 
+/* HEADER / HERO */
 .resources-hero{
   border:1px solid var(--stroke);
   border-radius:14px;
   padding:18px;
   margin-bottom:12px;
+  background:var(--bg-panel);
 }
 
-.resources-hero h2{margin:0 0 6px 0}
-.resources-hero p{margin:0;color:var(--muted)}
+.resources-hero h2{
+  margin:0 0 6px 0;
+  color:var(--text);
+}
 
+.resources-hero p{
+  margin:0;
+  color:var(--muted);
+}
+
+/* LEGEND */
 .legend{
   display:flex;
-  gap:14px;
-  margin-top:10px;
-  color:var(--muted);
+  gap:18px;
+  margin-top:12px;
   font-size:.95rem;
+  color:var(--text);
 }
-.dot{width:10px;height:10px;border-radius:50%}
+
+.legend div{
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+
+.dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+}
+
 .red{background:var(--red)}
 .blue{background:var(--blue)}
 .green{background:var(--green)}
 .gray{background:var(--gray)}
 
+/* CONTROLS */
 .controls{
   display:flex;
   gap:10px;
   margin:12px 0;
 }
-.controls input,.controls button{
+
+.controls input,
+.controls button{
   padding:10px 12px;
   border-radius:10px;
   border:1px solid var(--stroke);
-  background:rgba(255,255,255,.06);
-  color:var(--text);
+  background:#ffffff;
+  color:#000000;
 }
 
+/* GRAPH CONTAINER */
 .graph-card{
   border:1px solid var(--stroke);
   border-radius:14px;
   overflow:hidden;
+  background:var(--bg-panel);
 }
 
+/* GRAPH ITSELF */
 #graph{
   width:100%;
   height:640px;
   display:block;
   background:
-    radial-gradient(800px 400px at 20% 10%, rgba(77,163,255,.15), transparent 55%),
-    radial-gradient(800px 400px at 80% 90%, rgba(255,77,77,.12), transparent 55%),
-    var(--bg);
+    radial-gradient(700px 350px at 20% 15%, rgba(53,126,221,.08), transparent 60%),
+    radial-gradient(700px 350px at 80% 85%, rgba(217,83,79,.07), transparent 60%),
+    var(--bg-soft);
 }
 </style>
 
