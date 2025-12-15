@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { id:"boston_review_list", label:"Boston Review – Solidarity reading list", group:"blue", url:"https://www.bostonreview.net/reading-list/solidarity-makes-us-strong/" }
   ];
 
-  let currentFilter = "all";
+  let currentFilter = "red";
   let currentQuery = "";
 
   const g = svg.append("g");
@@ -47,46 +47,33 @@ document.addEventListener("DOMContentLoaded", () => {
     return { w: Math.max(360, r.width), h: Math.max(420, r.height) };
   }
 
+  function setActiveButton(filter) {
+    document.querySelectorAll(".filter").forEach(b => {
+      b.classList.toggle("active", b.dataset.filter === filter);
+    });
+  }
+
   function buildGraph(filter, query) {
     g.selectAll("*").remove();
 
     const { w, h } = getSize();
     svg.attr("viewBox", `0 0 ${w} ${h}`);
 
-    const filtered =
-      (filter === "all")
-        ? resources
-        : resources.filter(r => r.group === filter);
+    const hub = hubs[filter] || hubs.gray;
+
+    const base = resources.filter(r => r.group === filter);
 
     const q = (query || "").trim().toLowerCase();
-    const filtered2 =
+    const filtered =
       (!q)
-        ? filtered
-        : filtered.filter(r =>
+        ? base
+        : base.filter(r =>
             (r.label || "").toLowerCase().includes(q) ||
             (r.url || "").toLowerCase().includes(q)
           );
 
-    let nodes = [];
-    let links = [];
-
-    if (filter === "all") {
-      const hubList = [hubs.red, hubs.blue, hubs.green, hubs.gray];
-      nodes = hubList.concat(filtered2);
-
-      links = filtered2.map(r => ({
-        source: hubs[r.group]?.id || hubs.gray.id,
-        target: r.id
-      }));
-    } else {
-      const hub = hubs[filter] || hubs.gray;
-      nodes = [hub].concat(filtered2);
-
-      links = filtered2.map(r => ({
-        source: hub.id,
-        target: r.id
-      }));
-    }
+    const nodes = [hub].concat(filtered);
+    const links = filtered.map(r => ({ source: hub.id, target: r.id }));
 
     const link = g.selectAll("line")
       .data(links)
@@ -94,6 +81,8 @@ document.addEventListener("DOMContentLoaded", () => {
       .append("line")
       .attr("stroke", "#b5b5b5")
       .attr("stroke-width", 1);
+
+    let sim;
 
     const node = g.selectAll("circle")
       .data(nodes)
@@ -105,12 +94,12 @@ document.addEventListener("DOMContentLoaded", () => {
       .attr("stroke-width", d => String(d.id).startsWith("hub_") ? 2 : 1)
       .call(d3.drag()
         .on("start", (e,d) => {
-          if (!e.active) sim.alphaTarget(0.3).restart();
+          if (!e.active && sim) sim.alphaTarget(0.3).restart();
           d.fx = d.x; d.fy = d.y;
         })
         .on("drag", (e,d) => { d.fx = e.x; d.fy = e.y; })
         .on("end", (e,d) => {
-          if (!e.active) sim.alphaTarget(0);
+          if (!e.active && sim) sim.alphaTarget(0);
           d.fx = null; d.fy = null;
         })
       )
@@ -128,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .attr("font-weight", d => String(d.id).startsWith("hub_") ? 800 : 600)
       .style("pointer-events", "none");
 
-    const sim = d3.forceSimulation(nodes)
+    sim = d3.forceSimulation(nodes)
       .force("link", d3.forceLink(links).id(d => d.id).distance(95).strength(0.9))
       .force("charge", d3.forceManyBody().strength(-520))
       .force("center", d3.forceCenter(w/2, h/2))
@@ -150,30 +139,34 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   }
 
-  function setActiveButton(filter) {
-    document.querySelectorAll(".filter").forEach(b => {
-      b.classList.toggle("active", b.dataset.filter === filter);
+  setActiveButton(currentFilter);
+  buildGraph(currentFilter, "");
+
+  const legend = document.getElementById("legend");
+  if (legend) {
+    legend.addEventListener("click", (e) => {
+      const btn = e.target.closest("button.filter");
+      if (!btn) return;
+
+      currentFilter = btn.dataset.filter;
+      currentQuery = "";
+
+      const search = document.getElementById("search");
+      if (search) search.value = "";
+
+      setActiveButton(currentFilter);
+      buildGraph(currentFilter, "");
+
+      svg.transition().duration(250).call(zoom.transform, d3.zoomIdentity);
     });
   }
 
-  buildGraph("all", "");
-  setActiveButton("all");
-
-  document.getElementById("legend").addEventListener("click", (e) => {
-    const btn = e.target.closest("button.filter");
-    if (!btn) return;
-    currentFilter = btn.dataset.filter;
-    currentQuery = "";
-    const search = document.getElementById("search");
-    if (search) search.value = "";
-    setActiveButton(currentFilter);
-    buildGraph(currentFilter, "");
-    svg.transition().duration(250).call(zoom.transform, d3.zoomIdentity);
-  });
-
-  document.getElementById("reset").addEventListener("click", () => {
-    svg.transition().duration(250).call(zoom.transform, d3.zoomIdentity);
-  });
+  const resetBtn = document.getElementById("reset");
+  if (resetBtn) {
+    resetBtn.addEventListener("click", () => {
+      svg.transition().duration(250).call(zoom.transform, d3.zoomIdentity);
+    });
+  }
 
   const search = document.getElementById("search");
   if (search) {
