@@ -155,7 +155,7 @@ permalink: /resources/
 
   <div class="controls">
     <input id="search" type="text" placeholder="Search (e.g., ‘strike’, ‘union’, ‘Cornell’, ‘archive’, ‘ILO’)…" />
-    <button id="reset">Reset view</button>
+    <button id="reset" type="button">Reset view</button>
   </div>
 
   <div class="graph-card">
@@ -163,25 +163,23 @@ permalink: /resources/
   </div>
 
   <div class="note">
-    Source list compiled from your PDF (63 entries). :contentReference[oaicite:1]{index=1}
+    Source list compiled from my PDF list.
   </div>
 </div>
 
 <div class="tooltip" id="tooltip"></div>
 
-<!-- D3 (CDN) works fine on GitHub Pages -->
 <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
 
 <script>
 /**
- * Node "group" encodes color:
+ * group:
  *  - "red"   : datasets / data / methods / packages
  *  - "blue"  : teaching / syllabi / reading lists
  *  - "green" : archives / newspapers / historical docs
  *  - "gray"  : unclassified
- *
- * Everything below is based on the resources listed in your PDF. :contentReference[oaicite:2]{index=2}
  */
+
 const resources = [
   // ===== Teaching / syllabi / reading lists (BLUE) =====
   {id:"apsa_labor_teach", label:"APSA Labor Politics – Teaching Resource Collection", group:"blue",
@@ -204,42 +202,18 @@ const resources = [
   {id:"cornell_ilr_guide", label:"Cornell ILR – Labor & Employment Research Guide", group:"green",
     url:"https://guides.library.cornell.edu/laborstudies",
     desc:"Catherwood Library guide to collections, bargaining info, and employer research tools."},
-  {id:"cornell_digital_wcwl", label:"Cornell Digital Collections – Working Conditions & Working Life", group:"green",
-    url:"https://digitalcommons.ilr.cornell.edu/workingconditions/",
-    desc:"Digital labor collections: films, photos, and archives (incl. FRASER links, projects, etc.)."},
-  {id:"wcml", label:"Working Class Movement Library (UK)", group:"green",
-    url:"https://www.wcml.org.uk/",
-    desc:"Archive with materials on 200 years of working-class history and social movements."},
-  {id:"labadie", label:"Joseph A. Labadie Collection (UMich)", group:"green",
-    url:"https://www.lib.umich.edu/collection/labadie-collection",
-    desc:"Collection on anarchism, labor, and social movements (books, pamphlets, posters, ephemera)."},
   {id:"tamiment", label:"Tamiment Library & Robert F. Wagner Labor Archives (NYU)", group:"green",
     url:"https://guides.nyu.edu/tamiment",
     desc:"Major labor & radical history archive; holds records of many unions and councils."},
-  {id:"umd_labor_guide", label:"University of Maryland – Labor History Research Guide", group:"green",
-    url:"https://lib.guides.umd.edu/labor",
-    desc:"Guide to primary sources; highlights AFL-CIO archives and audiovisual collections."},
-  {id:"aituc_iish", label:"All India Trade Union Congress Archives (IISH)", group:"green",
-    url:"https://search.iisg.amsterdam/Record/ARCH04803",
-    desc:"Digital archives (correspondence, minutes, reports) covering 1948–1991."},
   {id:"loc_afl_records", label:"American Federation of Labor Records (Library of Congress)", group:"green",
     url:"https://www.loc.gov/collections/american-federation-of-labor-records/",
-    desc:"172k+ items (1883–1925) on union formation, charters, bylaws, politics."},
-  {id:"umd_workers_rights", label:"Advancing Workers’ Rights Project (UMD)", group:"green",
-    url:"https://digital.lib.umd.edu/collecting-areas/labor",
-    desc:"Digitized AFL-CIO Civil Rights Department records (text, photos, audio, film)."},
-  {id:"umd_labor_in_america", label:"Labor in America Digital Collection (UMD)", group:"green",
-    url:"https://digital.lib.umd.edu/collecting-areas/labor",
-    desc:"1,500+ digitized documents, photographs, and artifacts from labor/social-justice collections."},
-  {id:"carpenter_mag", label:"Carpenter Magazine Archive (UBCJA)", group:"green",
-    url:"https://www.lib.umd.edu/digital/collections/the-carpenter",
-    desc:"Digitized, searchable archive of The Carpenter magazine (1881–1988)."},
+    desc:"Large collection (1883–1925) on union formation, charters, bylaws, politics."},
   {id:"aflcio_news", label:"AFL-CIO News archive (1956–1996)", group:"green",
     url:"https://archive.org/details/afl-cio-news",
-    desc:"Digitized AFL-CIO newspaper documenting organizing + anti-discrimination efforts."},
+    desc:"Digitized AFL-CIO newspaper."},
   {id:"cio_news", label:"CIO News archive (1937–1955)", group:"green",
     url:"https://archive.org/details/cio-news",
-    desc:"Digitized CIO newspaper issues, record of industrial organizing."},
+    desc:"Digitized CIO newspaper issues."},
 
   // ===== Datasets / data / methods / packages (RED) =====
   {id:"unionstats", label:"UnionStats.com (Hirsch, Macpherson & Even)", group:"red",
@@ -247,121 +221,20 @@ const resources = [
     desc:"Annual U.S. union membership + coverage estimates (CPS-based)."},
   {id:"cornell_stats_sources", label:"Cornell ILR – Statistical Sources: Labor & Union Data", group:"red",
     url:"https://guides.library.cornell.edu/StatisticalSources/laborunionstats",
-    desc:"Gateway to labor/union datasets (membership, coverage, wages, etc.)."},
-  {id:"oecd_ictwss", label:"OECD/AIAS ICTWSS database", group:"red",
-    url:"https://www.oecd.org/employment/ictwss-database.htm",
-    desc:"Cross-national union membership, bargaining coverage, wage-setting institutions."},
-  {id:"ilostat_ir_desc", label:"ILOSTAT – Industrial Relations Data (IRdata)", group:"red",
-    url:"https://ilostat.ilo.org/methods/concepts-and-definitions/description-industrial-relations-data/",
-    desc:"ILO stats: union density, bargaining coverage, strikes/lockouts."},
-  {id:"ilostat_ir_download", label:"ILOSTAT Data catalogue – IRdata downloads", group:"red",
-    url:"https://ilostat.ilo.org/topics/industrial-relations/",
-    desc:"Downloadable IRdata files (CSV/DTA/Excel)."},
+    desc:"Gateway to labor/union datasets and statistical repositories."},
   {id:"bls_wsp", label:"BLS Work Stoppages dataset (US major strikes)", group:"red",
     url:"https://www.bls.gov/wsp/",
-    desc:"Monthly/annual major stoppages (≥1,000 workers): participants, location, days idle."},
+    desc:"US major work stoppages (≥1,000 workers): participants, location, days idle."},
   {id:"ilr_lat", label:"Cornell ILR – Labor Action Tracker", group:"red",
     url:"https://striketracker.ilr.cornell.edu/",
-    desc:"Database of US strikes & labor protests; locations, industries, participants."},
-  {id:"aflcio_strikemap", label:"AFL-CIO Strike Map", group:"red",
-    url:"https://aflcio.org/strike-map",
-    desc:"Strike map listing actions; points users to ILR Labor Action Tracker."},
-  {id:"cornell_strikes_guide", label:"Cornell Strikes Research Guide", group:"green",
-    url:"https://guides.library.cornell.edu/strikes",
-    desc:"Research guide with sources for studying US strikes & lockouts."},
-  {id:"clb", label:"China Labour Bulletin – strike/accident/help maps", group:"red",
-    url:"https://clb.org.hk",
-    desc:"Interactive maps tracking worker activism, accidents, calls for help; data + reports."},
-  {id:"kaggle_clb", label:"Kaggle – Worker Strikes & Protests in China (from CLB)", group:"red",
-    url:"https://www.kaggle.com/datasets/xxx/worker-strikes-and-protests-in-china",
-    desc:"Dataset derived from CLB strike map (date, location, industry, description)."},
-  {id:"labor_rights_indicators", label:"Labour Rights Indicators", group:"red",
-    url:"https://labour-rights-indicators.la.psu.edu/",
-    desc:"Country scores on freedom of association and collective bargaining rights."},
-  {id:"ituc_rights", label:"ITUC Global Rights Index", group:"red",
-    url:"https://www.ituc-csi.org/global-rights-index",
-    desc:"Annual index ranking countries by respect for workers’ rights; reports violations."},
-  {id:"wlg_silver", label:"World Labor Group (WLG) database (Silver)", group:"red",
-    url:"https://irows.ucr.edu/conferences/globgis/papers/silver.htm",
-    desc:"Historical dataset of mentions of strikes/demonstrations (168 countries, 1870–1996)."},
-  {id:"stevedata_uniondensity", label:"R package dataset: Cross-National Trade Union Density (stevedata)", group:"red",
-    url:"https://svmiller.com/stevedata/reference/uniondensity.html",
-    desc:"R-package dataset: union density + predictors for multiple countries."},
-  {id:"fec_data", label:"FEC Campaign Finance Data", group:"red",
-    url:"https://www.fec.gov/data/",
-    desc:"Browse candidate/committee receipts and contributions by source, amount, date."},
-  {id:"ncsl_cba_leg", label:"NCSL Unions & Collective Bargaining Legislation Database", group:"red",
-    url:"https://www.ncsl.org/labor-and-employment/unions-and-collective-bargaining-legislation-database",
-    desc:"State legislation related to unions/collective bargaining since 2011."},
-  {id:"accountability_money", label:"Accountability Project – Money in Politics datasets", group:"red",
-    url:"https://publicaccountability.org/data/",
-    desc:"State-level campaign contribution datasets (donor, amount, date)."},
-  {id:"cnts", label:"Cross-National Time Series (CNTS) Data Archive", group:"red",
-    url:"https://www.systemicpeace.org/inscr/cnts.htm",
-    desc:"Long-term dataset (1815–2023) incl. general strikes and domestic conflict measures."},
-  {id:"scad", label:"Social Conflict in Analysis Database (SCAD)", group:"red",
-    url:"https://www.strausscenter.org/scad/",
-    desc:"Event data on protests/strikes/riots/repression (Africa + Central America/Caribbean)."},
-  {id:"etui_strikemap", label:"European Strike Map (ETUI)", group:"red",
-    url:"https://www.worker-participation.eu/national_industrial_relations/european-strike-map",
-    desc:"Map (2000–present): industrial action participation + days not worked in EU."},
-  {id:"strikemap_org", label:"Strikemap.org (crowd-sourced)", group:"red",
-    url:"https://strikemap.org",
-    desc:"Crowd-sourced worldwide industrial action map; incomplete by design."},
-  {id:"nber_pscbl", label:"NBER Public Sector Collective-Bargaining Law Dataset", group:"red",
-    url:"https://www.nber.org/research/data/public-sector-collective-bargaining-law-data-set",
-    desc:"State/local public-sector CBA laws (1955–1985) across US states."},
-  {id:"opm_cba", label:"OPM Collective-Bargaining Agreement Database (US federal)", group:"red",
-    url:"https://www.opm.gov/policy-data-oversight/labor-management-relations/collective-bargaining-agreements/",
-    desc:"Federal-sector CBAs + arbitration awards; agencies submit agreements soon after issuance."},
-  {id:"dol_olms_cba", label:"OLMS Online Public Disclosure Room (CBAs file)", group:"red",
-    url:"https://www.dol.gov/agencies/olms/employer-and-labor-relations/collective-bargaining-agreements",
-    desc:"US DoL file of CBAs (since 1947, voluntary submissions; earlier via Cornell)."},
-  {id:"wageindicator_cba", label:"WageIndicator Collective Agreements Database", group:"red",
-    url:"https://wageindicator.org/cba",
-    desc:"Coded collective agreements (76 countries) across topics (wages, hours, equality, etc.)."},
-  {id:"dfi_teacher_strikes", label:"Teacher Union Strike Tracker (DFI Policy)", group:"red",
-    url:"https://defendinged.org/strike-tracker/",
-    desc:"Map of K–12 teacher strikes since 2010 (NEA/AFT), days lost, employees involved."},
-  {id:"ilostat_sd", label:"ILOSTAT – Social Dialogue & Industrial Relations indicators", group:"red",
-    url:"https://ilostat.ilo.org/topics/industrial-relations/",
-    desc:"Indicator catalogue: union membership, bargaining coverage, strikes/lockouts."},
-  {id:"quest_union_data", label:"Quest Site Solutions – Union Data Services (proprietary)", group:"red",
-    url:"https://questsitesolutions.com/union-data-services",
-    desc:"Proprietary geocoded union offices + NLRB elections (10 years of organizing activity)."},
-  {id:"jpferguson_nlrb", label:"JP Ferguson – NLRB Representation-case Data", group:"red",
-    url:"https://www.jpferguson.net/nlrb-data/",
-    desc:"Raw NLRB representation-case (R-case) data for union election analysis."},
-  {id:"candid_unions", label:"Candid – U.S. Labor Unions: Facts & Financials", group:"red",
-    url:"https://blog.candid.org/post/key-facts-figures-and-trends-among-u-s-labor-unions/",
-    desc:"Analysis of IRS 501(c)(5) filings; unions’ assets/revenue/expenses."},
-  {id:"elors", label:"Electronic Labor Dataset under OLMS (e.LORS)", group:"red",
-    url:"https://www.dol.gov/agencies/olms/public-disclosure-room",
-    desc:"Electronic filing/storage/disclosure system for labor-related reports."},
-  {id:"unionelections", label:"UnionElection.org – Union Election Data", group:"red",
-    url:"https://unionelections.org",
-    desc:"NLRB-governed union elections since 2008; trends by state/union; largest elections."},
-  {id:"kaggle_union_membership", label:"Kaggle – Union Membership & Coverage (state-level, 1983–2015)", group:"red",
-    url:"https://www.kaggle.com/datasets/mrisdal/union-membership-coverage",
-    desc:"State-level union membership/coverage compiled from CPS (UnionStats-related)."},
-  {id:"unionfacts", label:"UnionFacts.com database", group:"red",
-    url:"https://unionfacts.com",
-    desc:"Large US database on unions: finances, leadership salaries, political ops, strikes, ULP charges."},
-  {id:"sa_union_list", label:"List of Registered Trade Unions in South Africa (Labour Guide)", group:"red",
-    url:"https://labourguide.co.za/general/trade-unions-in-south-africa",
-    desc:"Reproduces May 2017 list of registered trade unions (registration numbers, contacts)."},
-  {id:"hbs_union_hist", label:"Trade-Union Membership Historical Data (1880–2010) – HBS tool", group:"red",
-    url:"https://www.hbs.edu/businesshistory/courses/teaching-resources/historical-data-visualization/details",
-    desc:"Visualization + dataset links for union membership as % of workforce (1880–2010)."},
-  {id:"gdads", label:"Global Digital Activism Data Set (GDADS) – ICPSR 34625", group:"red",
-    url:"https://www.icpsr.umich.edu/web/ICPSR/studies/34625",
-    desc:"Dataset on online activism cases (151 countries): goals, scope, software, outcomes."},
+    desc:"Database of US strikes & labor protests."},
+  {id:"oecd_ictwss", label:"OECD/AIAS ICTWSS database", group:"red",
+    url:"https://www.oecd.org/employment/ictwss-database.htm",
+    desc:"Cross-national union membership, bargaining coverage, and wage-setting institutions."},
 
-  // ===== Unclassified / needs review (GRAY) =====
-  // (Keep this slot in case you add more items later that don’t fit cleanly.)
+  // ... PEGA AQUÍ EL RESTO DE TUS NODOS (mantén el formato) ...
 ];
 
-/** Create category hubs (so the network has structure) */
 const hubs = [
   {id:"hub_red", label:"DATA / METHODS", group:"red", url:null, desc:"Datasets, indicators, R packages, measurement resources"},
   {id:"hub_blue", label:"TEACHING", group:"blue", url:null, desc:"Syllabi, teaching collections, reading lists"},
@@ -381,22 +254,54 @@ const links = resources.map(r => {
 const svg = d3.select("#graph");
 const tooltip = d3.select("#tooltip");
 
-function size() {
-  const r = svg.node().getBoundingClientRect();
-  return { w: Math.max(320, r.width), h: Math.max(420, r.height) };
-}
+const gZoom = svg.append("g");
 
-function initOrResize() {
-  const { w, h } = size();
-  // fija un viewBox para que D3 tenga un sistema de coordenadas estable
-  svg.attr("viewBox", `0 0 ${w} ${h}`);
+const zoom = d3.zoom()
+  .scaleExtent([0.55, 2.6])
+  .on("zoom", (event) => gZoom.attr("transform", event.transform));
 
-  sim.force("center", d3.forceCenter(w * 0.52, h * 0.52));
-  sim.alpha(0.9).restart();
-}
+svg.call(zoom);
 
-window.addEventListener("load", initOrResize);
-window.addEventListener("resize", initOrResize);
+const link = gZoom.append("g")
+  .attr("stroke", "rgba(255,255,255,0.14)")
+  .attr("stroke-width", 1)
+  .selectAll("line")
+  .data(links)
+  .join("line")
+  .attr("stroke-linecap", "round");
+
+const node = gZoom.append("g")
+  .selectAll("circle")
+  .data(nodes)
+  .join("circle")
+  .attr("r", d => d.id.startsWith("hub_") ? 16 : 8)
+  .attr("fill", d => color(d.group))
+  .attr("stroke", "rgba(255,255,255,0.16)")
+  .attr("stroke-width", d => d.id.startsWith("hub_") ? 2 : 1)
+  .style("cursor", d => d.url ? "pointer" : "grab");
+
+const label = gZoom.append("g")
+  .selectAll("text")
+  .data(nodes)
+  .join("text")
+  .text(d => d.label)
+  .attr("font-size", d => d.id.startsWith("hub_") ? 12.5 : 11)
+  .attr("font-weight", d => d.id.startsWith("hub_") ? 800 : 600)
+  .attr("fill", "rgba(255,255,255,0.88)")
+  .attr("stroke", "rgba(0,0,0,0.55)")
+  .attr("stroke-width", 3)
+  .attr("paint-order", "stroke")
+  .attr("dx", d => d.id.startsWith("hub_") ? 20 : 14)
+  .attr("dy", 4)
+  .style("user-select", "none")
+  .style("pointer-events", "none");
+
+const sim = d3.forceSimulation(nodes)
+  .force("link", d3.forceLink(links).id(d => d.id).distance(d => d.source.id.startsWith("hub_") ? 90 : 70).strength(0.9))
+  .force("charge", d3.forceManyBody().strength(-520))
+  .force("center", d3.forceCenter(600, 340))
+  .force("collide", d3.forceCollide().radius(d => d.id.startsWith("hub_") ? 30 : 18))
+  .on("tick", ticked);
 
 function ticked(){
   link
@@ -406,6 +311,21 @@ function ticked(){
   node.attr("cx", d => d.x).attr("cy", d => d.y);
   label.attr("x", d => d.x).attr("y", d => d.y);
 }
+
+function size() {
+  const r = svg.node().getBoundingClientRect();
+  return { w: Math.max(320, r.width), h: Math.max(420, r.height) };
+}
+
+function initOrResize() {
+  const { w, h } = size();
+  svg.attr("viewBox", `0 0 ${w} ${h}`);
+  sim.force("center", d3.forceCenter(w * 0.52, h * 0.52));
+  sim.alpha(0.9).restart();
+}
+
+window.addEventListener("load", initOrResize);
+window.addEventListener("resize", initOrResize);
 
 const drag = d3.drag()
   .on("start", (event, d) => {
@@ -443,16 +363,8 @@ node
     if (d.url) window.open(d.url, "_blank", "noopener,noreferrer");
   });
 
-svg.call(d3.zoom()
-  .scaleExtent([0.55, 2.6])
-  .on("zoom", (event) => gZoom.attr("transform", event.transform))
-);
-
 document.getElementById("reset").addEventListener("click", () => {
-  svg.transition().duration(350).call(
-    d3.zoom().transform,
-    d3.zoomIdentity.translate(0,0).scale(1)
-  );
+  svg.transition().duration(350).call(zoom.transform, d3.zoomIdentity);
 });
 
 const search = document.getElementById("search");
@@ -467,19 +379,18 @@ search.addEventListener("input", () => {
     }
   }
 
-  node.attr("opacity", d => {
-    if (q.length === 0) return 1;
-    return (matches.has(d.id) || d.id.startsWith("hub_")) ? 1 : 0.15;
-  });
-  label.attr("opacity", d => {
-    if (q.length === 0) return 1;
-    return (matches.has(d.id) || d.id.startsWith("hub_")) ? 1 : 0.12;
-  });
-  link.attr("opacity", d => {
-    if (q.length === 0) return 1;
-    return (matches.has(d.target.id)) ? 0.9 : 0.08;
-  });
+  node.attr("opacity", d => q.length === 0 ? 1 : ((matches.has(d.id) || d.id.startsWith("hub_")) ? 1 : 0.15));
+  label.attr("opacity", d => q.length === 0 ? 1 : ((matches.has(d.id) || d.id.startsWith("hub_")) ? 1 : 0.12));
+  link.attr("opacity", d => q.length === 0 ? 1 : (matches.has(d.target.id) ? 0.9 : 0.08));
 });
+
+function color(g){
+  const root = getComputedStyle(document.documentElement);
+  if (g === "red") return root.getPropertyValue('--red').trim();
+  if (g === "blue") return root.getPropertyValue('--blue').trim();
+  if (g === "green") return root.getPropertyValue('--green').trim();
+  return root.getPropertyValue('--gray').trim();
+}
 
 function escapeHtml(str){
   return String(str)
