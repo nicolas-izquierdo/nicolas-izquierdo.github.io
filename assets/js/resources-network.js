@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const hubs = {
-    red:  { id: "hub_red",  label: "DATA / METHODS", group: "red" },
+    red:  { id: "hub_red",  label: "DATA", group: "red" },
     blue: { id: "hub_blue", label: "TEACHING",      group: "blue" },
     green:{ id: "hub_green",label: "ARCHIVES",      group: "green" },
     gray: { id: "hub_gray", label: "OTHER",         group: "gray" }
