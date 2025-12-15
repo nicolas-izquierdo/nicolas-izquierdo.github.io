@@ -168,8 +168,9 @@ document.addEventListener("DOMContentLoaded", () => {
           const dx = bx - ax;
           const dy = by - ay;
 
-          const minX = (a.w + b.w) / 2 + 14;
-          const minY = (a.h + b.h) / 2 + 10;
+          const minX = ((a.w + b.w) / 2 + 14) * 1.35;
+          const minY = ((a.h + b.h) / 2 + 10) * 1.35;
+
 
           if (Math.abs(dx) < minX && Math.abs(dy) < minY) {
             const sx = (minX - Math.abs(dx)) * (dx === 0 ? (Math.random() - 0.5) : Math.sign(dx));
