@@ -46,6 +46,37 @@ document.addEventListener("DOMContentLoaded", () => {
     { id:"labor_in_america", label:"UMD Digital Collections – Labor", group:"green", url:"https://digital.lib.umd.edu/collecting-areas/labor" }
   ];
 
+  const dataBranches = [
+    { id: "branch_contentious", label: "Contentious", group: "red" },
+    { id: "branch_finance",     label: "Finance", group: "red" },
+    { id: "branch_cba",         label: "Collective bargaining", group: "red" },
+    { id: "branch_general",     label: "General", group: "red" }
+  ];
+
+  const redBranchOf = {
+    bls_wsp: "branch_contentious",
+    ilr_lat: "branch_contentious",
+    aflcio_strikemap: "branch_contentious",
+    strikemap_org: "branch_contentious",
+    clb: "branch_contentious",
+    gdads: "branch_contentious",
+    fec_data: "branch_finance",
+    candid_unions: "branch_finance",
+    elors: "branch_finance",
+    ncsl_cba: "branch_cba",
+    opm_cba: "branch_cba",
+    unionstats: "branch_general",
+    oecd_ictwss: "branch_general",
+    ilostat_ir_desc: "branch_general",
+    ilostat_ir_download: "branch_general",
+    labour_rights_indicators: "branch_general",
+    ituc_rights: "branch_general",
+    kaggle_union_membership: "branch_general",
+    unionfacts: "branch_general",
+    sa_union_list: "branch_general",
+    hbs_union_hist: "branch_general"
+  };
+
   let currentFilter = "red";
   let currentQuery = "";
 
@@ -75,7 +106,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function cmToPx(cm) {
-    // CSS px típicos: 96dpi => 1in = 2.54cm = 96px
     return (cm * 96) / 2.54;
   }
 
@@ -86,20 +116,58 @@ document.addEventListener("DOMContentLoaded", () => {
     svg.attr("viewBox", `0 0 ${w} ${h}`);
 
     const hub = hubs[filter] || hubs.gray;
+
     const base = resources.filter(r => r.group === filter);
 
     const q = (query || "").trim().toLowerCase();
-    const filtered = !q ? base : base.filter(r =>
-      (r.label || "").toLowerCase().includes(q) ||
-      (r.url || "").toLowerCase().includes(q)
-    );
+    const filtered =
+      (!q)
+        ? base
+        : base.filter(r =>
+            (r.label || "").toLowerCase().includes(q) ||
+            (r.url || "").toLowerCase().includes(q)
+          );
 
-    const nodes = [hub].concat(filtered);
-    const links = filtered.map(r => ({ source: hub.id, target: r.id }));
+    let nodes, links;
+
+    if (filter === "red") {
+      nodes = [hub].concat(dataBranches).concat(filtered);
+      links = dataBranches.map(b => ({ source: hub.id, target: b.id, _kind: "hub-branch" }));
+      filtered.forEach(r => {
+        const bid = redBranchOf[r.id] || "branch_general";
+        links.push({ source: bid, target: r.id, _kind: "branch-leaf" });
+      });
+    } else {
+      nodes = [hub].concat(filtered);
+      links = filtered.map(r => ({ source: hub.id, target: r.id, _kind: "hub-leaf" }));
+    }
+
+    const branchAngles = {};
+    if (filter === "red") {
+      const N = dataBranches.length;
+      dataBranches.forEach((b, i) => {
+        branchAngles[b.id] = (-Math.PI / 2) + (2 * Math.PI * i / N);
+      });
+    }
 
     nodes.forEach(n => {
-      n.x = w/2 + (Math.random() - 0.5) * w * 0.35;
-      n.y = h/2 + (Math.random() - 0.5) * h * 0.35;
+      const isHub = String(n.id).startsWith("hub_");
+      const isBranch = String(n.id).startsWith("branch_");
+
+      if (isHub) {
+        n.x = w / 2; n.y = h / 2;
+      } else if (filter === "red" && (isBranch || (redBranchOf[n.id] || "branch_general"))) {
+        const bId = isBranch ? n.id : (redBranchOf[n.id] || "branch_general");
+        const ang = branchAngles[bId] ?? 0;
+        const R = isBranch ? 110 : 210;
+        n.x = w/2 + Math.cos(ang) * R + (Math.random() - 0.5) * 18;
+        n.y = h/2 + Math.sin(ang) * R + (Math.random() - 0.5) * 18;
+        n._branchAngle = ang;
+        n._isBranch = isBranch;
+      } else {
+        n.x = w/2 + (Math.random() - 0.5) * w * 0.35;
+        n.y = h/2 + (Math.random() - 0.5) * h * 0.35;
+      }
     });
 
     const link = g.selectAll("line")
@@ -107,7 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .enter()
       .append("line")
       .attr("stroke", "#b5b5b5")
-      .attr("stroke-width", 1)
+      .attr("stroke-width", d => d._kind === "hub-branch" ? 1.2 : 1)
       .attr("opacity", 0.80);
 
     let sim;
@@ -116,7 +184,11 @@ document.addEventListener("DOMContentLoaded", () => {
       .data(nodes)
       .enter()
       .append("circle")
-      .attr("r", d => String(d.id).startsWith("hub_") ? 17 : 9)
+      .attr("r", d => {
+        if (String(d.id).startsWith("hub_")) return 17;
+        if (String(d.id).startsWith("branch_")) return 12;
+        return 9;
+      })
       .attr("fill", d => colors[d.group] || colors.gray)
       .attr("stroke", "#ffffff")
       .attr("stroke-width", d => String(d.id).startsWith("hub_") ? 2 : 1)
@@ -150,36 +222,25 @@ document.addEventListener("DOMContentLoaded", () => {
       .attr("stroke-linejoin", "round")
       .style("pointer-events", "none");
 
-    // --- LABEL BOXES (aprox) + padding de 0.8cm desde el perímetro ---
-    const PERIM_PAD_PX = cmToPx(0.8); // ~30.24px
+    const PERIM_PAD_PX = cmToPx(0.8);
     const labelBoxes = nodes.map(n => {
       const isHub = String(n.id).startsWith("hub_");
       const wBox = approxTextWidth(n.label, isHub) + (isHub ? 34 : 26);
       const hBox = (isHub ? 18 : 16) + 8;
-
-      const dx = isHub ? 22 : 14; // mismo offset que en el text
-      // Representamos la caja del label centrada en (node.x + dx + w/2, node.y)
-      return {
-        node: n,
-        dx,
-        w: wBox,
-        h: hBox
-      };
+      const dx = isHub ? 22 : 14;
+      return { node: n, dx, w: wBox, h: hBox };
     });
 
     function forceLabelCollide() {
-      // Empuja rectángulos inflados por PERIM_PAD_PX (desde el perímetro)
       for (let i = 0; i < labelBoxes.length; i++) {
         for (let j = i + 1; j < labelBoxes.length; j++) {
           const a = labelBoxes[i], b = labelBoxes[j];
 
-          // Centros de cajas de texto (aprox) en coords del grafo
           const aCx = a.node.x + a.dx + a.w / 2;
           const aCy = a.node.y;
           const bCx = b.node.x + b.dx + b.w / 2;
           const bCy = b.node.y;
 
-          // “Semiextensiones” (half sizes) con padding de 0.8cm por lado
           const aHx = a.w / 2 + PERIM_PAD_PX;
           const aHy = a.h / 2 + PERIM_PAD_PX;
           const bHx = b.w / 2 + PERIM_PAD_PX;
@@ -192,8 +253,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const overlapY = (aHy + bHy) - Math.abs(dy);
 
           if (overlapX > 0 && overlapY > 0) {
-            // Separar por el eje con menor penetración (sale más rápido y estable)
-            const push = 0.012; // fuerza suave (ajusta si quieres más “dura”)
+            const push = 0.012;
             if (overlapX < overlapY) {
               const sx = (dx === 0 ? (Math.random() - 0.5) : Math.sign(dx)) * overlapX;
               a.node.vx -= sx * push;
@@ -208,23 +268,60 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
+    function forceSectors(alpha) {
+      if (filter !== "red") return;
+      const cx = w / 2, cy = h / 2;
+
+      nodes.forEach(n => {
+        if (String(n.id).startsWith("hub_")) return;
+
+        let ang = null;
+        if (String(n.id).startsWith("branch_")) ang = branchAngles[n.id];
+        else ang = branchAngles[redBranchOf[n.id] || "branch_general"];
+        if (ang == null) return;
+
+        const isBranch = String(n.id).startsWith("branch_");
+        const R = isBranch ? 115 : 225;
+        const tx = cx + Math.cos(ang) * R;
+        const ty = cy + Math.sin(ang) * R;
+
+        const k = isBranch ? 0.12 : 0.08;
+        n.vx += (tx - n.x) * k * alpha;
+        n.vy += (ty - n.y) * k * alpha;
+      });
+    }
+
     sim = d3.forceSimulation(nodes)
       .alphaDecay(0.15)
       .velocityDecay(0.45)
       .force("link", d3.forceLink(links).id(d => d.id)
-        .distance(() => 85 + Math.random() * 120)
-        .strength(0.85)
+        .distance(l => {
+          if (l._kind === "hub-branch") return 90;
+          if (l._kind === "branch-leaf") return 155 + Math.random() * 55;
+          return 85 + Math.random() * 120;
+        })
+        .strength(l => l._kind === "hub-branch" ? 0.95 : 0.85)
       )
       .force("charge", d3.forceManyBody().strength(-520))
       .force("center", d3.forceCenter(w/2, h/2))
-      .force("collide", d3.forceCollide().radius(d => String(d.id).startsWith("hub_") ? 34 : 24).iterations(3))
+      .force("collide", d3.forceCollide().radius(d => {
+        if (String(d.id).startsWith("hub_")) return 34;
+        if (String(d.id).startsWith("branch_")) return 28;
+        return 24;
+      }).iterations(3))
       .force("radial", d3.forceRadial(
-        d => String(d.id).startsWith("hub_") ? 5 : 170 + Math.random() * 40,
+        d => {
+          if (filter !== "red") return String(d.id).startsWith("hub_") ? 5 : 170 + Math.random() * 40;
+          if (String(d.id).startsWith("hub_")) return 5;
+          if (String(d.id).startsWith("branch_")) return 115;
+          return 225;
+        },
         w/2, h/2
-      ).strength(0.03))
+      ).strength(filter === "red" ? 0.02 : 0.03))
       .force("jitterX", d3.forceX(w/2 + (Math.random() - 0.5) * 40).strength(0.02))
       .force("jitterY", d3.forceY(h/2 + (Math.random() - 0.5) * 40).strength(0.02))
       .on("tick", () => {
+        forceSectors(sim.alpha());
         forceLabelCollide();
 
         link
