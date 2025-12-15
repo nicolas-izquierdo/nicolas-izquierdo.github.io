@@ -105,13 +105,10 @@ permalink: /resources/
 
   <div class="resources-hero">
     <h2>Labor politics resources — interactive map</h2>
-    <p>Click a category to view its network. Drag nodes, zoom, click to open resources.</p>
+    <p>Click a category to view its own network. Drag nodes, zoom, click to open resources.</p>
 
     <div class="legend" id="legend">
-      <button type="button" class="filter active" data-filter="all">
-        <span class="dot gray"></span> All
-      </button>
-      <button type="button" class="filter" data-filter="red">
+      <button type="button" class="filter active" data-filter="red">
         <span class="dot red"></span> Data
       </button>
       <button type="button" class="filter" data-filter="blue">
@@ -127,12 +124,12 @@ permalink: /resources/
   </div>
 
   <div class="controls">
-    <input id="search" placeholder="Search inside the selected category…" />
+    <input id="search" placeholder="Search within selected category…" />
     <button id="reset" type="button">Reset</button>
   </div>
 
   <div class="graph-card">
-    <svg id="graph"></svg>
+    <svg id="graph" role="img" aria-label="Network of labor politics resources"></svg>
   </div>
 
 </div>
