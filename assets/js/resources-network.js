@@ -115,6 +115,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const { w, h } = getSize();
     svg.attr("viewBox", `0 0 ${w} ${h}`);
 
+    const cx = w / 2;
+    const cy = h / 2;
+
     const hub = hubs[filter] || hubs.gray;
 
     const base = resources.filter(r => r.group === filter);
@@ -143,10 +146,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const branchAngles = {};
+    const branchCenters = {};
     if (filter === "red") {
       const N = dataBranches.length;
+      const maxR = Math.max(180, Math.min(w, h) / 2 - 55);
+      const branchR = maxR * 0.50;
+      const leafR = maxR * 0.86;
+
       dataBranches.forEach((b, i) => {
-        branchAngles[b.id] = (-Math.PI / 2) + (2 * Math.PI * i / N);
+        const ang = (-Math.PI / 2) + (2 * Math.PI * i / N);
+        branchAngles[b.id] = ang;
+        branchCenters[b.id] = {
+          x: cx + Math.cos(ang) * branchR,
+          y: cy + Math.sin(ang) * branchR,
+          leafX: cx + Math.cos(ang) * leafR,
+          leafY: cy + Math.sin(ang) * leafR
+        };
       });
     }
 
@@ -155,18 +170,23 @@ document.addEventListener("DOMContentLoaded", () => {
       const isBranch = String(n.id).startsWith("branch_");
 
       if (isHub) {
-        n.x = w / 2; n.y = h / 2;
-      } else if (filter === "red" && (isBranch || (redBranchOf[n.id] || "branch_general"))) {
-        const bId = isBranch ? n.id : (redBranchOf[n.id] || "branch_general");
-        const ang = branchAngles[bId] ?? 0;
-        const R = isBranch ? 110 : 210;
-        n.x = w/2 + Math.cos(ang) * R + (Math.random() - 0.5) * 18;
-        n.y = h/2 + Math.sin(ang) * R + (Math.random() - 0.5) * 18;
-        n._branchAngle = ang;
-        n._isBranch = isBranch;
+        n.x = cx; n.y = cy;
+        n._branch = null;
+      } else if (filter === "red" && isBranch) {
+        n._branch = n.id;
+        const c = branchCenters[n.id];
+        n.x = c.x + (Math.random() - 0.5) * 14;
+        n.y = c.y + (Math.random() - 0.5) * 14;
+      } else if (filter === "red") {
+        const bId = redBranchOf[n.id] || "branch_general";
+        n._branch = bId;
+        const c = branchCenters[bId];
+        n.x = c.leafX + (Math.random() - 0.5) * 36;
+        n.y = c.leafY + (Math.random() - 0.5) * 36;
       } else {
-        n.x = w/2 + (Math.random() - 0.5) * w * 0.35;
-        n.y = h/2 + (Math.random() - 0.5) * h * 0.35;
+        n._branch = null;
+        n.x = cx + (Math.random() - 0.5) * w * 0.35;
+        n.y = cy + (Math.random() - 0.5) * h * 0.35;
       }
     });
 
@@ -175,7 +195,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .enter()
       .append("line")
       .attr("stroke", "#b5b5b5")
-      .attr("stroke-width", d => d._kind === "hub-branch" ? 1.2 : 1)
+      .attr("stroke-width", d => d._kind === "hub-branch" ? 1.3 : 1)
       .attr("opacity", 0.80);
 
     let sim;
@@ -186,7 +206,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .append("circle")
       .attr("r", d => {
         if (String(d.id).startsWith("hub_")) return 17;
-        if (String(d.id).startsWith("branch_")) return 12;
+        if (String(d.id).startsWith("branch_")) return 13;
         return 9;
       })
       .attr("fill", d => colors[d.group] || colors.gray)
@@ -253,7 +273,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const overlapY = (aHy + bHy) - Math.abs(dy);
 
           if (overlapX > 0 && overlapY > 0) {
-            const push = 0.012;
+            const push = 0.013;
             if (overlapX < overlapY) {
               const sx = (dx === 0 ? (Math.random() - 0.5) : Math.sign(dx)) * overlapX;
               a.node.vx -= sx * push;
@@ -268,60 +288,75 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    function forceSectors(alpha) {
+    function forceClusters(alpha) {
       if (filter !== "red") return;
-      const cx = w / 2, cy = h / 2;
 
-      nodes.forEach(n => {
-        if (String(n.id).startsWith("hub_")) return;
+      const branchIds = dataBranches.map(b => b.id);
+      const sepRadius = Math.max(220, Math.min(w, h) * 0.40);
+      const sepStrength = 0.060 * alpha;
 
-        let ang = null;
-        if (String(n.id).startsWith("branch_")) ang = branchAngles[n.id];
-        else ang = branchAngles[redBranchOf[n.id] || "branch_general"];
-        if (ang == null) return;
+      for (const n of nodes) {
+        if (!n._branch) continue;
 
-        const isBranch = String(n.id).startsWith("branch_");
-        const R = isBranch ? 115 : 225;
-        const tx = cx + Math.cos(ang) * R;
-        const ty = cy + Math.sin(ang) * R;
+        if (String(n.id).startsWith("branch_")) {
+          const c = branchCenters[n._branch];
+          const k = 0.34 * alpha;
+          n.vx += (c.x - n.x) * k;
+          n.vy += (c.y - n.y) * k;
+        } else {
+          const c = branchCenters[n._branch];
+          const k = 0.22 * alpha;
+          n.vx += (c.leafX - n.x) * k;
+          n.vy += (c.leafY - n.y) * k;
+        }
 
-        const k = isBranch ? 0.12 : 0.08;
-        n.vx += (tx - n.x) * k * alpha;
-        n.vy += (ty - n.y) * k * alpha;
-      });
+        for (const bId of branchIds) {
+          if (bId === n._branch) continue;
+          const c = branchCenters[bId];
+          const dx = n.x - c.leafX;
+          const dy = n.y - c.leafY;
+          const dist = Math.hypot(dx, dy) || 1e-6;
+          if (dist < sepRadius) {
+            const m = (sepRadius - dist) / sepRadius;
+            n.vx += (dx / dist) * m * sepStrength * 160;
+            n.vy += (dy / dist) * m * sepStrength * 160;
+          }
+        }
+      }
     }
 
     sim = d3.forceSimulation(nodes)
-      .alphaDecay(0.15)
-      .velocityDecay(0.45)
+      .alpha(1)
+      .alphaDecay(0.17)
+      .velocityDecay(0.62)
       .force("link", d3.forceLink(links).id(d => d.id)
         .distance(l => {
-          if (l._kind === "hub-branch") return 90;
-          if (l._kind === "branch-leaf") return 155 + Math.random() * 55;
-          return 85 + Math.random() * 120;
+          if (filter === "red") {
+            if (l._kind === "hub-branch") return 140;
+            if (l._kind === "branch-leaf") return 260 + Math.random() * 70;
+          }
+          return 110 + Math.random() * 80;
         })
-        .strength(l => l._kind === "hub-branch" ? 0.95 : 0.85)
+        .strength(l => {
+          if (filter === "red") {
+            if (l._kind === "hub-branch") return 1.0;
+            if (l._kind === "branch-leaf") return 0.92;
+          }
+          return 0.85;
+        })
       )
-      .force("charge", d3.forceManyBody().strength(-520))
-      .force("center", d3.forceCenter(w/2, h/2))
+      .force("charge", d3.forceManyBody()
+        .strength(filter === "red" ? -360 : -520)
+        .distanceMax(filter === "red" ? Math.max(w, h) * 0.38 : Math.max(w, h))
+      )
+      .force("center", d3.forceCenter(cx, cy))
       .force("collide", d3.forceCollide().radius(d => {
-        if (String(d.id).startsWith("hub_")) return 34;
-        if (String(d.id).startsWith("branch_")) return 28;
-        return 24;
-      }).iterations(3))
-      .force("radial", d3.forceRadial(
-        d => {
-          if (filter !== "red") return String(d.id).startsWith("hub_") ? 5 : 170 + Math.random() * 40;
-          if (String(d.id).startsWith("hub_")) return 5;
-          if (String(d.id).startsWith("branch_")) return 115;
-          return 225;
-        },
-        w/2, h/2
-      ).strength(filter === "red" ? 0.02 : 0.03))
-      .force("jitterX", d3.forceX(w/2 + (Math.random() - 0.5) * 40).strength(0.02))
-      .force("jitterY", d3.forceY(h/2 + (Math.random() - 0.5) * 40).strength(0.02))
+        if (String(d.id).startsWith("hub_")) return 42;
+        if (String(d.id).startsWith("branch_")) return 40;
+        return filter === "red" ? 30 : 24;
+      }).iterations(4))
       .on("tick", () => {
-        forceSectors(sim.alpha());
+        forceClusters(sim.alpha());
         forceLabelCollide();
 
         link
@@ -338,6 +373,11 @@ document.addEventListener("DOMContentLoaded", () => {
           .attr("x", d => d.x)
           .attr("y", d => d.y);
       });
+
+    const settleMs = 900;
+    setTimeout(() => {
+      sim.alphaTarget(0);
+    }, settleMs);
   }
 
   setActiveButton(currentFilter);
