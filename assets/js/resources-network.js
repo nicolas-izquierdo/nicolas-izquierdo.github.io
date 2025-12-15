@@ -16,6 +16,37 @@ document.addEventListener("DOMContentLoaded", () => {
     gray: { id: "hub_gray", label: "OTHER",    group: "gray" }
   };
 
+  // ---- NEW: 1–2 line descriptions for the info box (keyed by resource id)
+  const resourceDesc = {
+    apsa_labor_teach: "Curated syllabi, assignments, and teaching materials for labor politics courses.",
+    unionstats: "U.S. union membership and coverage series (CPS-based) with long-run trends and downloads.",
+    oecd_ictwss: "Cross-national database on unions, bargaining, wages, and labor-market institutions (ICTWSS).",
+    ilostat_ir_desc: "Definitions and methodological notes for ILO’s industrial relations indicators.",
+    ilostat_ir_download: "ILOSTAT topic page to explore and download industrial relations indicators.",
+    bls_wsp: "Official U.S. BLS series on major work stoppages (strikes/lockouts) with tables and notes.",
+    ilr_lat: "Cornell ILR strike & labor action tracker with searchable events and metadata.",
+    aflcio_strikemap: "AFL-CIO map of ongoing and recent strikes and labor actions in the U.S.",
+    clb: "Independent NGO documenting labor rights, strikes, and industrial relations in China.",
+    labour_rights_indicators: "Quantitative cross-national indicators of labor rights, protections, and violations.",
+    ituc_rights: "Annual global index measuring workers’ rights and violations across countries.",
+    wcml: "UK archive and library collections focused on working-class and labor movement history.",
+    lawcha_books: "Reading list from LAWCHA highlighting influential labor history books.",
+    boston_review_list: "Reading list on solidarity, labor, and working-class politics from Boston Review.",
+    fec_data: "Official U.S. Federal Election Commission bulk and API campaign finance data.",
+    ncsl_cba: "State-by-state database tracking collective bargaining legislation and related policies.",
+    strikemap_org: "Crowd-sourced strike map and event listings for monitoring labor unrest.",
+    opm_cba: "Repository of U.S. federal collective bargaining agreements from OPM.",
+    candid_unions: "Overview of U.S. labor union finances and nonprofit reporting via Candid/GuideStar.",
+    elors: "U.S. DOL-OLMS disclosure portal for union filings (LM reports) and compliance data.",
+    kaggle_union_membership: "Convenient Kaggle mirror of CPS union membership/coverage data for quick use.",
+    unionfacts: "Union governance, finances, and related summaries compiled from public filings.",
+    sa_union_list: "Directory-style listing of registered trade unions in South Africa.",
+    hbs_union_hist: "Historical union membership series and visualization resources (1880–2010).",
+    loc_afl: "Library of Congress digital collection for American Federation of Labor records.",
+    gdads: "ICPSR dataset on digital activism events across countries with standardized coding.",
+    labor_in_america: "University of Maryland digital collections related to labor history and movements."
+  };
+
   const resources = [
     { id:"apsa_labor_teach", label:"APSA Labor Politics – Teaching Resource Collection", group:"blue", url:"https://educate.apsanet.org/labor-politics-teaching-resource-collection" },
     { id:"unionstats", label:"UnionStats.com – CPS Union Membership & Coverage", group:"red", url:"https://unionstats.com" },
@@ -47,10 +78,11 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   const dataBranches = [
-    { id: "branch_contentious", label: "Contentious", group: "red" },
-    { id: "branch_finance",     label: "Finance", group: "red" },
-    { id: "branch_cba",         label: "Collective bargaining", group: "red" },
-    { id: "branch_general",     label: "General", group: "red" }
+    // ---- CHANGE #2: branch labels are now BOLD (via font-weight) and CAPITALIZED (via label text)
+    { id: "branch_contentious", label: "CONTENTIOUS",          group: "red" },
+    { id: "branch_finance",     label: "FINANCE",              group: "red" },
+    { id: "branch_cba",         label: "COLLECTIVE BARGAINING", group: "red" },
+    { id: "branch_general",     label: "GENERAL",              group: "red" }
   ];
 
   const redBranchOf = {
@@ -109,8 +141,74 @@ document.addEventListener("DOMContentLoaded", () => {
     return (cm * 96) / 2.54;
   }
 
+  // ---- NEW: Info box (tooltip) injected once and reused
+  const wrap = svg.node().parentElement || document.body;
+  wrap.style.position = wrap.style.position || "relative";
+
+  const infoBox = document.createElement("div");
+  infoBox.id = "node-info-box";
+  infoBox.style.position = "absolute";
+  infoBox.style.maxWidth = "280px";
+  infoBox.style.padding = "10px 12px";
+  infoBox.style.background = "#fff";
+  infoBox.style.border = "1px solid rgba(0,0,0,0.15)";
+  infoBox.style.borderRadius = "10px";
+  infoBox.style.boxShadow = "0 10px 25px rgba(0,0,0,0.15)";
+  infoBox.style.fontSize = "0.9rem";
+  infoBox.style.lineHeight = "1.25";
+  infoBox.style.zIndex = 9999;
+  infoBox.style.display = "none";
+
+  infoBox.innerHTML = `
+    <div style="font-weight:800;margin:0 0 6px 0;" id="node-info-title"></div>
+    <div style="margin:0 0 8px 0;color:#444;" id="node-info-desc"></div>
+    <a id="node-info-link" target="_blank" rel="noopener" style="font-weight:700;text-decoration:none;">
+      Click here →
+    </a>
+  `;
+
+  wrap.appendChild(infoBox);
+
+  const infoTitleEl = infoBox.querySelector("#node-info-title");
+  const infoDescEl  = infoBox.querySelector("#node-info-desc");
+  const infoLinkEl  = infoBox.querySelector("#node-info-link");
+
+  function hideInfoBox() {
+    infoBox.style.display = "none";
+  }
+
+  function showInfoBoxForNode(d, event) {
+    if (!d || !d.url) return;
+
+    infoTitleEl.textContent = d.label || "";
+    infoDescEl.textContent  = resourceDesc[d.id] || "Open this resource for details and documentation.";
+    infoLinkEl.href         = d.url;
+
+    // Place box near click position, relative to wrapper
+    const rect = wrap.getBoundingClientRect();
+    const x = (event.clientX - rect.left) + 12;
+    const y = (event.clientY - rect.top) + 12;
+
+    infoBox.style.left = `${x}px`;
+    infoBox.style.top  = `${y}px`;
+    infoBox.style.display = "block";
+  }
+
+  // Click outside: close box
+  document.addEventListener("click", (e) => {
+    const isCircle = e.target && e.target.tagName && e.target.tagName.toLowerCase() === "circle";
+    const isInsideBox = e.target && infoBox.contains(e.target);
+    if (!isCircle && !isInsideBox) hideInfoBox();
+  });
+
+  // Escape key: close box
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") hideInfoBox();
+  });
+
   function buildGraph(filter, query) {
     g.selectAll("*").remove();
+    hideInfoBox();
 
     const { w, h } = getSize();
     svg.attr("viewBox", `0 0 ${w} ${h}`);
@@ -223,7 +321,11 @@ document.addEventListener("DOMContentLoaded", () => {
           d.fx = null; d.fy = null;
         })
       )
-      .on("click", (_, d) => { if (d.url) window.open(d.url, "_blank"); });
+      // ---- CHANGE #1: click shows info box instead of opening link immediately
+      .on("click", (event, d) => {
+        event.stopPropagation();
+        if (d.url) showInfoBoxForNode(d, event);
+      });
 
     const label = g.selectAll("text")
       .data(nodes)
@@ -234,7 +336,12 @@ document.addEventListener("DOMContentLoaded", () => {
       .attr("dx", d => String(d.id).startsWith("hub_") ? 22 : 14)
       .attr("dy", 4)
       .attr("fill", "#000000")
-      .attr("font-weight", d => String(d.id).startsWith("hub_") ? 900 : 650)
+      // ---- CHANGE #2 (continued): branch labels are bold (and already capitalized via label text)
+      .attr("font-weight", d => {
+        if (String(d.id).startsWith("hub_")) return 900;
+        if (String(d.id).startsWith("branch_")) return 900;
+        return 650;
+      })
       .attr("paint-order", "stroke")
       .attr("stroke", "white")
       .attr("stroke-width", 4)
