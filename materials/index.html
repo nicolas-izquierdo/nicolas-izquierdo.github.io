@@ -33,8 +33,29 @@ permalink: /resources/
   background:var(--bg-panel);
 }
 
-.resources-hero h2{margin:0 0 6px 0;color:var(--text)}
-.resources-hero p{margin:0;color:var(--muted)}
+.resources-hero h2{
+  margin:0 0 6px 0;
+  color:var(--text);
+}
+
+.hero-copy{
+  margin:0;
+  color:var(--muted);
+  line-height:1.35;
+}
+
+.lp-red{
+  color:#b10015;
+  font-weight:700;
+  letter-spacing:.15px;
+}
+
+.hero-sub{
+  display:block;
+  margin-top:8px;
+  font-size:.92em;
+  color:rgba(0,0,0,.68);
+}
 
 .legend{
   display:flex;
@@ -57,12 +78,18 @@ permalink: /resources/
 }
 
 .legend button:hover{background:#f2f3f5}
+
 .legend button.active{
   border-color:#000;
   box-shadow:0 0 0 2px rgba(0,0,0,.08) inset;
 }
 
-.dot{width:10px;height:10px;border-radius:50%}
+.dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+}
+
 .red{background:var(--red)}
 .blue{background:var(--blue)}
 .green{background:var(--green)}
@@ -105,7 +132,14 @@ permalink: /resources/
 
   <div class="resources-hero">
     <h2>Labor Politics Resources</h2>
-    <p>This page collects materials I find useful or inspiring for research in labor politics. Click a category to view its own network. Drag nodes, zoom, and click to open resources!</p>
+
+    <p class="hero-copy">
+      This page collects materials I find useful or inspiring for research in
+      <span class="lp-red">labor politics</span>.
+      <span class="hero-sub">
+        Click a category to view its own network. Drag nodes, zoom, and click to open resources!
+      </span>
+    </p>
 
     <div class="legend" id="legend">
       <button type="button" class="filter active" data-filter="red">
