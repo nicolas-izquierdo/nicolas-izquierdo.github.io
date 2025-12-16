@@ -126,6 +126,115 @@ permalink: /resources/
     radial-gradient(700px 350px at 80% 85%, rgba(217,83,79,.07), transparent 60%),
     var(--bg-soft);
 }
+
+.reveal-card{
+  margin-top:12px;
+  border:1px solid var(--stroke);
+  border-radius:14px;
+  background:rgba(255,255,255,.92);
+  padding:14px 14px 12px 14px;
+}
+
+.reveal-head{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:0 0 8px 0;
+}
+
+.reveal-badge{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:28px;
+  height:28px;
+  border-radius:10px;
+  border:1px solid var(--stroke);
+  background:#fff;
+}
+
+.reveal-title{
+  margin:0;
+  font-size:1.0rem;
+  letter-spacing:.1px;
+}
+
+.reveal-copy{
+  margin:0 0 10px 0;
+  color:var(--muted);
+  line-height:1.35;
+  font-size:.96rem;
+}
+
+.reveal-row{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+
+.reveal-q{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 10px;
+  border-radius:12px;
+  border:1px dashed var(--stroke);
+  background:#fff;
+  font-weight:700;
+  letter-spacing:.2px;
+}
+
+.reveal-input{
+  padding:10px 12px;
+  border-radius:12px;
+  border:1px solid var(--stroke);
+  background:#fff;
+  min-width:160px;
+}
+
+.reveal-btn{
+  padding:10px 12px;
+  border-radius:12px;
+  border:1px solid var(--stroke);
+  background:#fff;
+  cursor:pointer;
+}
+
+.reveal-btn:hover{background:#f2f3f5}
+
+.reveal-msg{
+  margin-top:10px;
+  font-size:.92rem;
+  color:rgba(0,0,0,.7);
+}
+
+.reveal-success{
+  display:none;
+  margin-top:10px;
+  padding:10px 12px;
+  border-radius:12px;
+  border:1px solid rgba(42,157,143,.35);
+  background:rgba(42,157,143,.08);
+  color:rgba(0,0,0,.85);
+}
+
+.reveal-success a{
+  color:var(--text);
+  font-weight:800;
+  text-decoration:none;
+  border-bottom:1px solid rgba(0,0,0,.25);
+}
+
+.reveal-success a:hover{
+  border-bottom-color:rgba(0,0,0,.6);
+}
+
+.reveal-foot{
+  margin-top:10px;
+  font-size:.82rem;
+  color:rgba(0,0,0,.55);
+}
 </style>
 
 <div class="resources-wrap">
@@ -166,7 +275,124 @@ permalink: /resources/
     <svg id="graph" role="img" aria-label="Network of labor politics resources"></svg>
   </div>
 
+  <div class="reveal-card" id="revealCard">
+    <div class="reveal-head">
+      <span class="reveal-badge" aria-hidden="true">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+          <path d="M7 10V8a5 5 0 0 1 10 0v2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M6 10h12a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M12 14v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <h3 class="reveal-title">Help expand the list</h3>
+    </div>
+
+    <p class="reveal-copy">
+      If you have a favorite dataset, syllabus, archive, or paper I should add, send it over — the address is hidden behind a tiny math check to keep bots away.
+    </p>
+
+    <div class="reveal-row" role="group" aria-label="Simple math check to reveal email">
+      <span class="reveal-q" id="captchaQ">Loading…</span>
+      <input class="reveal-input" id="captchaA" inputmode="numeric" autocomplete="off" placeholder="Your answer" aria-label="Captcha answer" />
+      <button class="reveal-btn" id="captchaBtn" type="button">Reveal email</button>
+      <button class="reveal-btn" id="captchaNew" type="button" aria-label="New question">New</button>
+    </div>
+
+    <div class="reveal-msg" id="captchaMsg" aria-live="polite"></div>
+
+    <div class="reveal-success" id="revealSuccess">
+      Email me at <a id="revealLink" href="#" rel="nofollow noopener">[revealed]</a>.
+    </div>
+
+    <div class="reveal-foot">
+      Tip: include a short note + link, and which category (Data / Teaching / Archives / Other) it fits best.
+    </div>
+  </div>
+
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
 <script src="/assets/js/resources-network.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const qEl = document.getElementById("captchaQ");
+  const aEl = document.getElementById("captchaA");
+  const btnEl = document.getElementById("captchaBtn");
+  const newEl = document.getElementById("captchaNew");
+  const msgEl = document.getElementById("captchaMsg");
+  const okEl  = document.getElementById("revealSuccess");
+  const linkEl= document.getElementById("revealLink");
+
+  if (!qEl || !aEl || !btnEl || !newEl || !msgEl || !okEl || !linkEl) return;
+
+  const STORAGE_KEY = "lp_resources_email_revealed_v1";
+
+  const buildEmail = () => {
+    const a = String.fromCharCode(112,97,105,122,113,117,105,101);
+    const b = String.fromCharCode(99,108,105,111);
+    const c = String.fromCharCode(117,99,51,109);
+    const d = String.fromCharCode(101,115);
+    return a + "@" + b + "." + c + "." + d;
+  };
+
+  const setRevealed = () => {
+    const email = buildEmail();
+    linkEl.textContent = email;
+    linkEl.href = "mailto:" + email + "?subject=" + encodeURIComponent("Labor Politics Resources Suggestion");
+    okEl.style.display = "block";
+    msgEl.textContent = "Unlocked. Thanks — I read every suggestion.";
+    try { sessionStorage.setItem(STORAGE_KEY, "1"); } catch(e) {}
+  };
+
+  let answer = null;
+
+  const randInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+  const newCaptcha = () => {
+    const a = randInt(2, 9);
+    const b = randInt(2, 9);
+    const op = Math.random() < 0.5 ? "+" : "×";
+    answer = (op === "+") ? (a + b) : (a * b);
+    qEl.textContent = `${a} ${op} ${b} = ?`;
+    aEl.value = "";
+    msgEl.textContent = "";
+    okEl.style.display = "none";
+    aEl.focus();
+  };
+
+  const check = () => {
+    const v = (aEl.value || "").trim();
+    if (!v) {
+      msgEl.textContent = "Type the answer to reveal the email.";
+      return;
+    }
+    const n = Number(v);
+    if (!Number.isFinite(n)) {
+      msgEl.textContent = "Numbers only 🙂";
+      return;
+    }
+    if (n === answer) {
+      setRevealed();
+    } else {
+      msgEl.textContent = "Not quite — try again (or hit “New”).";
+    }
+  };
+
+  try {
+    if (sessionStorage.getItem(STORAGE_KEY) === "1") {
+      setRevealed();
+      newCaptcha();
+      return;
+    }
+  } catch(e) {}
+
+  newCaptcha();
+
+  btnEl.addEventListener("click", check);
+  newEl.addEventListener("click", newCaptcha);
+  aEl.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") check();
+  });
+});
+</script>
