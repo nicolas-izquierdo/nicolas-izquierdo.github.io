@@ -127,113 +127,79 @@ permalink: /resources/
     var(--bg-soft);
 }
 
-.reveal-card{
+/* Minimal “contact reveal” (sober) */
+.contact-line{
   margin-top:12px;
-  border:1px solid var(--stroke);
-  border-radius:14px;
-  background:rgba(255,255,255,.92);
-  padding:14px 14px 12px 14px;
-}
-
-.reveal-head{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  margin:0 0 8px 0;
-}
-
-.reveal-badge{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  width:28px;
-  height:28px;
-  border-radius:10px;
-  border:1px solid var(--stroke);
-  background:#fff;
-}
-
-.reveal-title{
-  margin:0;
-  font-size:1.0rem;
-  letter-spacing:.1px;
-}
-
-.reveal-copy{
-  margin:0 0 10px 0;
-  color:var(--muted);
+  padding-top:10px;
+  border-top:1px solid var(--stroke);
+  color:rgba(0,0,0,.72);
+  font-size:.95rem;
   line-height:1.35;
-  font-size:.96rem;
 }
 
-.reveal-row{
+.contact-row{
   display:flex;
   gap:10px;
-  flex-wrap:wrap;
   align-items:center;
+  flex-wrap:wrap;
+  margin-top:8px;
 }
 
-.reveal-q{
+.captcha-pill{
   display:inline-flex;
   align-items:center;
   gap:8px;
-  padding:8px 10px;
-  border-radius:12px;
-  border:1px dashed var(--stroke);
-  background:#fff;
-  font-weight:700;
-  letter-spacing:.2px;
-}
-
-.reveal-input{
-  padding:10px 12px;
-  border-radius:12px;
+  padding:7px 10px;
+  border-radius:999px;
   border:1px solid var(--stroke);
   background:#fff;
-  min-width:160px;
+  color:#000;
 }
 
-.reveal-btn{
-  padding:10px 12px;
-  border-radius:12px;
+.captcha-pill b{
+  font-weight:800;
+  letter-spacing:.1px;
+}
+
+.contact-row input{
+  padding:9px 10px;
+  border-radius:10px;
+  border:1px solid var(--stroke);
+  background:#fff;
+  min-width:120px;
+}
+
+.contact-row button{
+  padding:9px 10px;
+  border-radius:10px;
   border:1px solid var(--stroke);
   background:#fff;
   cursor:pointer;
 }
 
-.reveal-btn:hover{background:#f2f3f5}
+.contact-row button:hover{background:#f2f3f5}
 
-.reveal-msg{
-  margin-top:10px;
-  font-size:.92rem;
-  color:rgba(0,0,0,.7);
+.contact-msg{
+  margin-top:8px;
+  font-size:.9rem;
+  color:rgba(0,0,0,.62);
 }
 
-.reveal-success{
+.contact-email{
   display:none;
-  margin-top:10px;
-  padding:10px 12px;
-  border-radius:12px;
-  border:1px solid rgba(42,157,143,.35);
-  background:rgba(42,157,143,.08);
-  color:rgba(0,0,0,.85);
+  margin-top:8px;
+  font-size:.95rem;
 }
 
-.reveal-success a{
+.contact-email a{
   color:var(--text);
   font-weight:800;
   text-decoration:none;
   border-bottom:1px solid rgba(0,0,0,.25);
 }
 
-.reveal-success a:hover{
+.contact-email a:hover{
   border-bottom-color:rgba(0,0,0,.6);
-}
-
-.reveal-foot{
-  margin-top:10px;
-  font-size:.82rem;
-  color:rgba(0,0,0,.55);
 }
 </style>
 
@@ -275,37 +241,23 @@ permalink: /resources/
     <svg id="graph" role="img" aria-label="Network of labor politics resources"></svg>
   </div>
 
-  <div class="reveal-card" id="revealCard">
-    <div class="reveal-head">
-      <span class="reveal-badge" aria-hidden="true">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-          <path d="M7 10V8a5 5 0 0 1 10 0v2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <path d="M6 10h12a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <path d="M12 14v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </span>
-      <h3 class="reveal-title">Help expand the list</h3>
+  <!-- Minimal contact reveal (end of page) -->
+  <div class="contact-line" id="contactReveal">
+    <div>
+      Want to help expand this list? Send me a link + one sentence on why it’s useful.
     </div>
 
-    <p class="reveal-copy">
-      If you have a favorite dataset, syllabus, archive, or paper I should add, send it over — the address is hidden behind a tiny math check to keep bots away.
-    </p>
-
-    <div class="reveal-row" role="group" aria-label="Simple math check to reveal email">
-      <span class="reveal-q" id="captchaQ">Loading…</span>
-      <input class="reveal-input" id="captchaA" inputmode="numeric" autocomplete="off" placeholder="Your answer" aria-label="Captcha answer" />
-      <button class="reveal-btn" id="captchaBtn" type="button">Reveal email</button>
-      <button class="reveal-btn" id="captchaNew" type="button" aria-label="New question">New</button>
+    <div class="contact-row" aria-label="Solve a simple math question to reveal the email">
+      <span class="captcha-pill"><span>Quick check:</span> <b id="capQ">…</b></span>
+      <input id="capA" inputmode="numeric" autocomplete="off" placeholder="Answer" aria-label="Captcha answer" />
+      <button id="capShow" type="button">Show email</button>
+      <button id="capNew" type="button" aria-label="New question">↻</button>
     </div>
 
-    <div class="reveal-msg" id="captchaMsg" aria-live="polite"></div>
+    <div class="contact-msg" id="capMsg" aria-live="polite"></div>
 
-    <div class="reveal-success" id="revealSuccess">
-      Email me at <a id="revealLink" href="#" rel="nofollow noopener">[revealed]</a>.
-    </div>
-
-    <div class="reveal-foot">
-      Tip: include a short note + link, and which category (Data / Teaching / Archives / Other) it fits best.
+    <div class="contact-email" id="capEmail">
+      Email: <a id="capLink" href="#" rel="nofollow noopener">[revealed]</a>
     </div>
   </div>
 
@@ -316,83 +268,54 @@ permalink: /resources/
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  const qEl = document.getElementById("captchaQ");
-  const aEl = document.getElementById("captchaA");
-  const btnEl = document.getElementById("captchaBtn");
-  const newEl = document.getElementById("captchaNew");
-  const msgEl = document.getElementById("captchaMsg");
-  const okEl  = document.getElementById("revealSuccess");
-  const linkEl= document.getElementById("revealLink");
+  const q = document.getElementById("capQ");
+  const a = document.getElementById("capA");
+  const show = document.getElementById("capShow");
+  const fresh = document.getElementById("capNew");
+  const msg = document.getElementById("capMsg");
+  const box = document.getElementById("capEmail");
+  const link = document.getElementById("capLink");
 
-  if (!qEl || !aEl || !btnEl || !newEl || !msgEl || !okEl || !linkEl) return;
+  if (!q || !a || !show || !fresh || !msg || !box || !link) return;
 
-  const STORAGE_KEY = "lp_resources_email_revealed_v1";
+  let ans = null;
 
-  const buildEmail = () => {
-    const a = String.fromCharCode(112,97,105,122,113,117,105,101);
-    const b = String.fromCharCode(99,108,105,111);
-    const c = String.fromCharCode(117,99,51,109);
-    const d = String.fromCharCode(101,115);
-    return a + "@" + b + "." + c + "." + d;
+  const email = () => {
+    const p1 = String.fromCharCode(112,97,105,122,113,117,105,101);
+    const p2 = String.fromCharCode(99,108,105,111);
+    const p3 = String.fromCharCode(117,99,51,109);
+    const p4 = String.fromCharCode(101,115);
+    return `${p1}@${p2}.${p3}.${p4}`;
   };
 
-  const setRevealed = () => {
-    const email = buildEmail();
-    linkEl.textContent = email;
-    linkEl.href = "mailto:" + email + "?subject=" + encodeURIComponent("Labor Politics Resources Suggestion");
-    okEl.style.display = "block";
-    msgEl.textContent = "Unlocked. Thanks — I read every suggestion.";
-    try { sessionStorage.setItem(STORAGE_KEY, "1"); } catch(e) {}
+  const newQ = () => {
+    const x = Math.floor(Math.random() * 8) + 2;   // 2..9
+    const y = Math.floor(Math.random() * 8) + 2;   // 2..9
+    const op = Math.random() < 0.7 ? "+" : "×";    // mostly addition
+    ans = (op === "+") ? (x + y) : (x * y);
+    q.textContent = `${x} ${op} ${y}`;
+    a.value = "";
+    msg.textContent = "";
+    box.style.display = "none";
   };
 
-  let answer = null;
-
-  const randInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-
-  const newCaptcha = () => {
-    const a = randInt(2, 9);
-    const b = randInt(2, 9);
-    const op = Math.random() < 0.5 ? "+" : "×";
-    answer = (op === "+") ? (a + b) : (a * b);
-    qEl.textContent = `${a} ${op} ${b} = ?`;
-    aEl.value = "";
-    msgEl.textContent = "";
-    okEl.style.display = "none";
-    aEl.focus();
-  };
-
-  const check = () => {
-    const v = (aEl.value || "").trim();
-    if (!v) {
-      msgEl.textContent = "Type the answer to reveal the email.";
-      return;
-    }
+  const reveal = () => {
+    const v = (a.value || "").trim();
+    if (!v) { msg.textContent = "Type the answer to reveal the email."; return; }
     const n = Number(v);
-    if (!Number.isFinite(n)) {
-      msgEl.textContent = "Numbers only 🙂";
-      return;
-    }
-    if (n === answer) {
-      setRevealed();
-    } else {
-      msgEl.textContent = "Not quite — try again (or hit “New”).";
-    }
+    if (!Number.isFinite(n)) { msg.textContent = "Numbers only 🙂"; return; }
+    if (n !== ans) { msg.textContent = "Not quite. Try again or refresh."; return; }
+
+    const e = email();
+    link.textContent = e;
+    link.href = `mailto:${e}?subject=${encodeURIComponent("Labor Politics Resources Suggestion")}`;
+    box.style.display = "block";
+    msg.textContent = "";
   };
 
-  try {
-    if (sessionStorage.getItem(STORAGE_KEY) === "1") {
-      setRevealed();
-      newCaptcha();
-      return;
-    }
-  } catch(e) {}
-
-  newCaptcha();
-
-  btnEl.addEventListener("click", check);
-  newEl.addEventListener("click", newCaptcha);
-  aEl.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") check();
-  });
+  newQ();
+  show.addEventListener("click", reveal);
+  fresh.addEventListener("click", newQ);
+  a.addEventListener("keydown", (ev) => { if (ev.key === "Enter") reveal(); });
 });
 </script>
