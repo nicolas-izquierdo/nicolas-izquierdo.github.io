@@ -127,19 +127,13 @@ permalink: /resources/
     var(--bg-soft);
 }
 
-/* Contact reveal (kept compact + sober) */
+/* Sober contact reveal */
 .reveal-card{
   margin-top:12px;
-  border-top:1px solid var(--stroke);
   padding-top:10px;
+  border-top:1px solid var(--stroke);
   color:rgba(0,0,0,.72);
   font-size:.95rem;
-  line-height:1.35;
-}
-
-.reveal-copy{
-  margin:0;
-  color:var(--muted);
 }
 
 .reveal-row{
@@ -147,32 +141,25 @@ permalink: /resources/
   gap:10px;
   flex-wrap:wrap;
   align-items:center;
-  margin-top:10px;
+  margin-top:8px;
 }
 
 .reveal-q{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding:7px 10px;
+  padding:6px 10px;
   border-radius:999px;
   border:1px solid var(--stroke);
   background:#fff;
-  color:#000;
-  font-weight:800;
-  letter-spacing:.1px;
+  font-weight:700;
 }
 
 .reveal-input{
-  padding:9px 10px;
+  padding:8px 10px;
   border-radius:10px;
   border:1px solid var(--stroke);
-  background:#fff;
-  min-width:120px;
 }
 
 .reveal-btn{
-  padding:9px 10px;
+  padding:8px 10px;
   border-radius:10px;
   border:1px solid var(--stroke);
   background:#fff;
@@ -182,26 +169,21 @@ permalink: /resources/
 .reveal-btn:hover{background:#f2f3f5}
 
 .reveal-msg{
-  margin-top:8px;
+  margin-top:6px;
   font-size:.9rem;
-  color:rgba(0,0,0,.62);
+  color:rgba(0,0,0,.6);
 }
 
 .reveal-success{
   display:none;
-  margin-top:8px;
-  font-size:.95rem;
+  margin-top:6px;
 }
 
 .reveal-success a{
-  color:var(--text);
+  color:#000;
   font-weight:800;
   text-decoration:none;
   border-bottom:1px solid rgba(0,0,0,.25);
-}
-
-.reveal-success a:hover{
-  border-bottom-color:rgba(0,0,0,.6);
 }
 </style>
 
@@ -209,7 +191,6 @@ permalink: /resources/
 
   <div class="resources-hero">
     <h2>Labor Politics Resources</h2>
-
     <p class="hero-copy">
       This page collects materials I find useful or inspiring for research in
       <span class="lp-red">labor politics</span>.
@@ -219,18 +200,10 @@ permalink: /resources/
     </p>
 
     <div class="legend" id="legend">
-      <button type="button" class="filter active" data-filter="red">
-        <span class="dot red"></span> Data
-      </button>
-      <button type="button" class="filter" data-filter="blue">
-        <span class="dot blue"></span> Teaching
-      </button>
-      <button type="button" class="filter" data-filter="green">
-        <span class="dot green"></span> Archives
-      </button>
-      <button type="button" class="filter" data-filter="gray">
-        <span class="dot gray"></span> Other
-      </button>
+      <button type="button" class="filter active" data-filter="red"><span class="dot red"></span> Data</button>
+      <button type="button" class="filter" data-filter="blue"><span class="dot blue"></span> Teaching</button>
+      <button type="button" class="filter" data-filter="green"><span class="dot green"></span> Archives</button>
+      <button type="button" class="filter" data-filter="gray"><span class="dot gray"></span> Other</button>
     </div>
   </div>
 
@@ -243,100 +216,26 @@ permalink: /resources/
     <svg id="graph" role="img" aria-label="Network of labor politics resources"></svg>
   </div>
 
-  <!-- End-of-page: sober contact reveal -->
-  <div class="reveal-card" id="revealCard" aria-label="Reveal email with a simple math check">
-    <p class="reveal-copy">
-      Want to help expand this list? Send me a link + one sentence on why it’s useful.
-    </p>
+  <!-- Contact reveal -->
+  <div class="reveal-card">
+    Want to help expand this list?
 
-    <div class="reveal-row" role="group" aria-label="Math check">
+    <div class="reveal-row">
       <span class="reveal-q" id="captchaQ">…</span>
-      <input class="reveal-input" id="captchaA" inputmode="numeric" autocomplete="off" placeholder="Answer" aria-label="Captcha answer" />
-      <button class="reveal-btn" id="captchaBtn" type="button">Show email</button>
-      <button class="reveal-btn" id="captchaNew" type="button" aria-label="New question">↻</button>
+      <input id="captchaA" class="reveal-input" inputmode="numeric" placeholder="Answer" />
+      <button id="captchaBtn" class="reveal-btn" type="button">Show email</button>
+      <button id="captchaNew" class="reveal-btn" type="button">↻</button>
     </div>
 
-    <div class="reveal-msg" id="captchaMsg" aria-live="polite"></div>
+    <div class="reveal-msg" id="captchaMsg"></div>
 
     <div class="reveal-success" id="revealSuccess">
-      Email: <a id="revealLink" href="#" rel="nofollow noopener">[revealed]</a>
+      Email: <a id="revealLink" href="#">[revealed]</a>
     </div>
   </div>
 
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
-<script src="/assets/js/resources-network.js"></script>
-
-<script>
-(function () {
-  const init = () => {
-    const qEl = document.getElementById("captchaQ");
-    const aEl = document.getElementById("captchaA");
-    const btnEl = document.getElementById("captchaBtn");
-    const newEl = document.getElementById("captchaNew");
-    const msgEl = document.getElementById("captchaMsg");
-    const okEl  = document.getElementById("revealSuccess");
-    const linkEl= document.getElementById("revealLink");
-
-    if (!qEl || !aEl || !btnEl || !newEl || !msgEl || !okEl || !linkEl) return;
-
-    const buildEmail = () => {
-      const p1 = String.fromCharCode(112,97,105,122,113,117,105,101);
-      const p2 = String.fromCharCode(99,108,105,111);
-      const p3 = String.fromCharCode(117,99,51,109);
-      const p4 = String.fromCharCode(101,115);
-      return `${p1}@${p2}.${p3}.${p4}`;
-    };
-
-    let answer = null;
-
-    const randInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-
-    const newCaptcha = () => {
-      const a = randInt(2, 9);
-      const b = randInt(2, 9);
-
-      const isAdd = Math.random() < 0.7; // mostly addition
-      answer = isAdd ? (a + b) : (a * b);
-
-      qEl.textContent = isAdd ? `${a} + ${b} = ?` : `${a} * ${b} = ?`;
-      aEl.value = "";
-      msgEl.textContent = "";
-      okEl.style.display = "none";
-      aEl.focus();
-    };
-
-    const reveal = () => {
-      const v = (aEl.value || "").trim();
-      if (!v) { msgEl.textContent = "Type the answer to reveal the email."; return; }
-
-      const n = Number(v);
-      if (!Number.isFinite(n)) { msgEl.textContent = "Numbers only 🙂"; return; }
-
-      if (n !== answer) { msgEl.textContent = "Not quite — try again or refresh."; return; }
-
-      const email = buildEmail();
-      linkEl.textContent = email;
-      linkEl.href = `mailto:${email}?subject=${encodeURIComponent("Labor Politics Resources Suggestion")}`;
-      okEl.style.display = "block";
-      msgEl.textContent = "";
-    };
-
-    btnEl.onclick = reveal;
-    newEl.onclick = newCaptcha;
-
-    aEl.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") reveal();
-    });
-
-    newCaptcha();
-  };
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", init);
-  } else {
-    init();
-  }
-})();
-</script>
+<script src="/assets/js/resources-network.js" defer></script>
+<script src="/assets/js/email-captcha.js" defer></script>
