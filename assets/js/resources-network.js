@@ -39,7 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
     candid_unions: "Overview of U.S. labor union finances and nonprofit reporting via Candid/GuideStar.",
     elors: "U.S. DOL-OLMS disclosure portal for union filings (LM reports) and compliance data.",
     kaggle_union_membership: "Convenient Kaggle mirror of CPS union membership/coverage data for quick use.",
-    unionfacts: "Union governance, finances, and related summaries compiled from public filings.",
     sa_union_list: "Directory-style listing of registered trade unions in South Africa.",
     hbs_union_hist: "Historical union membership series and visualization resources (1880–2010).",
     loc_afl: "Library of Congress digital collection for American Federation of Labor records.",
@@ -71,7 +70,6 @@ document.addEventListener("DOMContentLoaded", () => {
     { id:"candid_unions", label:"Candid – U.S. Labor Unions: Facts & Financials", group:"red", url:"https://blog.candid.org/post/key-facts-figures-and-trends-among-u-s-labor-unions/" },
     { id:"elors", label:"DOL OLMS – Online Public Disclosure Room", group:"red", url:"https://www.dol.gov/agencies/olms/public-disclosure-room" },
     { id:"kaggle_union_membership", label:"Union Membership & Coverage", group:"red", url:"https://www.kaggle.com/datasets/mrisdal/union-membership-coverage" },
-    { id:"unionfacts", label:"UnionFacts.com", group:"red", url:"https://unionfacts.com" },
     { id:"hbs_union_hist", label:"Trade Union Membership Historical Data (1880–2010)", group:"red", url:"https://www.hbs.edu/businesshistory/courses/teaching-resources/historical-data-visualization/details" },
     { id:"loc_afl", label:"American Federation of Labor Records", group:"green", url:"https://www.loc.gov/collections/american-federation-of-labor-records/" },
     { id:"gdads", label:"Global Digital Activism Data Set", group:"red", url:"https://www.icpsr.umich.edu/web/ICPSR/studies/34625" },
@@ -103,7 +101,6 @@ document.addEventListener("DOMContentLoaded", () => {
     labour_rights_indicators: "branch_general",
     ituc_rights: "branch_general",
     kaggle_union_membership: "branch_general",
-    unionfacts: "branch_general",
     hbs_union_hist: "branch_general"
   };
 
