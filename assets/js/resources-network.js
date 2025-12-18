@@ -48,32 +48,29 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const resources = [
-    { id:"apsa_labor_teach", label:"APSA Labor Politics – Teaching Resource Collection", group:"blue", url:"https://educate.apsanet.org/labor-politics-teaching-resource-collection" },
-    { id:"unionstats", label:"UnionStats.com – CPS Union Membership & Coverage", group:"red", url:"https://unionstats.com" },
+    { id:"apsa_labor_teach", label:"APSA Labor Politics", group:"blue", url:"https://educate.apsanet.org/labor-politics-teaching-resource-collection" },
+    { id:"unionstats", label:"UnionStats.com", group:"red", url:"https://unionstats.com" },
     { id:"oecd_ictwss", label:"OECD/AIAS ICTWSS Database", group:"red", url:"https://www.oecd.org/en/data/datasets/oecdaias-ictwss-database.html" },
-    { id:"ilostat_ir_desc", label:"ILOSTAT – Industrial Relations Data (concepts & definitions)", group:"red", url:"https://ilostat.ilo.org/methods/concepts-and-definitions/description-industrial-relations-data/" },
-    { id:"ilostat_ir_download", label:"ILOSTAT – Industrial Relations (topic page & data)", group:"red", url:"https://ilostat.ilo.org/topics/industrial-relations/" },
-    { id:"bls_wsp", label:"BLS Work Stoppages Dataset (US)", group:"red", url:"https://www.bls.gov/wsp/" },
+    { id:"bls_wsp", label:"BLS Work Stoppages Dataset", group:"red", url:"https://www.bls.gov/wsp/" },
     { id:"ilr_lat", label:"Cornell ILR – Labor Action Tracker", group:"red", url:"https://striketracker.ilr.cornell.edu/" },
     { id:"aflcio_strikemap", label:"AFL-CIO Strike Map", group:"red", url:"https://aflcio.org/strike-map" },
     { id:"clb", label:"China Labour Bulletin", group:"red", url:"https://clb.org.hk/" },
     { id:"labour_rights_indicators", label:"Labour Rights Indicators (Penn State)", group:"red", url:"https://labour-rights-indicators.la.psu.edu/" },
     { id:"ituc_rights", label:"ITUC Global Rights Index", group:"red", url:"https://www.ituc-csi.org/global-rights-index" },
-    { id:"wcml", label:"Working Class Movement Library (UK)", group:"green", url:"https://www.wcml.org.uk/" },
+    { id:"wcml", label:"Salford's Working Class Movement Library", group:"green", url:"https://www.wcml.org.uk/" },
     { id:"lawcha_books", label:"LAWCHA – Twenty Best Labor Books", group:"blue", url:"https://lawcha.org/2015/06/08/twenty-best-labor-books-first-cut/" },
-    { id:"boston_review_list", label:"Boston Review – “Solidarity Makes Us Strong” Reading List", group:"blue", url:"https://www.bostonreview.net/reading-list/solidarity-makes-us-strong/" },
+    { id:"boston_review_list", label:"“Solidarity Makes Us Strong” Reading List", group:"blue", url:"https://www.bostonreview.net/reading-list/solidarity-makes-us-strong/" },
     { id:"fec_data", label:"FEC Campaign Finance Data", group:"red", url:"https://www.fec.gov/data/" },
     { id:"ncsl_cba", label:"NCSL – Unions & Collective Bargaining Legislation Database", group:"red", url:"https://www.ncsl.org/labor-and-employment/unions-and-collective-bargaining-legislation-database" },
-    { id:"strikemap_org", label:"Strikemap.org (crowd-sourced)", group:"red", url:"https://strikemap.org/" },
+    { id:"strikemap_org", label:"Strikemap.org", group:"red", url:"https://strikemap.org/" },
     { id:"opm_cba", label:"OPM – Federal Collective Bargaining Agreements", group:"red", url:"https://www.opm.gov/policy-data-oversight/labor-management-relations/collective-bargaining-agreements/" },
     { id:"candid_unions", label:"Candid – U.S. Labor Unions: Facts & Financials", group:"red", url:"https://blog.candid.org/post/key-facts-figures-and-trends-among-u-s-labor-unions/" },
     { id:"elors", label:"DOL OLMS – Online Public Disclosure Room", group:"red", url:"https://www.dol.gov/agencies/olms/public-disclosure-room" },
-    { id:"kaggle_union_membership", label:"Union Membership & Coverage (Kaggle / CPS)", group:"red", url:"https://www.kaggle.com/datasets/mrisdal/union-membership-coverage" },
-    { id:"unionfacts", label:"UnionFacts.com Database", group:"red", url:"https://unionfacts.com" },
-    { id:"sa_union_list", label:"South Africa – Registered Trade Unions List", group:"red", url:"https://labourguide.co.za/general/trade-unions-in-south-africa" },
-    { id:"hbs_union_hist", label:"HBS – Trade Union Membership Historical Data (1880–2010)", group:"red", url:"https://www.hbs.edu/businesshistory/courses/teaching-resources/historical-data-visualization/details" },
-    { id:"loc_afl", label:"Library of Congress – American Federation of Labor Records", group:"green", url:"https://www.loc.gov/collections/american-federation-of-labor-records/" },
-    { id:"gdads", label:"Global Digital Activism Data Set (ICPSR)", group:"red", url:"https://www.icpsr.umich.edu/web/ICPSR/studies/34625" },
+    { id:"kaggle_union_membership", label:"Union Membership & Coverage", group:"red", url:"https://www.kaggle.com/datasets/mrisdal/union-membership-coverage" },
+    { id:"unionfacts", label:"UnionFacts.com", group:"red", url:"https://unionfacts.com" },
+    { id:"hbs_union_hist", label:"Trade Union Membership Historical Data (1880–2010)", group:"red", url:"https://www.hbs.edu/businesshistory/courses/teaching-resources/historical-data-visualization/details" },
+    { id:"loc_afl", label:"American Federation of Labor Records", group:"green", url:"https://www.loc.gov/collections/american-federation-of-labor-records/" },
+    { id:"gdads", label:"Global Digital Activism Data Set", group:"red", url:"https://www.icpsr.umich.edu/web/ICPSR/studies/34625" },
     { id:"labor_in_america", label:"UMD Digital Collections – Labor", group:"green", url:"https://digital.lib.umd.edu/collecting-areas/labor" }
   ];
 
@@ -99,13 +96,10 @@ document.addEventListener("DOMContentLoaded", () => {
     opm_cba: "branch_cba",
     unionstats: "branch_general",
     oecd_ictwss: "branch_general",
-    ilostat_ir_desc: "branch_general",
-    ilostat_ir_download: "branch_general",
     labour_rights_indicators: "branch_general",
     ituc_rights: "branch_general",
     kaggle_union_membership: "branch_general",
     unionfacts: "branch_general",
-    sa_union_list: "branch_general",
     hbs_union_hist: "branch_general"
   };
 
