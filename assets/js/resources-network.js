@@ -44,11 +44,13 @@ document.addEventListener("DOMContentLoaded", () => {
     hbs_union_hist: "Historical union membership series and visualization resources (1880–2010).",
     loc_afl: "Library of Congress digital collection for American Federation of Labor records.",
     gdads: "ICPSR dataset on digital activism events across countries with standardized coding.",
-    labor_in_america: "University of Maryland digital collections related to labor history and movements."
+    labor_in_america: "University of Maryland digital collections related to labor history and movements.",
+    warwick: "Digitised journals and newspapers of British trade unions"
   };
 
   const resources = [
     { id:"apsa_labor_teach", label:"APSA Labor Politics", group:"blue", url:"https://educate.apsanet.org/labor-politics-teaching-resource-collection" },
+    { id:"warwick", label:"Labour Movement Newspapers and Journals (UK)", group:"red", url:"https://warwick.ac.uk/services/library/mrc/collections/digital/unionjournals/#Agriculture" },
     { id:"unionstats", label:"UnionStats.com", group:"red", url:"https://unionstats.com" },
     { id:"oecd_ictwss", label:"OECD/AIAS ICTWSS Database", group:"red", url:"https://www.oecd.org/en/data/datasets/oecdaias-ictwss-database.html" },
     { id:"bls_wsp", label:"BLS Work Stoppages Dataset", group:"red", url:"https://www.bls.gov/wsp/" },
