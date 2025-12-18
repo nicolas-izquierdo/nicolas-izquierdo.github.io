@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
     gdads: "ICPSR dataset on digital activism events across countries with standardized coding.",
     labor_in_america: "University of Maryland digital collections related to labor history and movements.",
     warwick: "Digitised journals and newspapers of British trade unions",
-    tuc: "Research library for the study of trade unions, collective bargaining and labour history (UK and Commonwealth)
+    tuc: "Research library for the study of trade unions, collective bargaining and labour history (UK and Commonwealth)"
   };
 
   const resources = [
