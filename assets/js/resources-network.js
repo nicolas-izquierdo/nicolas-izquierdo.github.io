@@ -51,8 +51,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const resources = [
     { id:"apsa_labor_teach", label:"APSA Labor Politics", group:"blue", url:"https://educate.apsanet.org/labor-politics-teaching-resource-collection" },
-    { id:"warwick", label:"Labour Movement Newspapers and Journals (UK)", group:"red", url:"https://warwick.ac.uk/services/library/mrc/collections/digital/unionjournals/#Agriculture" },
-    { id:"tuc", label:"Trades Union Congress Library", group:"red", url:"https://libguides.londonmet.ac.uk/special-collections/TUC" },    
+    { id:"warwick", label:"Labour Movement Newspapers and Journals (UK)", group:"green", url:"https://warwick.ac.uk/services/library/mrc/collections/digital/unionjournals/#Agriculture" },
+    { id:"tuc", label:"Trades Union Congress Library", group:"green", url:"https://libguides.londonmet.ac.uk/special-collections/TUC" },    
     { id:"unionstats", label:"UnionStats.com", group:"red", url:"https://unionstats.com" },
     { id:"oecd_ictwss", label:"OECD/AIAS ICTWSS Database", group:"red", url:"https://www.oecd.org/en/data/datasets/oecdaias-ictwss-database.html" },
     { id:"bls_wsp", label:"BLS Work Stoppages Dataset", group:"red", url:"https://www.bls.gov/wsp/" },
