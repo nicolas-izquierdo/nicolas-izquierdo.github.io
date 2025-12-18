@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const dataBranches = [
     // ---- CHANGE #2: branch labels are now BOLD (via font-weight) and CAPITALIZED (via label text)
-    { id: "branch_contentious", label: "CONTENTIOUS",          group: "red" },
+    { id: "branch_contentious", label: "STRIKES & PROTESTS",          group: "red" },
     { id: "branch_finance",     label: "FINANCE",              group: "red" },
     { id: "branch_cba",         label: "COLLECTIVE BARGAINING", group: "red" },
     { id: "branch_general",     label: "GENERAL",              group: "red" }
