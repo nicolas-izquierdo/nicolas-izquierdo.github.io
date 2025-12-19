@@ -40,7 +40,7 @@ from the University Carlos III of Madrid.
 
 My research interests lie in comparative political economy and labor politics, encompassing issues of organized interests, contentious politics, and redistribution. I am particularly interested in how labor mobilization shapes policy outcomes and mass preferences across advanced democracies. I also study courts and legal processes, focusing on how private economic interests influence judicial decision-making.
 
-Outside academia, I enjoy [political cinema](https://en.wikipedia.org/wiki/Political_cinema) and [playing chess](https://www.chess.com/member/nicolas_izq).
+Outside academia, I enjoy <button id="pc-link" class="link-like">political cinema</button> and <a href="https://www.chess.com/member/nicolas_izq">playing chess</a>.
 
 You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
 
