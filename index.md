@@ -38,6 +38,10 @@ I also hold both degrees in [Law (LL.B.)](https://www.uc3m.es/bachelor-degree/la
 and [Political Science (B.A.)](https://www.uc3m.es/bachelor-degree/political-science) 
 from the University Carlos III of Madrid.  
 
-My research interests lie in comparative political economy and labor politics, encompassing issues of workers’ political representation, collective action, and redistribution. In particular, I am interested in how labor mobilization shapes policy outcomes and public opinion across democracies. I also study judicial behavior, focusing on how private economic interests and organized interests affect judicial decision-making.
+My research interests lie in comparative political economy and labor politics, encompassing issues of organized interests, contentious politics, and redistribution. I am particularly interested in how labor mobilization shapes policy outcomes and mass preferences across advanced democracies. I also study courts and legal processes, focusing on how private economic interests influence judicial decision-making.
+
+Outside academia, I enjoy [political cinema](https://en.wikipedia.org/wiki/Political_cinema) and [playing chess](https://www.chess.com/member/nicolas_izq).
 
 You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
+
+
