@@ -8,98 +8,6 @@ redirect_from:
   - /about.html
 ---
 
-<style>
-/* Links ONLY for main text */
-.main-text a,
-.main-text a:visited {
-  color: #6495ED;
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
-}
-.main-text a:hover,
-.main-text a:focus {
-  color: #6495ED;
-}
-.main-text a:active {
-  color: #6495ED;
-}
-
-/* Cinema box */
-#cinema-box {
-  display: none;
-  margin: 10px 0 10px 0;
-  padding: 14px;
-  border: 1px solid rgba(0,0,0,.14);
-  border-radius: 14px;
-  background: #fff;
-  box-shadow: 0 10px 26px rgba(0,0,0,.10);
-  max-width: 620px;
-}
-
-#cinema-box .row {
-  display: flex;
-  gap: 14px;
-  align-items: flex-start;
-}
-
-#cinema-box img {
-  width: 120px;   /* mid size, fixed */
-  height: 180px;  /* mid size, fixed */
-  object-fit: cover;
-  border-radius: 12px;
-  background: #f2f2f2;
-  flex: 0 0 auto;
-}
-
-#cinema-box .meta {
-  flex: 1 1 auto;
-  min-width: 0;
-}
-
-#cinema-box .title {
-  margin: 0 0 8px 0;
-  font-size: 1.05rem;
-  line-height: 1.25;
-}
-
-#cinema-box .title a {
-  color: #6495ED;
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
-}
-
-#cinema-box .desc {
-  margin: 0;
-  opacity: .88;
-  font-size: .96rem;
-  line-height: 1.4;
-}
-
-#cinema-box .actions {
-  margin-top: 10px;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-#cinema-close {
-  border: 1px solid rgba(0,0,0,.18);
-  background: #fff;
-  border-radius: 999px;
-  padding: 6px 10px;
-  font-size: .9rem;
-  cursor: pointer;
-}
-
-#cinema-status {
-  font-size: .9rem;
-  opacity: .75;
-}
-</style>
-
 <h1 style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">
   Nicolás Izquierdo, Political Science, Political Scientist, Political Economy
 </h1>
@@ -107,9 +15,7 @@ redirect_from:
 <figure style="margin:0;">
   <img src="marx-painting-HD.jpg"
        alt="Workers’ Delegation Before the Magistrate by Johann Peter Hasenclever"
-       style="width:660px;height:200px;object-fit:cover;display:block;"
-       loading="eager"
-       decoding="async">
+       style="width:660px;height:200px;object-fit:cover;display:block;">
   <figcaption style="font-size:0.9em;margin-top:-13px;margin-bottom:20px;">
     <span style="font-style:italic;text-decoration:underline;">
       Workers’ Delegation Before the Magistrate</span>
@@ -117,204 +23,243 @@ redirect_from:
   </figcaption>
 </figure>
 
-<div class="main-text">
+Welcome! My name is Nicolás Izquierdo and I am a Master's student in Social Sciences at the 
+[Carlos III–Juan March Institute (IC3JM)](https://ic3jm.es/en/postgraduates/master-degree-social-sciences/). 
+I also hold both degrees in [Law (LL.B.)](https://www.uc3m.es/bachelor-degree/law) 
+and [Political Science (B.A.)](https://www.uc3m.es/bachelor-degree/political-science) 
+from the University Carlos III of Madrid.  
 
-<p>
-Welcome! My name is Nicolás Izquierdo and I am a Master's student in Social Sciences at the
-<a href="https://ic3jm.es/en/postgraduates/master-degree-social-sciences/">Carlos III–Juan March Institute (IC3JM)</a>.
-I also hold both degrees in
-<a href="https://www.uc3m.es/bachelor-degree/law">Law (LL.B.)</a>
-and
-<a href="https://www.uc3m.es/bachelor-degree/political-science">Political Science (B.A.)</a>
-from the University Carlos III of Madrid.
-</p>
-
-<p>
 My research interests lie in comparative political economy and labor politics, encompassing issues of political representation, contentious politics, and redistribution. I am particularly interested in how labor mobilization shapes policy outcomes and mass preferences across advanced democracies. I also study courts and legal processes, focusing on how private economic interests influence judicial decision-making.
-</p>
 
-<p>
-Outside academia, I enjoy social and political cinema —
-<a href="#" id="political-cinema-link">political cinema</a> —
+Outside academia, I enjoy
+<a href="#" id="movie-trigger" style="text-decoration:underline;cursor:pointer;color:inherit;">
+  historical and political cinema
+</a>
 and <a href="https://www.chess.com/member/nicolas_izq">playing chess</a>.
-</p>
 
-<!-- Cinema box (we move it ABOVE the link with JS) -->
-<div id="cinema-box" role="region" aria-live="polite">
-  <div class="row">
-    <img id="cinema-cover" alt="" decoding="async" loading="eager">
-    <div class="meta">
-      <h3 class="title">
-        <a id="cinema-movie-link" href="#" target="_blank" rel="noopener noreferrer"></a>
-      </h3>
-      <p class="desc" id="cinema-desc"></p>
-      <div class="actions">
-        <button id="cinema-close" type="button">Close</button>
-        <span id="cinema-status"></span>
-      </div>
-    </div>
-  </div>
-</div>
+<div id="movie-card" style="display:none;"></div>
 
-<p>
-You can find my full CV <a href="/CV-nicolas-izquierdo-11-25.pdf">here</a>.
-</p>
+You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
 
-</div>
+<!-- ================= MOVIE POPOVER (SELF-CONTAINED) ================= -->
+<style>
+#movie-card{
+  position:absolute;
+  z-index:9999;
+  width:520px;
+  max-width:calc(100vw - 24px);
+  background:#fff;
+  border:1px solid rgba(0,0,0,.12);
+  border-radius:14px;
+  padding:14px;
+  box-shadow:0 10px 28px rgba(0,0,0,.14);
+}
+
+#movie-card header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-weight:700;
+  margin-bottom:10px;
+}
+
+#movie-card button{
+  border:1px solid rgba(0,0,0,.15);
+  background:#fff;
+  border-radius:8px;
+  width:32px;height:32px;
+  cursor:pointer;
+  font-size:18px;
+  line-height:30px;
+}
+
+#movie-card .grid{
+  display:grid;
+  grid-template-columns:110px 1fr;
+  gap:12px;
+}
+
+#movie-card img{
+  width:110px;height:160px;
+  object-fit:cover;
+  border-radius:10px;
+  border:1px solid rgba(0,0,0,.1);
+  background:#f2f2f2;
+}
+
+#movie-card .title{
+  font-weight:700;
+  margin:0 0 6px 0;
+}
+
+#movie-card a{
+  color:#1a73e8;
+  text-decoration:none;
+}
+#movie-card a:hover{ text-decoration:underline; }
+
+#movie-card p{
+  margin:0;
+  font-size:.95rem;
+  color:rgba(0,0,0,.82);
+}
+#movie-card .meta p + p{ margin-top:6px; }
+</style>
 
 <script>
-(function () {
-  // Rutas: JSON en /movies/movies.json y las imágenes en /movies/<image_file>
-  var JSON_URL = "/movies/movies.json";
-  var IMG_BASE = "/movies/";
+(function(){
+  const trigger = document.getElementById("movie-trigger");
+  const card = document.getElementById("movie-card");
 
-  var link = document.getElementById("political-cinema-link");
-  var box = document.getElementById("cinema-box");
-  var cover = document.getElementById("cinema-cover");
-  var movieLink = document.getElementById("cinema-movie-link");
-  var desc = document.getElementById("cinema-desc");
-  var closeBtn = document.getElementById("cinema-close");
-  var statusEl = document.getElementById("cinema-status");
+  // Folder where BOTH movies.json and images live:
+  const BASE = "/movies/";
+  const JSON_PATH = BASE + "movies.json";
 
-  var cache = null;
+  let cachedMovies = null;
+  let prefetched = false;
 
-  function placeBoxAboveLink() {
-    var p = link.parentElement; // el <p> del texto
-    if (p && box.parentElement !== p) {
-      p.insertBefore(box, link); // queda justo antes del enlace
-    }
-  }
+  function pickIndex(n){
+    // stable per local day (Madrid for you)
+    const d = new Date();
+    const yyyy = d.getFullYear();
+    const mm = String(d.getMonth()+1).padStart(2,"0");
+    const dd = String(d.getDate()).padStart(2,"0");
+    const s = `${yyyy}-${mm}-${dd}`;
 
-  function seedYYYYMMDDLocal() {
-    // usa la FECHA LOCAL del visitante (Madrid en tu caso)
-    var d = new Date();
-    var y = d.getFullYear();
-    var m = String(d.getMonth() + 1).padStart(2, "0");
-    var day = String(d.getDate()).padStart(2, "0");
-    return y + "-" + m + "-" + day;
-  }
-
-  function hashToIndex(s, n) {
-    var h = 0;
-    for (var i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0;
+    let h = 0;
+    for(let i=0;i<s.length;i++) h = (h * 31 + s.charCodeAt(i)) >>> 0;
     return n ? (h % n) : 0;
   }
 
-  function pickMovie(movies) {
-    var idx = hashToIndex(seedYYYYMMDDLocal(), movies.length);
-    return movies[idx];
+  function position(){
+    const r = trigger.getBoundingClientRect();
+    const left = window.scrollX + r.left;
+    const top  = window.scrollY + r.bottom + 8;
+
+    card.style.left = left + "px";
+    card.style.top  = top  + "px";
+
+    // keep within viewport horizontally
+    const rect = card.getBoundingClientRect();
+    const overflowRight = rect.right - window.innerWidth;
+    if(overflowRight > 12){
+      card.style.left = (left - overflowRight - 12) + "px";
+    }
+    if(rect.left < 12){
+      card.style.left = (window.scrollX + 12) + "px";
+    }
   }
 
-  function movieTitle(m) {
-    if (m.id_with_year && String(m.id_with_year).trim()) return m.id_with_year;
-    var base = (m.id || "Untitled");
-    return m.year ? (base + " (" + m.year + ")") : base;
+  function close(){
+    card.style.display = "none";
+    document.removeEventListener("mousedown", outside);
+    window.removeEventListener("resize", position);
+    window.removeEventListener("scroll", position, true);
   }
 
-  function imgSrc(m) {
-    if (m.image_file && String(m.image_file).trim()) return IMG_BASE + m.image_file;
-    if (m.image_url && String(m.image_url).trim()) return m.image_url;
+  function outside(e){
+    if(card.contains(e.target) || trigger.contains(e.target)) return;
+    close();
+  }
+
+  async function loadMovies(){
+    if(cachedMovies) return cachedMovies;
+
+    const res = await fetch(JSON_PATH, { cache: "no-store" });
+    if(!res.ok) throw new Error("Could not load " + JSON_PATH + " (HTTP " + res.status + ")");
+    const movies = await res.json();
+    if(!Array.isArray(movies) || movies.length === 0) throw new Error("movies.json empty or invalid array");
+    cachedMovies = movies;
+    return movies;
+  }
+
+  function titleFor(m){
+    return (m.id_with_year && String(m.id_with_year).trim())
+      ? m.id_with_year
+      : ((m.year && String(m.year).trim()) ? `${m.id} (${m.year})` : (m.id || "Untitled"));
+  }
+
+  function imgFor(m){
+    if(m.image_file && String(m.image_file).trim()){
+      return BASE + encodeURIComponent(String(m.image_file));
+    }
+    if(m.image_url && String(m.image_url).trim()){
+      return m.image_url;
+    }
     return "";
   }
 
-  function showLoading() {
-    statusEl.textContent = "Loading…";
-    box.style.display = "block";
-  }
-
-  function clearStatus() {
-    statusEl.textContent = "";
-  }
-
-  function showMovie(m) {
-    var title = movieTitle(m);
-    var href = (m.url && String(m.url).trim()) ? m.url : "#";
-
-    movieLink.textContent = title;
-    movieLink.href = href;
-
-    desc.textContent = m.description ? m.description : "";
-    desc.style.display = m.description ? "" : "none";
-
-    var src = imgSrc(m);
-    if (src) {
-      // para que sea instantáneo al abrir: asignamos src directo
-      cover.src = src;
-      cover.alt = title;
-    } else {
-      cover.removeAttribute("src");
-      cover.alt = "";
-    }
-
-    clearStatus();
-    box.style.display = "block";
-  }
-
-  function showError(msg) {
-    movieLink.textContent = "Could not load political cinema";
-    movieLink.href = "#";
-    desc.style.display = "";
-    desc.textContent = msg;
-    cover.removeAttribute("src");
-    cover.alt = "";
-    statusEl.textContent = "";
-    box.style.display = "block";
-  }
-
-  function loadJSON(cb) {
-    if (cache) return cb(null, cache);
-
-    fetch(JSON_URL, { cache: "no-store" })
-      .then(function (res) {
-        if (!res.ok) throw new Error("HTTP " + res.status + " for " + JSON_URL);
-        return res.json();
-      })
-      .then(function (data) {
-        if (!Array.isArray(data) || data.length === 0) throw new Error("movies.json empty or invalid");
-        cache = data;
-        cb(null, cache);
-      })
-      .catch(function (err) {
-        cb(err);
-      });
-  }
-
-  // Click handler
-  link.addEventListener("click", function (e) {
-    e.preventDefault();
-    placeBoxAboveLink();
-
-    // toggle: si ya está abierto, ciérralo
-    if (box.style.display === "block") {
-      box.style.display = "none";
-      return;
-    }
-
-    showLoading();
-    loadJSON(function (err, movies) {
-      if (err) {
-        showError(String(err && err.message ? err.message : err));
-        return;
+  async function prefetch(){
+    if(prefetched) return;
+    prefetched = true;
+    try{
+      const movies = await loadMovies();
+      const m = movies[pickIndex(movies.length)];
+      const src = imgFor(m);
+      if(src){
+        const img = new Image();
+        img.src = src;
       }
-      var m = pickMovie(movies);
-      showMovie(m);
-    });
-  });
+    }catch(_){}
+  }
 
-  closeBtn.addEventListener("click", function () {
-    box.style.display = "none";
-  });
+  async function open(){
+    const movies = await loadMovies();
+    const m = movies[pickIndex(movies.length)];
 
-  // Cerrar al clicar fuera
-  document.addEventListener("click", function (e) {
-    if (box.style.display !== "block") return;
-    var inside = box.contains(e.target) || e.target === link;
-    if (!inside) box.style.display = "none";
-  });
+    const t = titleFor(m);
+    const src = imgFor(m);
+    const url = (m.url && String(m.url).trim()) ? m.url : "#";
+    const description = (m.description && String(m.description).trim()) ? m.description : "";
 
-  // ESC para cerrar
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") box.style.display = "none";
+    card.innerHTML = `
+      <header>
+        <span>Today’s movie recommendation!</span>
+        <button id="close-movie" aria-label="Close">×</button>
+      </header>
+      <div class="grid">
+        ${src ? `<img src="${src}" alt="${t}" loading="eager" decoding="async">` : `<div></div>`}
+        <div class="meta">
+          <p class="title">${t}</p>
+          <p><a href="${url}" target="_blank" rel="noopener noreferrer">Link</a></p>
+          ${description ? `<p>${description}</p>` : ``}
+        </div>
+      </div>
+    `;
+
+    document.getElementById("close-movie").onclick = close;
+    card.style.display = "block";
+    position();
+
+    document.addEventListener("mousedown", outside);
+    window.addEventListener("resize", position);
+    window.addEventListener("scroll", position, true);
+  }
+
+  trigger.addEventListener("mouseenter", prefetch);
+  window.addEventListener("load", prefetch);
+
+  trigger.addEventListener("click", async function(e){
+    e.preventDefault();
+    if(card.style.display === "block"){ close(); return; }
+    try{
+      await open();
+    }catch(err){
+      card.innerHTML = `
+        <header>
+          <span>Today’s movie recommendation!</span>
+          <button id="close-movie" aria-label="Close">×</button>
+        </header>
+        <p style="margin:0;color:rgba(0,0,0,.82);font-size:.95rem;">
+          ${String(err && err.message ? err.message : err)}
+        </p>
+      `;
+      document.getElementById("close-movie").onclick = close;
+      card.style.display = "block";
+      position();
+      document.addEventListener("mousedown", outside);
+    }
   });
 })();
 </script>
+<!-- ================================================================ -->
