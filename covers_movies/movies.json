@@ -1,0 +1,1822 @@
+[
+  {
+    "id": "Billy Elliot",
+    "year": "2000",
+    "id_with_year": "Billy Elliot (2000)",
+    "url": "https://en.wikipedia.org/wiki/Billy_Elliot",
+    "wikipedia_title": "Billy Elliot",
+    "description": "Young boy pursues ballet despite societal and familial pressures.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/3/31/Billy_Elliot_movie.jpg",
+    "image_file": "Billy_Elliot_(2000).jpg"
+  },
+  {
+    "id": "Bloody Sunday",
+    "year": "2002",
+    "id_with_year": "Bloody Sunday (2002)",
+    "url": "https://en.wikipedia.org/wiki/Bloody_Sunday_(2002_film)",
+    "wikipedia_title": "Bloody Sunday (2002 film)",
+    "description": "Reconstruction of 1972 Derry civil rights march and massacre.",
+    "image_url": "https://image.tmdb.org/t/p/w342/oqdQMDJucR7R0ol0LFvzmqcDyEb.jpg",
+    "image_file": "Bloody_Sunday.jpg"
+  },
+  {
+    "id": "Made in Dagenham",
+    "year": "2010",
+    "id_with_year": "Made in Dagenham (2010)",
+    "url": "https://en.wikipedia.org/wiki/Made_in_Dagenham",
+    "wikipedia_title": "Made in Dagenham",
+    "description": "Women Ford workers strike for equal pay in 1968 Britain.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/9/9a/Made_in_dagenham_poster.jpg",
+    "image_file": "Made_in_Dagenham_(2010).jpg"
+  },
+  {
+    "id": "Tierra y libertad",
+    "year": "1995",
+    "id_with_year": "Tierra y libertad (1995)",
+    "url": "https://en.wikipedia.org/wiki/Land_and_Freedom_(film)",
+    "wikipedia_title": "Land and liberty",
+    "description": "A foreign volunteer joins Spanish Civil War revolutionaries.",
+    "image_url": "https://image.tmdb.org/t/p/w342/uhS7eWg2eNZGktYUzBtqReg11fu.jpg",
+    "image_file": "Tierra_y_libertad.jpg"
+  },
+  {
+    "id": "The Wind That Shakes the Barley",
+    "year": "2006",
+    "id_with_year": "The Wind That Shakes the Barley (2006)",
+    "url": "https://en.wikipedia.org/wiki/The_Wind_That_Shakes_the_Barley_(film)",
+    "wikipedia_title": "The Wind That Shakes the Barley (film)",
+    "description": "Brothers fight British forces in Ireland’s war of independence.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/3/3d/The_Wind_That_Shakes_the_Barley_poster.jpg",
+    "image_file": "The_Wind_That_Shakes_the_Barley_(2006).jpg"
+  },
+  {
+    "id": "La battaglia di Algeri",
+    "year": "1966",
+    "id_with_year": "La battaglia di Algeri (1966)",
+    "url": "https://en.wikipedia.org/wiki/The_Battle_of_Algiers",
+    "wikipedia_title": "The Battle of Algiers",
+    "description": "Algerian insurgents clash with French paratroopers in war drama.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/a/aa/The_Battle_of_Algiers_poster.jpg",
+    "image_file": "La_battaglia_di_Algeri_(1966).jpg"
+  },
+  {
+    "id": "Октябрь (Десять дней, которые потрясли мир)",
+    "year": "",
+    "id_with_year": "Октябрь (Десять дней, которые потрясли мир)",
+    "url": "https://en.wikipedia.org/wiki/October_(1928_film)",
+    "wikipedia_title": "October (1928 film)",
+    "description": "Eisenstein depicts 1917 October Revolution’s dramatic uprising and aftermath.",
+    "image_url": "",
+    "image_file": ""
+  },
+  {
+    "id": "Броненосец «Потёмкин»",
+    "year": "1925",
+    "id_with_year": "Броненосец «Потёмкин» (1925)",
+    "url": "https://en.wikipedia.org/wiki/Battleship_Potemkin",
+    "wikipedia_title": "Battleship Potemkin",
+    "description": "Iconic silent film dramatising 1905 mutiny on the Potemkin battleship.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/85/Vintage_Potemkin.jpg",
+    "image_file": "Броненосец_Потемкин_(1925).jpg"
+  },
+  {
+    "id": "Cidade de Deus",
+    "year": "2002",
+    "id_with_year": "Cidade de Deus (2002)",
+    "url": "https://en.wikipedia.org/wiki/City_of_God_(2002_film)",
+    "wikipedia_title": "City of God (2002 film)",
+    "description": "Story of crime and survival in Rio’s City of God.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/1/10/CidadedeDeus.jpg",
+    "image_file": "Cidade_de_Deus_(2002).jpg"
+  },
+  {
+    "id": "Иди и смотри",
+    "year": "1985",
+    "id_with_year": "Иди и смотри (1985)",
+    "url": "https://en.wikipedia.org/wiki/Come_and_See",
+    "wikipedia_title": "Come and See",
+    "description": "Teen experiences horrors of Nazi occupation in Belarusian countryside.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/0/08/Come_and_See_%28poster%29.jpg",
+    "image_file": "Иди_и_смотри_(1985).jpg"
+  },
+  {
+    "id": "Soy Cuba",
+    "year": "1964",
+    "id_with_year": "Soy Cuba (1964)",
+    "url": "https://en.wikipedia.org/wiki/I_Am_Cuba",
+    "wikipedia_title": "I Am Cuba",
+    "description": "Cuban Soviet co‑production blending poetic visuals and revolutionary tales.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/3/3c/Soy_Cuba_film_poster.png",
+    "image_file": "Soy_Cuba_(1964).png"
+  },
+  {
+    "id": "Attica",
+    "year": "1974",
+    "id_with_year": "Attica (1974)",
+    "url": "https://en.wikipedia.org/wiki/Attica_(1974_film)",
+    "wikipedia_title": "Attica (1974 film)",
+    "description": "Documentary recounts violent 1971 prison uprising and state response.",
+    "image_url": "https://image.tmdb.org/t/p/w342/8dpc49O7G9B0y2crRbI7hHtbQzB.jpg",
+    "image_file": "Attica.jpg"
+  },
+  {
+    "id": "La hora de los hornos",
+    "year": "1968",
+    "id_with_year": "La hora de los hornos (1968)",
+    "url": "https://en.wikipedia.org/wiki/The_Hour_of_the_Furnaces",
+    "wikipedia_title": "The Hour of the Furnaces",
+    "description": "Radical Argentine documentary examining neocolonialism and resistance movements.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/3/36/Poster_The_Hour_of_the_Furnaces.jpeg",
+    "image_file": "La_hora_de_los_hornos_(1968).jpg"
+  },
+  {
+    "id": "Castro’s Spies",
+    "year": "",
+    "id_with_year": "Castro’s Spies",
+    "url": "https://www.filmaffinity.com/us/film451776.html",
+    "wikipedia_title": "film451776.html",
+    "description": "The story of Cuban agents infiltrating United States exile communities.",
+    "image_url": "https://image.tmdb.org/t/p/w342/5e2NW2eJTSMuBE4Ca7ZZfQWDF9W.jpg",
+    "image_file": "Castros_Spies.jpg"
+  },
+  {
+    "id": "They Do Not Exist",
+    "year": "1974",
+    "id_with_year": "They Do Not Exist (1974)",
+    "url": "https://mubi.com/en/es/films/they-do-not-exist",
+    "wikipedia_title": "they-do-not-exist",
+    "description": "Palestinian film exploring displacement and the cost of occupation.",
+    "image_url": "https://image.tmdb.org/t/p/w342/AcZ0Pn1du1kvMoyXetJGtyPW18R.jpg",
+    "image_file": "They_Do_Not_Exist.jpg"
+  },
+  {
+    "id": "Тіні забутих предків",
+    "year": "1965",
+    "id_with_year": "Тіні забутих предків (1965)",
+    "url": "https://en.wikipedia.org/wiki/Shadows_of_Forgotten_Ancestors",
+    "wikipedia_title": "Shadows of Forgotten Ancestors",
+    "description": "Ukrainian love story steeped in folklore and family tragedy.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/3/3f/Tini_zabytykh_predkiv_%281965%2C_Ukrainian_poster_by_Heorhiy_Yakutovych%29.jpg",
+    "image_file": "Тіні_забутих_предків_(1965).jpg"
+  },
+  {
+    "id": "Above Us the Earth",
+    "year": "1977",
+    "id_with_year": "Above Us the Earth (1977)",
+    "url": "https://www.imdb.com/title/tt0273056/",
+    "wikipedia_title": "",
+    "description": "Welsh miners chronicle community life during nationalised industry transition.",
+    "image_url": "https://image.tmdb.org/t/p/w342/g0ry4GPz3Xgffw689sUGm1QMia5.jpg",
+    "image_file": "Above_Us_the_Earth.jpg"
+  },
+  {
+    "id": "On the Same River",
+    "year": "1959",
+    "id_with_year": "On the Same River (1959)",
+    "url": "https://www.imdb.com/title/tt2136824/",
+    "wikipedia_title": "",
+    "description": "Serbian film about love, revenge and generational conflict by river.",
+    "image_url": "https://image.tmdb.org/t/p/w342/pGpLt4ulbnvEz5QSjllQ6N6Nbmw.jpg",
+    "image_file": "On_the_Same_River.jpg"
+  },
+  {
+    "id": "The Debt",
+    "year": "",
+    "id_with_year": "The Debt",
+    "url": "https://en.wikipedia.org/wiki/The_Debt_(1988_film)",
+    "wikipedia_title": "The Debt (1988 film)",
+    "description": "Polish drama about anti‑communist resistance and memory of wartime betrayal.",
+    "image_url": "https://image.tmdb.org/t/p/w342/lK3fGkcpKRpZf8w1P9eYgfs29RZ.jpg",
+    "image_file": "The_Debt.jpg"
+  },
+  {
+    "id": "Cuba 30 Anni Dopo",
+    "year": "",
+    "id_with_year": "Cuba 30 Anni Dopo",
+    "url": "https://en.wikipedia.org/wiki/Cuba_30_Anni_Dopo",
+    "wikipedia_title": "Cuba 30 Anni Dopo",
+    "description": "Documentary revisits Cuba thirty years after the revolution’s beginning.",
+    "image_url": "https://image.tmdb.org/t/p/w342/vWsDUwa1Ku5wAhspuDL6NWh6P83.jpg",
+    "image_file": "Cuba_30_Anni_Dopo.jpg"
+  },
+  {
+    "id": "Non dago Mikel?",
+    "year": "",
+    "id_with_year": "Non dago Mikel?",
+    "url": "https://en.wikipedia.org/wiki/Where_Is_Mikel%3F",
+    "wikipedia_title": "Where Is Mikel%3F",
+    "description": "Basque documentary investigating disappearance of activist Mikel Zabalza.",
+    "image_url": "https://image.tmdb.org/t/p/w342/nq0d6k3OIUXKbfd2ZRIqWLwoS3M.jpg",
+    "image_file": "Non_dago_Mikel.jpg"
+  },
+  {
+    "id": "Salvador (Puig Antich)",
+    "year": "1986",
+    "id_with_year": "Salvador (Puig Antich) (1986)",
+    "url": "https://en.wikipedia.org/wiki/Salvador_(film)",
+    "wikipedia_title": "Salvador (film)",
+    "description": "Journalist entangled in Salvadoran civil war fights for truth.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/c/c2/Salvador_%28film%29_POSTER.jpg",
+    "image_file": "Salvador_(Puig_Antich)_(1986).jpg"
+  },
+  {
+    "id": "Pada",
+    "year": "2022",
+    "id_with_year": "Pada (2022)",
+    "url": "https://en.wikipedia.org/wiki/Pada_(film)",
+    "wikipedia_title": "Pada (film)",
+    "description": "Indian drama recounts 1996 hostage crisis in Palakkad district.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/6/6d/Pada_%28film%29.jpg",
+    "image_file": "Pada_(2022).jpg"
+  },
+  {
+    "id": "Reds",
+    "year": "1981",
+    "id_with_year": "Reds (1981)",
+    "url": "https://en.wikipedia.org/wiki/Reds_(film)",
+    "wikipedia_title": "Reds (film)",
+    "description": "Epic story of journalist John Reed amid Russian Revolution events.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/2/26/Redsposter.jpg",
+    "image_file": "Reds_(1981).jpg"
+  },
+  {
+    "id": "Hunger",
+    "year": "2008",
+    "id_with_year": "Hunger (2008)",
+    "url": "https://en.wikipedia.org/wiki/Hunger_(2008_film)",
+    "wikipedia_title": "Hunger (2008 film)",
+    "description": "Depicts IRA hunger striker Bobby Sands inside Long Kesh prison.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/5/50/Hunger2008Poster.jpg",
+    "image_file": "Hunger_(2008).jpg"
+  },
+  {
+    "id": "Snowpiercer",
+    "year": "2013",
+    "id_with_year": "Snowpiercer (2013)",
+    "url": "https://en.wikipedia.org/wiki/Snowpiercer",
+    "wikipedia_title": "Snowpiercer",
+    "description": "Post‑apocalyptic train houses class struggles after climate disaster.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/b/b4/Snowpiercer_poster.jpg",
+    "image_file": "Snowpiercer_(2013).jpg"
+  },
+  {
+    "id": "La Haine",
+    "year": "1995",
+    "id_with_year": "La Haine (1995)",
+    "url": "https://en.wikipedia.org/wiki/La_Haine",
+    "wikipedia_title": "La Haine",
+    "description": "French banlieue youths confront police brutality over volatile day.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/0/01/La_Haine_%281995_movie_poster%29.jpg",
+    "image_file": "La_Haine_(1995).jpg"
+  },
+  {
+    "id": "Vladimir and Rosa",
+    "year": "1971",
+    "id_with_year": "Vladimir and Rosa (1971)",
+    "url": "https://en.wikipedia.org/wiki/Vladimir_and_Rosa",
+    "wikipedia_title": "Vladimir and Rosa",
+    "description": "Godard political satire lampooning Chicago Eight trial and capitalism.",
+    "image_url": "https://image.tmdb.org/t/p/w342/4p3QjbypwTE02FTdrNALwOE0LtY.jpg",
+    "image_file": "Vladimir_and_Rosa_(1971).jpg"
+  },
+  {
+    "id": "Rosa Luxemburg",
+    "year": "1986",
+    "id_with_year": "Rosa Luxemburg (1986)",
+    "url": "https://en.wikipedia.org/wiki/Rosa_Luxemburg_(film)",
+    "wikipedia_title": "Rosa Luxemburg (film)",
+    "description": "Biopic portrays socialist leader’s activism, imprisonment and assassination.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/0/0b/Rosa_Luxemburg_%28film%29.jpg",
+    "image_file": "Rosa_Luxemburg_(1986).jpg"
+  },
+  {
+    "id": "Salt of the Earth",
+    "year": "1954",
+    "id_with_year": "Salt of the Earth (1954)",
+    "url": "https://en.wikipedia.org/wiki/Salt_of_the_Earth_(1954_film)",
+    "wikipedia_title": "Salt of the Earth (1954 film)",
+    "description": "Striking miners’ wives take courageous stand against exploitation.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Salt_of_the_Earth_%281954_film_poster%29.jpg",
+    "image_file": "Salt_of_the_Earth_(1954).jpg"
+  },
+  {
+    "id": "Black Panthers",
+    "year": "1968",
+    "id_with_year": "Black Panthers (1968)",
+    "url": "https://en.wikipedia.org/wiki/Black_Panthers_(film)",
+    "wikipedia_title": "Black Panthers (film)",
+    "description": "Agnès Varda documents Oakland rally of Black Panther Party.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/9/90/Black_Panthers_documentary_poster.jpg",
+    "image_file": "Black_Panthers_(1968).jpg"
+  },
+  {
+    "id": "South of the Border",
+    "year": "2009",
+    "id_with_year": "South of the Border (2009)",
+    "url": "https://en.wikipedia.org/wiki/South_of_the_Border_(2009_film)",
+    "wikipedia_title": "South of the Border (2009 film)",
+    "description": "Oliver Stone interviews South American presidents on regional politics.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/1/19/Poster_of_the_movie_South_of_the_Border.jpg",
+    "image_file": "South_of_the_Border_(2009).jpg"
+  },
+  {
+    "id": "The Coconut Revolution",
+    "year": "2001",
+    "id_with_year": "The Coconut Revolution (2001)",
+    "url": "https://en.wikipedia.org/wiki/The_Coconut_Revolution",
+    "wikipedia_title": "The Coconut Revolution",
+    "description": "Bougainville Islanders fight mining corporations using coconut oil fuel.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/8/87/Coconutrevolution-pic.jpg",
+    "image_file": "The_Coconut_Revolution_(2001).jpg"
+  },
+  {
+    "id": "The Black Power Mixtape 1967–1975",
+    "year": "1967",
+    "id_with_year": "The Black Power Mixtape 1967–1975 (1967)",
+    "url": "https://en.wikipedia.org/wiki/The_Black_Power_Mixtape_1967%E2%80%931975",
+    "wikipedia_title": "The Black Power Mixtape 1967–1975",
+    "description": "Swedish archive footage chronicles rise of American Black Power movement.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/7/76/The_Black_Power_Mixtape_1967-1975.jpg",
+    "image_file": "The_Black_Power_Mixtape_19671975_(1967).jpg"
+  },
+  {
+    "id": "Hasta la Victoria Siempre",
+    "year": "",
+    "id_with_year": "Hasta la Victoria Siempre",
+    "url": "https://en.wikipedia.org/wiki/Hasta_la_Victoria_Siempre",
+    "wikipedia_title": "Hasta la Victoria Siempre",
+    "description": "Tribute to Che Guevara using archival footage and revolutionary slogans.",
+    "image_url": "https://image.tmdb.org/t/p/w342/ApeTl3vPWLBfXeAzIzAzYfelO33.jpg",
+    "image_file": "Hasta_la_Victoria_Siempre.jpg"
+  },
+  {
+    "id": "Novecento",
+    "year": "1900",
+    "id_with_year": "Novecento (1900)",
+    "url": "https://en.wikipedia.org/wiki/1900_(film)",
+    "wikipedia_title": "1900 (film)",
+    "description": "Historical epic follows two Italian friends across twentieth‑century struggles.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/0/07/1900_Bertolluci.jpg",
+    "image_file": "Novecento_(1900).jpg"
+  },
+  {
+    "id": "White Dog",
+    "year": "",
+    "id_with_year": "White Dog",
+    "url": "https://en.wikipedia.org/wiki/White_Dog_(film)",
+    "wikipedia_title": "White Dog (film)",
+    "description": "Dog trained to attack Black people is rehabilitated by trainer.",
+    "image_url": "https://image.tmdb.org/t/p/w342/2oU700G9pDwFt7px5GxOqDHFPfR.jpg",
+    "image_file": "White_Dog.jpg"
+  },
+  {
+    "id": "Ogro",
+    "year": "1973",
+    "id_with_year": "Ogro (1973)",
+    "url": "https://en.wikipedia.org/wiki/Ogro",
+    "wikipedia_title": "Assassination of Luis Carrero Blanco",
+    "description": "Dramatic account of Basque separatists assassinating Francoist admiral Carrero Blanco.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/a/aa/Luis_Carrero_Blanco.jpg",
+    "image_file": "Ogro_(1973).jpg"
+  },
+  {
+    "id": "La Commune (Paris, 1871)",
+    "year": "2000",
+    "id_with_year": "La Commune (Paris, 1871) (2000)",
+    "url": "https://en.wikipedia.org/wiki/La_Commune_(Paris,_1871)",
+    "wikipedia_title": "La Commune (Paris, 1871)",
+    "description": "Community re‑enacts 1871 Paris Commune through modern collective filmmaking.",
+    "image_url": "https://image.tmdb.org/t/p/w342/rz39nFOxbeHAHx56ac4ao27OJbw.jpg",
+    "image_file": "La_Commune_(Paris_1871)_(2000).jpg"
+  },
+  {
+    "id": "Paul Goodman Changed My Life",
+    "year": "2011",
+    "id_with_year": "Paul Goodman Changed My Life (2011)",
+    "url": "https://en.wikipedia.org/wiki/Paul_Goodman_Changed_My_Life",
+    "wikipedia_title": "Paul Goodman Changed My Life",
+    "description": "Documentary examines influential writer Paul Goodman and counterculture legacy.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/c/c7/Paul_Goodman_Changed_My_Life_poster.jpg",
+    "image_file": "Paul_Goodman_Changed_My_Life_(2011).jpg"
+  },
+  {
+    "id": "Matewan",
+    "year": "1987",
+    "id_with_year": "Matewan (1987)",
+    "url": "https://en.wikipedia.org/wiki/Matewan_(film)",
+    "wikipedia_title": "Matewan, West Virginia",
+    "description": "Coal miners strike in West Virginia sparks violent labor confrontation.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/db/View_of_Downtown_Historic_District_Matewan_West_Virginia_%282018%29.jpg",
+    "image_file": "Matewan_(2020).jpg"
+  },
+  {
+    "id": "La Chinoise",
+    "year": "1967",
+    "id_with_year": "La Chinoise (1967)",
+    "url": "https://en.wikipedia.org/wiki/La_Chinoise",
+    "wikipedia_title": "La Chinoise",
+    "description": "Parisian students experiment with Maoist ideology and revolutionary theatrics.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/d/d5/La_Chinoise_poster.jpg",
+    "image_file": "La_Chinoise_(1967).jpg"
+  },
+  {
+    "id": "Innocence",
+    "year": "2022",
+    "id_with_year": "Innocence (2022)",
+    "url": "https://www.imdb.com/title/tt21377522/",
+    "wikipedia_title": "",
+    "description": "Crime drama exploring guilt and redemption after a wrongful conviction.",
+    "image_url": "https://image.tmdb.org/t/p/w342/2XRZd4RI3X3xPqOoeJf51ggt2oX.jpg",
+    "image_file": "Innocence.jpg"
+  },
+  {
+    "id": "Gaza Fights for Freedom",
+    "year": "",
+    "id_with_year": "Gaza Fights for Freedom",
+    "url": "https://en.wikipedia.org/wiki/Gaza_Fights_for_Freedom",
+    "wikipedia_title": "Gaza Fights for Freedom",
+    "description": "Investigates Israeli military violence during Gaza border protests.",
+    "image_url": "https://image.tmdb.org/t/p/w342/5OaFeewCLw6zBvU1NLrLNlNkTbh.jpg",
+    "image_file": "Gaza_Fights_for_Freedom.jpg"
+  },
+  {
+    "id": "Triumph Over Violence",
+    "year": "1965",
+    "id_with_year": "Triumph Over Violence (1965)",
+    "url": "https://en.wikipedia.org/wiki/Triumph_Over_Violence",
+    "wikipedia_title": "Triumph Over Violence",
+    "description": "Soviet film compiles Nazi propaganda to expose fascist atrocities.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/9/9e/Triumph_Over_Violence.jpg",
+    "image_file": "Triumph_Over_Violence_(1965).jpg"
+  },
+  {
+    "id": "Soy Cuba, O Mamute Siberiano",
+    "year": "2004",
+    "id_with_year": "Soy Cuba, O Mamute Siberiano (2004)",
+    "url": "https://www.imdb.com/title/tt0436784/",
+    "wikipedia_title": "",
+    "description": "Documentary explores making of ‘I Am Cuba’ and its legacy.",
+    "image_url": "https://image.tmdb.org/t/p/w342/fqlghiH4JbDUJovlUfo8pl4UaOp.jpg",
+    "image_file": "I_Am_Cuba_the_Siberian_Mammoth.jpg"
+  },
+  {
+    "id": "Die Stille nach dem Schuss",
+    "year": "2000",
+    "id_with_year": "Die Stille nach dem Schuss (2000)",
+    "url": "https://en.wikipedia.org/wiki/The_Legend_of_Rita",
+    "wikipedia_title": "The Legend of Rita",
+    "description": "Former Red Army Faction member hides in East Germany.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/3/39/Die_Stille_nach_dem_Schu%C3%9F.jpg",
+    "image_file": "The_Legend_of_Rita_(2000).jpg"
+  },
+  {
+    "id": "Camp de Thiaroye",
+    "year": "1988",
+    "id_with_year": "Camp de Thiaroye (1988)",
+    "url": "https://en.wikipedia.org/wiki/Camp_de_Thiaroye",
+    "wikipedia_title": "Camp de Thiaroye",
+    "description": "Senegalese soldiers mutiny against French colonial injustice after war.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/a/a0/Camp_de_Thiaroye.jpg",
+    "image_file": "Camp_de_Thiaroye_(1988).jpg"
+  },
+  {
+    "id": "Ленин в Октябре",
+    "year": "1937",
+    "id_with_year": "Ленин в Октябре (1937)",
+    "url": "https://en.wikipedia.org/wiki/Lenin_in_October",
+    "wikipedia_title": "Lenin in October",
+    "description": "Soviet biopic depicts Lenin’s leadership during October Revolution events.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/3/37/Lenin_in_October.jpg",
+    "image_file": "Ленин_в_Октябре_(1937).jpg"
+  },
+  {
+    "id": "Стачка",
+    "year": "1925",
+    "id_with_year": "Стачка (1925)",
+    "url": "https://en.wikipedia.org/wiki/Strike_(1925_film)",
+    "wikipedia_title": "Strike (1925 film)",
+    "description": "Eisenstein’s debut portrays factory strike and brutal tsarist repression.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/7/71/Strike_%281925%29_original_poster.jpg",
+    "image_file": "Стачка_(1925).jpg"
+  },
+  {
+    "id": "Malcolm X",
+    "year": "1992",
+    "id_with_year": "Malcolm X (1992)",
+    "url": "https://en.wikipedia.org/wiki/Malcolm_X_(1992_film)",
+    "wikipedia_title": "Malcolm X (disambiguation)",
+    "description": "Spike Lee recounts life of civil rights leader Malcolm X.",
+    "image_url": "https://image.tmdb.org/t/p/w342/o2s9ow0uRRm1BcF3teznk5twd90.jpg",
+    "image_file": "Malcolm_X_(1992).jpg"
+  },
+  {
+    "id": "The Revolution Will Not Be Televised",
+    "year": "2003",
+    "id_with_year": "The Revolution Will Not Be Televised (2003)",
+    "url": "https://en.wikipedia.org/wiki/The_Revolution_Will_Not_Be_Televised_(film)",
+    "wikipedia_title": "The Revolution Will Not Be Televised (film)",
+    "description": "Irish filmmakers capture coup attempt against Venezuelan president Chávez.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/7/7a/The_Revolution_will_not_be_Televised.gif",
+    "image_file": "The_Revolution_Will_Not_Be_Televised_(2003).jpg"
+  },
+  {
+    "id": "The Spirit of ’45",
+    "year": "2013",
+    "id_with_year": "The Spirit of ’45 (2013)",
+    "url": "https://en.wikipedia.org/wiki/The_Spirit_of_%2745",
+    "wikipedia_title": "The Spirit of '45",
+    "description": "Ken Loach celebrates UK welfare state built after World War II.",
+    "image_url": "https://image.tmdb.org/t/p/w342/yTzLFWvzewHnIdMHS8uKaUtY8Eu.jpg",
+    "image_file": "The_Spirit_of_45_(2013).jpg"
+  },
+  {
+    "id": "Yawar Mallku",
+    "year": "1969",
+    "id_with_year": "Yawar Mallku (1969)",
+    "url": "https://en.wikipedia.org/wiki/Blood_of_the_Condor",
+    "wikipedia_title": "Blood of the Condor",
+    "description": "Bolivian drama exposes U.S. interference and forced sterilisation campaign.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/e/e1/BloodoftheCondor.jpg",
+    "image_file": "Yawar_Mallku_(1969).jpg"
+  },
+  {
+    "id": "Los Canadienses",
+    "year": "1976",
+    "id_with_year": "Los Canadienses (1976)",
+    "url": "https://www.imdb.com/title/tt0215590/",
+    "wikipedia_title": "",
+    "description": "Documentary about Canadian volunteers in Spanish Civil War.",
+    "image_url": "https://image.tmdb.org/t/p/w342/kHFJ4SvuS8ZlKIVbsDUJ2UfVJsf.jpg",
+    "image_file": "Los_Canadienses.jpg"
+  },
+  {
+    "id": "Até Amanhã, Camaradas",
+    "year": "2013",
+    "id_with_year": "Até Amanhã, Camaradas (2013)",
+    "url": "https://www.themoviedb.org/movie/337628-at-amanh-camaradas?language=es-ES",
+    "wikipedia_title": "337628-at-amanh-camaradas?language=es-ES",
+    "description": "Portuguese TV film dramatises working‑class resistance to dictatorship.",
+    "image_url": "https://image.tmdb.org/t/p/w342/shSu1K14n6m5cdznefQkA4WYcq2.jpg",
+    "image_file": "Until_Tomorrow_Comrades.jpg"
+  },
+  {
+    "id": "Le jeune Karl Marx",
+    "year": "2017",
+    "id_with_year": "Le jeune Karl Marx (2017)",
+    "url": "https://en.wikipedia.org/wiki/The_Young_Karl_Marx",
+    "wikipedia_title": "The Young Karl Marx",
+    "description": "Early friendship and intellectual journey of Marx and Engels.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/5/5f/The_Young_Karl_Marx_film_poster.jpg",
+    "image_file": "Le_jeune_Karl_Marx_(2017).jpg"
+  },
+  {
+    "id": "Platform",
+    "year": "2000",
+    "id_with_year": "Platform (2000)",
+    "url": "https://en.wikipedia.org/wiki/Platform_(2000_film)",
+    "wikipedia_title": "Platform (2000 film)",
+    "description": "Chinese youth troupe confronts economic reform and personal transformation.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/1/12/Platform_poster.jpg",
+    "image_file": "Platform_(2000).jpg"
+  },
+  {
+    "id": "Freedomfighters",
+    "year": "",
+    "id_with_year": "Freedomfighters",
+    "url": "https://en.wikipedia.org/wiki/Freedomfighters",
+    "wikipedia_title": "Freedomfighters",
+    "description": "Profiles of freedom fighters resisting colonialism and oppression globally.",
+    "image_url": "https://image.tmdb.org/t/p/w342/k9HiiZRNS6N0PnUM7Wyeo5cspEn.jpg",
+    "image_file": "Freedomfighters.jpg"
+  },
+  {
+    "id": "Red Army/PFLP: Declaration of World War",
+    "year": "",
+    "id_with_year": "Red Army/PFLP: Declaration of World War",
+    "url": "https://en.wikipedia.org/wiki/Red_Army/PFLP:_Declaration_of_World_War",
+    "wikipedia_title": "PFLP: Declaration of World War",
+    "description": "Radical Japanese Red Army and PFLP announce global armed struggle.",
+    "image_url": "https://image.tmdb.org/t/p/w342/vYO59YajzKqThHg1HLajAvFSsIq.jpg",
+    "image_file": "Red_ArmyPFLP_Declaration_of_World_War.jpg"
+  },
+  {
+    "id": "Judas and the Black Messiah",
+    "year": "2021",
+    "id_with_year": "Judas and the Black Messiah (2021)",
+    "url": "https://en.wikipedia.org/wiki/Judas_and_the_Black_Messiah",
+    "wikipedia_title": "Judas and the Black Messiah",
+    "description": "FBI informant betrays Black Panther leader Fred Hampton.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/5/55/Judas_and_the_Black_Messiah_poster.png",
+    "image_file": "Judas_and_the_Black_Messiah_(2021).png"
+  },
+  {
+    "id": "Kanehsatake: 270 Years of Resistance",
+    "year": "1993",
+    "id_with_year": "Kanehsatake: 270 Years of Resistance (1993)",
+    "url": "https://en.wikipedia.org/wiki/Kanehsatake:_270_Years_of_Resistance",
+    "wikipedia_title": "Kanehsatake: 270 Years of Resistance",
+    "description": "Mohawk nation documentary recounts Oka Crisis and centuries of resistance.",
+    "image_url": "https://image.tmdb.org/t/p/w342/euhqC5Cs4mum2WFymPkgjo9xunS.jpg",
+    "image_file": "Kanehsatake_270_Years_of_Resistance_(1993).jpg"
+  },
+  {
+    "id": "Class of Struggle",
+    "year": "",
+    "id_with_year": "Class of Struggle",
+    "url": "https://en.wikipedia.org/wiki/Class_of_Struggle",
+    "wikipedia_title": "Class of Struggle",
+    "description": "French workers discuss factory conditions and politics in collective film.",
+    "image_url": "https://image.tmdb.org/t/p/w342/nLQHMdhpaYm8XSfrq03jTCbj9Cv.jpg",
+    "image_file": "Class_of_Struggle.jpg"
+  },
+  {
+    "id": "The Fall of Communism as Seen in Gay Pornography",
+    "year": "",
+    "id_with_year": "The Fall of Communism as Seen in Gay Pornography",
+    "url": "https://en.wikipedia.org/wiki/The_Fall_of_Communism_as_Seen_in_Gay_Pornography",
+    "wikipedia_title": "The Fall of Communism as Seen in Gay Pornography",
+    "description": "Experimental montage juxtaposes Eastern Bloc collapse with queer aesthetics.",
+    "image_url": "https://image.tmdb.org/t/p/w342/ugzIfN32An8gegVZk8KK34sLTka.jpg",
+    "image_file": "The_Fall_of_Communism_as_Seen_in_Gay_Pornography.jpg"
+  },
+  {
+    "id": "Property Is No Longer a Theft",
+    "year": "1973",
+    "id_with_year": "Property Is No Longer a Theft (1973)",
+    "url": "https://en.wikipedia.org/wiki/Property_Is_No_Longer_a_Theft",
+    "wikipedia_title": "Property Is No Longer a Theft",
+    "description": "Bank clerk turns thief to attack capitalist hypocrisy and greed.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/b/b9/Property_Is_No_Longer_a_Theft.jpg",
+    "image_file": "Property_Is_No_Longer_a_Theft_(1973).jpg"
+  },
+  {
+    "id": "Four Days in September",
+    "year": "1997",
+    "id_with_year": "Four Days in September (1997)",
+    "url": "https://en.wikipedia.org/wiki/Four_Days_in_September",
+    "wikipedia_title": "Four Days in September",
+    "description": "Brazilian guerrillas kidnap U.S. ambassador to highlight dictatorship injustices.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/c/c6/OQEIsso.jpg",
+    "image_file": "Four_Days_in_September_(1997).jpg"
+  },
+  {
+    "id": "Black Is… Black Ain’t",
+    "year": "1995",
+    "id_with_year": "Black Is… Black Ain’t (1995)",
+    "url": "https://en.wikipedia.org/wiki/Black_Is..._Black_Ain%27t",
+    "wikipedia_title": "Black Is... Black Ain't",
+    "description": "Examines diversity within African‑American identity, gender, and health.",
+    "image_url": "https://image.tmdb.org/t/p/w342/sqEUXvyBBX7iFXbURAo40ELQLp7.jpg",
+    "image_file": "Black_Is..._Black_Aint_(1995).jpg"
+  },
+  {
+    "id": "Confessions of a Congressman",
+    "year": "1978",
+    "id_with_year": "Confessions of a Congressman (1978)",
+    "url": "https://en.wikipedia.org/wiki/Confessions_of_a_Congressman",
+    "wikipedia_title": "Confessions of a Congressman",
+    "description": "Spanish drama about politician balancing sexuality and political ambition.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/4/48/El_Diputado.jpg",
+    "image_file": "Confessions_of_a_Congressman_(1978).jpg"
+  },
+  {
+    "id": "Angela Davis: Portrait of a Revolutionary",
+    "year": "",
+    "id_with_year": "Angela Davis: Portrait of a Revolutionary",
+    "url": "https://en.wikipedia.org/wiki/Angela_Davis:_Portrait_of_a_Revolutionary",
+    "wikipedia_title": "Angela Davis: Portrait of a Revolutionary",
+    "description": "Profiles radical philosopher Angela Davis amid 1970s civil rights struggles.",
+    "image_url": "https://image.tmdb.org/t/p/w342/utPYEVb5dSG8rc0qldtBcmC1rwB.jpg",
+    "image_file": "Angela_Davis_Portrait_of_a_Revolutionary.jpg"
+  },
+  {
+    "id": "Those Whom Death Refused",
+    "year": "1988",
+    "id_with_year": "Those Whom Death Refused (1988)",
+    "url": "https://en.wikipedia.org/wiki/Those_Whom_Death_Refused",
+    "wikipedia_title": "Mortu Nega",
+    "description": "Guinea‑Bissau war film about liberation fighters and Portuguese colonialism.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/7/79/Mortu_Nega_%281988%29_Film_Poster.jpg",
+    "image_file": "Those_Whom_Death_Refused_(1988).jpg"
+  },
+  {
+    "id": "Freedom Road",
+    "year": "1979",
+    "id_with_year": "Freedom Road (1979)",
+    "url": "https://en.wikipedia.org/wiki/Freedom_Road",
+    "wikipedia_title": "Freedom Road",
+    "description": "Historical mini‑series featuring Muhammad Ali as freed slave turned politician.",
+    "image_url": "https://image.tmdb.org/t/p/w342/hBuMRuwSa7EMtvZMm420Jqlchd0.jpg",
+    "image_file": "Freedom_Road_(1979).jpg"
+  },
+  {
+    "id": "Return to Haifa",
+    "year": "",
+    "id_with_year": "Return to Haifa",
+    "url": "https://en.wikipedia.org/wiki/Return_to_Haifa_(film)",
+    "wikipedia_title": "Return to Haifa (film)",
+    "description": "Palestinian family revisits home seized during 1948 Israeli war.",
+    "image_url": "https://image.tmdb.org/t/p/w342/zto7yhsefPMqmmGYq4gFfbO7IuU.jpg",
+    "image_file": "Return_to_Haifa.jpg"
+  },
+  {
+    "id": "Eyes of the Rainbow",
+    "year": "1997",
+    "id_with_year": "Eyes of the Rainbow (1997)",
+    "url": "https://en.wikipedia.org/wiki/Eyes_of_the_Rainbow",
+    "wikipedia_title": "Eyes of the Rainbow",
+    "description": "Assata Shakur shares exile life and lessons on resistance.",
+    "image_url": "https://image.tmdb.org/t/p/w342/g0zYY5wcptDNPzY8g3GEfjwarp6.jpg",
+    "image_file": "Eyes_of_the_Rainbow_(1997).jpg"
+  },
+  {
+    "id": "Marxist Poetry: The Making of The Battle of Algiers",
+    "year": "",
+    "id_with_year": "Marxist Poetry: The Making of The Battle of Algiers",
+    "url": "https://en.wikipedia.org/wiki/Marxist_Poetry:_The_Making_of_The_Battle_of_Algiers",
+    "wikipedia_title": "Marxist Poetry: The Making of The Battle of Algiers",
+    "description": "Behind‑the‑scenes documentary on Gillo Pontecorvo’s revolutionary masterpiece.",
+    "image_url": "https://image.tmdb.org/t/p/w342/6gHpQ8bRvcgMLb5566aLM86Ttbk.jpg",
+    "image_file": "Marxist_Poetry_The_Making_of_The_Battle_of_Algiers.jpg"
+  },
+  {
+    "id": "Riso amaro",
+    "year": "1949",
+    "id_with_year": "Riso amaro (1949)",
+    "url": "https://en.wikipedia.org/wiki/Bitter_Rice",
+    "wikipedia_title": "Bitter Rice",
+    "description": "Neorealist drama about rice workers caught in crime and passion.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/9/9d/Movies-Riso_Amaro.jpg",
+    "image_file": "Riso_amaro_(1949).jpg"
+  },
+  {
+    "id": "The Red Detachment of Women",
+    "year": "1964",
+    "id_with_year": "The Red Detachment of Women (1964)",
+    "url": "https://en.wikipedia.org/wiki/The_Red_Detachment_of_Women_(film)",
+    "wikipedia_title": "Red Detachment of Women",
+    "description": "Ballet adaptation of Chinese communist women soldiers’ heroic exploits.",
+    "image_url": "",
+    "image_file": ""
+  },
+  {
+    "id": "Black and Cuba",
+    "year": "",
+    "id_with_year": "Black and Cuba",
+    "url": "https://en.wikipedia.org/wiki/Black_and_Cuba",
+    "wikipedia_title": "Black and Cuba",
+    "description": "Students travel to Cuba exploring race and socialist revolution’s legacy.",
+    "image_url": "https://image.tmdb.org/t/p/w342/yjBrZoB4x2yFTV5jXoPGvC49rGV.jpg",
+    "image_file": "Black_and_Cuba.jpg"
+  },
+  {
+    "id": "Poble rebel",
+    "year": "",
+    "id_with_year": "Poble rebel",
+    "url": "https://en.wikipedia.org/wiki/Poble_rebel",
+    "wikipedia_title": "Poble rebel",
+    "description": "Documentary highlighting Catalan independence movement’s cultural roots.",
+    "image_url": "https://image.tmdb.org/t/p/w342/pkfI9V5ldQkrUvAlLg6NEn1cTJ6.jpg",
+    "image_file": "Poble_rebel.jpg"
+  },
+  {
+    "id": "Profit Motive and the Whispering Wind",
+    "year": "",
+    "id_with_year": "Profit Motive and the Whispering Wind",
+    "url": "https://en.wikipedia.org/wiki/Profit_Motive_and_the_Whispering_Wind",
+    "wikipedia_title": "John Gianvito",
+    "description": "Experimental film visits graves of U.S. radicals and reformers.",
+    "image_url": "https://image.tmdb.org/t/p/w342/jqIomfp67teUzjQYRb4yLmvIkDI.jpg",
+    "image_file": "Profit_Motive_and_the_Whispering_Wind.jpg"
+  },
+  {
+    "id": "Jamila, the Algerian",
+    "year": "1958",
+    "id_with_year": "Jamila, the Algerian (1958)",
+    "url": "https://en.wikipedia.org/wiki/Jamila,_the_Algerian",
+    "wikipedia_title": "Jamila, the Algerian",
+    "description": "Biographical drama about Algerian independence fighter Jamila Bouhired.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/2/24/Jamila%2C_the_Algerian_movie_poster.jpg",
+    "image_file": "Jamila_the_Algerian_(1958).jpg"
+  },
+  {
+    "id": "Человек с киноаппаратом",
+    "year": "1929",
+    "id_with_year": "Человек с киноаппаратом (1929)",
+    "url": "https://en.wikipedia.org/wiki/Man_with_a_Movie_Camera",
+    "wikipedia_title": "Man with a Movie Camera",
+    "description": "City symphony capturing everyday Soviet life with groundbreaking techniques.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Man_with_a_movie_camera_1929_2.png",
+    "image_file": "Человек_с_киноаппаратом_(1929).png"
+  },
+  {
+    "id": "A Corner in Wheat",
+    "year": "1909",
+    "id_with_year": "A Corner in Wheat (1909)",
+    "url": "https://en.wikipedia.org/wiki/A_Corner_in_Wheat",
+    "wikipedia_title": "A Corner in Wheat",
+    "description": "D.W. Griffith short criticises monopolies by intercutting rich and poor.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/A_Corner_in_Wheat.jpg",
+    "image_file": "A_Corner_in_Wheat_(1909).jpg"
+  },
+  {
+    "id": "Старое и новое",
+    "year": "1929",
+    "id_with_year": "Старое и новое (1929)",
+    "url": "https://en.wikipedia.org/wiki/The_General_Line",
+    "wikipedia_title": "The General Line",
+    "description": "Eisenstein depicts collectivisation’s effects on Russian peasantry.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/7/78/The_General_Line.jpg",
+    "image_file": "Старое_и_новое_(1929).jpg"
+  },
+  {
+    "id": "Jenin, Jenin",
+    "year": "2002",
+    "id_with_year": "Jenin, Jenin (2002)",
+    "url": "https://en.wikipedia.org/wiki/Jenin,_Jenin",
+    "wikipedia_title": "Jenin, Jenin",
+    "description": "Controversial film voices Palestinian testimonies from Jenin camp battle.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/7/76/Jenin_jenin.jpg",
+    "image_file": "Jenin_Jenin_(2002).jpg"
+  },
+  {
+    "id": "The Motorcycle Diaries",
+    "year": "2004",
+    "id_with_year": "The Motorcycle Diaries (2004)",
+    "url": "https://en.wikipedia.org/wiki/The_Motorcycle_Diaries_(film)",
+    "wikipedia_title": "The Motorcycle Diaries",
+    "description": "Che Guevara’s youthful travels spark awakening to Latin American inequality.",
+    "image_url": "",
+    "image_file": ""
+  },
+  {
+    "id": "The Brickmakers",
+    "year": "1972",
+    "id_with_year": "The Brickmakers (1972)",
+    "url": "https://en.wikipedia.org/wiki/The_Brickmakers",
+    "wikipedia_title": "The Brickmakers",
+    "description": "Colombian workers endure poverty making bricks in rural society.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/c/c4/Chiracles_%281972%29.png",
+    "image_file": "The_Brickmakers_(1972).png"
+  },
+  {
+    "id": "La batalla de Chile",
+    "year": "1975",
+    "id_with_year": "La batalla de Chile (1975)",
+    "url": "https://en.wikipedia.org/wiki/The_Battle_of_Chile",
+    "wikipedia_title": "The Battle of Chile",
+    "description": "Documentary trilogy chronicles downfall of Chilean president Allende.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/6/69/The_Battle_of_Chile.png",
+    "image_file": "La_batalla_de_Chile_(1975).png"
+  },
+  {
+    "id": "City Girl",
+    "year": "",
+    "id_with_year": "City Girl",
+    "url": "https://en.wikipedia.org/wiki/City_Girl_(1930_film)",
+    "wikipedia_title": "City Girl",
+    "description": "Farm girl and Chicago man navigate love amid rural hardships.",
+    "image_url": "https://image.tmdb.org/t/p/w342/2B2jJY32MPthYqmR8REC2iLc9uR.jpg",
+    "image_file": "City_Girl.jpg"
+  },
+  {
+    "id": "A Fuga",
+    "year": "1978",
+    "id_with_year": "A Fuga (1978)",
+    "url": "https://www.imdb.com/title/tt0074556/",
+    "wikipedia_title": "",
+    "description": "Portuguese drama about prison escape and social tensions under dictatorship.",
+    "image_url": "https://image.tmdb.org/t/p/w342/eCCofTI6btEwy38vfnP8k3vQUa8.jpg",
+    "image_file": "A_Fuga.jpg"
+  },
+  {
+    "id": "The Darty Report",
+    "year": "",
+    "id_with_year": "The Darty Report",
+    "url": "https://en.wikipedia.org/wiki/The_Darty_Report",
+    "wikipedia_title": "The Darty Report",
+    "description": "Satire or documentary exploring consumer culture and corporate excesses.",
+    "image_url": "https://image.tmdb.org/t/p/w342/e8kQ2zDXGr0G7BZnvTW4OZaQ7wv.jpg",
+    "image_file": "The_Darty_Report.jpg"
+  },
+  {
+    "id": "The Third Part of the Night",
+    "year": "1971",
+    "id_with_year": "The Third Part of the Night (1971)",
+    "url": "https://en.wikipedia.org/wiki/The_Third_Part_of_the_Night",
+    "wikipedia_title": "The Third Part of the Night",
+    "description": "Surreal Polish thriller blends apocalypse, plague and resistance narrative.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/4/4c/1971_film_The_Third_Part_of_the_Night_directed_by_Andrzej_Zulawski.jpeg",
+    "image_file": "The_Third_Part_of_the_Night_(1971).jpg"
+  },
+  {
+    "id": "La Planète sauvage",
+    "year": "1973",
+    "id_with_year": "La Planète sauvage (1973)",
+    "url": "https://en.wikipedia.org/wiki/Fantastic_Planet",
+    "wikipedia_title": "Fantastic Planet",
+    "description": "Animated allegory of humans enslaved by giants on alien world.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/1/12/Fantastic_Planet_film_poster.jpg",
+    "image_file": "La_Planete_sauvage_(1973).jpg"
+  },
+  {
+    "id": "Fresa y chocolate",
+    "year": "1993",
+    "id_with_year": "Fresa y chocolate (1993)",
+    "url": "https://en.wikipedia.org/wiki/Strawberry_and_Chocolate",
+    "wikipedia_title": "Strawberry and Chocolate",
+    "description": "Havana friendship challenges prejudice between gay intellectual and conservative.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/d/d8/Fresa_y_Chocolate_%28US_cover%29.jpg",
+    "image_file": "Fresa_y_chocolate_(1993).jpg"
+  },
+  {
+    "id": "Sambizanga",
+    "year": "1972",
+    "id_with_year": "Sambizanga (1972)",
+    "url": "https://en.wikipedia.org/wiki/Sambizanga_(film)",
+    "wikipedia_title": "Sambizanga",
+    "description": "Angolan woman searches for husband arrested by Portuguese colonial forces.",
+    "image_url": "https://image.tmdb.org/t/p/w342/isnDnTWjOE9EJqsKXvCwZQrIkeE.jpg",
+    "image_file": "Sambizanga.jpg"
+  },
+  {
+    "id": "79 Springs",
+    "year": "1969",
+    "id_with_year": "79 Springs (1969)",
+    "url": "https://www.imdb.com/title/tt0149565/",
+    "wikipedia_title": "",
+    "description": "Chronicles life and revolutionary struggles of Vietnamese leader Ho Chi Minh.",
+    "image_url": "https://image.tmdb.org/t/p/w342/ylEs8xYFBW6NkDvkrC8NA9BD1dd.jpg",
+    "image_file": "79_Springs.jpg"
+  },
+  {
+    "id": "Cecilia",
+    "year": "1982",
+    "id_with_year": "Cecilia (1982)",
+    "url": "https://en.wikipedia.org/wiki/Cecilia_(1982_film)",
+    "wikipedia_title": "Cecilia (disambiguation)",
+    "description": "Cuban drama adapts 19th‑century novel exploring race and colonial oppression.",
+    "image_url": "https://image.tmdb.org/t/p/w342/hrwva7qemUt9v9w9502aVHaiOJh.jpg",
+    "image_file": "Cecilia.jpg"
+  },
+  {
+    "id": "Lucía",
+    "year": "1968",
+    "id_with_year": "Lucía (1968)",
+    "url": "https://en.wikipedia.org/wiki/Luc%C3%ADa",
+    "wikipedia_title": "Luc%C3%ADa",
+    "description": "Three Cuban women from different eras confront political upheaval.",
+    "image_url": "https://image.tmdb.org/t/p/w342/1n5zblUmtynJjoBdeVmSNpRNT7w.jpg",
+    "image_file": "Lucia.jpg"
+  },
+  {
+    "id": "Escape from Segovia",
+    "year": "1981",
+    "id_with_year": "Escape from Segovia (1981)",
+    "url": "https://en.wikipedia.org/wiki/Escape_from_Segovia",
+    "wikipedia_title": "Escape from Segovia",
+    "description": "Basque prisoners’ daring 1976 escape from Spanish prison told dramatically.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/6/61/Escape_from_Segovia.jpg",
+    "image_file": "Escape_from_Segovia_(1981).jpg"
+  },
+  {
+    "id": "The Forgotten War",
+    "year": "",
+    "id_with_year": "The Forgotten War",
+    "url": "https://en.wikipedia.org/wiki/The_Forgotten_War_(film)",
+    "wikipedia_title": "The Forgotten War (film)",
+    "description": "Documentary revisiting overlooked conflict and its lasting human toll.",
+    "image_url": "https://image.tmdb.org/t/p/w342/8hEJntWe7ETwj3gb683DllUPws6.jpg",
+    "image_file": "The_Forgotten_War.jpg"
+  },
+  {
+    "id": "The Atomic Café",
+    "year": "1982",
+    "id_with_year": "The Atomic Café (1982)",
+    "url": "https://en.wikipedia.org/wiki/The_Atomic_Caf%C3%A9",
+    "wikipedia_title": "The Atomic Cafe",
+    "description": "Compilation film satirises U.S. Cold War propaganda about nuclear safety.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/4/4b/The-atomic-cafe-movie-Poster.jpg",
+    "image_file": "The_Atomic_Cafe_(1982).jpg"
+  },
+  {
+    "id": "A Bug’s Life",
+    "year": "1998",
+    "id_with_year": "A Bug’s Life (1998)",
+    "url": "https://en.wikipedia.org/wiki/A_Bug%27s_Life",
+    "wikipedia_title": "A Bug's Life",
+    "description": "Misfit ant recruits circus bugs to defend colony from grasshoppers.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/c/cc/A_Bug%27s_Life.jpg",
+    "image_file": "A_Bugs_Life_(1998).jpg"
+  },
+  {
+    "id": "The Third Generation",
+    "year": "",
+    "id_with_year": "The Third Generation",
+    "url": "https://en.wikipedia.org/wiki/The_Third_Generation_(film)",
+    "wikipedia_title": "The Third Generation (film)",
+    "description": "German thriller about terrorists manipulated by intelligence agencies.",
+    "image_url": "https://image.tmdb.org/t/p/w342/i83LSPgoioCuywFQmDrAyoTVUFq.jpg",
+    "image_file": "The_Third_Generation.jpg"
+  },
+  {
+    "id": "¡Las Sandinistas!",
+    "year": "2018",
+    "id_with_year": "¡Las Sandinistas! (2018)",
+    "url": "https://en.wikipedia.org/wiki/%C2%A1Las_Sandinistas!",
+    "wikipedia_title": "¡Las Sandinistas!",
+    "description": "Celebrates Nicaraguan women who fought in the Sandinista revolution.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Jenny_Murray_at_the_Cardozo_Education_Campus%2C_Washington%2C_D.C.%2C_2019.jpg",
+    "image_file": "Las_Sandinistas_(2018).jpg"
+  },
+  {
+    "id": "Concerning Violence",
+    "year": "2014",
+    "id_with_year": "Concerning Violence (2014)",
+    "url": "https://en.wikipedia.org/wiki/Concerning_Violence",
+    "wikipedia_title": "Concerning Violence",
+    "description": "Göran Olsson pairs Fanon’s words with African liberation struggle footage.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/1/1b/CV_film_Poster.jpg",
+    "image_file": "Concerning_Violence_(2014).jpg"
+  },
+  {
+    "id": "They Fought for Their Motherland",
+    "year": "",
+    "id_with_year": "They Fought for Their Motherland",
+    "url": "https://en.wikipedia.org/wiki/They_Fought_for_Their_Motherland",
+    "wikipedia_title": "They Fought for Their Motherland",
+    "description": "Soviet soldiers defend Stalingrad with sacrifice and solidarity.",
+    "image_url": "https://image.tmdb.org/t/p/w342/6TI2mup2pB37qbo5aa75FI84h3E.jpg",
+    "image_file": "They_Fought_for_Their_Motherland.jpg"
+  },
+  {
+    "id": "Le grain et l’ivraie",
+    "year": "2005",
+    "id_with_year": "Le grain et l’ivraie (2005)",
+    "url": "https://en.wikipedia.org/wiki/Grain_in_Ear",
+    "wikipedia_title": "Grain in Ear",
+    "description": "Chinese drama follows Korean corn seller facing personal turmoil.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/0/0c/Grain_in_Ear.jpg",
+    "image_file": "Le_grain_et_livraie_(2005).jpg"
+  },
+  {
+    "id": "South",
+    "year": "1999",
+    "id_with_year": "South (1999)",
+    "url": "https://en.wikipedia.org/wiki/South_(1999_film)",
+    "wikipedia_title": "Sud (1999 film)",
+    "description": "Chantal Akerman reflects on racism and police violence in Texas.",
+    "image_url": "https://image.tmdb.org/t/p/w342/xQSChz9j9NZbUKUPiLoSwmKUMoD.jpg",
+    "image_file": "South_(1999).jpg"
+  },
+  {
+    "id": "Deus Pátria Autoridade",
+    "year": "",
+    "id_with_year": "Deus Pátria Autoridade",
+    "url": "https://en.wikipedia.org/wiki/Deus_P%C3%A1tria_Autoridade",
+    "wikipedia_title": "Deus P%C3%A1tria Autoridade",
+    "description": "Investigative piece on Portugal’s authoritarian Estado Novo regime.",
+    "image_url": "https://image.tmdb.org/t/p/w342/oov3zIJIPnSZpVXDf2Ys1Q4RJqo.jpg",
+    "image_file": "Deus_Patria_Autoridade.jpg"
+  },
+  {
+    "id": "기생충",
+    "year": "",
+    "id_with_year": "기생충",
+    "url": "https://en.wikipedia.org/wiki/Parasite_(film)",
+    "wikipedia_title": "Parasite (disambiguation)",
+    "description": "Darkly comic class satire where poor family infiltrates wealthy household.",
+    "image_url": "https://image.tmdb.org/t/p/w342/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg",
+    "image_file": "기생충.jpg"
+  },
+  {
+    "id": "万引き家族",
+    "year": "",
+    "id_with_year": "万引き家族",
+    "url": "https://en.wikipedia.org/wiki/Shoplifters_(film)",
+    "wikipedia_title": "Shoplifting (disambiguation)",
+    "description": "Japanese drama about chosen family surviving through petty crime.",
+    "image_url": "https://image.tmdb.org/t/p/w342/4nfRUOv3LX5zLn98WS1WqVBk9E9.jpg",
+    "image_file": "万引き家族.jpg"
+  },
+  {
+    "id": "Trop tôt, trop tard",
+    "year": "",
+    "id_with_year": "Trop tôt, trop tard",
+    "url": "https://en.wikipedia.org/wiki/Too_Early_/_Too_Late",
+    "wikipedia_title": "Too Late",
+    "description": "Essay film on Egyptian peasants and French revolutionary sites.",
+    "image_url": "https://image.tmdb.org/t/p/w342/svhscgSLqNQtFFZoRlS2KiAoVtG.jpg",
+    "image_file": "Trop_tot_trop_tard.jpg"
+  },
+  {
+    "id": "Punishment Park",
+    "year": "1971",
+    "id_with_year": "Punishment Park (1971)",
+    "url": "https://en.wikipedia.org/wiki/Punishment_Park",
+    "wikipedia_title": "Punishment Park",
+    "description": "Dystopian mockumentary sends dissidents to desert survival games.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/5/57/Punishment_park.jpg",
+    "image_file": "Punishment_Park_(1971).jpg"
+  },
+  {
+    "id": "L’heure de la libération a sonné",
+    "year": "1974",
+    "id_with_year": "L’heure de la libération a sonné (1974)",
+    "url": "https://en.wikipedia.org/wiki/The_Hour_of_Liberation_Has_Arrived",
+    "wikipedia_title": "The Hour of Liberation Has Arrived",
+    "description": "Documents Dhufar liberation movement against Oman’s imperial rule.",
+    "image_url": "https://image.tmdb.org/t/p/w342/pFyrDYsaiMysqgQq5FwS8qK2Lem.jpg",
+    "image_file": "Lheure_de_la_liberation_a_sonne_(1974).jpg"
+  },
+  {
+    "id": "Tout va bien",
+    "year": "1972",
+    "id_with_year": "Tout va bien (1972)",
+    "url": "https://en.wikipedia.org/wiki/Tout_Va_Bien",
+    "wikipedia_title": "Tout Va Bien",
+    "description": "Couple discovers factory strike reveals class conflict and consumerism.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/7/79/Toutvabien.jpg",
+    "image_file": "Tout_va_bien_(1972).jpg"
+  },
+  {
+    "id": "Летят журавли",
+    "year": "1957",
+    "id_with_year": "Летят журавли (1957)",
+    "url": "https://en.wikipedia.org/wiki/The_Cranes_Are_Flying",
+    "wikipedia_title": "The Cranes Are Flying",
+    "description": "Post‑war lovers torn apart by World War II service.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/4/4d/Letyat_Zhuravli.jpg",
+    "image_file": "Летят_журавли_(1957).jpg"
+  },
+  {
+    "id": "Under the Open Sky",
+    "year": "2020",
+    "id_with_year": "Under the Open Sky (2020)",
+    "url": "https://en.wikipedia.org/wiki/Under_the_Open_Sky",
+    "wikipedia_title": "Under the Open Sky",
+    "description": "Ex‑yakuza struggles to readjust to society after prison.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/c/c0/UnderTheOpenSky.jpg",
+    "image_file": "Under_the_Open_Sky_(2020).jpg"
+  },
+  {
+    "id": "Scenes from the Class Struggle in Portugal",
+    "year": "",
+    "id_with_year": "Scenes from the Class Struggle in Portugal",
+    "url": "https://en.wikipedia.org/wiki/Scenes_from_the_Class_Struggle_in_Portugal",
+    "wikipedia_title": "Scenes from the Class Struggle in Portugal",
+    "description": "Workers and peasants discuss revolution in post‑Carnation Portugal.",
+    "image_url": "https://image.tmdb.org/t/p/w342/n0992Ue8G4lqwnq8duGA9vlv7bh.jpg",
+    "image_file": "Scenes_from_the_Class_Struggle_in_Portugal.jpg"
+  },
+  {
+    "id": "长津湖",
+    "year": "2021",
+    "id_with_year": "长津湖 (2021)",
+    "url": "https://en.wikipedia.org/wiki/The_Battle_at_Lake_Changjin",
+    "wikipedia_title": "The Battle at Lake Changjin",
+    "description": "Epic war film portrays brutal Battle of Chosin Reservoir in Korea.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/4/4d/Official_movie_poster_to_The_Battle_at_Lake_Changjin.png",
+    "image_file": "长津湖_(2021).png"
+  },
+  {
+    "id": "ハウルの動く城",
+    "year": "2004",
+    "id_with_year": "ハウルの動く城 (2004)",
+    "url": "https://en.wikipedia.org/wiki/Howl%27s_Moving_Castle_(film)",
+    "wikipedia_title": "Howl's Moving Castle (film)",
+    "description": "Young woman cursed with old body befriends eccentric wizard Howl.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/a/a0/Howls-moving-castleposter.jpg",
+    "image_file": "ハウルの動く城_(2004).jpg"
+  },
+  {
+    "id": "The Edge of Democracy",
+    "year": "2019",
+    "id_with_year": "The Edge of Democracy (2019)",
+    "url": "https://en.wikipedia.org/wiki/The_Edge_of_Democracy",
+    "wikipedia_title": "The Edge of Democracy",
+    "description": "Brazilian documentarian reflects on impeachment of Dilma Rousseff and democracy.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/a/a6/The_Edge_of_Democracy_poster.png",
+    "image_file": "The_Edge_of_Democracy_(2019).png"
+  },
+  {
+    "id": "¡Fidel!",
+    "year": "2002",
+    "id_with_year": "¡Fidel! (2002)",
+    "url": "https://en.wikipedia.org/wiki/Fidel_(2002_film)",
+    "wikipedia_title": "Fidel",
+    "description": "Explores life of Fidel Castro and Cuban revolutionary history.",
+    "image_url": "",
+    "image_file": ""
+  },
+  {
+    "id": "Paradise Now",
+    "year": "2005",
+    "id_with_year": "Paradise Now (2005)",
+    "url": "https://en.wikipedia.org/wiki/Paradise_Now",
+    "wikipedia_title": "Paradise Now",
+    "description": "Two Palestinian friends prepare for suicide bombing in Tel Aviv.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/f/fa/Paradisenowfilm.jpg",
+    "image_file": "Paradise_Now_(2005).jpg"
+  },
+  {
+    "id": "The Ruling Class",
+    "year": "1972",
+    "id_with_year": "The Ruling Class (1972)",
+    "url": "https://en.wikipedia.org/wiki/The_Ruling_Class_(film)",
+    "wikipedia_title": "The Ruling Class (film)",
+    "description": "British earl who believes he’s Jesus inherits family title.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/2/29/1972_Peter_Medak_film_The_Ruling_Class_distribution_poster_U.S.jpg",
+    "image_file": "The_Ruling_Class_(1972).jpg"
+  },
+  {
+    "id": "Suite Habana",
+    "year": "2003",
+    "id_with_year": "Suite Habana (2003)",
+    "url": "https://en.wikipedia.org/wiki/Suite_Habana",
+    "wikipedia_title": "Suite Habana",
+    "description": "Portraits of Havana residents going about daily lives without dialogue.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/9/99/Suite_.jpg",
+    "image_file": "Suite_Habana_(2003).jpg"
+  },
+  {
+    "id": "The Navigators",
+    "year": "2001",
+    "id_with_year": "The Navigators (2001)",
+    "url": "https://en.wikipedia.org/wiki/The_Navigators_(film)",
+    "wikipedia_title": "The Navigators (film)",
+    "description": "Railway workers face job losses under 1990s British privatisation.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/a/ad/The_Navigators_%28french%29_DVD_Cover.png",
+    "image_file": "The_Navigators_(2001).png"
+  },
+  {
+    "id": "المخدوعون",
+    "year": "1973",
+    "id_with_year": "المخدوعون (1973)",
+    "url": "https://en.wikipedia.org/wiki/The_Dupes",
+    "wikipedia_title": "The Dupes",
+    "description": "Syrian adaptation of Ghassan Kanafani novel about dispossessed Palestinians.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/a/a6/The_Dupes_%28film_poster%29.jpg",
+    "image_file": "المخدوعون_(1973).jpg"
+  },
+  {
+    "id": "We Still Kill the Old Way",
+    "year": "",
+    "id_with_year": "We Still Kill the Old Way",
+    "url": "https://en.wikipedia.org/wiki/We_Still_Kill_the_Old_Way",
+    "wikipedia_title": "We Still Kill the Old Way",
+    "description": "Mafia satire explores corruption and hypocrisy in Italian society.",
+    "image_url": "https://image.tmdb.org/t/p/w342/A8ezFMixyVkxMPptmd3dqiZUp2W.jpg",
+    "image_file": "We_Still_Kill_the_Old_Way.jpg"
+  },
+  {
+    "id": "长津湖之水门桥",
+    "year": "2022",
+    "id_with_year": "长津湖之水门桥 (2022)",
+    "url": "https://en.wikipedia.org/wiki/The_Battle_at_Lake_Changjin_II",
+    "wikipedia_title": "The Battle at Lake Changjin II",
+    "description": "Chinese sequel recounts Battle of Funchilin Pass during Korean War.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/2/21/The_Battle_at_Lake_Changjin_II_poster.jpg",
+    "image_file": "长津湖之水门桥_(2022).jpg"
+  },
+  {
+    "id": "Hello Cubans",
+    "year": "",
+    "id_with_year": "Hello Cubans",
+    "url": "https://en.wikipedia.org/wiki/Hello_Cubans",
+    "wikipedia_title": "Hello Cubans",
+    "description": "Agnès Varda interviews Cuban exiles about revolution and culture.",
+    "image_url": "https://image.tmdb.org/t/p/w342/lsFFLB1dPQVyGRAiaFTPPkynDoE.jpg",
+    "image_file": "Hello_Cubans.jpg"
+  },
+  {
+    "id": "Letter to Brezhnev",
+    "year": "1985",
+    "id_with_year": "Letter to Brezhnev (1985)",
+    "url": "https://en.wikipedia.org/wiki/Letter_to_Brezhnev",
+    "wikipedia_title": "Letter to Brezhnev",
+    "description": "Liverpool love story between local woman and visiting Soviet sailor.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/2/27/Lettertobrezhnev1985movieposter.jpg",
+    "image_file": "Letter_to_Brezhnev_(1985).jpg"
+  },
+  {
+    "id": "Anniversary of the Revolution",
+    "year": "",
+    "id_with_year": "Anniversary of the Revolution",
+    "url": "https://en.wikipedia.org/wiki/Anniversary_of_the_Revolution",
+    "wikipedia_title": "Anniversary of the Revolution",
+    "description": "Soviet montage commemorates Bolshevik Revolution with archival footage.",
+    "image_url": "https://image.tmdb.org/t/p/w342/7yE1IITKDD7c0A0PJ6LKATzq4Pf.jpg",
+    "image_file": "Anniversary_of_the_Revolution.jpg"
+  },
+  {
+    "id": "The Necessary War",
+    "year": "",
+    "id_with_year": "The Necessary War",
+    "url": "https://en.wikipedia.org/wiki/The_Necessary_War",
+    "wikipedia_title": "The Necessary War",
+    "description": "Explores why Allies fought World War II and its necessity.",
+    "image_url": "https://image.tmdb.org/t/p/w342/aMZIgVJe0Rh9yU0f4fn5r1hgxQN.jpg",
+    "image_file": "The_Necessary_War.jpg"
+  },
+  {
+    "id": "Algérie en flammes",
+    "year": "",
+    "id_with_year": "Algérie en flammes",
+    "url": "https://en.wikipedia.org/wiki/Algeria_in_Flames",
+    "wikipedia_title": "Algeria in Flames",
+    "description": "Documentary capturing Algerian War with raw frontline footage.",
+    "image_url": "https://image.tmdb.org/t/p/w342/vo4od9ntoAQMbpdunrXoSojYbsJ.jpg",
+    "image_file": "Algerie_en_flammes.jpg"
+  },
+  {
+    "id": "Lumumba",
+    "year": "2000",
+    "id_with_year": "Lumumba (2000)",
+    "url": "https://en.wikipedia.org/wiki/Lumumba_(film)",
+    "wikipedia_title": "Lumumba (film)",
+    "description": "Biopic about Congo’s first prime minister and independence struggle.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/a/a5/Lumumba2000.jpg",
+    "image_file": "Lumumba_(2000).jpg"
+  },
+  {
+    "id": "Loin du Vietnam",
+    "year": "1967",
+    "id_with_year": "Loin du Vietnam (1967)",
+    "url": "https://en.wikipedia.org/wiki/Far_from_Vietnam",
+    "wikipedia_title": "Far from Vietnam",
+    "description": "Seven filmmakers protest Vietnam War through documentary essays.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/f/ff/Far_from_Vietnam.jpg",
+    "image_file": "Loin_du_Vietnam_(1967).jpg"
+  },
+  {
+    "id": "Five Days, Five Nights",
+    "year": "",
+    "id_with_year": "Five Days, Five Nights",
+    "url": "https://en.wikipedia.org/wiki/Five_Days,_Five_Nights",
+    "wikipedia_title": "Five Days, Five Nights",
+    "description": "Docudrama recounts Portuguese artist’s escape during Salazar dictatorship.",
+    "image_url": "https://image.tmdb.org/t/p/w342/mQPMIXiPbhLYi3yYcczrW50ohlq.jpg",
+    "image_file": "Five_Days_Five_Nights.jpg"
+  },
+  {
+    "id": "When They See Us",
+    "year": "2019",
+    "id_with_year": "When They See Us (2019)",
+    "url": "https://en.wikipedia.org/wiki/When_They_See_Us",
+    "wikipedia_title": "When They See Us",
+    "description": "Dramatisation of Central Park Five’s wrongful convictions and exoneration.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/e/e2/Title_Screen_for_When_They_See_Us.png",
+    "image_file": "When_They_See_Us_(2019).png"
+  },
+  {
+    "id": "Sorry to Bother You",
+    "year": "2018",
+    "id_with_year": "Sorry to Bother You (2018)",
+    "url": "https://en.wikipedia.org/wiki/Sorry_to_Bother_You",
+    "wikipedia_title": "Sorry to Bother You",
+    "description": "Telemarketer discovers secret of corporately exploited workforce rebellion.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/c/c7/Sorry_to_Bother_You.png",
+    "image_file": "Sorry_to_Bother_You_(2018).png"
+  },
+  {
+    "id": "Nicht der Homosexuelle ist pervers, sondern die Situation, in der er lebt",
+    "year": "1971",
+    "id_with_year": "Nicht der Homosexuelle ist pervers, sondern die Situation, in der er lebt (1971)",
+    "url": "https://en.wikipedia.org/wiki/It_Is_Not_the_Homosexual_Who_Is_Perverse,_But_the_Society_in_Which_He_Lives",
+    "wikipedia_title": "It Is Not the Homosexual Who Is Perverse, But the Society in Which He Lives",
+    "description": "Landmark German film challenges gay stereotypes and encourages liberation.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/0/09/It_Is_Not_the_Homosexual_Who_Is_Perverse%2C_But_the_Society_in_Which_He_Lives.jpg",
+    "image_file": "Nicht_der_Homosexuelle_ist_pervers_sondern_die_Situation_in_der_er_lebt_(1971).jpg"
+  },
+  {
+    "id": "Crimson Gold",
+    "year": "2003",
+    "id_with_year": "Crimson Gold (2003)",
+    "url": "https://en.wikipedia.org/wiki/Crimson_Gold",
+    "wikipedia_title": "Crimson Gold",
+    "description": "Iranian pizza deliveryman turned thief critiques class injustice in Tehran.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/f/f5/Crimsongold.jpg",
+    "image_file": "Crimson_Gold_(2003).jpg"
+  },
+  {
+    "id": "Il compagno Don Camillo",
+    "year": "",
+    "id_with_year": "Il compagno Don Camillo",
+    "url": "https://en.wikipedia.org/wiki/The_Organizer_(1963_film)",
+    "wikipedia_title": "The Organizer (1963 film)",
+    "description": "Comedic tale of communist priest Don Camillo’s misadventures.",
+    "image_url": "https://image.tmdb.org/t/p/w342/rBNEwPdjy8Ph8MDdYvaxlT1mlIN.jpg",
+    "image_file": "Il_compagno_Don_Camillo.jpg"
+  },
+  {
+    "id": "A World Not Ours",
+    "year": "",
+    "id_with_year": "A World Not Ours",
+    "url": "https://en.wikipedia.org/wiki/A_World_Not_Ours",
+    "wikipedia_title": "A World Not Ours",
+    "description": "Memoir about Palestinian refugee family living in Lebanese camp.",
+    "image_url": "https://image.tmdb.org/t/p/w342/k8HkoWLXFdMBWUoV7dGi42oY74L.jpg",
+    "image_file": "A_World_Not_Ours.jpg"
+  },
+  {
+    "id": "Bread and Roses",
+    "year": "2000",
+    "id_with_year": "Bread and Roses (2000)",
+    "url": "https://en.wikipedia.org/wiki/Bread_and_Roses_(2000_film)",
+    "wikipedia_title": "Bread and Roses (2000 film)",
+    "description": "Los Angeles janitors unionise against exploitation to secure fair wages.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/e/e1/Bread_and_Roses_poster.jpg",
+    "image_file": "Bread_and_Roses_(2000).jpg"
+  },
+  {
+    "id": "Salvador Allende",
+    "year": "2004",
+    "id_with_year": "Salvador Allende (2004)",
+    "url": "https://en.wikipedia.org/wiki/Salvador_Allende_(film)",
+    "wikipedia_title": "Salvador Allende (film)",
+    "description": "Documentary chronicles life and death of Chilean president Allende.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/b/b9/Salvador_Allende_by_Patricio_Guzm%C3%A1n_film_poster.jpg",
+    "image_file": "Salvador_Allende_(2004).jpg"
+  },
+  {
+    "id": "Machuca",
+    "year": "2004",
+    "id_with_year": "Machuca (2004)",
+    "url": "https://en.wikipedia.org/wiki/Machuca",
+    "wikipedia_title": "Machuca",
+    "description": "Schoolboys from different backgrounds witness Chile’s 1973 coup unfolding.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/0/0b/Machuca_film_poster.jpg",
+    "image_file": "Machuca_(2004).jpg"
+  },
+  {
+    "id": "Ici et ailleurs",
+    "year": "1976",
+    "id_with_year": "Ici et ailleurs (1976)",
+    "url": "https://en.wikipedia.org/wiki/Here_and_Elsewhere",
+    "wikipedia_title": "Here and Elsewhere",
+    "description": "Essay film interweaves Palestinian struggle with French bourgeois life.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/2/2c/Ici-et-ailleurs.jpg",
+    "image_file": "Ici_et_ailleurs_(1976).jpg"
+  },
+  {
+    "id": "Can Dialectics Break Bricks?",
+    "year": "1973",
+    "id_with_year": "Can Dialectics Break Bricks? (1973)",
+    "url": "https://en.wikipedia.org/wiki/Can_Dialectics_Break_Bricks%3F",
+    "wikipedia_title": "Can Dialectics Break Bricks?",
+    "description": "Situationist détournement overdubs kung‑fu film with revolutionary dialogue.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/5/59/La_Dialectique_Peut-Elle_Casser_Des_Briques.jpg",
+    "image_file": "Can_Dialectics_Break_Bricks_(1973).jpg"
+  },
+  {
+    "id": "Let the Fire Burn",
+    "year": "2013",
+    "id_with_year": "Let the Fire Burn (2013)",
+    "url": "https://en.wikipedia.org/wiki/Let_the_Fire_Burn",
+    "wikipedia_title": "Let the Fire Burn",
+    "description": "Documentary reconstructs 1985 MOVE bombing through archival news footage.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/d/d2/Let_the_Fire_Burn_poster.jpg",
+    "image_file": "Let_the_Fire_Burn_(2013).jpg"
+  },
+  {
+    "id": "Getting to Know the Big Wide World",
+    "year": "",
+    "id_with_year": "Getting to Know the Big Wide World",
+    "url": "https://en.wikipedia.org/wiki/Getting_to_Know_the_Big_Wide_World",
+    "wikipedia_title": "Getting to Know the Big Wide World",
+    "description": "Soviet drama follows factory workers discovering love and world perspectives.",
+    "image_url": "https://image.tmdb.org/t/p/w342/vttxDyd9VD0YLEZbGCVh3IPF0TR.jpg",
+    "image_file": "Getting_to_Know_the_Big_Wide_World.jpg"
+  },
+  {
+    "id": "陽光燦爛的日子",
+    "year": "1994",
+    "id_with_year": "陽光燦爛的日子 (1994)",
+    "url": "https://en.wikipedia.org/wiki/In_the_Heat_of_the_Sun",
+    "wikipedia_title": "In the Heat of the Sun",
+    "description": "Beijing teenager reminisces about growing up during Cultural Revolution.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/3/31/Intheheatofthesun.jpg",
+    "image_file": "陽光燦爛的日子_(1994).jpg"
+  },
+  {
+    "id": "Merku Thodarchi Malai",
+    "year": "2018",
+    "id_with_year": "Merku Thodarchi Malai (2018)",
+    "url": "https://en.wikipedia.org/wiki/Merku_Thodarchi_Malai",
+    "wikipedia_title": "Merku Thodarchi Malai",
+    "description": "Indian labourer struggles for land rights against corporate exploitation.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/0/0e/Merku_Thodarchi_Malai.jpg",
+    "image_file": "Merku_Thodarchi_Malai_(2018).jpg"
+  },
+  {
+    "id": "It’s a Free World…",
+    "year": "2007",
+    "id_with_year": "It’s a Free World… (2007)",
+    "url": "https://en.wikipedia.org/wiki/It%27s_a_Free_World...",
+    "wikipedia_title": "It's a Free World...",
+    "description": "Recruiter exploits migrant workers while confronting ethics and capitalism.",
+    "image_url": "https://image.tmdb.org/t/p/w342/mf21jW15cjoe95yIW1DvlYUN4YO.jpg",
+    "image_file": "Its_a_Free_World..._(2007).jpg"
+  },
+  {
+    "id": "Voices",
+    "year": "",
+    "id_with_year": "Voices",
+    "url": "https://en.wikipedia.org/wiki/Voices_(1969_film)",
+    "wikipedia_title": "Voices (1969 film)",
+    "description": "Canadian film portrays mental health challenges within supportive community.",
+    "image_url": "https://image.tmdb.org/t/p/w342/b1JN88bCePUdp8u9QLZhH2vFhVR.jpg",
+    "image_file": "Voices.jpg"
+  },
+  {
+    "id": "Reboiras. Acción e corazón",
+    "year": "",
+    "id_with_year": "Reboiras. Acción e corazón",
+    "url": "https://en.wikipedia.org/wiki/Reboiras._Action_and_heart.",
+    "wikipedia_title": "Reboiras. Action and heart.",
+    "description": "Galician documentary about nationalist activist Moncho Reboiras’s life.",
+    "image_url": "https://image.tmdb.org/t/p/w342/ap8oSuz0Ov8fl4QVds3RlB9EGce.jpg",
+    "image_file": "Reboiras._Accion_e_corazon.jpg"
+  },
+  {
+    "id": "Sardar Udham",
+    "year": "2021",
+    "id_with_year": "Sardar Udham (2021)",
+    "url": "https://en.wikipedia.org/wiki/Sardar_Udham",
+    "wikipedia_title": "Sardar Udham",
+    "description": "Recounts Indian revolutionary Udham Singh’s assassination of Michael O’Dwyer.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/5/5b/Sardar_Udham_poster.jpg",
+    "image_file": "Sardar_Udham_(2021).jpg"
+  },
+  {
+    "id": "Marighella",
+    "year": "2019",
+    "id_with_year": "Marighella (2019)",
+    "url": "https://en.wikipedia.org/wiki/Marighella_(film)",
+    "wikipedia_title": "Marighella (film)",
+    "description": "Biopic of Brazilian guerrilla leader Carlos Marighella’s armed resistance.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/c/ca/Marighella_poster.jpg",
+    "image_file": "Marighella_(2019).jpg"
+  },
+  {
+    "id": "The Sixth Side of the Pentagon",
+    "year": "",
+    "id_with_year": "The Sixth Side of the Pentagon",
+    "url": "https://en.wikipedia.org/wiki/The_Sixth_Side_of_the_Pentagon",
+    "wikipedia_title": "The Sixth Side of the Pentagon",
+    "description": "Short film documents anti‑Vietnam War march encircling Pentagon.",
+    "image_url": "https://image.tmdb.org/t/p/w342/yQbV5oLuZhQszZX7hf7gpJZPlJK.jpg",
+    "image_file": "The_Sixth_Side_of_the_Pentagon.jpg"
+  },
+  {
+    "id": "The House I Live In",
+    "year": "2012",
+    "id_with_year": "The House I Live In (2012)",
+    "url": "https://en.wikipedia.org/wiki/The_House_I_Live_In_(2012_film)",
+    "wikipedia_title": "The House I Live In (2012 film)",
+    "description": "Examines U.S. War on Drugs’ impact on families and communities.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/8/87/TheHouseILiveIn_poster.jpg",
+    "image_file": "The_House_I_Live_In_(2012).jpg"
+  },
+  {
+    "id": "Pather Panchali",
+    "year": "1955",
+    "id_with_year": "Pather Panchali (1955)",
+    "url": "https://en.wikipedia.org/wiki/Pather_Panchali",
+    "wikipedia_title": "Pather Panchali",
+    "description": "Tender portrayal of impoverished Bengali family’s joys and sorrows.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/7/77/Pather_panchali_poster_in_color_1.jpg",
+    "image_file": "Pather_Panchali_(1955).jpg"
+  },
+  {
+    "id": "Klassenverhältnisse",
+    "year": "1984",
+    "id_with_year": "Klassenverhältnisse (1984)",
+    "url": "https://en.wikipedia.org/wiki/Class_Relations",
+    "wikipedia_title": "Klassenverhältnisse",
+    "description": "Kafka adaptation depicts bewildering bureaucratic world of immigrant worker.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/c/cf/Klassenverh%C3%A4ltnisse.jpeg",
+    "image_file": "Klassenverhaltnisse_(1984).jpg"
+  },
+  {
+    "id": "Germania anno zero",
+    "year": "1948",
+    "id_with_year": "Germania anno zero (1948)",
+    "url": "https://en.wikipedia.org/wiki/Germany,_Year_Zero",
+    "wikipedia_title": "Germany, Year Zero",
+    "description": "German boy wanders devastated Berlin confronting war’s moral collapse.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/3/3f/Germania%2C_anno_zero_poster.jpg",
+    "image_file": "Germania_anno_zero_(1948).jpg"
+  },
+  {
+    "id": "On vous parle du Brésil: Carlos Marighela",
+    "year": "1970",
+    "id_with_year": "On vous parle du Brésil: Carlos Marighela (1970)",
+    "url": "https://www.imdb.com/title/tt0065523/",
+    "wikipedia_title": "",
+    "description": "French short profiles Brazilian guerrilla leader Carlos Marighela.",
+    "image_url": "https://image.tmdb.org/t/p/w342/5rxETy4eYMXkMwqoF4IbIuZH6r4.jpg",
+    "image_file": "Report_on_Brazil_Carlos_Marighella.jpg"
+  },
+  {
+    "id": "La Noire de...",
+    "year": "1966",
+    "id_with_year": "La Noire de... (1966)",
+    "url": "https://en.wikipedia.org/wiki/Black_Girl_(1966_film)",
+    "wikipedia_title": "Black Girl (1966 film)",
+    "description": "Senegalese maid experiences racism while working for French couple.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/6/6b/La_noire_de%E2%80%A6_%281966%29.png",
+    "image_file": "La_Noire_de..._(1966).png"
+  },
+  {
+    "id": "Ici on noie les Algériens",
+    "year": "1961",
+    "id_with_year": "Ici on noie les Algériens (1961)",
+    "url": "https://www.imdb.com/title/tt2079514/",
+    "wikipedia_title": "",
+    "description": "Accounts French police massacre of Algerian protesters in 1961.",
+    "image_url": "https://image.tmdb.org/t/p/w342/hKGzTiScjljMsyuljjy5qvuto11.jpg",
+    "image_file": "Here_We_Drown_Algerians.jpg"
+  },
+  {
+    "id": "An Unreasonable Man",
+    "year": "2006",
+    "id_with_year": "An Unreasonable Man (2006)",
+    "url": "https://en.wikipedia.org/wiki/An_Unreasonable_Man",
+    "wikipedia_title": "An Unreasonable Man",
+    "description": "Portrait of consumer advocate Ralph Nader and his political campaigns.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/1/16/Unreasonable_man.jpg",
+    "image_file": "An_Unreasonable_Man_(2006).jpg"
+  },
+  {
+    "id": "The Coming War on China",
+    "year": "",
+    "id_with_year": "The Coming War on China",
+    "url": "https://www.filmaffinity.com/us/film112949.html",
+    "wikipedia_title": "film112949.html",
+    "description": "Journalist John Pilger warns about escalating tensions with China.",
+    "image_url": "https://image.tmdb.org/t/p/w342/i8dLrZv0jD1pdQMeb4pC2owtjZy.jpg",
+    "image_file": "The_Coming_War_on_China.jpg"
+  },
+  {
+    "id": "De cierta manera",
+    "year": "1978",
+    "id_with_year": "De cierta manera (1978)",
+    "url": "https://en.wikipedia.org/wiki/One_Way_or_Another_(film)",
+    "wikipedia_title": "One Way or Another",
+    "description": "Hybrid film explores class, race and gender in revolutionary Havana.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/5/55/Blondie_-_One_Way_Or_Another.jpg",
+    "image_file": "De_cierta_manera_(1978).jpg"
+  },
+  {
+    "id": "La faute à Fidel",
+    "year": "2006",
+    "id_with_year": "La faute à Fidel (2006)",
+    "url": "https://en.wikipedia.org/wiki/Blame_It_on_Fidel",
+    "wikipedia_title": "Blame It on Fidel",
+    "description": "Parisian girl’s worldview transforms as parents embrace radical politics.",
+    "image_url": "https://image.tmdb.org/t/p/w342/cMhgXisVDyoOGaXzFe0x1SAifF4.jpg",
+    "image_file": "La_faute_a_Fidel_.jpg"
+  },
+  {
+    "id": "Em bé Hà Nội",
+    "year": "",
+    "id_with_year": "Em bé Hà Nội",
+    "url": "https://en.wikipedia.org/wiki/The_Little_Girl_of_Hanoi",
+    "wikipedia_title": "The Little Girl of Hanoi",
+    "description": "Vietnamese girl searches for father during U.S. bombing of Hanoi.",
+    "image_url": "https://image.tmdb.org/t/p/w342/16jUJTtFHu6OCKioGdS5oJIllxx.jpg",
+    "image_file": "Em_be_Ha_Noi.jpg"
+  },
+  {
+    "id": "Kanaval: A People’s History of Haiti in Six Chapters",
+    "year": "2022",
+    "id_with_year": "Kanaval: A People’s History of Haiti in Six Chapters (2022)",
+    "url": "https://www.imdb.com/title/tt22044400/",
+    "wikipedia_title": "Kanaval: A People%27s History of Haiti in Six Chapters",
+    "description": "Chronicles Haitian carnival history and its sociopolitical significance.",
+    "image_url": "https://image.tmdb.org/t/p/w342/aeOUk3rkcLkSKnnva0dks8LvFCt.jpg",
+    "image_file": "Kanaval_A_Peoples_History_of_Haiti_in_Six_Chapters.jpg"
+  },
+  {
+    "id": "Восхождение",
+    "year": "1977",
+    "id_with_year": "Восхождение (1977)",
+    "url": "https://en.wikipedia.org/wiki/The_Ascent_(1977_film)",
+    "wikipedia_title": "The Ascent (1977 film)",
+    "description": "Two partisans face moral dilemmas during Nazi occupation of Belarus.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/a/a4/Ascent_poster.jpg",
+    "image_file": "Восхождение_(1977).jpg"
+  },
+  {
+    "id": "Teorema",
+    "year": "1968",
+    "id_with_year": "Teorema (1968)",
+    "url": "https://en.wikipedia.org/wiki/Teorema",
+    "wikipedia_title": "Teorema",
+    "description": "Mysterious visitor seduces each family member, sparking existential crises.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/d/d0/Teorema_film_Pier_Paolo_Pasolini_xlg.jpg",
+    "image_file": "Teorema_(1968).jpg"
+  },
+  {
+    "id": "The Abandoned Field: Free Fire Zone",
+    "year": "1979",
+    "id_with_year": "The Abandoned Field: Free Fire Zone (1979)",
+    "url": "https://en.wikipedia.org/wiki/The_Abandoned_Field:_Free_Fire_Zone",
+    "wikipedia_title": "The Abandoned Field: Free Fire Zone",
+    "description": "Vietnamese war film shows farmers caught between troops and planes.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/b/b1/The_Abandoned_Field-_Free_Fire_Zone_%28C%C3%A1nh_%C4%91%E1%BB%93ng_hoang%29.jpg",
+    "image_file": "The_Abandoned_Field_Free_Fire_Zone_(1979).jpg"
+  },
+  {
+    "id": "Bao giờ cho đến tháng Mười",
+    "year": "1984",
+    "id_with_year": "Bao giờ cho đến tháng Mười (1984)",
+    "url": "https://en.wikipedia.org/wiki/When_the_Tenth_Month_Comes",
+    "wikipedia_title": "When the Tenth Month Comes",
+    "description": "Vietnamese widow keeps secret while mourning husband’s wartime death.",
+    "image_url": "https://image.tmdb.org/t/p/w342/dMQzipxzYozsp71mxRqKTOSciMB.jpg",
+    "image_file": "Bao_gio_cho_đen_thang_Muoi_(1984).jpg"
+  },
+  {
+    "id": "Her Socialist Smile",
+    "year": "",
+    "id_with_year": "Her Socialist Smile",
+    "url": "https://en.wikipedia.org/wiki/Her_Socialist_Smile",
+    "wikipedia_title": "John Gianvito",
+    "description": "Documentary explores Helen Keller’s socialist activism and public speaking.",
+    "image_url": "https://image.tmdb.org/t/p/w342/nDIyCZx6cWy5nIO8Hawx6wbfjqi.jpg",
+    "image_file": "Her_Socialist_Smile.jpg"
+  },
+  {
+    "id": "Underground",
+    "year": "1976",
+    "id_with_year": "Underground (1976)",
+    "url": "https://en.wikipedia.org/wiki/Underground_(1976_film)",
+    "wikipedia_title": "Underground (1976 film)",
+    "description": "Radical Weather Underground members discuss motivations and clandestine operations.",
+    "image_url": "https://image.tmdb.org/t/p/w342/tG9opFKaq9mW9axAUnGL8gZHXFR.jpg",
+    "image_file": "Underground_(1976).jpg"
+  },
+  {
+    "id": "The Corporation",
+    "year": "2003",
+    "id_with_year": "The Corporation (2003)",
+    "url": "https://en.wikipedia.org/wiki/The_Corporation_(2003_film)",
+    "wikipedia_title": "The Corporation (2003 film)",
+    "description": "Documentary analyses corporate behaviour as pathological and destructive.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/4/43/Movie_poster_the_corporation.jpg",
+    "image_file": "The_Corporation_(2003).jpg"
+  },
+  {
+    "id": "La mort de Guillem",
+    "year": "2020",
+    "id_with_year": "La mort de Guillem (2020)",
+    "url": "https://www.imdb.com/title/tt10555142/",
+    "wikipedia_title": "",
+    "description": "Dramatises 1993 fascist murder of Valencian teenager Guillem Agulló.",
+    "image_url": "https://image.tmdb.org/t/p/w342/avR4TamVXlAUn3WIpEmCLzLSgdT.jpg",
+    "image_file": "La_mort_de_Guillem.jpg"
+  },
+  {
+    "id": "Que Farei Eu Com Esta Espada?",
+    "year": "1975",
+    "id_with_year": "Que Farei Eu Com Esta Espada? (1975)",
+    "url": "https://pt.wikipedia.org/wiki/Que_Farei_Eu_com_Esta_Espada%3F",
+    "wikipedia_title": "Que Farei Eu com Esta Espada%3F",
+    "description": "Experimental Portuguese film critiques colonialism through surreal allegory.",
+    "image_url": "",
+    "image_file": ""
+  },
+  {
+    "id": "Ovosodo",
+    "year": "1997",
+    "id_with_year": "Ovosodo (1997)",
+    "url": "https://en.wikipedia.org/wiki/Ovosodo",
+    "wikipedia_title": "Ovosodo",
+    "description": "Italian coming‑of‑age comedy about misfit teenager in Livorno.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/1/1e/Locandina_Ovosodo.jpg",
+    "image_file": "Ovosodo_(1997).jpg"
+  },
+  {
+    "id": "La classe operaia va in paradiso",
+    "year": "1971",
+    "id_with_year": "La classe operaia va in paradiso (1971)",
+    "url": "https://en.wikipedia.org/wiki/The_Working_Class_Goes_to_Heaven",
+    "wikipedia_title": "The Working Class Goes to Heaven",
+    "description": "Factory worker becomes radicalised after accident and union conflict.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/8/80/The_Working_Class_Goes_to_Heaven_movie_poster.jpg",
+    "image_file": "La_classe_operaia_va_in_paradiso_(1971).jpg"
+  },
+  {
+    "id": "Sátántangó",
+    "year": "1994",
+    "id_with_year": "Sátántangó (1994)",
+    "url": "https://en.wikipedia.org/wiki/S%C3%A1t%C3%A1ntang%C3%B3",
+    "wikipedia_title": "Sátántangó",
+    "description": "Seven hour epic follows collapse of Hungarian collective farm community.",
+    "image_url": "https://upload.wikimedia.org/wikipedia/en/6/69/S%C3%A1t%C3%A1ntang%C3%B3_%282019_Rerelease_Poster%29.jpeg",
+    "image_file": "Satantango_(1994).jpg"
+  }
+]
