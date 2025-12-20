@@ -55,9 +55,20 @@ You can find my full CV <a href="/CV-nicolas-izquierdo-11-25.pdf">here</a>.
 </div>
 
 <style>
-  .poplink { color:#0057d9; text-decoration:underline; }
-  .poplink:visited { color:#0057d9; }
-  .poplink:hover { color:#0046b3; }
+.poplink{
+  color:inherit;                 /* ✅ mismo color que el resto */
+  text-decoration:underline;
+}
+
+.poplink:visited{
+  color:inherit;
+}
+
+.poplink:hover{
+  color:inherit;                 /* o déjalo sin hover si prefieres */
+  text-decoration:underline;
+}
+
 
   .popover{
     position:fixed;
