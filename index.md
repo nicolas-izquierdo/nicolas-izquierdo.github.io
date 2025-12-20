@@ -100,14 +100,17 @@ You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
   align-items:start;
 }
 
+/* Fixed poster size (match your reference poster size consistently) */
 #movie-card .poster{
   width:120px;
   height:176px;
   object-fit:cover;
+  object-position:center;
   border-radius:12px;
   border:1px solid rgba(0,0,0,.10);
   box-shadow:0 10px 24px rgba(0,0,0,.16);
   background:rgba(0,0,0,.03);
+  display:block;
 }
 
 #movie-card .title{
@@ -125,8 +128,9 @@ You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
 }
 
 #movie-card .meta a{
-  color:#1a73e8;
+  color:#1a73e8 !important;
   text-decoration:none;
+  font-weight:600;
 }
 
 #movie-card .meta a:hover{
@@ -212,51 +216,7 @@ You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
     return y ? `${id} (${y})` : id;
   }
 
-  async function loadMovies(){
-    const res = await fetch(JSON_PATH, {cache:"no-store"});
-    if(!res.ok) throw new Error(`Could not load ${JSON_PATH} (HTTP ${res.status})`);
-    const movies = await res.json();
-    if(!Array.isArray(movies)) throw new Error("movies.json is not an array.");
-    return movies;
-  }
-
-  async function pickMovieWithCover(movies){
-    const withCover = movies.filter(m => m && m.image_file && String(m.image_file).trim().length > 0);
-    if(withCover.length === 0) throw new Error("No movies with image_file found.");
-
-    const start = hashDay() % withCover.length;
-    for(let i = 0; i < withCover.length; i++){
-      const m = withCover[(start + i) % withCover.length];
-      const imgSrc = "/covers_movies/" + encodeURIComponent(m.image_file);
-
-      const ok = await new Promise(resolve => {
-        const img = new Image();
-        img.onload = () => resolve(true);
-        img.onerror = () => resolve(false);
-        img.src = imgSrc;
-      });
-
-      if(ok) return { m, imgSrc };
-    }
-    throw new Error("No movie covers could be loaded from /covers_movies/.");
-  }
-
-  let cached = null;
-  let loading = false;
-
-  async function open(){
-    if(card.style.display === "block"){ close(); return; }
-
-    card.style.display = "block";
-    position();
-    document.addEventListener("mousedown", outside);
-    window.addEventListener("resize", position);
-    window.addEventListener("scroll", position, {passive:true});
-
-    if(cached){ render(cached.m, cached.imgSrc); position(); return; }
-    if(loading) return;
-
-    loading = true;
+  function loadingUI(){
     card.innerHTML = `
       <div class="top">
         <div class="badge"><span class="dot"></span><span>Today’s movie recommendation</span></div>
@@ -265,28 +225,18 @@ You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
       <div class="hint">Loading…</div>
     `;
     document.getElementById("close-movie").onclick = close;
+  }
 
-    try{
-      const movies = await loadMovies();
-      const picked = await pickMovieWithCover(movies);
-      cached = picked;
-      render(picked.m, picked.imgSrc);
-      position();
-    }catch(e){
-      card.innerHTML = `
-        <div class="top">
-          <div class="badge"><span class="dot"></span><span>Today’s movie recommendation</span></div>
-          <button class="close" id="close-movie" aria-label="Close">×</button>
-        </div>
-        <p class="desc">Couldn’t load today’s recommendation.</p>
-        <div class="hint">${esc(e.message || e)}</div>
-      `;
-      document.getElementById("close-movie").onclick = close;
-      position();
-      console.error(e);
-    }finally{
-      loading = false;
-    }
+  function errorUI(msg){
+    card.innerHTML = `
+      <div class="top">
+        <div class="badge"><span class="dot"></span><span>Today’s movie recommendation</span></div>
+        <button class="close" id="close-movie" aria-label="Close">×</button>
+      </div>
+      <p class="desc">Couldn’t load today’s recommendation.</p>
+      <div class="hint">${esc(msg)}</div>
+    `;
+    document.getElementById("close-movie").onclick = close;
   }
 
   function render(m, imgSrc){
@@ -310,6 +260,81 @@ You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
       <div class="hint">Selection updates daily.</div>
     `;
     document.getElementById("close-movie").onclick = close;
+  }
+
+  async function loadMovies(){
+    const res = await fetch(JSON_PATH, {cache:"no-store"});
+    if(!res.ok) throw new Error(`Could not load ${JSON_PATH} (HTTP ${res.status})`);
+    const movies = await res.json();
+    if(!Array.isArray(movies)) throw new Error("movies.json is not an array.");
+    return movies;
+  }
+
+  function imageLoads(src){
+    return new Promise(resolve => {
+      const img = new Image();
+      img.onload = () => resolve(true);
+      img.onerror = () => resolve(false);
+      img.src = src;
+    });
+  }
+
+  let coverReady = null;
+  let initPromise = null;
+  let chosen = null;
+
+  async function initCoversOnce(){
+    if (coverReady) return coverReady;
+    if (initPromise) return initPromise;
+
+    initPromise = (async () => {
+      const movies = await loadMovies();
+      const candidates = movies
+        .filter(m => m && m.image_file && String(m.image_file).trim().length > 0)
+        .map(m => ({ m, imgSrc: "/covers_movies/" + encodeURIComponent(m.image_file) }));
+
+      if (candidates.length === 0) throw new Error("No movies with image_file found.");
+
+      const ok = [];
+      for (const c of candidates){
+        if (await imageLoads(c.imgSrc)) ok.push(c);
+      }
+
+      if (ok.length === 0) throw new Error("No movie covers could be loaded from /covers_movies/.");
+      coverReady = ok;
+      return ok;
+    })();
+
+    return initPromise;
+  }
+
+  function pickToday(list){
+    const idx = hashDay() % list.length;
+    return list[idx];
+  }
+
+  async function open(){
+    if(card.style.display === "block"){ close(); return; }
+
+    card.style.display = "block";
+    position();
+    document.addEventListener("mousedown", outside);
+    window.addEventListener("resize", position);
+    window.addEventListener("scroll", position, {passive:true});
+
+    loadingUI();
+    position();
+
+    try{
+      const list = await initCoversOnce();
+      if (!chosen) chosen = pickToday(list);
+      render(chosen.m, chosen.imgSrc);
+      position();
+    }catch(e){
+      errorUI(e.message || String(e));
+      position();
+      console.error(e);
+    }
   }
 
   trigger.addEventListener("click", function(e){
