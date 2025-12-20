@@ -34,17 +34,21 @@ from the University Carlos III of Madrid.
 My research interests lie in comparative political economy and labor politics, encompassing issues of political representation, contentious politics, and redistribution. I am particularly interested in how labor mobilization shapes policy outcomes and mass preferences across advanced democracies. I also study courts and legal processes, focusing on how private economic interests influence judicial decision-making.
 
 Outside academia, I enjoy
-<a href="#" id="movie-trigger"
-   style="text-decoration:underline;cursor:pointer;color:#1a73e8;">
+<a href="#" id="movie-trigger" class="blue-link" style="text-decoration:underline;cursor:pointer;">
   social and political cinema
 </a>
-and <a href="https://www.chess.com/member/nicolas_izq">playing chess</a>.
+and <a class="blue-link" href="https://www.chess.com/member/nicolas_izq">playing chess</a>.
 
 <div id="movie-card" style="display:none;"></div>
 
-You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
+You can find my full CV <a class="blue-link" href="/CV-nicolas-izquierdo-11-25.pdf">here</a>.
 
 <style>
+:root{ --link-blue:#1a73e8; }
+
+a.blue-link{ color:var(--link-blue) !important; text-decoration:none; }
+a.blue-link:hover{ text-decoration:underline; }
+
 #movie-card{
   position:absolute;
   z-index:9999;
@@ -52,7 +56,7 @@ You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
   max-width:calc(100vw - 24px);
   background:rgba(255,255,255,.92);
   border:1px solid rgba(0,0,0,.10);
-  border-radius:16px;
+  border-radius:0px;
   padding:14px 14px 12px 14px;
   box-shadow:0 18px 46px rgba(0,0,0,.18);
   backdrop-filter: blur(10px);
@@ -87,7 +91,7 @@ You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
 #movie-card .close{
   border:1px solid rgba(0,0,0,.12);
   background:rgba(255,255,255,.9);
-  border-radius:10px;
+  border-radius:0px;
   width:34px;
   height:34px;
   cursor:pointer;
@@ -103,13 +107,12 @@ You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
   align-items:start;
 }
 
-/* Fixed poster size */
 #movie-card .poster{
   width:120px;
   height:176px;
   object-fit:cover;
   object-position:center;
-  border-radius:12px;
+  border-radius:0px;
   border:1px solid rgba(0,0,0,.10);
   box-shadow:0 10px 24px rgba(0,0,0,.16);
   background:rgba(0,0,0,.03);
@@ -131,7 +134,7 @@ You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
 }
 
 #movie-card .meta a{
-  color:#1a73e8 !important;
+  color:var(--link-blue) !important;
   text-decoration:none;
   font-weight:600;
 }
@@ -153,7 +156,7 @@ You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
 @media (max-width: 520px){
   #movie-card{ width:calc(100vw - 24px); }
   #movie-card .grid{ grid-template-columns:96px 1fr; }
-  #movie-card .poster{ width:96px; height:140px; border-radius:10px; }
+  #movie-card .poster{ width:96px; height:140px; border-radius:0px; }
 }
 </style>
 
@@ -161,14 +164,10 @@ You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
 (function(){
   const trigger = document.getElementById("movie-trigger");
   const card = document.getElementById("movie-card");
-
-  // Adjust if your repo path differs
   const BASE = "/covers_movies/";
   const JSON_PATH = BASE + "movies.json";
 
-  // ---------- utils ----------
   function hashDay(){
-    // Stable per-day hash (UTC date)
     const d = new Date().toISOString().slice(0,10);
     let h = 2166136261;
     for (let i = 0; i < d.length; i++){
@@ -198,7 +197,6 @@ You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
   function posterSrc(m){
     const f = String(m?.image_file || "").trim();
     if (!f) return "";
-    // keep file names simple in your repo (best). encodeURIComponent is ok anyway:
     return BASE + encodeURIComponent(f);
   }
 
@@ -206,21 +204,19 @@ You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
     const r = trigger.getBoundingClientRect();
     const pad = 12;
     card.style.display = "block";
-
     const maxLeft = window.scrollX + document.documentElement.clientWidth - card.offsetWidth - pad;
     let left = window.scrollX + r.left;
     left = Math.min(left, maxLeft);
     left = Math.max(left, window.scrollX + pad);
-
     card.style.left = left + "px";
     card.style.top  = (window.scrollY + r.bottom + 10) + "px";
   }
 
-  // Keep references so removeEventListener always works
   function onOutside(e){
     if (card.contains(e.target) || trigger.contains(e.target)) return;
     close();
   }
+
   function onReposition(){ position(); }
 
   function bindOpenListeners(){
@@ -228,6 +224,7 @@ You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
     window.addEventListener("resize", onReposition);
     window.addEventListener("scroll", onReposition, {passive:true});
   }
+
   function unbindOpenListeners(){
     document.removeEventListener("mousedown", onOutside);
     window.removeEventListener("resize", onReposition);
@@ -265,16 +262,14 @@ You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
   function render(m, imgSrc){
     const t = titleOf(m);
     const link = m.url
-      ? `<a href="${esc(m.url)}" target="_blank" rel="noopener">Link</a>`
+      ? `<a class="blue-link" href="${esc(m.url)}" target="_blank" rel="noopener">Link</a>`
       : "";
     const desc = m.description ? esc(m.description) : "";
-
     card.innerHTML = `
       <div class="top">
         <div class="badge"><span class="dot"></span><span>Today’s movie recommendation</span></div>
         <button class="close" id="close-movie" aria-label="Close">×</button>
       </div>
-
       <div class="grid">
         <img class="poster"
              src="${esc(imgSrc)}"
@@ -288,7 +283,6 @@ You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
           <p class="desc">${desc}</p>
         </div>
       </div>
-
       <div class="hint">Selection updates daily.</div>
     `;
     document.getElementById("close-movie").onclick = close;
@@ -298,7 +292,6 @@ You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
     return new Promise(resolve => {
       const img = new Image();
       img.onload = async () => {
-        // decode() helps avoid “half-painted” feeling in some browsers
         try { if (img.decode) await img.decode(); } catch(_) {}
         resolve(true);
       };
@@ -308,16 +301,13 @@ You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
     });
   }
 
-  // ---------- fast data path ----------
   let moviesCache = null;
   let moviesPromise = null;
 
   async function loadMoviesOnce(){
     if (moviesCache) return moviesCache;
     if (moviesPromise) return moviesPromise;
-
     moviesPromise = (async () => {
-      // Let browser cache do its job (GitHub Pages is static)
       const res = await fetch(JSON_PATH, { cache: "force-cache" });
       if (!res.ok) throw new Error(`Could not load ${JSON_PATH} (HTTP ${res.status})`);
       const data = await res.json();
@@ -325,64 +315,49 @@ You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
       moviesCache = data;
       return data;
     })();
-
     return moviesPromise;
   }
 
-  // Pick “today”, but if missing/broken image_file, fall forward until we find one
   async function pickTodayWithFallback(movies){
     const n = movies.length;
     if (!n) throw new Error("movies.json is empty.");
-
     let start = hashDay() % n;
-
     for (let step = 0; step < n; step++){
       const m = movies[(start + step) % n];
       const src = posterSrc(m);
       if (!src) continue;
       if (await imageLoads(src)) return { m, imgSrc: src };
     }
-
     throw new Error("No valid cover image found in /covers_movies/.");
   }
 
-  // Prefetch in idle so click feels instant
   let chosen = null;
   let chosenPromise = null;
 
   async function ensureChosen(){
     if (chosen) return chosen;
     if (chosenPromise) return chosenPromise;
-
     chosenPromise = (async () => {
       const movies = await loadMoviesOnce();
       chosen = await pickTodayWithFallback(movies);
       return chosen;
     })();
-
     return chosenPromise;
   }
 
   function warmup(){
-    // Don’t block rendering; do it when the browser is idle
     const run = () => { ensureChosen().catch(()=>{}); };
-    if ("requestIdleCallback" in window) {
-      requestIdleCallback(run, { timeout: 1200 });
-    } else {
-      setTimeout(run, 300);
-    }
+    if ("requestIdleCallback" in window) requestIdleCallback(run, { timeout: 1200 });
+    else setTimeout(run, 300);
   }
 
   async function open(){
     if (card.style.display === "block"){ close(); return; }
-
     card.style.display = "block";
     position();
     bindOpenListeners();
-
     loadingUI();
     position();
-
     try{
       const pick = await ensureChosen();
       render(pick.m, pick.imgSrc);
@@ -399,7 +374,6 @@ You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
     open();
   });
 
-  // start warmup after page load
   warmup();
 })();
 </script>
