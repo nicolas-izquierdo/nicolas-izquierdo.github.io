@@ -9,22 +9,22 @@ redirect_from:
 ---
 
 <style>
-/* Homogeneous intense blue links */
-a,
-a:visited {
-  color: #0057ff !important;
+/* Intense blue ONLY for links inside main-text */
+.main-text a,
+.main-text a:visited {
+  color: #0057ff;
   text-decoration: none;
 }
 
-a:hover,
-a:focus {
-  color: #0057ff !important;
+.main-text a:hover,
+.main-text a:focus {
+  color: #0057ff;
   text-decoration: underline;
   text-underline-offset: 2px;
 }
 
-a:active {
-  color: #0057ff !important;
+.main-text a:active {
+  color: #0057ff;
 }
 </style>
 
@@ -45,6 +45,8 @@ a:active {
   </figcaption>
 </figure>
 
+<div class="main-text">
+
 Welcome! My name is Nicolás Izquierdo and I am a Master's student in Social Sciences at the 
 [Carlos III–Juan March Institute (IC3JM)](https://ic3jm.es/en/postgraduates/master-degree-social-sciences/). 
 I also hold both degrees in [Law (LL.B.)](https://www.uc3m.es/bachelor-degree/law) 
@@ -57,3 +59,5 @@ Outside academia, I enjoy social and political cinema and
 <a href="https://www.chess.com/member/nicolas_izq">playing chess</a>.
 
 You can find my full CV <a href="/CV-nicolas-izquierdo-11-25.pdf">here</a>.
+
+</div>
