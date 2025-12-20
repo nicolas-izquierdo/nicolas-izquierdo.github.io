@@ -9,22 +9,23 @@ redirect_from:
 ---
 
 <style>
-/* Intense blue ONLY for links inside main text */
+/* Light coral links ONLY for main text */
 .main-text a,
 .main-text a:visited {
-  color: #0057ff;
-  text-decoration: none;
+  color: #F08080;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
 }
 
 .main-text a:hover,
 .main-text a:focus {
-  color: #0057ff;
+  color: #F08080;
   text-decoration: underline;
-  text-underline-offset: 2px;
 }
 
 .main-text a:active {
-  color: #0057ff;
+  color: #F08080;
 }
 </style>
 
