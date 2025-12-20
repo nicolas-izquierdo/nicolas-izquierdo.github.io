@@ -1,13 +1,16 @@
-<script>
 document.addEventListener("DOMContentLoaded", () => {
   const trigger = document.getElementById("movie-trigger");
   const card = document.getElementById("movie-card");
   if (!trigger || !card) return;
 
-  const MOVIES_JSON_PATH = "/covers_movies/movies.json";
+  // Robust baseurl: user-site => "", project-site => "/repo"
+  const BASEURL = (window.__BASEURL__ || "").replace(/\/$/, "");
+
+  // Your structure: /covers_movies/movies.json and covers in /covers_movies/
+  const MOVIES_JSON_PATH = `${BASEURL}/covers_movies/movies.json`;
 
   function coverPath(imageFile) {
-    return "/covers_movies/" + encodeURIComponent(imageFile);
+    return `${BASEURL}/covers_movies/${encodeURIComponent(imageFile)}`;
   }
 
   function ymdLocal() {
@@ -41,17 +44,31 @@ document.addEventListener("DOMContentLoaded", () => {
     const scrollX = window.scrollX || window.pageXOffset;
     const scrollY = window.scrollY || window.pageYOffset;
 
-    // default: to the right of the link
+    card.style.display = "block"; // ensure offsetWidth is measurable
+
     let left = scrollX + r.left;
     let top  = scrollY + r.bottom + 8;
 
-    // if there isn't room on the right, align to left edge but keep inside viewport
-    const maxLeft = scrollX + document.documentElement.clientWidth - card.offsetWidth - 12;
+    const viewportW = document.documentElement.clientWidth;
+    const maxLeft = scrollX + viewportW - card.offsetWidth - 12;
+
     left = Math.min(left, maxLeft);
     left = Math.max(left, scrollX + 12);
 
-    card.style.left = left + "px";
-    card.style.top  = top  + "px";
+    card.style.left = `${left}px`;
+    card.style.top  = `${top}px`;
+  }
+
+  function closePopover() {
+    card.style.display = "none";
+    window.removeEventListener("scroll", positionPopover, { passive: true });
+    window.removeEventListener("resize", positionPopover);
+    document.removeEventListener("mousedown", outsideClick);
+  }
+
+  function outsideClick(e) {
+    if (card.contains(e.target) || trigger.contains(e.target)) return;
+    closePopover();
   }
 
   function renderMovie(movie) {
@@ -73,13 +90,18 @@ document.addEventListener("DOMContentLoaded", () => {
         <button class="movie-close" type="button" aria-label="Close">×</button>
       </div>
       <div class="movie-card-grid">
-        ${poster
-          ? `<img class="movie-poster" src="${poster}" alt="Poster for ${escapeHtml(displayTitle)}" loading="lazy">`
-          : `<div class="movie-poster" aria-hidden="true"></div>`
+        ${
+          poster
+            ? `<img class="movie-poster" src="${poster}" alt="Poster for ${escapeHtml(displayTitle)}" loading="lazy">`
+            : `<div class="movie-poster" aria-hidden="true"></div>`
         }
         <div>
           <p class="movie-title">${escapeHtml(displayTitle)}</p>
-          ${link ? `<p class="movie-link"><a href="${escapeHtml(link)}" target="_blank" rel="noopener">Link</a></p>` : ""}
+          ${
+            link
+              ? `<p class="movie-link"><a href="${escapeHtml(link)}" target="_blank" rel="noopener">Link</a></p>`
+              : ""
+          }
           ${desc ? `<p class="movie-desc">${escapeHtml(desc)}</p>` : ""}
         </div>
       </div>
@@ -92,8 +114,11 @@ document.addEventListener("DOMContentLoaded", () => {
   async function loadAndPickMovie() {
     const res = await fetch(MOVIES_JSON_PATH, { cache: "no-store" });
     if (!res.ok) throw new Error(`Could not load ${MOVIES_JSON_PATH} (HTTP ${res.status})`);
+
     const movies = await res.json();
-    if (!Array.isArray(movies) || movies.length === 0) throw new Error("movies.json empty or not an array.");
+    if (!Array.isArray(movies) || movies.length === 0) {
+      throw new Error("movies.json is empty or not an array.");
+    }
 
     const idx = hashStringToInt(ymdLocal()) % movies.length;
     return movies[idx];
@@ -102,35 +127,26 @@ document.addEventListener("DOMContentLoaded", () => {
   let loaded = false;
   let loading = false;
 
-  function openPopover() {
+  trigger.addEventListener("click", async (ev) => {
+    ev.preventDefault();
+
+    // toggle
+    if (card.style.display === "block") {
+      closePopover();
+      return;
+    }
+
+    // open
     card.style.display = "block";
     positionPopover();
     window.addEventListener("scroll", positionPopover, { passive: true });
     window.addEventListener("resize", positionPopover);
     document.addEventListener("mousedown", outsideClick);
-  }
-
-  function closePopover() {
-    card.style.display = "none";
-    window.removeEventListener("scroll", positionPopover);
-    window.removeEventListener("resize", positionPopover);
-    document.removeEventListener("mousedown", outsideClick);
-  }
-
-  function outsideClick(e) {
-    if (card.contains(e.target) || trigger.contains(e.target)) return;
-    closePopover();
-  }
-
-  trigger.addEventListener("click", async (ev) => {
-    ev.preventDefault();
-
-    if (card.style.display === "block") { closePopover(); return; }
-    openPopover();
 
     if (loaded || loading) return;
     loading = true;
 
+    // loading skeleton
     card.innerHTML = `
       <div class="movie-top">
         <p class="movie-card-header">Today’s movie recommendation!</p>
@@ -156,9 +172,9 @@ document.addEventListener("DOMContentLoaded", () => {
       `;
       card.querySelector(".movie-close").addEventListener("click", closePopover);
       console.error(e);
+      positionPopover();
     } finally {
       loading = false;
     }
   });
 });
-</script>
