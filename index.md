@@ -165,6 +165,7 @@ a.blue-link:hover{ text-decoration:underline; }
   const trigger = document.getElementById("movie-trigger");
   const card = document.getElementById("movie-card");
   const BASE = "/covers_movies/";
+  const THUMBS = BASE + "thumbs/";
   const JSON_PATH = BASE + "movies.json";
 
   function hashDay(){
@@ -194,10 +195,11 @@ a.blue-link:hover{ text-decoration:underline; }
     return y ? `${id} (${y})` : id;
   }
 
-  function posterSrc(m){
+  function posterSrcThumb(m){
     const f = String(m?.image_file || "").trim();
     if (!f) return "";
-    return BASE + encodeURIComponent(f);
+    const base = f.replace(/\.[^/.]+$/, "");
+    return THUMBS + encodeURIComponent(base + ".jpg");
   }
 
   function position(){
@@ -261,9 +263,7 @@ a.blue-link:hover{ text-decoration:underline; }
 
   function render(m, imgSrc){
     const t = titleOf(m);
-    const link = m.url
-      ? `<a class="blue-link" href="${esc(m.url)}" target="_blank" rel="noopener">Link</a>`
-      : "";
+    const link = m.url ? `<a class="blue-link" href="${esc(m.url)}" target="_blank" rel="noopener">Link</a>` : "";
     const desc = m.description ? esc(m.description) : "";
     card.innerHTML = `
       <div class="top">
@@ -324,11 +324,11 @@ a.blue-link:hover{ text-decoration:underline; }
     let start = hashDay() % n;
     for (let step = 0; step < n; step++){
       const m = movies[(start + step) % n];
-      const src = posterSrc(m);
+      const src = posterSrcThumb(m);
       if (!src) continue;
       if (await imageLoads(src)) return { m, imgSrc: src };
     }
-    throw new Error("No valid cover image found in /covers_movies/.");
+    throw new Error("No valid thumbnail found in /covers_movies/thumbs/.");
   }
 
   let chosen = null;
