@@ -75,6 +75,7 @@ You can find my full CV <a href="/CV-nicolas-izquierdo-11-25.pdf">here</a>.
     background:#e9e9e9;
     color:#111;
     border-radius:14px;
+    border:1px solid #111;              /* ✅ borde negro */
     box-shadow:0 10px 30px rgba(0,0,0,.18);
     padding:12px;
     min-width:280px;
@@ -103,18 +104,49 @@ You can find my full CV <a href="/CV-nicolas-izquierdo-11-25.pdf">here</a>.
     margin-bottom:10px;
   }
 
-  .movie-card{ display:flex; gap:12px; align-items:flex-start; }
+  .movie-card{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;             /* ✅ alinear arriba */
+  }
+
   .movie-poster{
-    width:78px; height:110px;
+    width:80px;                         /* ✅ +2.5% (aprox) */
+    height:113px;                       /* ✅ +2.5% (aprox) */
     border-radius:10px;
     object-fit:cover;
     background:#d9d9d9;
     flex:0 0 auto;
+    display:block;                      /* ✅ evita baseline raro */
+    margin-top:0;                       /* ✅ arranque exacto */
   }
-  .movie-name{ font-weight:800; font-size:14px; margin:0 0 4px 0; }
-  .movie-year{ font-size:12px; opacity:.7; margin:0 0 8px 0; }
-  .movie-desc{ font-size:12.5px; line-height:1.35; opacity:.92; margin:0 0 10px 0; }
-  .movie-link{ color:#0057d9; text-decoration:underline; font-weight:800; font-size:12.5px; }
+
+  .movie-meta{
+    min-width:0;
+    align-self:flex-start;              /* ✅ fuerza arranque arriba */
+    padding-top:0;                      /* ✅ por si el tema mete padding */
+  }
+
+  .movie-name{
+    font-weight:800;
+    font-size:14px;
+    margin:0 0 6px 0;                   /* un pelín más aire */
+    line-height:1.2;
+  }
+
+  .movie-desc{
+    font-size:12.5px;
+    line-height:1.35;
+    opacity:.92;
+    margin:0 0 10px 0;
+  }
+
+  .movie-link{
+    color:#0057d9;
+    text-decoration:underline;
+    font-weight:800;
+    font-size:12.5px;
+  }
   .movie-link:hover{ color:#0046b3; }
 </style>
 
@@ -163,7 +195,7 @@ You can find my full CV <a href="/CV-nicolas-izquierdo-11-25.pdf">here</a>.
     const img = posterSrc(movie);
     const year = t(movie.year).trim();
     const yearParen = year ? ` (${year})` : "";
-    const title = t(movie.id).trim() || t(movie.id_with_year).trim();
+    const title = (t(movie.id).trim() || t(movie.id_with_year).trim());
     const desc = t(movie.description).trim();
     const url = t(movie.url).trim();
 
@@ -171,7 +203,7 @@ You can find my full CV <a href="/CV-nicolas-izquierdo-11-25.pdf">here</a>.
       <div class="pop-title">Today’s movie recommendation</div>
       <div class="movie-card">
         ${img ? `<img class="movie-poster" src="${img}" alt="${title}${yearParen} poster" loading="eager" decoding="async" onerror="this.style.display='none';">` : ``}
-        <div style="min-width:0;">
+        <div class="movie-meta">
           <p class="movie-name">${title}${yearParen}</p>
           ${desc ? `<p class="movie-desc">${desc}</p>` : ``}
           ${url ? `<a class="movie-link" href="${url}" target="_blank" rel="noopener noreferrer">Link</a>` : ``}
@@ -213,5 +245,11 @@ You can find my full CV <a href="/CV-nicolas-izquierdo-11-25.pdf">here</a>.
     const pop = document.getElementById("cinema-pop");
     if (pop.classList.contains("show")) position(link);
   }, { passive:true });
+
+  window.addEventListener("resize", () => {
+    const link = document.getElementById("cinema-link");
+    const pop = document.getElementById("cinema-pop");
+    if (pop.classList.contains("show")) position(link);
+  });
 })();
 </script>
