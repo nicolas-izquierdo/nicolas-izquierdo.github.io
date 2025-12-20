@@ -9,7 +9,7 @@ redirect_from:
 ---
 
 <style>
-/* Intense blue ONLY for links inside main-text */
+/* Intense blue ONLY for links inside main text */
 .main-text a,
 .main-text a:visited {
   color: #0057ff;
@@ -47,17 +47,27 @@ redirect_from:
 
 <div class="main-text">
 
-Welcome! My name is Nicolás Izquierdo and I am a Master's student in Social Sciences at the 
-[Carlos III–Juan March Institute (IC3JM)](https://ic3jm.es/en/postgraduates/master-degree-social-sciences/). 
-I also hold both degrees in [Law (LL.B.)](https://www.uc3m.es/bachelor-degree/law) 
-and [Political Science (B.A.)](https://www.uc3m.es/bachelor-degree/political-science) 
-from the University Carlos III of Madrid.  
+<p>
+Welcome! My name is Nicolás Izquierdo and I am a Master's student in Social Sciences at the
+<a href="https://ic3jm.es/en/postgraduates/master-degree-social-sciences/">Carlos III–Juan March Institute (IC3JM)</a>.
+I also hold both degrees in
+<a href="https://www.uc3m.es/bachelor-degree/law">Law (LL.B.)</a>
+and
+<a href="https://www.uc3m.es/bachelor-degree/political-science">Political Science (B.A.)</a>
+from the University Carlos III of Madrid.
+</p>
 
+<p>
 My research interests lie in comparative political economy and labor politics, encompassing issues of political representation, contentious politics, and redistribution. I am particularly interested in how labor mobilization shapes policy outcomes and mass preferences across advanced democracies. I also study courts and legal processes, focusing on how private economic interests influence judicial decision-making.
+</p>
 
+<p>
 Outside academia, I enjoy social and political cinema and
 <a href="https://www.chess.com/member/nicolas_izq">playing chess</a>.
+</p>
 
+<p>
 You can find my full CV <a href="/CV-nicolas-izquierdo-11-25.pdf">here</a>.
+</p>
 
 </div>
