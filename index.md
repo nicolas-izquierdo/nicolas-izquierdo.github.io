@@ -27,7 +27,7 @@ Welcome! My name is Nicolás Izquierdo and I am a Master's student in Social Sci
 
 My research interests lie in comparative political economy and labor politics, encompassing issues of political representation, contentious politics, and redistribution. I am particularly interested in how labor mobilization shapes policy outcomes and mass preferences across advanced democracies. I also study courts and legal processes, focusing on how private economic interests influence judicial decision-making.
 
-Outside academia, I enjoy <a href="#" id="movie-trigger" style="text-decoration:underline;cursor:pointer;color:inherit;"> social and political cinema </a> and <a href="https://www.chess.com/member/nicolas_izq">playing chess</a>.
+Outside academia, I enjoy <a href="#" id="movie-trigger" style="text-decoration:underline;cursor:pointer;color:inherit;"> social and political cinema</a> and <a href="https://www.chess.com/member/nicolas_izq">playing chess</a>.
 
 <div id="movie-card" style="display:none;"></div>
 
