@@ -15,7 +15,9 @@ redirect_from:
 <figure style="margin:0;">
   <img src="marx-painting-HD.jpg"
        alt="Workers’ Delegation Before the Magistrate by Johann Peter Hasenclever"
-       style="width:660px;height:200px;object-fit:cover;display:block;">
+       style="width:660px;height:200px;object-fit:cover;display:block;"
+       loading="eager"
+       decoding="async">
   <figcaption style="font-size:0.9em;margin-top:-13px;margin-bottom:20px;">
     <span style="font-style:italic;text-decoration:underline;">
       Workers’ Delegation Before the Magistrate</span>
@@ -32,7 +34,8 @@ from the University Carlos III of Madrid.
 My research interests lie in comparative political economy and labor politics, encompassing issues of political representation, contentious politics, and redistribution. I am particularly interested in how labor mobilization shapes policy outcomes and mass preferences across advanced democracies. I also study courts and legal processes, focusing on how private economic interests influence judicial decision-making.
 
 Outside academia, I enjoy
-<a href="#" id="movie-trigger" style="text-decoration:underline;cursor:pointer;color:inherit;">
+<a href="#" id="movie-trigger"
+   style="text-decoration:underline;cursor:pointer;color:#1a73e8;">
   social and political cinema
 </a>
 and <a href="https://www.chess.com/member/nicolas_izq">playing chess</a>.
@@ -100,7 +103,7 @@ You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
   align-items:start;
 }
 
-/* Fixed poster size (match your reference poster size consistently) */
+/* Fixed poster size */
 #movie-card .poster{
   width:120px;
   height:176px;
@@ -132,10 +135,7 @@ You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
   text-decoration:none;
   font-weight:600;
 }
-
-#movie-card .meta a:hover{
-  text-decoration:underline;
-}
+#movie-card .meta a:hover{ text-decoration:underline; }
 
 #movie-card .desc{
   margin:0;
@@ -161,9 +161,14 @@ You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
 (function(){
   const trigger = document.getElementById("movie-trigger");
   const card = document.getElementById("movie-card");
-  const JSON_PATH = "/covers_movies/movies.json";
 
+  // Adjust if your repo path differs
+  const BASE = "/covers_movies/";
+  const JSON_PATH = BASE + "movies.json";
+
+  // ---------- utils ----------
   function hashDay(){
+    // Stable per-day hash (UTC date)
     const d = new Date().toISOString().slice(0,10);
     let h = 2166136261;
     for (let i = 0; i < d.length; i++){
@@ -171,32 +176,6 @@ You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
       h = Math.imul(h, 16777619);
     }
     return (h >>> 0);
-  }
-
-  function position(){
-    const r = trigger.getBoundingClientRect();
-    const pad = 12;
-    card.style.display = "block";
-    const maxLeft = window.scrollX + document.documentElement.clientWidth - card.offsetWidth - pad;
-
-    let left = window.scrollX + r.left;
-    left = Math.min(left, maxLeft);
-    left = Math.max(left, window.scrollX + pad);
-
-    card.style.left = left + "px";
-    card.style.top  = (window.scrollY + r.bottom + 10) + "px";
-  }
-
-  function close(){
-    card.style.display = "none";
-    document.removeEventListener("mousedown", outside);
-    window.removeEventListener("resize", position);
-    window.removeEventListener("scroll", position, {passive:true});
-  }
-
-  function outside(e){
-    if(card.contains(e.target) || trigger.contains(e.target)) return;
-    close();
   }
 
   function esc(s){
@@ -214,6 +193,50 @@ You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
     const id = (m.id || "Untitled").trim();
     const y = String(m.year || "").trim();
     return y ? `${id} (${y})` : id;
+  }
+
+  function posterSrc(m){
+    const f = String(m?.image_file || "").trim();
+    if (!f) return "";
+    // keep file names simple in your repo (best). encodeURIComponent is ok anyway:
+    return BASE + encodeURIComponent(f);
+  }
+
+  function position(){
+    const r = trigger.getBoundingClientRect();
+    const pad = 12;
+    card.style.display = "block";
+
+    const maxLeft = window.scrollX + document.documentElement.clientWidth - card.offsetWidth - pad;
+    let left = window.scrollX + r.left;
+    left = Math.min(left, maxLeft);
+    left = Math.max(left, window.scrollX + pad);
+
+    card.style.left = left + "px";
+    card.style.top  = (window.scrollY + r.bottom + 10) + "px";
+  }
+
+  // Keep references so removeEventListener always works
+  function onOutside(e){
+    if (card.contains(e.target) || trigger.contains(e.target)) return;
+    close();
+  }
+  function onReposition(){ position(); }
+
+  function bindOpenListeners(){
+    document.addEventListener("mousedown", onOutside);
+    window.addEventListener("resize", onReposition);
+    window.addEventListener("scroll", onReposition, {passive:true});
+  }
+  function unbindOpenListeners(){
+    document.removeEventListener("mousedown", onOutside);
+    window.removeEventListener("resize", onReposition);
+    window.removeEventListener("scroll", onReposition);
+  }
+
+  function close(){
+    card.style.display = "none";
+    unbindOpenListeners();
   }
 
   function loadingUI(){
@@ -241,7 +264,9 @@ You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
 
   function render(m, imgSrc){
     const t = titleOf(m);
-    const link = m.url ? `<a href="${esc(m.url)}" target="_blank" rel="noopener">Link</a>` : "";
+    const link = m.url
+      ? `<a href="${esc(m.url)}" target="_blank" rel="noopener">Link</a>`
+      : "";
     const desc = m.description ? esc(m.description) : "";
 
     card.innerHTML = `
@@ -249,97 +274,132 @@ You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
         <div class="badge"><span class="dot"></span><span>Today’s movie recommendation</span></div>
         <button class="close" id="close-movie" aria-label="Close">×</button>
       </div>
+
       <div class="grid">
-        <img class="poster" src="${imgSrc}" alt="Poster for ${esc(t)}" loading="lazy">
+        <img class="poster"
+             src="${esc(imgSrc)}"
+             alt="Poster for ${esc(t)}"
+             loading="eager"
+             decoding="async"
+             fetchpriority="high">
         <div>
           <p class="title">${esc(t)}</p>
           <p class="meta">${link}</p>
           <p class="desc">${desc}</p>
         </div>
       </div>
+
       <div class="hint">Selection updates daily.</div>
     `;
     document.getElementById("close-movie").onclick = close;
   }
 
-  async function loadMovies(){
-    const res = await fetch(JSON_PATH, {cache:"no-store"});
-    if(!res.ok) throw new Error(`Could not load ${JSON_PATH} (HTTP ${res.status})`);
-    const movies = await res.json();
-    if(!Array.isArray(movies)) throw new Error("movies.json is not an array.");
-    return movies;
-  }
-
   function imageLoads(src){
     return new Promise(resolve => {
       const img = new Image();
-      img.onload = () => resolve(true);
+      img.onload = async () => {
+        // decode() helps avoid “half-painted” feeling in some browsers
+        try { if (img.decode) await img.decode(); } catch(_) {}
+        resolve(true);
+      };
       img.onerror = () => resolve(false);
+      img.decoding = "async";
       img.src = src;
     });
   }
 
-  let coverReady = null;
-  let initPromise = null;
-  let chosen = null;
+  // ---------- fast data path ----------
+  let moviesCache = null;
+  let moviesPromise = null;
 
-  async function initCoversOnce(){
-    if (coverReady) return coverReady;
-    if (initPromise) return initPromise;
+  async function loadMoviesOnce(){
+    if (moviesCache) return moviesCache;
+    if (moviesPromise) return moviesPromise;
 
-    initPromise = (async () => {
-      const movies = await loadMovies();
-      const candidates = movies
-        .filter(m => m && m.image_file && String(m.image_file).trim().length > 0)
-        .map(m => ({ m, imgSrc: "/covers_movies/" + encodeURIComponent(m.image_file) }));
-
-      if (candidates.length === 0) throw new Error("No movies with image_file found.");
-
-      const ok = [];
-      for (const c of candidates){
-        if (await imageLoads(c.imgSrc)) ok.push(c);
-      }
-
-      if (ok.length === 0) throw new Error("No movie covers could be loaded from /covers_movies/.");
-      coverReady = ok;
-      return ok;
+    moviesPromise = (async () => {
+      // Let browser cache do its job (GitHub Pages is static)
+      const res = await fetch(JSON_PATH, { cache: "force-cache" });
+      if (!res.ok) throw new Error(`Could not load ${JSON_PATH} (HTTP ${res.status})`);
+      const data = await res.json();
+      if (!Array.isArray(data)) throw new Error("movies.json is not an array.");
+      moviesCache = data;
+      return data;
     })();
 
-    return initPromise;
+    return moviesPromise;
   }
 
-  function pickToday(list){
-    const idx = hashDay() % list.length;
-    return list[idx];
+  // Pick “today”, but if missing/broken image_file, fall forward until we find one
+  async function pickTodayWithFallback(movies){
+    const n = movies.length;
+    if (!n) throw new Error("movies.json is empty.");
+
+    let start = hashDay() % n;
+
+    for (let step = 0; step < n; step++){
+      const m = movies[(start + step) % n];
+      const src = posterSrc(m);
+      if (!src) continue;
+      if (await imageLoads(src)) return { m, imgSrc: src };
+    }
+
+    throw new Error("No valid cover image found in /covers_movies/.");
+  }
+
+  // Prefetch in idle so click feels instant
+  let chosen = null;
+  let chosenPromise = null;
+
+  async function ensureChosen(){
+    if (chosen) return chosen;
+    if (chosenPromise) return chosenPromise;
+
+    chosenPromise = (async () => {
+      const movies = await loadMoviesOnce();
+      chosen = await pickTodayWithFallback(movies);
+      return chosen;
+    })();
+
+    return chosenPromise;
+  }
+
+  function warmup(){
+    // Don’t block rendering; do it when the browser is idle
+    const run = () => { ensureChosen().catch(()=>{}); };
+    if ("requestIdleCallback" in window) {
+      requestIdleCallback(run, { timeout: 1200 });
+    } else {
+      setTimeout(run, 300);
+    }
   }
 
   async function open(){
-    if(card.style.display === "block"){ close(); return; }
+    if (card.style.display === "block"){ close(); return; }
 
     card.style.display = "block";
     position();
-    document.addEventListener("mousedown", outside);
-    window.addEventListener("resize", position);
-    window.addEventListener("scroll", position, {passive:true});
+    bindOpenListeners();
 
     loadingUI();
     position();
 
     try{
-      const list = await initCoversOnce();
-      if (!chosen) chosen = pickToday(list);
-      render(chosen.m, chosen.imgSrc);
+      const pick = await ensureChosen();
+      render(pick.m, pick.imgSrc);
       position();
     }catch(e){
-      errorUI(e.message || String(e));
+      errorUI(e?.message || String(e));
       position();
       console.error(e);
     }
   }
 
-  trigger.addEventListener("click", function(e){
+  trigger.addEventListener("click", (e) => {
     e.preventDefault();
     open();
   });
+
+  // start warmup after page load
+  warmup();
 })();
 </script>
