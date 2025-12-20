@@ -32,6 +32,7 @@
   width: 34px;
   height: 34px;
   cursor: pointer;
+  line-height: 1;
   font-size: 18px;
 }
 
@@ -39,6 +40,7 @@
   display: grid;
   grid-template-columns: 110px 1fr;
   gap: 12px;
+  align-items: start;
 }
 
 .movie-popover .movie-poster{
@@ -47,11 +49,20 @@
   object-fit: cover;
   border-radius: 10px;
   border: 1px solid rgba(0,0,0,.10);
+  background: rgba(0,0,0,.03);
+  display: block;
 }
 
 .movie-popover .movie-title{
   font-weight: 700;
+  font-size: 1.05rem;
+  line-height: 1.25;
   margin: 0 0 6px 0;
+}
+
+.movie-popover .movie-link{
+  margin: 0 0 8px 0;
+  font-size: 0.95rem;
 }
 
 .movie-popover .movie-link a{
@@ -64,6 +75,20 @@
 }
 
 .movie-popover .movie-desc{
+  margin: 0;
   font-size: 0.96rem;
+  line-height: 1.35;
   color: rgba(0,0,0,.78);
+}
+
+.movie-popover .movie-note{
+  margin-top: 10px;
+  font-size: 0.86rem;
+  color: rgba(0,0,0,.55);
+}
+
+@media (max-width: 520px){
+  .movie-popover{ width: calc(100vw - 24px); }
+  .movie-popover .movie-card-grid{ grid-template-columns: 92px 1fr; }
+  .movie-popover .movie-poster{ width: 92px; height: 134px; }
 }
