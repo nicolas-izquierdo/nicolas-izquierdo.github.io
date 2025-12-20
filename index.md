@@ -12,7 +12,7 @@ redirect_from:
 /* Light coral links ONLY for main text */
 .main-text a,
 .main-text a:visited {
-  color: #F08080;
+  color: #6495ED;
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
@@ -20,12 +20,12 @@ redirect_from:
 
 .main-text a:hover,
 .main-text a:focus {
-  color: #F08080;
+  color: #6495ED ;
   text-decoration: underline;
 }
 
 .main-text a:active {
-  color: #F08080;
+  color: #6495ED;
 }
 </style>
 
