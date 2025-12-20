@@ -23,10 +23,10 @@ redirect_from:
   </figcaption>
 </figure>
 
-Welcome! My name is Nicolás Izquierdo and I am a Master's student in Social Sciences at the 
-[Carlos III–Juan March Institute (IC3JM)](https://ic3jm.es/en/postgraduates/master-degree-social-sciences/). 
-I also hold both degrees in [Law (LL.B.)](https://www.uc3m.es/bachelor-degree/law) 
-and [Political Science (B.A.)](https://www.uc3m.es/bachelor-degree/political-science) 
+Welcome! My name is Nicolás Izquierdo and I am a Master's student in Social Sciences at the  
+[Carlos III–Juan March Institute (IC3JM)](https://ic3jm.es/en/postgraduates/master-degree-social-sciences/).  
+I also hold both degrees in [Law (LL.B.)](https://www.uc3m.es/bachelor-degree/law)  
+and [Political Science (B.A.)](https://www.uc3m.es/bachelor-degree/political-science)  
 from the University Carlos III of Madrid.  
 
 My research interests lie in comparative political economy and labor politics, encompassing issues of political representation, contentious politics, and redistribution. I am particularly interested in how labor mobilization shapes policy outcomes and mass preferences across advanced democracies. I also study courts and legal processes, focusing on how private economic interests influence judicial decision-making.
@@ -41,7 +41,7 @@ and <a href="https://www.chess.com/member/nicolas_izq">playing chess</a>.
 
 You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
 
-<!-- ================= MOVIE POPOVER (SELF-CONTAINED) ================= -->
+<!-- ================= MOVIE POPOVER ================= -->
 <style>
 #movie-card{
   position:absolute;
@@ -67,10 +67,10 @@ You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
   border:1px solid rgba(0,0,0,.15);
   background:#fff;
   border-radius:8px;
-  width:32px;height:32px;
+  width:32px;
+  height:32px;
   cursor:pointer;
   font-size:18px;
-  line-height:30px;
 }
 
 #movie-card .grid{
@@ -80,11 +80,11 @@ You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
 }
 
 #movie-card img{
-  width:110px;height:160px;
+  width:110px;
+  height:160px;
   object-fit:cover;
   border-radius:10px;
   border:1px solid rgba(0,0,0,.1);
-  background:#f2f2f2;
 }
 
 #movie-card .title{
@@ -111,50 +111,29 @@ You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
   const trigger = document.getElementById("movie-trigger");
   const card = document.getElementById("movie-card");
 
-  // Folder where BOTH movies.json and images live:
+  // ✅ RUTA CORRECTA
   const BASE = "/movies/";
   const JSON_PATH = BASE + "movies.json";
 
-  let cachedMovies = null;
-  let prefetched = false;
+  let moviesCache = null;
 
-  function pickIndex(n){
-    // stable per local day (Madrid for you)
+  function todayIndex(n){
     const d = new Date();
-    const yyyy = d.getFullYear();
-    const mm = String(d.getMonth()+1).padStart(2,"0");
-    const dd = String(d.getDate()).padStart(2,"0");
-    const s = `${yyyy}-${mm}-${dd}`;
-
+    const s = `${d.getFullYear()}-${d.getMonth()+1}-${d.getDate()}`;
     let h = 0;
-    for(let i=0;i<s.length;i++) h = (h * 31 + s.charCodeAt(i)) >>> 0;
-    return n ? (h % n) : 0;
+    for(const c of s) h = (h * 31 + c.charCodeAt(0)) >>> 0;
+    return h % n;
   }
 
   function position(){
     const r = trigger.getBoundingClientRect();
-    const left = window.scrollX + r.left;
-    const top  = window.scrollY + r.bottom + 8;
-
-    card.style.left = left + "px";
-    card.style.top  = top  + "px";
-
-    // keep within viewport horizontally
-    const rect = card.getBoundingClientRect();
-    const overflowRight = rect.right - window.innerWidth;
-    if(overflowRight > 12){
-      card.style.left = (left - overflowRight - 12) + "px";
-    }
-    if(rect.left < 12){
-      card.style.left = (window.scrollX + 12) + "px";
-    }
+    card.style.left = window.scrollX + r.left + "px";
+    card.style.top  = window.scrollY + r.bottom + 8 + "px";
   }
 
   function close(){
     card.style.display = "none";
     document.removeEventListener("mousedown", outside);
-    window.removeEventListener("resize", position);
-    window.removeEventListener("scroll", position, true);
   }
 
   function outside(e){
@@ -163,66 +142,28 @@ You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
   }
 
   async function loadMovies(){
-    if(cachedMovies) return cachedMovies;
-
+    if(moviesCache) return moviesCache;
     const res = await fetch(JSON_PATH, { cache: "no-store" });
-    if(!res.ok) throw new Error("Could not load " + JSON_PATH + " (HTTP " + res.status + ")");
-    const movies = await res.json();
-    if(!Array.isArray(movies) || movies.length === 0) throw new Error("movies.json empty or invalid array");
-    cachedMovies = movies;
-    return movies;
+    if(!res.ok) throw new Error("Could not load " + JSON_PATH);
+    moviesCache = await res.json();
+    return moviesCache;
   }
 
-  function titleFor(m){
-    return (m.id_with_year && String(m.id_with_year).trim())
-      ? m.id_with_year
-      : ((m.year && String(m.year).trim()) ? `${m.id} (${m.year})` : (m.id || "Untitled"));
-  }
-
-  function imgFor(m){
-    if(m.image_file && String(m.image_file).trim()){
-      return BASE + encodeURIComponent(String(m.image_file));
-    }
-    if(m.image_url && String(m.image_url).trim()){
-      return m.image_url;
-    }
-    return "";
-  }
-
-  async function prefetch(){
-    if(prefetched) return;
-    prefetched = true;
-    try{
-      const movies = await loadMovies();
-      const m = movies[pickIndex(movies.length)];
-      const src = imgFor(m);
-      if(src){
-        const img = new Image();
-        img.src = src;
-      }
-    }catch(_){}
-  }
-
-  async function open(){
-    const movies = await loadMovies();
-    const m = movies[pickIndex(movies.length)];
-
-    const t = titleFor(m);
-    const src = imgFor(m);
-    const url = (m.url && String(m.url).trim()) ? m.url : "#";
-    const description = (m.description && String(m.description).trim()) ? m.description : "";
+  function open(movie){
+    const title = movie.id_with_year || `${movie.id} (${movie.year})`;
+    const img = BASE + movie.image_file;
 
     card.innerHTML = `
       <header>
         <span>Today’s movie recommendation!</span>
-        <button id="close-movie" aria-label="Close">×</button>
+        <button id="close-movie">×</button>
       </header>
       <div class="grid">
-        ${src ? `<img src="${src}" alt="${t}" loading="eager" decoding="async">` : `<div></div>`}
+        <img src="${img}">
         <div class="meta">
-          <p class="title">${t}</p>
-          <p><a href="${url}" target="_blank" rel="noopener noreferrer">Link</a></p>
-          ${description ? `<p>${description}</p>` : ``}
+          <p class="title">${title}</p>
+          <p><a href="${movie.url}" target="_blank">Link</a></p>
+          <p>${movie.description}</p>
         </div>
       </div>
     `;
@@ -230,36 +171,22 @@ You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
     document.getElementById("close-movie").onclick = close;
     card.style.display = "block";
     position();
-
     document.addEventListener("mousedown", outside);
-    window.addEventListener("resize", position);
-    window.addEventListener("scroll", position, true);
   }
-
-  trigger.addEventListener("mouseenter", prefetch);
-  window.addEventListener("load", prefetch);
 
   trigger.addEventListener("click", async function(e){
     e.preventDefault();
     if(card.style.display === "block"){ close(); return; }
+
     try{
-      await open();
+      const movies = await loadMovies();
+      open(movies[todayIndex(movies.length)]);
     }catch(err){
-      card.innerHTML = `
-        <header>
-          <span>Today’s movie recommendation!</span>
-          <button id="close-movie" aria-label="Close">×</button>
-        </header>
-        <p style="margin:0;color:rgba(0,0,0,.82);font-size:.95rem;">
-          ${String(err && err.message ? err.message : err)}
-        </p>
-      `;
-      document.getElementById("close-movie").onclick = close;
+      card.innerHTML = `<p>${err.message}</p>`;
       card.style.display = "block";
       position();
-      document.addEventListener("mousedown", outside);
     }
   });
 })();
 </script>
-<!-- ================================================================ -->
+<!-- ================================================ -->
