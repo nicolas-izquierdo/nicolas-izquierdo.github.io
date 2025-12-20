@@ -151,11 +151,15 @@ You can find my full CV <a href="/CV-nicolas-izquierdo-11-25.pdf">here</a>.
   }
 
   .movie-link{
-    color:#0057d9;
-    text-decoration:underline;
-    font-weight:800;
-    font-size:12.5px;
-  }
+  display:inline-block;  /* controla mejor el espacio */
+  margin-top:0;          /* evita separación fantasma */
+  line-height:1.2;       /* más compacto */
+  color:#0057d9;
+  text-decoration:underline;
+  font-weight:800;
+  font-size:12.5px;
+}
+
   .movie-link:hover{ color:#0046b3; }
 </style>
 
