@@ -31,55 +31,126 @@ from the University Carlos III of Madrid.
 
 My research interests lie in comparative political economy and labor politics, encompassing issues of political representation, contentious politics, and redistribution. I am particularly interested in how labor mobilization shapes policy outcomes and mass preferences across advanced democracies. I also study courts and legal processes, focusing on how private economic interests influence judicial decision-making.
 
-Outside academia, I enjoy <a href="#" id="movie-trigger" style="text-decoration:underline;cursor:pointer;color:inherit;">social and political cinema</a> and <a href="https://www.chess.com/member/nicolas_izq">playing chess</a>.
+Outside academia, I enjoy
+<a href="#" id="movie-trigger" style="text-decoration:underline;cursor:pointer;color:inherit;">
+  social and political cinema
+</a>
+and <a href="https://www.chess.com/member/nicolas_izq">playing chess</a>.
 
 <div id="movie-card" style="display:none;"></div>
 
 You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
 
-<!-- ================= MOVIE POPOVER (SELF-CONTAINED) ================= -->
 <style>
 #movie-card{
   position:absolute;
   z-index:9999;
-  width:520px;
+  width:560px;
   max-width:calc(100vw - 24px);
-  background:#fff;
-  border:1px solid rgba(0,0,0,.12);
-  border-radius:14px;
-  padding:14px;
-  box-shadow:0 10px 28px rgba(0,0,0,.14);
+  background:rgba(255,255,255,.92);
+  border:1px solid rgba(0,0,0,.10);
+  border-radius:16px;
+  padding:14px 14px 12px 14px;
+  box-shadow:0 18px 46px rgba(0,0,0,.18);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
-#movie-card header{
+
+#movie-card .top{
   display:flex;
-  justify-content:space-between;
   align-items:center;
-  font-weight:700;
+  justify-content:space-between;
+  gap:12px;
   margin-bottom:10px;
 }
-#movie-card button{
-  border:1px solid rgba(0,0,0,.15);
-  background:#fff;
-  border-radius:8px;
-  width:32px;height:32px;
+
+#movie-card .badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-weight:700;
+  font-size:.95rem;
+  letter-spacing:.2px;
+}
+
+#movie-card .badge .dot{
+  width:8px;
+  height:8px;
+  border-radius:999px;
+  background:rgba(0,0,0,.35);
+  display:inline-block;
+}
+
+#movie-card .close{
+  border:1px solid rgba(0,0,0,.12);
+  background:rgba(255,255,255,.9);
+  border-radius:10px;
+  width:34px;
+  height:34px;
   cursor:pointer;
   font-size:18px;
+  line-height:1;
+  color:rgba(0,0,0,.7);
 }
+
 #movie-card .grid{
   display:grid;
-  grid-template-columns:110px 1fr;
-  gap:12px;
+  grid-template-columns:120px 1fr;
+  gap:14px;
+  align-items:start;
 }
-#movie-card img{
-  width:110px;height:160px;
+
+#movie-card .poster{
+  width:120px;
+  height:176px;
   object-fit:cover;
-  border-radius:10px;
-  border:1px solid rgba(0,0,0,.1);
+  border-radius:12px;
+  border:1px solid rgba(0,0,0,.10);
+  box-shadow:0 10px 24px rgba(0,0,0,.16);
+  background:rgba(0,0,0,.03);
 }
-#movie-card .title{font-weight:700;margin:0 0 6px 0;}
-#movie-card a{color:#1a73e8;text-decoration:none;}
-#movie-card a:hover{text-decoration:underline;}
-#movie-card p{margin:0;font-size:.95rem;color:rgba(0,0,0,.8);}
+
+#movie-card .title{
+  margin:0 0 6px 0;
+  font-weight:800;
+  font-size:1.06rem;
+  line-height:1.25;
+  color:rgba(0,0,0,.86);
+}
+
+#movie-card .meta{
+  margin:0 0 10px 0;
+  font-size:.92rem;
+  color:rgba(0,0,0,.62);
+}
+
+#movie-card .meta a{
+  color:#1a73e8;
+  text-decoration:none;
+}
+
+#movie-card .meta a:hover{
+  text-decoration:underline;
+}
+
+#movie-card .desc{
+  margin:0;
+  font-size:.98rem;
+  line-height:1.38;
+  color:rgba(0,0,0,.78);
+}
+
+#movie-card .hint{
+  margin-top:10px;
+  font-size:.84rem;
+  color:rgba(0,0,0,.50);
+}
+
+@media (max-width: 520px){
+  #movie-card{ width:calc(100vw - 24px); }
+  #movie-card .grid{ grid-template-columns:96px 1fr; }
+  #movie-card .poster{ width:96px; height:140px; border-radius:10px; }
+}
 </style>
 
 <script>
@@ -88,22 +159,35 @@ You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
   const card = document.getElementById("movie-card");
   const JSON_PATH = "/covers_movies/movies.json";
 
-  function pickIndex(n){
+  function hashDay(){
     const d = new Date().toISOString().slice(0,10);
-    let h = 0;
-    for(const c of d) h = (h * 31 + c.charCodeAt(0)) >>> 0;
-    return h % n;
+    let h = 2166136261;
+    for (let i = 0; i < d.length; i++){
+      h ^= d.charCodeAt(i);
+      h = Math.imul(h, 16777619);
+    }
+    return (h >>> 0);
   }
 
   function position(){
     const r = trigger.getBoundingClientRect();
-    card.style.left = (window.scrollX + r.left) + "px";
-    card.style.top  = (window.scrollY + r.bottom + 8) + "px";
+    const pad = 12;
+    card.style.display = "block";
+    const maxLeft = window.scrollX + document.documentElement.clientWidth - card.offsetWidth - pad;
+
+    let left = window.scrollX + r.left;
+    left = Math.min(left, maxLeft);
+    left = Math.max(left, window.scrollX + pad);
+
+    card.style.left = left + "px";
+    card.style.top  = (window.scrollY + r.bottom + 10) + "px";
   }
 
   function close(){
     card.style.display = "none";
     document.removeEventListener("mousedown", outside);
+    window.removeEventListener("resize", position);
+    window.removeEventListener("scroll", position, {passive:true});
   }
 
   function outside(e){
@@ -111,38 +195,126 @@ You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
     close();
   }
 
-  async function open(){
+  function esc(s){
+    return String(s ?? "")
+      .replaceAll("&","&amp;")
+      .replaceAll("<","&lt;")
+      .replaceAll(">","&gt;")
+      .replaceAll('"',"&quot;")
+      .replaceAll("'","&#039;");
+  }
+
+  function titleOf(m){
+    const t = (m.id_with_year || "").trim();
+    if (t) return t;
+    const id = (m.id || "Untitled").trim();
+    const y = String(m.year || "").trim();
+    return y ? `${id} (${y})` : id;
+  }
+
+  async function loadMovies(){
     const res = await fetch(JSON_PATH, {cache:"no-store"});
+    if(!res.ok) throw new Error(`Could not load ${JSON_PATH} (HTTP ${res.status})`);
     const movies = await res.json();
-    const m = movies[pickIndex(movies.length)];
+    if(!Array.isArray(movies)) throw new Error("movies.json is not an array.");
+    return movies;
+  }
 
-    const title = m.id_with_year || (m.year ? `${m.id} (${m.year})` : m.id);
+  async function pickMovieWithCover(movies){
+    const withCover = movies.filter(m => m && m.image_file && String(m.image_file).trim().length > 0);
+    if(withCover.length === 0) throw new Error("No movies with image_file found.");
 
-    card.innerHTML = `
-      <header>
-        <span>Today’s movie recommendation!</span>
-        <button id="close-movie">×</button>
-      </header>
-      <div class="grid">
-        <img src="/covers_movies/${encodeURIComponent(m.image_file)}">
-        <div>
-          <p class="title">${title}</p>
-          <p><a href="${m.url}" target="_blank">Link</a></p>
-          <p>${m.description}</p>
-        </div>
-      </div>
-    `;
+    const start = hashDay() % withCover.length;
+    for(let i = 0; i < withCover.length; i++){
+      const m = withCover[(start + i) % withCover.length];
+      const imgSrc = "/covers_movies/" + encodeURIComponent(m.image_file);
 
-    document.getElementById("close-movie").onclick = close;
+      const ok = await new Promise(resolve => {
+        const img = new Image();
+        img.onload = () => resolve(true);
+        img.onerror = () => resolve(false);
+        img.src = imgSrc;
+      });
+
+      if(ok) return { m, imgSrc };
+    }
+    throw new Error("No movie covers could be loaded from /covers_movies/.");
+  }
+
+  let cached = null;
+  let loading = false;
+
+  async function open(){
+    if(card.style.display === "block"){ close(); return; }
+
     card.style.display = "block";
     position();
     document.addEventListener("mousedown", outside);
+    window.addEventListener("resize", position);
+    window.addEventListener("scroll", position, {passive:true});
+
+    if(cached){ render(cached.m, cached.imgSrc); position(); return; }
+    if(loading) return;
+
+    loading = true;
+    card.innerHTML = `
+      <div class="top">
+        <div class="badge"><span class="dot"></span><span>Today’s movie recommendation</span></div>
+        <button class="close" id="close-movie" aria-label="Close">×</button>
+      </div>
+      <div class="hint">Loading…</div>
+    `;
+    document.getElementById("close-movie").onclick = close;
+
+    try{
+      const movies = await loadMovies();
+      const picked = await pickMovieWithCover(movies);
+      cached = picked;
+      render(picked.m, picked.imgSrc);
+      position();
+    }catch(e){
+      card.innerHTML = `
+        <div class="top">
+          <div class="badge"><span class="dot"></span><span>Today’s movie recommendation</span></div>
+          <button class="close" id="close-movie" aria-label="Close">×</button>
+        </div>
+        <p class="desc">Couldn’t load today’s recommendation.</p>
+        <div class="hint">${esc(e.message || e)}</div>
+      `;
+      document.getElementById("close-movie").onclick = close;
+      position();
+      console.error(e);
+    }finally{
+      loading = false;
+    }
+  }
+
+  function render(m, imgSrc){
+    const t = titleOf(m);
+    const link = m.url ? `<a href="${esc(m.url)}" target="_blank" rel="noopener">Link</a>` : "";
+    const desc = m.description ? esc(m.description) : "";
+
+    card.innerHTML = `
+      <div class="top">
+        <div class="badge"><span class="dot"></span><span>Today’s movie recommendation</span></div>
+        <button class="close" id="close-movie" aria-label="Close">×</button>
+      </div>
+      <div class="grid">
+        <img class="poster" src="${imgSrc}" alt="Poster for ${esc(t)}" loading="lazy">
+        <div>
+          <p class="title">${esc(t)}</p>
+          <p class="meta">${link}</p>
+          <p class="desc">${desc}</p>
+        </div>
+      </div>
+      <div class="hint">Selection updates daily.</div>
+    `;
+    document.getElementById("close-movie").onclick = close;
   }
 
   trigger.addEventListener("click", function(e){
     e.preventDefault();
-    card.style.display === "block" ? close() : open();
+    open();
   });
 })();
 </script>
-<!-- ================================================================ -->
