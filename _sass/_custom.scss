@@ -1,0 +1,69 @@
+.movie-popover{
+  position: absolute;
+  z-index: 9999;
+  width: 520px;
+  max-width: min(520px, calc(100vw - 24px));
+  border: 1px solid rgba(0,0,0,.12);
+  border-radius: 14px;
+  padding: 14px 14px 12px 14px;
+  box-shadow: 0 10px 28px rgba(0,0,0,.14);
+  background: #fff;
+}
+
+.movie-popover .movie-top{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.movie-popover .movie-card-header{
+  font-weight: 700;
+  font-size: 1.02rem;
+  margin: 0;
+}
+
+.movie-popover .movie-close{
+  appearance: none;
+  border: 1px solid rgba(0,0,0,.12);
+  background: #fff;
+  border-radius: 10px;
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.movie-popover .movie-card-grid{
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 12px;
+}
+
+.movie-popover .movie-poster{
+  width: 110px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,.10);
+}
+
+.movie-popover .movie-title{
+  font-weight: 700;
+  margin: 0 0 6px 0;
+}
+
+.movie-popover .movie-link a{
+  color: #1a73e8;
+  text-decoration: none;
+}
+
+.movie-popover .movie-link a:hover{
+  text-decoration: underline;
+}
+
+.movie-popover .movie-desc{
+  font-size: 0.96rem;
+  color: rgba(0,0,0,.78);
+}
