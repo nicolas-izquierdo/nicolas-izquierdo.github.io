@@ -49,10 +49,9 @@ and
 You can find my full CV <a href="/CV-nicolas-izquierdo-11-25.pdf">here</a>.
 </p>
 
-<!-- POPOVER (initially hidden) -->
 <div id="cinema-pop" class="popover" role="dialog" aria-hidden="true">
   <div class="popover-inner" id="cinema-pop-content">
-    <div class="pop-title">Today’s movie</div>
+    <div class="pop-title">Today’s movie recommendation</div>
     <div class="pop-loading">Loading…</div>
   </div>
 </div>
@@ -73,13 +72,13 @@ You can find my full CV <a href="/CV-nicolas-izquierdo-11-25.pdf">here</a>.
 
   .popover-inner{
     pointer-events:auto;
-    background:#111;
-    color:#fff;
+    background:#e9e9e9;
+    color:#111;
     border-radius:14px;
-    box-shadow:0 10px 30px rgba(0,0,0,.25);
+    box-shadow:0 10px 30px rgba(0,0,0,.18);
     padding:12px;
     min-width:280px;
-    max-width:360px;
+    max-width:380px;
     position:relative;
     font-family:inherit;
   }
@@ -92,12 +91,12 @@ You can find my full CV <a href="/CV-nicolas-izquierdo-11-25.pdf">here</a>.
     width:0;height:0;
     border-left:8px solid transparent;
     border-right:8px solid transparent;
-    border-top:8px solid #111;
+    border-top:8px solid #e9e9e9;
   }
 
   .pop-title{
     font-weight:800;
-    letter-spacing:.08em;
+    letter-spacing:.06em;
     font-size:12px;
     text-transform:uppercase;
     opacity:.9;
@@ -109,14 +108,14 @@ You can find my full CV <a href="/CV-nicolas-izquierdo-11-25.pdf">here</a>.
     width:78px; height:110px;
     border-radius:10px;
     object-fit:cover;
-    background:#222;
+    background:#d9d9d9;
     flex:0 0 auto;
   }
   .movie-name{ font-weight:800; font-size:14px; margin:0 0 4px 0; }
-  .movie-year{ font-size:12px; opacity:.75; margin:0 0 8px 0; }
+  .movie-year{ font-size:12px; opacity:.7; margin:0 0 8px 0; }
   .movie-desc{ font-size:12.5px; line-height:1.35; opacity:.92; margin:0 0 10px 0; }
-  .movie-link{ color:#60a5fa; text-decoration:underline; font-weight:700; font-size:12.5px; }
-  .movie-link:hover{ color:#93c5fd; }
+  .movie-link{ color:#0057d9; text-decoration:underline; font-weight:800; font-size:12.5px; }
+  .movie-link:hover{ color:#0046b3; }
 </style>
 
 <script>
@@ -162,15 +161,20 @@ You can find my full CV <a href="/CV-nicolas-izquierdo-11-25.pdf">here</a>.
 
   function render(movie){
     const img = posterSrc(movie);
+    const year = t(movie.year).trim();
+    const yearParen = year ? ` (${year})` : "";
+    const title = t(movie.id).trim() || t(movie.id_with_year).trim();
+    const desc = t(movie.description).trim();
+    const url = t(movie.url).trim();
+
     document.getElementById("cinema-pop-content").innerHTML = `
-      <div class="pop-title">Today’s movie</div>
+      <div class="pop-title">Today’s movie recommendation</div>
       <div class="movie-card">
-        ${img ? `<img class="movie-poster" src="${img}">` : ``}
-        <div>
-          <p class="movie-name">${t(movie.id_with_year || movie.id)}</p>
-          <p class="movie-year">${t(movie.year)}</p>
-          <p class="movie-desc">${t(movie.description)}</p>
-          <a class="movie-link" href="${movie.url}" target="_blank">More info</a>
+        ${img ? `<img class="movie-poster" src="${img}" alt="${title}${yearParen} poster" loading="eager" decoding="async" onerror="this.style.display='none';">` : ``}
+        <div style="min-width:0;">
+          <p class="movie-name">${title}${yearParen}</p>
+          ${desc ? `<p class="movie-desc">${desc}</p>` : ``}
+          ${url ? `<a class="movie-link" href="${url}" target="_blank" rel="noopener noreferrer">Link</a>` : ``}
         </div>
       </div>
     `;
