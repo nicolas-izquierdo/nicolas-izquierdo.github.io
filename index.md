@@ -39,10 +39,8 @@ My research interests lie in comparative political economy and labor politics, e
 </p>
 
 <p>
-Outside academia, I enjoy social and political
-<a href="#" id="cinema-link" class="poplink" aria-haspopup="dialog" aria-expanded="false">cinema</a>
-and
-<a href="https://www.chess.com/member/nicolas_izq">playing chess</a>.
+Outside academia, I enjoy <a href="#" id="cinema-link" class="poplink" aria-haspopup="dialog" aria-expanded="false">social and political cinema</a>
+and <a href="https://www.chess.com/member/nicolas_izq">playing chess</a>.
 </p>
 
 <p>
