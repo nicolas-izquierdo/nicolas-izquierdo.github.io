@@ -147,7 +147,7 @@ You can find my full CV <a href="/CV-nicolas-izquierdo-11-25.pdf">here</a>.
     font-size:12.5px;
     line-height:1.35;
     opacity:.92;
-    margin:0 0 4px 0;
+    margin:0 0 2px 0;
   }
 
   .movie-link{
