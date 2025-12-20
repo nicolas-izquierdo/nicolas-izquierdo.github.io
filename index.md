@@ -23,42 +23,43 @@ redirect_from:
   </figcaption>
 </figure>
 
-Welcome! My name is Nicolás Izquierdo and I am a Master's student in Social Sciences at the 
-[Carlos III–Juan March Institute (IC3JM)](https://ic3jm.es/en/postgraduates/master-degree-social-sciences/). 
-I also hold both degrees in [Law (LL.B.)](https://www.uc3m.es/bachelor-degree/law) 
-and [Political Science (B.A.)](https://www.uc3m.es/bachelor-degree/political-science) 
-from the University Carlos III of Madrid.  
+<p>
+Welcome! My name is Nicolás Izquierdo and I am a Master's student in Social Sciences at the
+<a href="https://ic3jm.es/en/postgraduates/master-degree-social-sciences/">Carlos III–Juan March Institute (IC3JM)</a>.
+I also hold both degrees in <a href="https://www.uc3m.es/bachelor-degree/law">Law (LL.B.)</a>
+and <a href="https://www.uc3m.es/bachelor-degree/political-science">Political Science (B.A.)</a>
+from the University Carlos III of Madrid.
+</p>
 
+<p>
 My research interests lie in comparative political economy and labor politics, encompassing issues of political representation, contentious politics, and redistribution. I am particularly interested in how labor mobilization shapes policy outcomes and mass preferences across advanced democracies. I also study courts and legal processes, focusing on how private economic interests influence judicial decision-making.
+</p>
 
-Outside academia, I enjoy social and political 
+<p>
+Outside academia, I enjoy social and political
 <a href="#" id="cinema-link" class="poplink" aria-haspopup="dialog" aria-expanded="false">cinema</a>
 and <a href="https://www.chess.com/member/nicolas_izq">playing chess</a>.
+</p>
 
-You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
-
-<div id="cinema-pop" class="popover" role="dialog" aria-hidden="true">
-  <div class="popover-inner" id="cinema-pop-content">
-    <div class="pop-title">Today’s movie</div>
-    <div class="pop-loading">Loading…</div>
-  </div>
-</div>
+<p>
+You can find my full CV <a href="/CV-nicolas-izquierdo-11-25.pdf">here</a>.
+</p>
 
 <style>
   .poplink { color:#0057d9; text-decoration:underline; }
   .poplink:visited { color:#0057d9; }
   .poplink:hover { color:#0046b3; }
 
-  .popover{
+  #cinema-pop{
     position:fixed;
-    z-index:9999;
+    z-index:999999;
     display:none;
     transform:translate(-50%,-100%);
     pointer-events:none;
   }
-  .popover.show{ display:block; }
+  #cinema-pop.show{ display:block; }
 
-  .popover-inner{
+  #cinema-pop .popover-inner{
     pointer-events:auto;
     background:#111;
     color:#fff;
@@ -68,8 +69,9 @@ You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
     min-width:280px;
     max-width:360px;
     position:relative;
+    font-family:inherit;
   }
-  .popover-inner::after{
+  #cinema-pop .popover-inner::after{
     content:"";
     position:absolute;
     left:50%;
@@ -81,7 +83,7 @@ You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
     border-top:8px solid #111;
   }
 
-  .pop-title{
+  #cinema-pop .pop-title{
     font-weight:800;
     letter-spacing:.08em;
     font-size:12px;
@@ -90,63 +92,74 @@ You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
     margin-bottom:10px;
   }
 
-  .movie-card{ display:flex; gap:12px; align-items:flex-start; }
-  .movie-poster{
+  #cinema-pop .movie-card{ display:flex; gap:12px; align-items:flex-start; }
+  #cinema-pop .movie-poster{
     width:78px; height:110px; border-radius:10px; object-fit:cover;
     flex:0 0 auto; background:#222;
   }
-  .movie-name{ font-weight:800; font-size:14px; line-height:1.2; margin:0 0 4px 0; }
-  .movie-year{ font-size:12px; opacity:.75; margin:0 0 8px 0; }
-  .movie-desc{ font-size:12.5px; line-height:1.35; opacity:.92; margin:0 0 10px 0; }
-  .movie-link{ color:#60a5fa; text-decoration:underline; font-size:12.5px; font-weight:700; }
+  #cinema-pop .movie-name{ font-weight:800; font-size:14px; line-height:1.2; margin:0 0 4px 0; }
+  #cinema-pop .movie-year{ font-size:12px; opacity:.75; margin:0 0 8px 0; }
+  #cinema-pop .movie-desc{ font-size:12.5px; line-height:1.35; opacity:.92; margin:0 0 10px 0; }
+  #cinema-pop .movie-link{ color:#60a5fa; text-decoration:underline; font-size:12.5px; font-weight:700; }
+  #cinema-pop .movie-link:hover{ color:#93c5fd; }
 </style>
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const link = document.getElementById("cinema-link");
-  const pop = document.getElementById("cinema-pop");
-  const content = document.getElementById("cinema-pop-content");
-
-  // If the element isn't found, don't crash the page.
-  if (!link || !pop || !content) return;
-
+(function () {
   const MOVIES_JSON_URL = "/movies/movies.json";
   const MOVIES_BASE_PATH = "/movies/";
 
   let moviesCache = null;
-  let movieOfDayCacheKey = null;
-  let movieOfDayCacheValue = null;
+  let cachedKey = null;
+  let cachedMovie = null;
 
-  function todayKeyUTC() {
+  function t(s){ return (s ?? "").toString(); }
+
+  function ensurePopover() {
+    let pop = document.getElementById("cinema-pop");
+    if (pop) return pop;
+
+    pop = document.createElement("div");
+    pop.id = "cinema-pop";
+    pop.setAttribute("role","dialog");
+    pop.setAttribute("aria-hidden","true");
+    pop.innerHTML = `
+      <div class="popover-inner" id="cinema-pop-content">
+        <div class="pop-title">Today’s movie</div>
+        <div style="font-size:12.5px;opacity:.9;">Loading…</div>
+      </div>
+    `;
+    document.body.appendChild(pop);
+    return pop;
+  }
+
+  function todayKeyUTC(){
     const d = new Date();
     return `${d.getUTCFullYear()}-${String(d.getUTCMonth()+1).padStart(2,"0")}-${String(d.getUTCDate()).padStart(2,"0")}`;
   }
 
-  function dayIndexUTC() {
+  function dayIndexUTC(){
     const d = new Date();
     const ms = Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate());
     return Math.floor(ms / 86400000);
   }
 
-  function t(s) { return (s ?? "").toString(); }
-
-  function posterSrc(movie) {
+  function posterSrc(movie){
     const file = t(movie.image_file).trim();
     if (file) return MOVIES_BASE_PATH + encodeURI(file);
     const url = t(movie.image_url).trim();
     return url || "";
   }
 
-  function buildMovieHTML(movie) {
+  function buildMovieHTML(movie){
     const title = t(movie.id_with_year || movie.id || "Untitled");
-    const year = t(movie.year).trim();
-    const desc = t(movie.description).trim();
-    const url = t(movie.url).trim();
-    const img = posterSrc(movie);
+    const year  = t(movie.year).trim();
+    const desc  = t(movie.description).trim();
+    const url   = t(movie.url).trim();
+    const img   = posterSrc(movie);
 
     const imgTag = img
-      ? `<img class="movie-poster" src="${img}" alt="${title} poster" loading="eager" decoding="async"
-              onerror="this.style.display='none';" />`
+      ? `<img class="movie-poster" src="${img}" alt="${title} poster" loading="eager" decoding="async" onerror="this.style.display='none';" />`
       : `<div class="movie-poster" style="display:flex;align-items:center;justify-content:center;font-size:11px;opacity:.75;">No poster</div>`;
 
     const linkTag = url
@@ -167,41 +180,60 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   }
 
-  async function loadMoviesOnce() {
+  async function loadMovies(){
     if (moviesCache) return moviesCache;
 
     const res = await fetch(MOVIES_JSON_URL, { cache: "no-store" });
     if (!res.ok) throw new Error(`Could not load ${MOVIES_JSON_URL} (HTTP ${res.status})`);
-
     const data = await res.json();
     if (!Array.isArray(data) || data.length === 0) throw new Error("movies.json is empty or not an array.");
-
     moviesCache = data;
     return moviesCache;
   }
 
-  function pickDailyMovie(movies) {
+  function pickDailyMovie(movies){
     const key = todayKeyUTC();
-    if (movieOfDayCacheKey === key && movieOfDayCacheValue) return movieOfDayCacheValue;
+    if (cachedKey === key && cachedMovie) return cachedMovie;
 
     const idx = dayIndexUTC() % movies.length;
-    const movie = movies[idx];
-
-    movieOfDayCacheKey = key;
-    movieOfDayCacheValue = movie;
-    return movie;
+    cachedKey = key;
+    cachedMovie = movies[idx];
+    return cachedMovie;
   }
 
-  async function ensureMovieRendered() {
-    content.innerHTML = `<div class="pop-title">Today’s movie</div><div class="pop-loading">Loading…</div>`;
-    try {
-      const movies = await loadMoviesOnce();
+  function position(pop, linkEl){
+    const r = linkEl.getBoundingClientRect();
+    pop.style.left = `${r.left + r.width/2}px`;
+    pop.style.top  = `${r.top - 12}px`;
+  }
+
+  function show(pop, linkEl){
+    position(pop, linkEl);
+    pop.classList.add("show");
+    pop.setAttribute("aria-hidden","false");
+    linkEl.setAttribute("aria-expanded","true");
+  }
+
+  function hide(pop){
+    pop.classList.remove("show");
+    pop.setAttribute("aria-hidden","true");
+    const linkEl = document.getElementById("cinema-link");
+    if (linkEl) linkEl.setAttribute("aria-expanded","false");
+  }
+
+  async function renderIntoPopover(){
+    const content = document.getElementById("cinema-pop-content");
+    if (!content) return;
+
+    content.innerHTML = `<div class="pop-title">Today’s movie</div><div style="font-size:12.5px;opacity:.9;">Loading…</div>`;
+    try{
+      const movies = await loadMovies();
       const movie = pickDailyMovie(movies);
       content.innerHTML = buildMovieHTML(movie);
 
       const img = posterSrc(movie);
       if (img) { const pre = new Image(); pre.decoding = "async"; pre.src = img; }
-    } catch (err) {
+    }catch(err){
       content.innerHTML = `
         <div class="pop-title">Today’s movie</div>
         <div style="font-size:12.5px;opacity:.9;">Couldn’t load the movie list.</div>
@@ -210,42 +242,40 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  function positionPopover() {
-    const r = link.getBoundingClientRect();
-    pop.style.left = `${r.left + r.width/2}px`;
-    pop.style.top = `${r.top - 12}px`;
-  }
+  // Works even if the theme swaps content / link is re-rendered
+  document.addEventListener("click", async (e) => {
+    const linkEl = e.target.closest ? e.target.closest("#cinema-link") : null;
+    const pop = document.getElementById("cinema-pop");
 
-  function showPopover() {
-    positionPopover();
-    pop.classList.add("show");
-    pop.setAttribute("aria-hidden", "false");
-    link.setAttribute("aria-expanded", "true");
-  }
+    if (linkEl) {
+      e.preventDefault();
+      const p = ensurePopover();
+      const open = p.classList.contains("show");
+      if (open) { hide(p); return; }
+      show(p, linkEl);
+      await renderIntoPopover();
+      position(p, linkEl);
+      return;
+    }
 
-  function hidePopover() {
-    pop.classList.remove("show");
-    pop.setAttribute("aria-hidden", "true");
-    link.setAttribute("aria-expanded", "false");
-  }
-
-  link.addEventListener("click", async (e) => {
-    e.preventDefault();
-    if (pop.classList.contains("show")) { hidePopover(); return; }
-    showPopover();
-    await ensureMovieRendered();
-    positionPopover();
+    if (pop && pop.classList.contains("show")) hide(pop);
   });
 
-  window.addEventListener("scroll", () => { if (pop.classList.contains("show")) positionPopover(); }, { passive:true });
-  window.addEventListener("resize", () => { if (pop.classList.contains("show")) positionPopover(); });
+  window.addEventListener("scroll", () => {
+    const pop = document.getElementById("cinema-pop");
+    const linkEl = document.getElementById("cinema-link");
+    if (pop && linkEl && pop.classList.contains("show")) position(pop, linkEl);
+  }, { passive:true });
 
-  document.addEventListener("click", (e) => {
-    if (e.target !== link && pop.classList.contains("show")) hidePopover();
+  window.addEventListener("resize", () => {
+    const pop = document.getElementById("cinema-pop");
+    const linkEl = document.getElementById("cinema-link");
+    if (pop && linkEl && pop.classList.contains("show")) position(pop, linkEl);
   });
 
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && pop.classList.contains("show")) hidePopover();
+    const pop = document.getElementById("cinema-pop");
+    if (e.key === "Escape" && pop && pop.classList.contains("show")) hide(pop);
   });
-});
+})();
 </script>
