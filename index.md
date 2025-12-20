@@ -23,25 +23,17 @@ redirect_from:
   </figcaption>
 </figure>
 
-Welcome! My name is Nicolás Izquierdo and I am a Master's student in Social Sciences at the  
-[Carlos III–Juan March Institute (IC3JM)](https://ic3jm.es/en/postgraduates/master-degree-social-sciences/).  
-I also hold both degrees in [Law (LL.B.)](https://www.uc3m.es/bachelor-degree/law)  
-and [Political Science (B.A.)](https://www.uc3m.es/bachelor-degree/political-science)  
-from the University Carlos III of Madrid.  
+Welcome! My name is Nicolás Izquierdo and I am a Master's student in Social Sciences at the [Carlos III–Juan March Institute (IC3JM)](https://ic3jm.es/en/postgraduates/master-degree-social-sciences/). I also hold both degrees in [Law (LL.B.)](https://www.uc3m.es/bachelor-degree/law) and [Political Science (B.A.)](https://www.uc3m.es/bachelor-degree/political-science) from the University Carlos III of Madrid.  
 
 My research interests lie in comparative political economy and labor politics, encompassing issues of political representation, contentious politics, and redistribution. I am particularly interested in how labor mobilization shapes policy outcomes and mass preferences across advanced democracies. I also study courts and legal processes, focusing on how private economic interests influence judicial decision-making.
 
-Outside academia, I enjoy
-<a href="#" id="movie-trigger" style="text-decoration:underline;cursor:pointer;color:inherit;">
-  historical and political cinema
-</a>
-and <a href="https://www.chess.com/member/nicolas_izq">playing chess</a>.
+Outside academia, I enjoy <a href="#" id="movie-trigger" style="text-decoration:underline;cursor:pointer;color:inherit;"> social and political cinema </a> and <a href="https://www.chess.com/member/nicolas_izq">playing chess</a>.
 
 <div id="movie-card" style="display:none;"></div>
 
 You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
 
-<!-- ================= MOVIE POPOVER ================= -->
+<!-- ================= MOVIE POPOVER (SELF-CONTAINED) ================= -->
 <style>
 #movie-card{
   position:absolute;
@@ -54,7 +46,6 @@ You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
   padding:14px;
   box-shadow:0 10px 28px rgba(0,0,0,.14);
 }
-
 #movie-card header{
   display:flex;
   justify-content:space-between;
@@ -62,48 +53,32 @@ You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
   font-weight:700;
   margin-bottom:10px;
 }
-
 #movie-card button{
   border:1px solid rgba(0,0,0,.15);
   background:#fff;
   border-radius:8px;
-  width:32px;
-  height:32px;
+  width:32px;height:32px;
   cursor:pointer;
   font-size:18px;
+  line-height:30px;
 }
-
 #movie-card .grid{
   display:grid;
   grid-template-columns:110px 1fr;
   gap:12px;
 }
-
 #movie-card img{
-  width:110px;
-  height:160px;
+  width:110px;height:160px;
   object-fit:cover;
   border-radius:10px;
   border:1px solid rgba(0,0,0,.1);
+  background:#f2f2f2;
 }
-
-#movie-card .title{
-  font-weight:700;
-  margin:0 0 6px 0;
-}
-
-#movie-card a{
-  color:#1a73e8;
-  text-decoration:none;
-}
-#movie-card a:hover{ text-decoration:underline; }
-
-#movie-card p{
-  margin:0;
-  font-size:.95rem;
-  color:rgba(0,0,0,.82);
-}
-#movie-card .meta p + p{ margin-top:6px; }
+#movie-card .title{font-weight:700;margin:0 0 6px 0;}
+#movie-card a{color:#1a73e8;text-decoration:none;}
+#movie-card a:hover{text-decoration:underline;}
+#movie-card p{margin:0;font-size:.95rem;color:rgba(0,0,0,.82);}
+#movie-card .meta p + p{margin-top:6px;}
 </style>
 
 <script>
@@ -111,15 +86,19 @@ You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
   const trigger = document.getElementById("movie-trigger");
   const card = document.getElementById("movie-card");
 
-  // ✅ RUTA CORRECTA
+  // ✅ JSON + covers in SAME folder
   const BASE = "/movies/";
   const JSON_PATH = BASE + "movies.json";
 
   let moviesCache = null;
 
-  function todayIndex(n){
+  function pickIndex(n){
     const d = new Date();
-    const s = `${d.getFullYear()}-${d.getMonth()+1}-${d.getDate()}`;
+    const yyyy = d.getFullYear();
+    const mm = String(d.getMonth()+1).padStart(2,"0");
+    const dd = String(d.getDate()).padStart(2,"0");
+    const s = `${yyyy}-${mm}-${dd}`;
+
     let h = 0;
     for(const c of s) h = (h * 31 + c.charCodeAt(0)) >>> 0;
     return h % n;
@@ -127,13 +106,15 @@ You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
 
   function position(){
     const r = trigger.getBoundingClientRect();
-    card.style.left = window.scrollX + r.left + "px";
-    card.style.top  = window.scrollY + r.bottom + 8 + "px";
+    card.style.left = (window.scrollX + r.left) + "px";
+    card.style.top  = (window.scrollY + r.bottom + 8) + "px";
   }
 
   function close(){
     card.style.display = "none";
     document.removeEventListener("mousedown", outside);
+    window.removeEventListener("resize", position);
+    window.removeEventListener("scroll", position, true);
   }
 
   function outside(e){
@@ -143,50 +124,86 @@ You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
 
   async function loadMovies(){
     if(moviesCache) return moviesCache;
-    const res = await fetch(JSON_PATH, { cache: "no-store" });
-    if(!res.ok) throw new Error("Could not load " + JSON_PATH);
-    moviesCache = await res.json();
+
+    const res = await fetch(JSON_PATH, { cache:"no-store" });
+    if(!res.ok) throw new Error(`Could not load ${JSON_PATH} (HTTP ${res.status})`);
+
+    const movies = await res.json();
+    if(!Array.isArray(movies) || movies.length === 0) {
+      throw new Error("movies.json is empty or not an array");
+    }
+    moviesCache = movies;
     return moviesCache;
   }
 
-  function open(movie){
-    const title = movie.id_with_year || `${movie.id} (${movie.year})`;
-    const img = BASE + movie.image_file;
+  function titleFor(m){
+    if(m.id_with_year && String(m.id_with_year).trim()) return m.id_with_year;
+    const base = m.id || "Untitled";
+    return (m.year && String(m.year).trim()) ? `${base} (${m.year})` : base;
+  }
+
+  function imgFor(m){
+    if(m.image_file && String(m.image_file).trim()){
+      // ✅ encode file name only (spaces, parentheses, etc.)
+      return BASE + encodeURIComponent(String(m.image_file));
+    }
+    if(m.image_url && String(m.image_url).trim()){
+      return m.image_url;
+    }
+    return "";
+  }
+
+  async function open(){
+    const movies = await loadMovies();
+    const m = movies[pickIndex(movies.length)];
+
+    const title = titleFor(m);
+    const imgSrc = imgFor(m);
+    const url = (m.url && String(m.url).trim()) ? m.url : "#";
+    const description = (m.description && String(m.description).trim()) ? m.description : "";
 
     card.innerHTML = `
       <header>
         <span>Today’s movie recommendation!</span>
-        <button id="close-movie">×</button>
+        <button id="close-movie" aria-label="Close">×</button>
       </header>
       <div class="grid">
-        <img src="${img}">
+        ${imgSrc ? `<img src="${imgSrc}" alt="${title}" loading="eager" decoding="async">` : ``}
         <div class="meta">
           <p class="title">${title}</p>
-          <p><a href="${movie.url}" target="_blank">Link</a></p>
-          <p>${movie.description}</p>
+          <p><a href="${url}" target="_blank" rel="noopener noreferrer">Link</a></p>
+          ${description ? `<p>${description}</p>` : ``}
         </div>
       </div>
     `;
 
     document.getElementById("close-movie").onclick = close;
+
     card.style.display = "block";
     position();
+
     document.addEventListener("mousedown", outside);
+    window.addEventListener("resize", position);
+    window.addEventListener("scroll", position, true);
   }
 
-  trigger.addEventListener("click", async function(e){
+  trigger.addEventListener("click", function(e){
     e.preventDefault();
-    if(card.style.display === "block"){ close(); return; }
-
-    try{
-      const movies = await loadMovies();
-      open(movies[todayIndex(movies.length)]);
-    }catch(err){
-      card.innerHTML = `<p>${err.message}</p>`;
+    card.style.display === "block" ? close() : open().catch(err => {
+      card.innerHTML = `
+        <header>
+          <span>Today’s movie recommendation!</span>
+          <button id="close-movie" aria-label="Close">×</button>
+        </header>
+        <p style="margin:0;font-size:.95rem;color:rgba(0,0,0,.82);">
+          ${String(err && err.message ? err.message : err)}
+        </p>
+      `;
+      document.getElementById("close-movie").onclick = close;
       card.style.display = "block";
       position();
-    }
+    });
   });
 })();
 </script>
-<!-- ================================================ -->
+<!-- ================================================================ -->
