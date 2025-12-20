@@ -23,11 +23,19 @@ redirect_from:
   </figcaption>
 </figure>
 
-Welcome! My name is Nicolás Izquierdo and I am a Master's student in Social Sciences at the [Carlos III–Juan March Institute (IC3JM)](https://ic3jm.es/en/postgraduates/master-degree-social-sciences/). I also hold both degrees in [Law (LL.B.)](https://www.uc3m.es/bachelor-degree/law) and [Political Science (B.A.)](https://www.uc3m.es/bachelor-degree/political-science) from the University Carlos III of Madrid.  
+Welcome! My name is Nicolás Izquierdo and I am a Master's student in Social Sciences at the 
+[Carlos III–Juan March Institute (IC3JM)](https://ic3jm.es/en/postgraduates/master-degree-social-sciences/). 
+I also hold both degrees in [Law (LL.B.)](https://www.uc3m.es/bachelor-degree/law) 
+and [Political Science (B.A.)](https://www.uc3m.es/bachelor-degree/political-science) 
+from the University Carlos III of Madrid.  
 
 My research interests lie in comparative political economy and labor politics, encompassing issues of political representation, contentious politics, and redistribution. I am particularly interested in how labor mobilization shapes policy outcomes and mass preferences across advanced democracies. I also study courts and legal processes, focusing on how private economic interests influence judicial decision-making.
 
-Outside academia, I enjoy <a href="#" id="movie-trigger" style="text-decoration:underline;cursor:pointer;color:inherit;"> social and political cinema</a> and <a href="https://www.chess.com/member/nicolas_izq">playing chess</a>.
+Outside academia, I enjoy
+<a href="#" id="movie-trigger" style="text-decoration:underline;cursor:pointer;color:inherit;">
+  historical and political cinema
+</a>
+and <a href="https://www.chess.com/member/nicolas_izq">playing chess</a>.
 
 <div id="movie-card" style="display:none;"></div>
 
@@ -86,13 +94,15 @@ You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
   const trigger = document.getElementById("movie-trigger");
   const card = document.getElementById("movie-card");
 
-  // ✅ JSON + covers in SAME folder
-  const BASE = "/movies/";
-  const JSON_PATH = BASE + "movies.json";
+  // ✅ YOUR REAL PATHS
+  const JSON_PATH = "/movies/movies.json";
+  const IMG_BASE  = "/movies/";
 
   let moviesCache = null;
+  let prefetched = false;
 
   function pickIndex(n){
+    // stable per local day
     const d = new Date();
     const yyyy = d.getFullYear();
     const mm = String(d.getMonth()+1).padStart(2,"0");
@@ -100,14 +110,23 @@ You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
     const s = `${yyyy}-${mm}-${dd}`;
 
     let h = 0;
-    for(const c of s) h = (h * 31 + c.charCodeAt(0)) >>> 0;
+    for (let i=0;i<s.length;i++) h = (h * 31 + s.charCodeAt(i)) >>> 0;
     return h % n;
   }
 
   function position(){
     const r = trigger.getBoundingClientRect();
-    card.style.left = (window.scrollX + r.left) + "px";
-    card.style.top  = (window.scrollY + r.bottom + 8) + "px";
+    let left = window.scrollX + r.left;
+    let top  = window.scrollY + r.bottom + 8;
+
+    card.style.left = left + "px";
+    card.style.top  = top  + "px";
+
+    // keep in viewport
+    const rect = card.getBoundingClientRect();
+    const overflowRight = rect.right - window.innerWidth;
+    if (overflowRight > 12) card.style.left = (left - overflowRight - 12) + "px";
+    if (rect.left < 12) card.style.left = (window.scrollX + 12) + "px";
   }
 
   function close(){
@@ -118,39 +137,55 @@ You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
   }
 
   function outside(e){
-    if(card.contains(e.target) || trigger.contains(e.target)) return;
+    if (card.contains(e.target) || trigger.contains(e.target)) return;
     close();
   }
 
   async function loadMovies(){
-    if(moviesCache) return moviesCache;
+    if (moviesCache) return moviesCache;
 
     const res = await fetch(JSON_PATH, { cache:"no-store" });
-    if(!res.ok) throw new Error(`Could not load ${JSON_PATH} (HTTP ${res.status})`);
+    if (!res.ok) throw new Error(`Could not load ${JSON_PATH} (HTTP ${res.status})`);
 
-    const movies = await res.json();
-    if(!Array.isArray(movies) || movies.length === 0) {
-      throw new Error("movies.json is empty or not an array");
+    const data = await res.json();
+    if (!Array.isArray(data) || data.length === 0) {
+      throw new Error("movies.json empty or invalid array");
     }
-    moviesCache = movies;
+
+    moviesCache = data;
     return moviesCache;
   }
 
   function titleFor(m){
-    if(m.id_with_year && String(m.id_with_year).trim()) return m.id_with_year;
+    if (m.id_with_year && String(m.id_with_year).trim()) return m.id_with_year;
     const base = m.id || "Untitled";
     return (m.year && String(m.year).trim()) ? `${base} (${m.year})` : base;
   }
 
   function imgFor(m){
-    if(m.image_file && String(m.image_file).trim()){
-      // ✅ encode file name only (spaces, parentheses, etc.)
-      return BASE + encodeURIComponent(String(m.image_file));
+    if (m.image_file && String(m.image_file).trim()){
+      // encode only filename
+      return IMG_BASE + encodeURIComponent(String(m.image_file));
     }
-    if(m.image_url && String(m.image_url).trim()){
+    if (m.image_url && String(m.image_url).trim()){
       return m.image_url;
     }
     return "";
+  }
+
+  async function prefetch(){
+    if (prefetched) return;
+    prefetched = true;
+
+    try{
+      const movies = await loadMovies();
+      const m = movies[pickIndex(movies.length)];
+      const src = imgFor(m);
+      if (src){
+        const img = new Image();
+        img.src = src;
+      }
+    } catch (_) {}
   }
 
   async function open(){
@@ -187,15 +222,22 @@ You can find my full CV [here](/CV-nicolas-izquierdo-11-25.pdf).
     window.addEventListener("scroll", position, true);
   }
 
+  // Prefetch makes it feel instant
+  window.addEventListener("load", prefetch);
+  trigger.addEventListener("mouseenter", prefetch);
+
   trigger.addEventListener("click", function(e){
     e.preventDefault();
-    card.style.display === "block" ? close() : open().catch(err => {
+    if (card.style.display === "block") { close(); return; }
+
+    open().catch(err => {
       card.innerHTML = `
         <header>
           <span>Today’s movie recommendation!</span>
           <button id="close-movie" aria-label="Close">×</button>
         </header>
         <p style="margin:0;font-size:.95rem;color:rgba(0,0,0,.82);">
+          Couldn’t load the movie list.<br>
           ${String(err && err.message ? err.message : err)}
         </p>
       `;
