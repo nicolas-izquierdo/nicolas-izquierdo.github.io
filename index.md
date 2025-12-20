@@ -99,7 +99,7 @@ You can find my full CV <a href="/CV-nicolas-izquierdo-11-25.pdf">here</a>.
     font-size:12px;
     text-transform:uppercase;
     opacity:.9;
-    margin-bottom:10px;
+    margin-bottom:14px;
   }
 
   .movie-card{
