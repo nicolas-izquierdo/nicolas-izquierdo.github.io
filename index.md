@@ -109,8 +109,7 @@ a.poplink:hover{ color:#52adc8; }
   margin-bottom:14px;
 }
 
-/* 80px × 1.6 = 128px
-   Grid gives a definite row height; flex-end bottom-aligns text */
+/* 80px × 1.6 = 128px */
 .movie-card{
   display:grid;
   grid-template-columns:128px 1fr;
@@ -150,6 +149,9 @@ a.poplink:hover{ color:#52adc8; }
   line-height:1.35;
   opacity:.92;
   margin:0;
+  text-align:justify;                 /* ✅ justified text */
+  text-justify:inter-word;
+  hyphens:auto;
 }
 
 .movie-desc a,
@@ -204,7 +206,7 @@ a.poplink:hover{ color:#52adc8; }
       .replaceAll("&","&amp;")
       .replaceAll("<","&lt;")
       .replaceAll(">","&gt;")
-      .replaceAll('"',"&quot;")
+      .replaceAll('"'," &quot;")
       .replaceAll("'","&#39;");
   }
 
