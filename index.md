@@ -109,19 +109,18 @@ a.poplink:hover{ color:#52adc8; }
   margin-bottom:14px;
 }
 
-/* ✅ GRID makes the row height “definite” (tallest item),
-   so the poster can truly be 100% of that height. */
+/* 80px × 1.6 = 128px
+   Grid gives a definite row height; flex-end bottom-aligns text */
 .movie-card{
   display:grid;
-  grid-template-columns:80px 1fr;
+  grid-template-columns:128px 1fr;
   column-gap:12px;
   align-items:stretch;
 }
 
 .movie-poster{
-  width:80px;
+  width:128px;
   height:100%;
-  align-self:stretch;
   border-radius:10px;
   object-fit:cover;
   background:#d9d9d9;
@@ -132,6 +131,7 @@ a.poplink:hover{ color:#52adc8; }
   min-width:0;
   display:flex;
   flex-direction:column;
+  justify-content:flex-end; /* bottom-align text with poster */
 }
 
 .movie-title-row{
@@ -154,7 +154,7 @@ a.poplink:hover{ color:#52adc8; }
 
 .movie-desc a,
 .movie-desc a:visited{
-  font-size:inherit;      /* same font size as description */
+  font-size:inherit;
   font-weight:inherit;
   color:#0057d9;
   text-decoration:underline;
