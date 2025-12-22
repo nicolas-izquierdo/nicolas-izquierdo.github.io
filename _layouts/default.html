@@ -9,6 +9,19 @@ layout: compress
   <head>
     {% include head.html %}
     {% include head/custom.html %}
+
+    <!-- Site name for Google (prevents showing "GitHub") -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Nicolás Izquierdo",
+      "alternateName": "Nicolás Izquierdo – Political Scientist",
+      "url": "https://nicolas-izquierdo.github.io/"
+    }
+    </script>
+
+    <meta property="og:site_name" content="Nicolás Izquierdo">
   </head>
 
   <body>
