@@ -112,12 +112,12 @@ a.poplink:hover{ color:#52adc8; }
 .movie-card{
   display:flex;
   gap:12px;
-  align-items:flex-start;
+  align-items:stretch; /* makes both columns share the same height */
 }
 
 .movie-poster{
   width:80px;
-  height:113px;
+  height:100%;          /* match the height of the right column */
   border-radius:10px;
   object-fit:cover;
   background:#d9d9d9;
@@ -125,13 +125,14 @@ a.poplink:hover{ color:#52adc8; }
   display:block;
 }
 
-.movie-meta{ min-width:0; }
+.movie-meta{
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+}
 
 .movie-title-row{
-  display:flex;
-  align-items:baseline;
-  gap:8px;
-  margin-bottom:6px;
+  margin:0 0 6px 0;
 }
 
 .movie-name{
@@ -141,21 +142,22 @@ a.poplink:hover{ color:#52adc8; }
   margin:0;
 }
 
-.movie-link{
-  font-size:11px;
-  font-weight:700;
-  color:#0057d9;
-  text-decoration:underline;
-  white-space:nowrap;
-}
-.movie-link:hover{ color:#0046b3; }
-
 .movie-desc{
   font-size:12.5px;
   line-height:1.35;
   opacity:.92;
   margin:0;
 }
+
+.movie-desc a,
+.movie-desc a:visited{
+  font-size:inherit;     /* same font size as description */
+  font-weight:inherit;
+  color:#0057d9;
+  text-decoration:underline;
+  white-space:nowrap;
+}
+.movie-desc a:hover{ color:#0046b3; }
 </style>
 
 <script>
@@ -189,22 +191,42 @@ a.poplink:hover{ color:#52adc8; }
     cacheMovie=movies[dayIndexUTC()%movies.length];
     return cacheMovie;
   }
+  function ensurePeriod(s){
+    const t=(s||"").trim();
+    if(!t) return "";
+    return /[.!?…]$/.test(t) ? t : (t + ".");
+  }
+  function esc(s){
+    return String(s ?? "")
+      .replaceAll("&","&amp;")
+      .replaceAll("<","&lt;")
+      .replaceAll(">","&gt;")
+      .replaceAll('"',"&quot;")
+      .replaceAll("'","&#39;");
+  }
+
   function render(movie){
     const img=posterSrc(movie);
     const year=movie.year?` (${movie.year})`:"";
+    const desc = ensurePeriod(movie.description || "");
+    const url  = movie.url || "#";
+
     document.getElementById("cinema-pop-content").innerHTML=`
       <div class="pop-title">Today’s movie recommendation</div>
       <div class="movie-card">
-        ${img?`<img class="movie-poster" src="${img}" loading="eager">`:""}
+        ${img?`<img class="movie-poster" src="${esc(img)}" loading="eager" alt="${esc(movie.id||"Movie poster")}">`:""}
         <div class="movie-meta">
           <div class="movie-title-row">
-            <p class="movie-name">${movie.id}${year}</p>
-            <a class="movie-link" href="${movie.url}" target="_blank" rel="noopener noreferrer">Link</a>
+            <p class="movie-name">${esc(movie.id||"")}${esc(year)}</p>
           </div>
-          <p class="movie-desc">${movie.description||""}</p>
+          <p class="movie-desc">
+            ${esc(desc)}
+            <a href="${esc(url)}" target="_blank" rel="noopener noreferrer">Link</a>
+          </p>
         </div>
       </div>`;
   }
+
   function position(link){
     const r=link.getBoundingClientRect();
     const pop=document.getElementById("cinema-pop");
