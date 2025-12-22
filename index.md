@@ -18,8 +18,7 @@ redirect_from:
        style="width:660px;height:200px;object-fit:cover;display:block;">
   <figcaption style="font-size:0.9em;margin-top:-13px;margin-bottom:20px;">
     <span style="font-style:italic;text-decoration:underline;">
-      Workers’ Delegation Before the Magistrate
-    </span>
+      Workers’ Delegation Before the Magistrate</span>
     by Johann Peter Hasenclever
   </figcaption>
 </figure>
@@ -41,8 +40,7 @@ redirect_from:
 <p>
   Outside academia, I enjoy
   <a href="#" id="cinema-link" class="poplink" aria-haspopup="dialog" aria-expanded="false">
-    social and political cinema
-  </a>
+    social and political cinema</a>
   and
   <a href="https://www.chess.com/member/nicolas_izq">playing chess</a>.
 </p>
