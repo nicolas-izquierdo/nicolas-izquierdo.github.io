@@ -11,12 +11,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const hubs = {
     red:  { id: "hub_red",  label: "DATA",     group: "red" },
-    blue: { id: "hub_blue", label: "TEACHING", group: "blue" },
+    blue: { id: "hub_blue", label: "READING", group: "blue" },
     green:{ id: "hub_green",label: "ARCHIVES", group: "green" },
     gray: { id: "hub_gray", label: "OTHER",    group: "gray" }
   };
 
-  // ---- NEW: 1–2 line descriptions for the info box (keyed by resource id)
   const resourceDesc = {
     apsa_labor_teach: "Curated syllabi, assignments, and teaching materials for labor politics courses.",
     unionstats: "U.S. union membership and coverage series (CPS-based) with long-run trends and downloads.",
