@@ -11,13 +11,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const hubs = {
     red:  { id: "hub_red",  label: "DATA",     group: "red" },
-    blue: { id: "hub_blue", label: "READING", group: "blue" },
+    blue: { id: "hub_blue", label: "READING",  group: "blue" },
     green:{ id: "hub_green",label: "ARCHIVES", group: "green" },
     gray: { id: "hub_gray", label: "OTHER",    group: "gray" }
   };
 
+  // ============================================================
+  // UPDATED: resourceDesc (blue additions: syllabi + reading lists)
+  // ============================================================
   const resourceDesc = {
     apsa_labor_teach: "Curated syllabi, assignments, and teaching materials for labor politics courses.",
+
+    // ---- BLUE ADDITIONS (syllabi + reading lists) ----
+    apsa_labor_syllabus: "APSA Educate PDF syllabus: 'The Politics of Labor and Work' (course readings + assignments).",
+    lawcha_teaching_labor_history: "LAWCHA teaching resources for labor history (syllabi, bibliographies, and classroom materials).",
+    yale_political_economy_reading_list: "Yale Political Science political economy reading list (core canon incl. labor/comparative political economy).",
+    cambridge_cpe_syllabus_pdf: "Cambridge POLIS Comparative Political Economy module syllabus (PDF).",
+    yorku_work_labour_comps_pdf: "York University comprehensive exam reading list: Work, Labour, and the Economy (PDF).",
+    uchicago_cp_comps_comparative: "UChicago Comparative Politics comps lists (includes Comparative Political Economy list).",
+    ufl_comp_reading_list_pdf: "University of Florida comparative politics reading list (comps bibliography, PDF).",
+    wisc_labor_econ_reading_list: "Wisconsin labor economics reading list / teaching page (unions, strikes, bargaining).",
+    dan_pemstein_cpe_syllabus_pdf: "Comparative Political Economy course syllabus (PDF).",
+
+    // ---- EXISTING (unchanged) ----
     unionstats: "U.S. union membership and coverage series (CPS-based) with long-run trends and downloads.",
     oecd_ictwss: "Cross-national database on unions, bargaining, wages, and labor-market institutions (ICTWSS).",
     ilostat_ir_desc: "Definitions and methodological notes for ILO’s industrial relations indicators.",
@@ -46,10 +62,40 @@ document.addEventListener("DOMContentLoaded", () => {
     tuc: "Research library for the study of trade unions, collective bargaining and labour history (UK and Commonwealth)"
   };
 
+  // ============================================================
+  // UPDATED: resources (blue additions inserted; everything else same)
+  // ============================================================
   const resources = [
+    // =========================
+    // BLUE (READING)
+    // =========================
     { id:"apsa_labor_teach", label:"APSA Labor Politics", group:"blue", url:"https://educate.apsanet.org/labor-politics-teaching-resource-collection" },
+
+    // ---- BLUE ADDITIONS (syllabi + reading lists) ----
+    { id:"apsa_labor_syllabus", label:"APSA – The Politics of Labor and Work (Syllabus PDF)", group:"blue", url:"https://educate.apsanet.org/wp-content/uploads/The-Politics-of-Labor-and-Work-Laura-Bucci-1.pdf" },
+    { id:"lawcha_teaching_labor_history", label:"LAWCHA – Teaching Labor History", group:"blue", url:"https://lawcha.org/labor-history-for-the-classroom-and-public/" },
+    { id:"yale_political_economy_reading_list", label:"Yale – Political Economy Reading List", group:"blue", url:"https://politicalscience.yale.edu/political-economy-reading-list" },
+    { id:"cambridge_cpe_syllabus_pdf", label:"Cambridge POLIS – Comparative Political Economy (Syllabus PDF)", group:"blue", url:"https://www.polis.cam.ac.uk/files/comparative_political_economy_syllabus.pdf" },
+    { id:"yorku_work_labour_comps_pdf", label:"YorkU – Work, Labour & the Economy (Comps List PDF)", group:"blue", url:"https://www.yorku.ca/gradstudies/sociology/wp-content/uploads/sites/353/2023/04/Work-Labour-and-the-Economy_comprehensive-reading-list_March-2023.pdf" },
+    { id:"uchicago_cp_comps_comparative", label:"UChicago – Comparative Politics Comps (incl. CPE list)", group:"blue", url:"https://political-science.uchicago.edu/graduate-study/graduate-degree-requirements/comprehensive-exams/comparative" },
+    { id:"ufl_comp_reading_list_pdf", label:"Florida – Comparative Politics Reading List (PDF)", group:"blue", url:"https://polisci.ufl.edu/wp-content/uploads/sites/147/compreadinglist2009.pdf" },
+    { id:"wisc_labor_econ_reading_list", label:"Wisconsin – Labor Economics Reading List / Teaching", group:"blue", url:"https://users.ssc.wisc.edu/~jfkennan/teaching/r750_98.htm" },
+    { id:"dan_pemstein_cpe_syllabus_pdf", label:"Comparative Political Economy (Syllabus PDF)", group:"blue", url:"https://www.danpemstein.com/files/POLS452Syllabus.pdf" },
+
+    { id:"lawcha_books", label:"LAWCHA – Twenty Best Labor Books", group:"blue", url:"https://lawcha.org/2015/06/08/twenty-best-labor-books-first-cut/" },
+
+    // =========================
+    // GREEN (ARCHIVES)
+    // =========================
     { id:"warwick", label:"Labour Movement Newspapers and Journals (UK)", group:"green", url:"https://warwick.ac.uk/services/library/mrc/collections/digital/unionjournals/#Agriculture" },
-    { id:"tuc", label:"Trades Union Congress Library", group:"green", url:"https://libguides.londonmet.ac.uk/special-collections/TUC" },    
+    { id:"tuc", label:"Trades Union Congress Library", group:"green", url:"https://libguides.londonmet.ac.uk/special-collections/TUC" },
+    { id:"wcml", label:"Salford's Working Class Movement Library", group:"green", url:"https://www.wcml.org.uk/" },
+    { id:"loc_afl", label:"American Federation of Labor Records", group:"green", url:"https://www.loc.gov/collections/american-federation-of-labor-records/" },
+    { id:"labor_in_america", label:"UMD Digital Collections – Labor", group:"green", url:"https://digital.lib.umd.edu/collecting-areas/labor" },
+
+    // =========================
+    // RED (DATA)
+    // =========================
     { id:"unionstats", label:"UnionStats.com", group:"red", url:"https://unionstats.com" },
     { id:"oecd_ictwss", label:"OECD/AIAS ICTWSS Database", group:"red", url:"https://www.oecd.org/en/data/datasets/oecdaias-ictwss-database.html" },
     { id:"bls_wsp", label:"BLS Work Stoppages Dataset", group:"red", url:"https://www.bls.gov/wsp/" },
@@ -58,8 +104,6 @@ document.addEventListener("DOMContentLoaded", () => {
     { id:"clb", label:"China Labour Bulletin", group:"red", url:"https://clb.org.hk/" },
     { id:"labour_rights_indicators", label:"Labour Rights Indicators (Penn State)", group:"red", url:"https://labour-rights-indicators.la.psu.edu/" },
     { id:"ituc_rights", label:"ITUC Global Rights Index", group:"red", url:"https://www.ituc-csi.org/global-rights-index" },
-    { id:"wcml", label:"Salford's Working Class Movement Library", group:"green", url:"https://www.wcml.org.uk/" },
-    { id:"lawcha_books", label:"LAWCHA – Twenty Best Labor Books", group:"blue", url:"https://lawcha.org/2015/06/08/twenty-best-labor-books-first-cut/" },
     { id:"fec_data", label:"FEC Campaign Finance Data", group:"red", url:"https://www.fec.gov/data/" },
     { id:"ncsl_cba", label:"NCSL – Unions & Collective Bargaining Legislation Database", group:"red", url:"https://www.ncsl.org/labor-and-employment/unions-and-collective-bargaining-legislation-database" },
     { id:"strikemap_org", label:"Strikemap.org", group:"red", url:"https://strikemap.org/" },
@@ -68,17 +112,15 @@ document.addEventListener("DOMContentLoaded", () => {
     { id:"elors", label:"DOL OLMS – Online Public Disclosure Room", group:"red", url:"https://www.dol.gov/agencies/olms/public-disclosure-room" },
     { id:"kaggle_union_membership", label:"Union Membership & Coverage", group:"red", url:"https://www.kaggle.com/datasets/mrisdal/union-membership-coverage" },
     { id:"hbs_union_hist", label:"Trade Union Membership Historical Data (1880–2010)", group:"red", url:"https://www.hbs.edu/businesshistory/courses/teaching-resources/historical-data-visualization/details" },
-    { id:"loc_afl", label:"American Federation of Labor Records", group:"green", url:"https://www.loc.gov/collections/american-federation-of-labor-records/" },
-    { id:"gdads", label:"Global Digital Activism Data Set", group:"red", url:"https://www.icpsr.umich.edu/web/ICPSR/studies/34625" },
-    { id:"labor_in_america", label:"UMD Digital Collections – Labor", group:"green", url:"https://digital.lib.umd.edu/collecting-areas/labor" }
+    { id:"gdads", label:"Global Digital Activism Data Set", group:"red", url:"https://www.icpsr.umich.edu/web/ICPSR/studies/34625" }
   ];
 
   const dataBranches = [
     // ---- CHANGE #2: branch labels are now BOLD (via font-weight) and CAPITALIZED (via label text)
-    { id: "branch_contentious", label: "STRIKES & PROTESTS",          group: "red" },
-    { id: "branch_finance",     label: "FINANCE",              group: "red" },
-    { id: "branch_cba",         label: "COLLECTIVE BARGAINING", group: "red" },
-    { id: "branch_general",     label: "GENERAL",              group: "red" }
+    { id: "branch_contentious", label: "STRIKES & PROTESTS",     group: "red" },
+    { id: "branch_finance",     label: "FINANCE",               group: "red" },
+    { id: "branch_cba",         label: "COLLECTIVE BARGAINING",  group: "red" },
+    { id: "branch_general",     label: "GENERAL",               group: "red" }
   ];
 
   const redBranchOf = {
