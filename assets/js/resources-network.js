@@ -25,13 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // ---- BLUE ADDITIONS (syllabi + reading lists) ----
     apsa_labor_syllabus: "APSA Educate PDF syllabus: 'The Politics of Labor and Work' (course readings + assignments).",
     lawcha_teaching_labor_history: "LAWCHA teaching resources for labor history (syllabi, bibliographies, and classroom materials).",
-    yale_political_economy_reading_list: "Yale Political Science political economy reading list (core canon incl. labor/comparative political economy).",
-    cambridge_cpe_syllabus_pdf: "Cambridge POLIS Comparative Political Economy module syllabus (PDF).",
     yorku_work_labour_comps_pdf: "York University comprehensive exam reading list: Work, Labour, and the Economy (PDF).",
-    uchicago_cp_comps_comparative: "UChicago Comparative Politics comps lists (includes Comparative Political Economy list).",
-    ufl_comp_reading_list_pdf: "University of Florida comparative politics reading list (comps bibliography, PDF).",
     wisc_labor_econ_reading_list: "Wisconsin labor economics reading list / teaching page (unions, strikes, bargaining).",
-    dan_pemstein_cpe_syllabus_pdf: "Comparative Political Economy course syllabus (PDF).",
 
     // ---- EXISTING (unchanged) ----
     unionstats: "U.S. union membership and coverage series (CPS-based) with long-run trends and downloads.",
@@ -74,13 +69,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // ---- BLUE ADDITIONS (syllabi + reading lists) ----
     { id:"apsa_labor_syllabus", label:"APSA – The Politics of Labor and Work (Syllabus PDF)", group:"blue", url:"https://educate.apsanet.org/wp-content/uploads/The-Politics-of-Labor-and-Work-Laura-Bucci-1.pdf" },
     { id:"lawcha_teaching_labor_history", label:"LAWCHA – Teaching Labor History", group:"blue", url:"https://lawcha.org/labor-history-for-the-classroom-and-public/" },
-    { id:"yale_political_economy_reading_list", label:"Yale – Political Economy Reading List", group:"blue", url:"https://politicalscience.yale.edu/political-economy-reading-list" },
-    { id:"cambridge_cpe_syllabus_pdf", label:"Cambridge POLIS – Comparative Political Economy (Syllabus PDF)", group:"blue", url:"https://www.polis.cam.ac.uk/files/comparative_political_economy_syllabus.pdf" },
     { id:"yorku_work_labour_comps_pdf", label:"YorkU – Work, Labour & the Economy (Comps List PDF)", group:"blue", url:"https://www.yorku.ca/gradstudies/sociology/wp-content/uploads/sites/353/2023/04/Work-Labour-and-the-Economy_comprehensive-reading-list_March-2023.pdf" },
-    { id:"uchicago_cp_comps_comparative", label:"UChicago – Comparative Politics Comps (incl. CPE list)", group:"blue", url:"https://political-science.uchicago.edu/graduate-study/graduate-degree-requirements/comprehensive-exams/comparative" },
-    { id:"ufl_comp_reading_list_pdf", label:"Florida – Comparative Politics Reading List (PDF)", group:"blue", url:"https://polisci.ufl.edu/wp-content/uploads/sites/147/compreadinglist2009.pdf" },
     { id:"wisc_labor_econ_reading_list", label:"Wisconsin – Labor Economics Reading List / Teaching", group:"blue", url:"https://users.ssc.wisc.edu/~jfkennan/teaching/r750_98.htm" },
-    { id:"dan_pemstein_cpe_syllabus_pdf", label:"Comparative Political Economy (Syllabus PDF)", group:"blue", url:"https://www.danpemstein.com/files/POLS452Syllabus.pdf" },
 
     { id:"lawcha_books", label:"LAWCHA – Twenty Best Labor Books", group:"blue", url:"https://lawcha.org/2015/06/08/twenty-best-labor-books-first-cut/" },
 
