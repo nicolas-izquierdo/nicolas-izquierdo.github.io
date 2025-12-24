@@ -23,7 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
     apsa_labor_teach: "Curated syllabi, assignments, and teaching materials for labor politics courses.",
 
     // ---- BLUE ADDITIONS (syllabi + reading lists) ----
-    apsa_labor_syllabus: "APSA Educate PDF syllabus: 'The Politics of Labor and Work' (course readings + assignments).",
     lawcha_teaching_labor_history: "LAWCHA teaching resources for labor history (syllabi, bibliographies, and classroom materials).",
     yorku_work_labour_comps_pdf: "York University comprehensive exam reading list: Work, Labour, and the Economy (PDF).",
     wisc_labor_econ_reading_list: "Wisconsin labor economics reading list / teaching page (unions, strikes, bargaining).",
@@ -67,7 +66,6 @@ document.addEventListener("DOMContentLoaded", () => {
     { id:"apsa_labor_teach", label:"APSA Labor Politics", group:"blue", url:"https://educate.apsanet.org/labor-politics-teaching-resource-collection" },
 
     // ---- BLUE ADDITIONS (syllabi + reading lists) ----
-    { id:"apsa_labor_syllabus", label:"APSA – The Politics of Labor and Work (Syllabus PDF)", group:"blue", url:"https://educate.apsanet.org/wp-content/uploads/The-Politics-of-Labor-and-Work-Laura-Bucci-1.pdf" },
     { id:"lawcha_teaching_labor_history", label:"LAWCHA – Teaching Labor History", group:"blue", url:"https://lawcha.org/labor-history-for-the-classroom-and-public/" },
     { id:"yorku_work_labour_comps_pdf", label:"YorkU – Work, Labour & the Economy (Comps List PDF)", group:"blue", url:"https://www.yorku.ca/gradstudies/sociology/wp-content/uploads/sites/353/2023/04/Work-Labour-and-the-Economy_comprehensive-reading-list_March-2023.pdf" },
     { id:"wisc_labor_econ_reading_list", label:"Wisconsin – Labor Economics Reading List / Teaching", group:"blue", url:"https://users.ssc.wisc.edu/~jfkennan/teaching/r750_98.htm" },
