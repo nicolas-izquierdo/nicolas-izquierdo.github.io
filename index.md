@@ -38,16 +38,13 @@ redirect_from:
 </p>
 
 <p>
-  Outside academia, I enjoy
-  <a href="#" id="cinema-link" class="poplink" aria-haspopup="dialog" aria-expanded="false">
-    social and political cinema</a>
-  and
-  <a href="https://www.chess.com/member/nicolas_izq">playing chess</a>.
+  Outside academia, I enjoy <a href="https://www.chess.com/member/nicolas_izq">playing chess</a>.
 </p>
 
 <p>
   You can find my full CV <a href="/CV-nicolas-izquierdo-11-25.pdf">here</a>.
 </p>
+
 
 <div id="cinema-pop" class="popover" role="dialog" aria-hidden="true">
   <div class="popover-inner" id="cinema-pop-content">
