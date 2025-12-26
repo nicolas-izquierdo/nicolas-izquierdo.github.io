@@ -38,7 +38,7 @@ redirect_from:
 </p>
 
 <p>
-  Outside academia, I enjoy playing chess (<a href="https://www.chess.com/member/nicolas_izq">you can find me here</a>).
+  Outside academia, I enjoy playing chess (you can find me <a href="https://www.chess.com/member/nicolas_izq">here</a>).
 </p>
 
 <p>
