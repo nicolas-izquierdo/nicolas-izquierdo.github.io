@@ -7,10 +7,13 @@
 main:
   - title: "CV"
     url: /CV-nicolas-izquierdo-11-25.pdf
+  -title: "Research"
+    url: /research/
   - title: "Data"
     url: /data/
   - title: "Resources"
     url: /resources/
+
 
 
   # - title: "Guide"
