@@ -22,42 +22,54 @@ permalink: /research/
   margin-bottom: 14px;
 }
 
-/* Section intro placeholder */
+/* Intro text */
 .research-intro {
   margin-bottom: 16px;
-  color: #6b7280;
+  color: #444;
 }
 
-/* Cards */
+/* --- UPDATED CARD STYLE (inspired by your example) --- */
 .research-card {
-  border: 1px solid #e5e7eb;
-  border-radius: 14px;
-  padding: 16px;
-  margin-top: 14px;
+  background: #ffffff;
+  border-radius: 10px;
+  border-left: 4px solid #005bbb;
+  padding: 1.4rem 1.5rem;
+  margin-top: 18px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.07);
 }
 
+/* Title inside card */
 .research-card h3 {
-  margin: 0 0 6px 0;
-  font-size: 1.05rem;
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #005bbb;
+  line-height: 1.35;
 }
 
+/* Meta text */
 .research-meta {
-  font-size: .86rem;
-  color: #6b7280;
-  margin: 6px 0 10px;
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 8px;
+  margin-bottom: 12px;
 }
 
+/* Actions */
 .actions a {
   display: inline-block;
-  margin-right: 8px;
-  padding: 6px 10px;
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
+  padding: 0.45rem 0.9rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: #005bbb;
+  color: #ffffff;
   text-decoration: none;
+  transition: background 0.2s ease;
 }
 
 .actions a:hover {
-  background: #f9fafb;
+  background: #003f8a;
 }
 </style>
 
@@ -75,10 +87,11 @@ permalink: /research/
     “Malapportionment.”
     <em>The Elgar Encyclopedia of Political Representation</em>
   </h3>
-  <div class="actions">
+
+  <div class="actions" style="margin-top: 14px;">
     <a href="https://www.e-elgar.com/shop/gbp/elgar-encyclopedia-of-political-representation-9781035324811.html"
        target="_blank" rel="noopener noreferrer">
-      ↗ View
+      View
     </a>
   </div>
 </div>
