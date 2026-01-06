@@ -18,14 +18,15 @@ layout: page
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 16px;
-  margin-top: 16px;
+  margin-top: 28px; /* ⬅️ more space from intro to first card */
 }
 
 /* Modern card style (light green accent) */
 .card {
   background: #ffffff;
   border-radius: 10px;
-  border-left: 4px solid #6ee7b7; /* light green */
+  border: 1.5px solid #e5e7eb;      /* ⬅️ slightly thicker outline */
+  border-left: 4px solid #6ee7b7;   /* light green accent (unchanged) */
   padding: 1.4rem 1.5rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.07);
 }
@@ -39,7 +40,7 @@ layout: page
   line-height: 1.35;
 }
 
-/* Badges (kept, but slightly modernized) */
+/* Badges */
 .badge {
   display: inline-block;
   font-size: .78rem;
@@ -56,7 +57,7 @@ layout: page
   margin: 6px 0 10px;
 }
 
-/* Actions (button-like, light green) */
+/* Actions */
 .actions a {
   display: inline-block;
   margin-right: 10px;
@@ -65,14 +66,14 @@ layout: page
   border-radius: 6px;
   font-size: 0.85rem;
   font-weight: 600;
-  background: #6ee7b7;  /* light green */
+  background: #6ee7b7;
   color: #000000;
   text-decoration: none;
   transition: background 0.2s ease;
 }
 
 .actions a:hover {
-  background: #34d399; /* slightly darker green */
+  background: #34d399;
 }
 </style>
 
