@@ -17,19 +17,69 @@
       color: #222;
       line-height: 1.6;
     }
+
+    /* Top navigation */
+    .topnav {
+      background: #ffffff;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .topnav-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0.85rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .brand {
+      font-weight: 700;
+      color: #222;
+      text-decoration: none;
+      letter-spacing: 0.2px;
+    }
+    .navlinks {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .navlinks a {
+      color: #333;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.35rem 0.55rem;
+      border-radius: 6px;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+    .navlinks a:hover {
+      background: rgba(0,0,0,0.05);
+    }
+    .navlinks a.active {
+      background: rgba(0,91,187,0.12);
+      color: #005bbb;
+    }
+
     .container {
       max-width: 800px;
       margin: 2rem auto;
       padding: 0 1rem;
     }
+
     h1, h2 {
       font-weight: 700;
       margin-bottom: 0.5rem;
     }
+
     .section-intro {
       margin-bottom: 1.5rem;
       color: #444;
     }
+
     .card {
       background: white;
       border-radius: 8px;
@@ -38,21 +88,25 @@
       margin-bottom: 1.5rem;
       box-shadow: 0 2px 6px rgba(0,0,0,0.07);
     }
+
     .card-title {
       font-size: 1.25rem;
       font-weight: 600;
       margin: 0;
       color: #005bbb;
     }
+
     .card-meta {
       font-size: 0.9rem;
       color: #666;
       margin-top: 0.5rem;
       margin-bottom: 1rem;
     }
+
     .card-buttons {
       margin-top: 1rem;
     }
+
     .button {
       text-decoration: none;
       padding: 0.45rem 0.9rem;
@@ -63,55 +117,62 @@
       background: #005bbb;
       color: white;
       transition: background 0.2s ease;
+      display: inline-block;
     }
     .button:hover {
       background: #003f8a;
     }
-    .status {
-      display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      padding: 0.2rem 0.5rem;
-      border-radius: 3px;
-      background: #ffbf00;
-      color: #222;
+
+    /* Small footer spacing */
+    .footer-space {
+      height: 1rem;
     }
   </style>
 </head>
 <body>
 
+  <!-- Top nav bar -->
+  <nav class="topnav">
+    <div class="topnav-inner">
+      <a class="brand" href="/">Nicolás Izquierdo</a>
+      <div class="navlinks">
+        <a href="/CV-nicolas-izquierdo-11-25.pdf">CV</a>
+        <a class="active" href="/research/">Research</a>
+        <a href="/data/">Data</a>
+        <a href="/resources/">Resources</a>
+      </div>
+    </div>
+  </nav>
+
   <div class="container">
 
     <h1>Research</h1>
+
     <p class="section-intro">
-      My research examines questions in political economy and representation,
-      with a focus on institutions, labor, and collective action.
+      <!-- Write a 1–2 sentence research description here (optional). -->
     </p>
 
     <!-- ===== Non-Peer-Reviewed Publications ===== -->
     <h2>Non-Peer-Reviewed Publications</h2>
 
     <div class="card">
-      <p class="status">Non-Peer Reviewed</p>
       <h3 class="card-title">
-        Nicolás Izquierdo & Pedro Riera. (Forthcoming). “Malapportionment.”
+        Nicolás Izquierdo &amp; Pedro Riera. (Forthcoming). “Malapportionment.”
         In <em>The Elgar Encyclopedia of Political Representation</em>
       </h3>
       <p class="card-meta">Publisher: Edward Elgar Publishing</p>
 
       <div class="card-buttons">
-        <a class="button" href="https://www.e-elgar.com/shop/gbp/elgar-encyclopedia-of-political-representation-9781035324811.html" target="_blank">
+        <a class="button" href="https://www.e-elgar.com/shop/gbp/elgar-encyclopedia-of-political-representation-9781035324811.html" target="_blank" rel="noopener noreferrer">
           View Publisher
         </a>
       </div>
     </div>
 
-    <!-- ===== Working Papers ===== -->
-    <h2>Working Papers & Research in Progress</h2>
+    <!-- ===== Working Papers & Research in Progress ===== -->
+    <h2>Working Papers &amp; Research in Progress</h2>
 
     <div class="card">
-      <p class="status">Working Paper</p>
       <h3 class="card-title">Organized Labor, Gerrymandering and Collective Action</h3>
       <p class="card-meta">Status: In progress</p>
 
@@ -123,6 +184,7 @@
       </div>
     </div>
 
+    <div class="footer-space"></div>
   </div>
 
 </body>
