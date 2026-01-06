@@ -21,17 +21,25 @@ layout: page
   margin-top: 16px;
 }
 
+/* Modern card style (light green accent) */
 .card {
-  border: 1px solid #e5e7eb;
-  border-radius: 14px;
-  padding: 16px;
+  background: #ffffff;
+  border-radius: 10px;
+  border-left: 4px solid #6ee7b7; /* light green */
+  padding: 1.4rem 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.07);
 }
 
+/* Card title */
 .card h3 {
-  margin: 0 0 6px 0;
-  font-size: 1.05rem;
+  margin: 0 0 8px 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #000000;
+  line-height: 1.35;
 }
 
+/* Badges (kept, but slightly modernized) */
 .badge {
   display: inline-block;
   font-size: .78rem;
@@ -41,23 +49,30 @@ layout: page
   margin-right: 6px;
 }
 
+/* Meta text */
 .meta {
-  font-size: .86rem;
-  color: #6b7280;
+  font-size: 0.9rem;
+  color: #000000;
   margin: 6px 0 10px;
 }
 
+/* Actions (button-like, light green) */
 .actions a {
   display: inline-block;
-  margin-right: 8px;
-  padding: 6px 10px;
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
+  margin-right: 10px;
+  margin-top: 6px;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: #6ee7b7;  /* light green */
+  color: #000000;
   text-decoration: none;
+  transition: background 0.2s ease;
 }
 
 .actions a:hover {
-  background: #f9fafb;
+  background: #34d399; /* slightly darker green */
 }
 </style>
 
