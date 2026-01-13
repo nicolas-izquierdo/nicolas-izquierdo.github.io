@@ -9,7 +9,7 @@ redirect_from:
 ---
 
 <h1 style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">
-  Nicolás Izquierdo, Political Science, Political Scientist, Political Economy
+  Nicolás Izquierdo, Political Science, Political Scientist, Political Economy, Labor Politics
 </h1>
 
 <figure style="margin:0;">
