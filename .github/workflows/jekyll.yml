@@ -11,8 +11,8 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
-  cancel-in-progress: true
+    group: ${{ github.workflow }}-${{ github.ref }}
+cancel-in-progress: true
 
 jobs:
   build:
