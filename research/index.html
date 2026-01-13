@@ -14,7 +14,7 @@ permalink: /research/
 }
 
 .section-title {
-  font-size: 1.25rem;      /* slightly smaller */
+  font-size: 1.25rem;
   font-weight: 700;
   margin-top: 32px;
   margin-bottom: 12px;
@@ -25,32 +25,38 @@ permalink: /research/
   color: #444;
 }
 
-/* ---- SMALLER CARDS ---- */
+/* ---- CARDS (slightly narrower + compact) ---- */
 .research-card {
   background: #ffffff;
-  border-radius: 8px;      /* slightly tighter */
+  border-radius: 8px;
   border-left: 3px solid #005bbb;
-  padding: 1.05rem 1.15rem;  /* reduced padding */
+  padding: 1.05rem 1.15rem;
   margin-top: 14px;
   box-shadow: 0 1.5px 5px rgba(0,0,0,0.065);
+
+  /* ~15% less wide than wrapper, while staying centered */
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+/* ---- TITLE ---- */
 .research-card h3 {
   margin: 0;
-  font-size: 1.05rem;     /* reduced title size */
+  font-size: 1.05rem;
   font-weight: 600;
   color: #000000;
   line-height: 1.3;
 }
 
 .research-meta {
-  font-size: 0.85rem;     /* smaller meta */
+  font-size: 0.85rem;
   color: #000000;
   margin-top: 6px;
   margin-bottom: 10px;
 }
 
-/* ---- SMALLER BUTTON ---- */
+/* ---- BUTTON ---- */
 .actions a {
   display: inline-block;
   padding: 0.28rem 0.6rem;
@@ -66,6 +72,27 @@ permalink: /research/
 .actions a:hover {
   background: #003f8a;
 }
+
+/* ---- LAYOUT: title left, button right, vertically centered ---- */
+.research-row {
+  display: flex;
+  align-items: center;          /* vertical middle */
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.research-row .research-left {
+  flex: 1 1 auto;
+  min-width: 0;                 /* allow wrapping/compression */
+}
+
+.research-row .actions {
+  flex: 0 0 auto;
+  margin-top: 0 !important;     /* override inline margins */
+  display: flex;
+  align-items: center;          /* ensure button centered */
+  justify-content: flex-end;
+}
 </style>
 
 <div class="research-wrapper">
@@ -75,17 +102,21 @@ permalink: /research/
 <h2 class="section-title">Non-Peer-Reviewed Publications</h2>
 
 <div class="research-card">
-  <h3>
-    Nicolás Izquierdo &amp; Pedro Riera. (Forthcoming).
-    “Malapportionment.”
-    <em>The Elgar Encyclopedia of Political Representation</em>
-  </h3>
+  <div class="research-row">
+    <div class="research-left">
+      <h3>
+        Nicolás Izquierdo &amp; Pedro Riera. (Forthcoming).
+        “Malapportionment.”
+        <em>The Elgar Encyclopedia of Political Representation</em>
+      </h3>
+    </div>
 
-  <div class="actions" style="margin-top: 10px;">
-    <a href="https://www.e-elgar.com/shop/gbp/elgar-encyclopedia-of-political-representation-9781035324811.html"
-       target="_blank" rel="noopener noreferrer">
-      View
-    </a>
+    <div class="actions">
+      <a href="https://www.e-elgar.com/shop/gbp/elgar-encyclopedia-of-political-representation-9781035324811.html"
+         target="_blank" rel="noopener noreferrer">
+        View
+      </a>
+    </div>
   </div>
 </div>
 
