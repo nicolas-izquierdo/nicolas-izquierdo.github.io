@@ -42,7 +42,7 @@ redirect_from:
 </p>
 
 <p>
-  You can download my compete CV <a href="/CV-nicolas-izquierdo-11-25.pdf">here</a>.
+  You can download my full CV <a href="/CV-nicolas-izquierdo-11-25.pdf">here</a>.
 </p>
 
 
