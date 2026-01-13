@@ -27,7 +27,7 @@ permalink: /research/
   color: #444;
 }
 
-/* ---- CARDS (slightly narrower + compact) ---- */
+/* ---- CARDS (shifted right + compact) ---- */
 .research-card {
   background: #ffffff;
   border-radius: 8px;
@@ -36,9 +36,8 @@ permalink: /research/
   margin-top: 14px;
   box-shadow: 0 1.5px 5px rgba(0,0,0,0.065);
 
-  /* ~15% less wide than wrapper, while staying centered */
   width: 85%;
-  margin-left: auto;
+  margin-left: 0.5cm;   /* ⬅️ boxes slightly to the right */
   margin-right: auto;
 }
 
@@ -67,12 +66,12 @@ permalink: /research/
   background: #003f8a;
 }
 
-/* ---- LAYOUT: title left, button right, vertically centered ---- */
+/* ---- LAYOUT: title left, button right, MORE HORIZONTAL SPACE ---- */
 .research-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 14px;
+  gap: 32px;   /* ⬅️ increased distance title ↔ button */
 }
 
 .research-left {
