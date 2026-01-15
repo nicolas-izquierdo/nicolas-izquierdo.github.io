@@ -65,6 +65,14 @@ permalink: /research/
   background: #003f8a;
 }
 
+.actions .in-progress {
+  background: #b30000;
+}
+
+.actions .in-progress:hover {
+  background: #7a0000;
+}
+
 .research-row {
   display: flex;
   align-items: center;
@@ -113,7 +121,17 @@ permalink: /research/
   <h2 class="section-title">Working Papers</h2>
 
   <div class="research-card">
-    <h3>Organized Labor, Gerrymandering and Collective Action</h3>
+    <div class="research-row">
+      <div class="research-left">
+        <h3>Organized Labor, Gerrymandering and Collective Action</h3>
+      </div>
+
+      <div class="actions">
+        <a class="in-progress" href="#" onclick="return false;">
+          In&nbsp;progress
+        </a>
+      </div>
+    </div>
   </div>
 
   <div class="research-card">
@@ -123,7 +141,8 @@ permalink: /research/
       </div>
 
       <div class="actions">
-        <a href="/research/WP%20Do%20voters%20respond%20to%20VAW.pdf" target="_blank" rel="noopener noreferrer">
+        <a href="/research/WP%20Do%20voters%20respond%20to%20VAW.pdf"
+           target="_blank" rel="noopener noreferrer">
           Draft
         </a>
       </div>
