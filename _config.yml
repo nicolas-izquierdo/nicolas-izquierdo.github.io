@@ -22,14 +22,15 @@ repository               : "nicolas-izquierdo/nicolas-izquierdo.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile2.png"
-  name             : "Nicolás Izquierdo"
-  pronouns         : "he / him"
-  bio              : "M.A. student in Social Sciences"
-  location         : "Madrid, Spain"
-  employer         : "Universidad Carlos III de Madrid"
-  uri              : # URL
-  email            : "paizquie@clio.uc3m.es"
+  avatar        : "profile2.png"
+  name          : "Nicolás Izquierdo"
+  pronunciation : "/nikoˈlas iθˈkjeɾdo/"   # optional — remove if you don’t want it shown
+  pronouns      : "he / him"
+  bio           : "M.A. student in Social Sciences, Juan Linz Institute (formerly IC3JM)"
+  location      : "Madrid, Spain"
+  employer      : "Universidad Carlos III de Madrid"
+  uri           : # your website (optional)
+  email         : "paizquie@clio.uc3m.es"
 
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile
