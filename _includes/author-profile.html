@@ -8,36 +8,21 @@
 
   <div class="author__avatar">
     {% if author.avatar contains "://" %}
-      <img src="{{ author.avatar }}" alt="{{ author.name }}">
+    	<img src="{{ author.avatar }}" alt="{{ author.name }}">
     {% else %}
-      <img src="{{ author.avatar | prepend: "/images/" | prepend: base_path }}" class="author__avatar" alt="{{ author.name }}">
+    	<img src="{{ author.avatar | prepend: "/images/" | prepend: base_path }}" class="author__avatar" alt="{{ author.name }}">
     {% endif %}
   </div>
 
   <div class="author__content">
-    <h3 class="author__name" style="font-size: 110%; margin-bottom: 0.1rem;">{{ author.name }}</h3>
-
-    {% if author.pronunciation %}
-      <p class="author__pronunciation"
-         style="margin: 0.05rem 0 0.35rem; font-size: 97%; opacity: 0.72; letter-spacing: 0.01em;">
-        <span style="font-style: italic;">{{ author.pronunciation }}</span>
-      </p>
-    {% endif %}
-
-    {% if author.pronouns %}
-      <p class="author__pronouns" style="font-size: 92%; margin-top: 0.1rem; opacity: 0.82;">
-        {{ author.pronouns }}
-      </p>
-    {% endif %}
-
-    {% if author.bio %}
-      <p class="author__bio" style="font-size: 95%;">{{ author.bio }}</p>
-    {% endif %}
+    <h3 class="author__name">{{ author.name }}</h3>
+    {% if author.pronouns %}<p class="author__pronouns">{{ author.pronouns }}</p>{% endif %}
+    {% if author.bio %}<p class="author__bio">{{ author.bio }}</p>{% endif %}
   </div>
 
   <div class="author__urls-wrapper">
-    <button class="btn btn--inverse" style="font-size: 110%;">Follow</button>
-    <ul class="author__urls social-icons" style="font-size: 110%;">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
       <!-- Font Awesome icons / Biographic information  -->
       {% if author.location %}
         <li class="author__desktop"><i class="fa-solid fa-location-dot icon-pad-right" aria-hidden="true"></i>{{ author.location }}</li>
@@ -116,4 +101,61 @@
       {% endif %}            
       {% if author.google_plus %}
         <li><a href="https://plus.google.com/+{{ author.google_plus }}"><i class="fab fa-fw fa-google-plus-g icon-pad-right" aria-hidden="true"></i>Google+</a></li>
+      {% endif %}            
+      {% if author.keybase %}
+        <li><a href="https://keybase.io/{{ author.keybase }}"><i class="fas fa-fw fa-key icon-pad-right" aria-hidden="true"></i>Keybase</a></li>
       {% endif %}
+      {% if author.instagram %}
+        <li><a href="https://instagram.com/{{ author.instagram }}"><i class="fab fa-fw fa-instagram icon-pad-right" aria-hidden="true"></i>Instagram</a></li>
+      {% endif %}      
+      {% if author.lastfm %}
+        <li><a href="https://last.fm/user/{{ author.lastfm }}"><i class="fab fa-fw fa-lastfm icon-pad-right" aria-hidden="true"></i>Last.fm</a></li>
+      {% endif %}      
+      {% if author.linkedin %}
+        <li><a href="https://www.linkedin.com/in/{{ author.linkedin }}"><i class="fab fa-fw fa-linkedin icon-pad-right" aria-hidden="true"></i>LinkedIn</a></li>
+      {% endif %}      
+      {% if author.mastodon %}
+        <li><a href="{{ author.mastodon }}"><i class="fab fa-fw fa-mastodon icon-pad-right" aria-hidden="true"></i>Mastodon</a></li>
+      {% endif %}
+      {% if author.medium %}
+        <li><a href="{{ author.medium }}"><i class="fab fa-fw fa-medium icon-pad-right" aria-hidden="true"></i>Medium</a></li>
+      {% endif %}      
+      {% if author.pinterest %}
+        <li><a href="https://www.pinterest.com/{{ author.pinterest }}"><i class="fab fa-fw fa-pinterest icon-pad-right" aria-hidden="true"></i>Pinterest</a></li>
+      {% endif %}            
+      {% if author.soundcloud %}
+        <li><a href="https://soundcloud.com/{{ author.soundcloud }}"><i class="fab fa-fw fa-soundcloud icon-pad-right" aria-hidden="true"></i>Soundcloud</a></li>
+      {% endif %}      
+      {% if author.steam %}
+        <li><a href="https://steamcommunity.com/id/{{ author.steam }}"><i class="fab fa-fw fa-steam icon-pad-right" aria-hidden="true"></i>Steam</a></li>
+      {% endif %}
+      {% if author.telegram %}
+        <li><a href="{{ author.telegram }}"><i class="fab fa-fw fa-telegram icon-pad-right" aria-hidden="true"></i>Telegram</a></li>
+      {% endif %}      
+      {% if author.tumblr %}
+        <li><a href="https://{{ author.tumblr }}.tumblr.com"><i class="fab fa-fw fa-tumblr icon-pad-right" aria-hidden="true"></i>Tumblr</a></li>
+      {% endif %}      
+      {% if author.twitter %}
+        <li><a href="https://twitter.com/{{ author.twitter }}"><i class="fab fa-fw fa-x-twitter icon-pad-right" aria-hidden="true"></i>X (formerly Twitter)</a></li>
+      {% endif %}
+      {% if author.vine %}
+        <li><a href="https://vine.co/u/{{ author.vine }}"><i class="fab fa-fw fa-vine icon-pad-right" aria-hidden="true"></i>Vine</a></li>
+      {% endif %}        
+      {% if author.weibo %}
+        <li><a href="https://www.weibo.com/{{ author.weibo }}"><i class="fab fa-fw fa-weibo icon-pad-right" aria-hidden="true"></i>Weibo</a></li>
+      {% endif %}
+      {% if author.wikipedia %}
+        <li><a href="https://en.wikipedia.org/wiki/User:{{ author.wikipedia }}"><i class="fab fa-fw fa-wikipedia-w icon-pad-right" aria-hidden="true"></i>Wikipedia</a></li>
+      {% endif %}                
+      {% if author.xing %}
+        <li><a href="https://www.xing.com/profile/{{ author.xing }}"><i class="fab fa-fw fa-xing icon-pad-right" aria-hidden="true"></i>XING</a></li>
+      {% endif %}
+      {% if author.youtube %}
+        <li><a href="https://www.youtube.com/@{{ author.youtube }}"><i class="fab fa-fw fa-youtube icon-pad-right" aria-hidden="true"></i>YouTube</a></li>
+      {% endif %}
+      {% if author.zhihu %}
+      <li><a href="htps://www.zhihu.com/people/{{ author.zhihu }}"><i class="fab fa-fw fa-zhihu icon-pad-right" aria-hidden="true"></i>Zhihu</a></li>
+      {% endif %}      
+    </ul>
+  </div>
+</div>
