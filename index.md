@@ -26,7 +26,7 @@ redirect_from:
 <p>
   Welcome! My name is Nicolás Izquierdo and I am a Master's student in Social Sciences at the
   <a href="https://ijlinz.es/en/postgraduates/master-degree-social-sciences/sc-plan/">Juan Linz Institute (IJL)</a>
-  (formerly the <a href="https://en.wikipedia.org/wiki/Carlos_III-Juan_March_Institute">Carlos III–Juan March Institute</a>).
+  (formerly the <a href="https://en.wikipedia.org/wiki/Instituto_Carlos_III-Juan_March">Carlos III–Juan March Institute</a>).
   I also hold both degrees in
   <a href="https://www.uc3m.es/bachelor-degree/law">Law (LL.B.)</a>
   and
