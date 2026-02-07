@@ -43,7 +43,7 @@ redirect_from:
 </p>
 
 <p>
-  You can download my full CV <a href="/cv_NI">here</a>.
+  You can download my full CV <a href="/cv_NI.pdf">here</a>.
 </p>
 
 
