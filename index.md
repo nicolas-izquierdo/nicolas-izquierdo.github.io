@@ -39,7 +39,7 @@ redirect_from:
 </p>
 
 <p>
-  Outside academia, I enjoy playing chess (you can challenge me <a href="https://www.chess.com/member/nicolas_izq" target="_blank" rel="noopener noreferrer">here</a>!) and <a id="cinema-link" class="poplink" href="#">historical cinema</a>.
+  Outside academia, I enjoy playing chess (you can challenge me <a href="https://www.chess.com/member/nicolas_izq" target="_blank" rel="noopener noreferrer">here</a>!).
 </p>
 
 <p>
