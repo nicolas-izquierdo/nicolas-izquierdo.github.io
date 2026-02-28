@@ -35,7 +35,7 @@ redirect_from:
 </p>
 
 <p>
-  My research interests lie in comparative political economy and labor politics, encompassing issues of political representation, contentious politics, and redistribution. I am particularly interested in how labor mobilization shapes policy outcomes and mass preferences across advanced democracies. I also study courts and legal processes, focusing on how private economic interests influence judicial decision-making.
+  My research interests lie in comparative political economy and labor politics, encompassing issues of political representation, contentious politics, and redistribution. Specifically, I am interested in how labor mobilization shapes policy outcomes and mass preferences across advanced democracies. 
 </p>
 
 <p>
