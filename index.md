@@ -39,11 +39,6 @@ redirect_from:
 </p>
 
 <p>
-  Outside academia, I enjoy playing chess (you can challenge me <a href="https://www.chess.com/member/izq_nicolas" target="_blank" rel="noopener noreferrer">here</a>!).
-</p>
-
-<p>
   You can download my full CV <a href="/cv_NI.pdf">here</a>.
 </p>
 
-</script>
