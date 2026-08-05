@@ -456,9 +456,12 @@ third_party_libraries:
         library: "https://cdn.jsdelivr.net/npm/echarts@{{version}}/dist/echarts.min.js"
         dark_theme: "https://cdn.jsdelivr.net/npm/echarts@{{version}}/theme/dark-fresh-cut.js"
     version: "5.5.0"
-  google_fonts:
-    url:
-      fonts: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+  # NOTE: the upstream `google_fonts:` entry has been REMOVED from this list on
+  # purpose. Inter and JetBrains Mono are SELF-HOSTED from assets/fonts/ via
+  # assets/css/fonts.css, so visitors' browsers never contact Google and no visitor
+  # IP is disclosed. Do not re-add it — that re-creates the disclosure (see CLAUDE.md).
+  # It must be deleted rather than blanked: the jekyll-3rd-party-libraries plugin
+  # calls .include? on each url and crashes with NoMethodError on a nil value.
   highlightjs:
     integrity:
       css:

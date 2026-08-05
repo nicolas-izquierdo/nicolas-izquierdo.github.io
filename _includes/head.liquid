@@ -1,12 +1,26 @@
 <!-- Metadata, OpenGraph and Schema.org -->
 {% include metadata.liquid %}
 
-<!-- Security: Content Security Policy -->
-<!-- Permissive CSP suitable for academic websites. Allows external images, videos, and common embed services. -->
-<!-- To customize for your needs, see: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+<!-- Never send this site's URL to external destinations. `no-referrer` means a click
+     on an outbound link (DOI, Scholar, LinkedIn) reveals nothing about where the
+     visitor came from — not even the domain. -->
+<meta name="referrer" content="no-referrer">
+
+<!-- Security: Content Security Policy.
+     Tightened from upstream al-folio, which allowed `https:` wholesale in script-src
+     and style-src — i.e. any HTTPS origin on the internet could execute code here.
+     Now limited to the two CDNs actually used. Fonts are self-hosted, all images are
+     local, and there are no iframes or forms, so those are locked to 'self'/'none'.
+     'unsafe-inline' remains only because al-folio emits inline script blocks;
+     removing it would require nonces throughout the templates.
+     NOTE: never write a literal script tag inside this comment — the HTML compressor
+     reads it as a real tag opening and silently drops everything up to the next
+     closing script tag, which deletes the CSP meta below.
+     If a resource silently fails to load, check the browser console for a CSP
+     violation before assuming the resource itself is broken. -->
 <meta
   http-equiv="Content-Security-Policy"
-  content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"
+  content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data:; font-src 'self' data: https://cdn.jsdelivr.net; media-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; connect-src 'self' https://cdn.jsdelivr.net;"
 >
 
 <!-- Bootstrap & MDB -->
@@ -32,12 +46,10 @@
 <!-- Fonts & Icons -->
 <link defer rel="stylesheet" href="{{ '/assets/css/academicons.min.css' | relative_url | bust_file_cache }}">
 <link defer rel="stylesheet" href="{{ '/assets/css/scholar-icons.css' | relative_url | bust_file_cache }}">
-<link
-  defer
-  rel="stylesheet"
-  type="text/css"
-  href="{{ site.third_party_libraries.google_fonts.url.fonts }}"
->
+<!-- Self-hosted Inter + JetBrains Mono. Replaces the upstream fonts.googleapis.com
+     link so no visitor IP is ever disclosed to Google. See assets/css/fonts.css. -->
+<link rel="preload" as="font" type="font/woff2" href="{{ '/assets/fonts/inter-400-latin.woff2' | relative_url }}" crossorigin>
+<link rel="stylesheet" type="text/css" href="{{ '/assets/css/fonts.css' | relative_url | bust_file_cache }}">
 
 <!-- Code Syntax Highlighting -->
 <link
