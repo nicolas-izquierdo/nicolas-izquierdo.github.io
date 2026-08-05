@@ -28,7 +28,9 @@
 @use "utilities";
 
 // Other specialized styles
-@use "distill";
+// NOTE: `@use "distill"` removed along with _sass/_distill.scss — the Distill
+// journal layout is unused here. Re-adding the import without restoring the
+// partial breaks the SCSS build.
 @use "cv";
 @use "tabs";
 @use "teachings";
