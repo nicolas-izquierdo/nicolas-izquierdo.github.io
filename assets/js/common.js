@@ -32,26 +32,14 @@ $(document).ready(function () {
     });
   }
 
-  // add css to jupyter notebooks
-  const cssLink = document.createElement("link");
-  cssLink.href = "../css/jupyter.css";
-  cssLink.rel = "stylesheet";
-  cssLink.type = "text/css";
-
-  let jupyterTheme = determineComputedTheme();
-
-  $(".jupyter-notebook-iframe-container iframe").each(function () {
-    $(this).contents().find("head").append(cssLink);
-
-    if (jupyterTheme == "dark") {
-      $(this).bind("load", function () {
-        $(this).contents().find("body").attr({
-          "data-jp-theme-light": "false",
-          "data-jp-theme-name": "JupyterLab Dark",
-        });
-      });
-    }
-  });
+  // NOTE: upstream al-folio styles Jupyter notebook iframes here. That block was
+  // removed. It called determineComputedTheme(), which lives in theme.js — a file
+  // that is never loaded because dark mode is disabled. The call ran unconditionally
+  // (before the iframe loop), so it threw ReferenceError on EVERY page and aborted
+  // the rest of this ready handler, silently killing the popover init below.
+  // This site has no notebooks, so the whole block was dead weight. If notebooks are
+  // ever added, restore it from upstream AND guard the call, e.g.
+  //   const t = typeof determineComputedTheme === "function" ? determineComputedTheme() : "light";
 
   // trigger popovers
   $('[data-toggle="popover"]').popover({

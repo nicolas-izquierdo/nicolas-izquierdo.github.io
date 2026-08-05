@@ -105,6 +105,10 @@
   <script>
     initTheme();
   </script>
+{% else %}
+  <!-- Dark mode off: supply the light-mode stub that al-folio's *-setup.js scripts
+       expect from theme.js, so they don't throw ReferenceError. See the file. -->
+  <script src="{{ '/assets/js/theme-light-only.js' | relative_url | bust_file_cache }}"></script>
 {% endif %}
 
 {% if page.map %}
