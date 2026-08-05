@@ -294,8 +294,14 @@ scholar:
 # Display different badges withs stats for your publications
 # Customize badge behavior in _layouts/bib.liquid
 enable_publication_badges:
-  altmetric: true # Altmetric badge (Customization options: https://badge-docs.altmetric.com/index.html)
-  dimensions: true # Dimensions badge (Customization options: https://badge.dimensions.ai/)
+  # OFF by design — do not re-enable without a cookie-consent banner.
+  # These two inject third-party scripts (d1bxh8uas1mnw7.cloudfront.net and
+  # badge.dimensions.ai) into EVERY page, not just pages with publications, sending
+  # each visitor's IP and referring page to Digital Science without consent — the same
+  # ePrivacy/GDPR problem that got Google Analytics removed. No entry in papers.bib
+  # uses an altmetric/dimensions field, so they rendered nothing anyway.
+  altmetric: false # Altmetric badge (Customization options: https://badge-docs.altmetric.com/index.html)
+  dimensions: false # Dimensions badge (Customization options: https://badge.dimensions.ai/)
   google_scholar: true # Google Scholar badge (https://scholar.google.com/intl/en/scholar/citations.html)
   inspirehep: true # Inspire HEP badge (https://help.inspirehep.net/knowledge-base/citation-metrics/)
 
