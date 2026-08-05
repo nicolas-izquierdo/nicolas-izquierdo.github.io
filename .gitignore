@@ -1,0 +1,23 @@
+_site
+.bundle
+
+# Local dev and AI agent files — never commit
+CLAUDE.md
+.claude/
+.gemini/
+docker-compose.yml
+Dockerfile
+.devcontainer/
+.DS_store
+.idea
+.jekyll-cache
+.jekyll-metadata
+.ruby-version
+.sass-cache
+.tweet-cache
+.venv
+assets/libs/
+assets/rendercv/rendercv_output/*.typ
+Gemfile.lock
+node_modules/
+vendor
