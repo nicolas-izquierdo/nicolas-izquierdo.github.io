@@ -26,12 +26,11 @@ hide_title: true
   <div class="col-12 col-md-6 col-lg-4 mb-3">
     <div class="card h-100 resources-card">
       <div class="card-body">
-        <h5 class="card-title resources-card-title">
+        <h5 class="card-title resources-card-title mb-0">
           <a href="{{ item.url }}" target="_blank" rel="noopener">
             {{ item.title }}&thinsp;<i class="fa-solid fa-arrow-up-right-from-square fa-xs resources-ext-icon"></i>
           </a>
         </h5>
-        <p class="card-text resources-card-desc mb-0">{{ item.description }}</p>
       </div>
     </div>
   </div>

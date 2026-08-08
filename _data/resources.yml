@@ -4,101 +4,84 @@
 - category: data
   title: UnionStats
   url: https://www.unionstats.com
-  description: Union membership and coverage rates by industry and occupation (BLS-CPS series)
   tags: [union density, United States, time series]
 
 - category: data
   title: Labour Rights Indicators (ITUC)
   url: https://www.ituc-csi.org/global-rights-index
-  description: Annual country-level index of labor rights violations from the ITUC Global Rights Index
   tags: [labor rights, comparative, index]
 
 - category: data
   title: HBS Historical Union Membership (Hirsch & Macpherson)
   url: https://www.unionstats.com
-  description: Long-run U.S. union membership series extending back to the early 20th century
   tags: [union density, United States, historical]
 
 - category: data
   title: BLS Work Stoppages
   url: https://www.bls.gov/web/wkstp/monthly-listing.htm
-  description: Bureau of Labor Statistics monthly listing of major work stoppages (1,000+ workers)
   tags: [strikes, United States, time series]
 
 - category: data
   title: Cornell ILR Strike Tracker
   url: https://striketracker.ilr.cornell.edu
-  description: Real-time database of U.S. strikes and labor actions maintained by Cornell's ILR school
   tags: [strikes, United States, real-time]
 
 - category: data
   title: AFL-CIO Strike Map
   url: https://aflcio.org/strike-map
-  description: Interactive map of ongoing and recent strikes reported to the AFL-CIO
   tags: [strikes, United States, visualization]
 
 - category: data
   title: Strikemap
   url: https://www.strikemap.org
-  description: Crowdsourced global map of labor actions and worker struggles
   tags: [strikes, global, crowdsourced]
 
 - category: data
   title: DOL OLMS Union Financial Reports
   url: https://www.dol.gov/agencies/olms/public-disclosure-room
-  description: Department of Labor Office of Labor-Management Standards — union financial filings (LM-2)
   tags: [union finances, United States, transparency]
 
 - category: data
   title: NCSL State Labor Legislation Database
   url: https://www.ncsl.org/labor-and-employment
-  description: National Conference of State Legislatures tracker of state-level labor and employment laws
   tags: [labor law, United States, subnational]
 
 - category: reading
   title: IZA World of Labor
   url: https://wol.iza.org
-  description: Peer-reviewed, accessible policy summaries on labor market topics — unions, wages, collective bargaining, and employment institutions
   tags: [labor economics, policy, comparative]
 
 - category: reading
   title: NBER Labor Studies
   url: https://www.nber.org/programs-projects/programs-working-groups/labor-studies
-  description: National Bureau of Economic Research working papers on wages, unions, unemployment, human capital, and labor market institutions
   tags: [labor economics, working papers, United States]
 
 - category: reading
   title: W.E. Upjohn Institute
   url: https://www.upjohn.org/research-highlights
-  description: Nonpartisan employment policy research organization publishing books and studies on labor markets, workforce development, and workplace policy
   tags: [employment policy, nonpartisan, United States]
 
 - category: reading
   title: OECD Employment and Labour
   url: https://www.oecd.org/en/topics/employment.html
-  description: Comparative data and analysis on employment, wages, labor market institutions, and collective bargaining across OECD member countries
   tags: [comparative, international, institutions]
 
 - category: archives
   title: Labour Movement Newspapers (UK)
   url: https://www.britishnewspaperarchive.co.uk
-  description: Digitized collection of British labor and trade union newspapers from the 19th–20th centuries
   tags: [labor press, United Kingdom, historical]
 
 - category: archives
   title: TUC Library Collections
   url: https://www.tuc.org.uk/tuc-library-collections
-  description: Trades Union Congress library holdings on British labor history, pamphlets, and ephemera
   tags: [trade unions, United Kingdom, primary sources]
 
 - category: archives
   title: Salford Working Class Movement Library
   url: https://www.wcml.org.uk
-  description: Specialist archive of the British working class and labor movement at the University of Salford
   tags: [labor history, United Kingdom, archive]
 
 - category: archives
   title: AFL Records at the Library of Congress
   url: https://www.loc.gov/collections/american-federation-of-labor-records/
-  description: Digitized records of the American Federation of Labor, including correspondence and proceedings
   tags: [AFL, United States, labor history]
