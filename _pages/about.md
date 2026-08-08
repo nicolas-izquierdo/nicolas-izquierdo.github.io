@@ -37,4 +37,4 @@ institutions play in that gap.
 
 You can download my updated CV <a href="/assets/pdf/cv.pdf" target="_blank" rel="noopener">here</a>.
 
-Feel free to reach out to me at <a href="mailto:pi2100@nyu.edu">pi2100@nyu.edu</a>.
+Feel free to reach out to me at pi2100 [at] nyu [dot] edu.
