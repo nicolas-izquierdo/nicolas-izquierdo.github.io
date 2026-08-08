@@ -345,34 +345,68 @@ html[data-theme="dark"] .hero-hasenclever {
   padding-bottom: 0.35rem;
 }
 
-.resources-card {
-  border: 1px solid var(--global-divider-color) !important;
-  background: var(--global-card-bg-color);
-  transition: box-shadow 0.15s ease;
+// Each card is only as wide as its own title, so the boxes wrap like text and
+// the row stays even. Keep the card an <a>: the whole box is the click target.
+.resources-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
 
-  &:hover {
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+.resources-card {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: 100%;
+  padding: 0.45rem 0.85rem;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 8px;
+  background: var(--global-card-bg-color);
+  color: var(--global-theme-color);
+  text-decoration: none;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.15s ease;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--global-hover-color);
+    border-color: var(--global-hover-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    text-decoration: none;
+    transform: translateY(-1px);
   }
 }
 
 .resources-card-title {
+  // al-folio hard-sets `span { color: var(--global-text-color) }`, which beats
+  // inheritance from the anchor — without this the title renders black.
+  color: inherit;
+  min-width: 0;
   font-size: 0.95rem;
   font-weight: 600;
-  margin-bottom: 0.4rem;
-
-  a {
-    color: var(--global-theme-color);
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
+  line-height: 1.35;
+  overflow-wrap: break-word;
 }
 
 .resources-ext-icon {
+  flex: none;
+  margin-left: 0.4em;
+  font-size: 0.62em;
   opacity: 0.45;
-  font-size: 0.65rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .resources-card {
+    transition: none;
+
+    &:hover,
+    &:focus-visible {
+      transform: none;
+    }
+  }
 }
 
 // -----------------------------------------------------------------------------
