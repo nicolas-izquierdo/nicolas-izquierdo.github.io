@@ -12,9 +12,19 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
 }
 
-// Nav section links (about, research, cv, data, labor) — +0.5pt over the 1rem base
+// Nav section links (about, research, cv, data, labor) — +1pt over the 1rem base
 .navbar-nav .nav-item .nav-link {
-  font-size: calc(1rem + 0.5pt);
+  font-size: calc(1rem + 1pt);
+}
+
+// +0.15cm between adjacent links, half added to each side of every link.
+// Scoped to the expanded bar: below 576px the menu stacks and Bootstrap zeroes
+// this padding, so the gap there is vertical and set elsewhere.
+@media (min-width: 576px) {
+  .navbar-expand-sm .navbar-nav .nav-link {
+    padding-right: calc(0.5rem + 0.075cm);
+    padding-left: calc(0.5rem + 0.075cm);
+  }
 }
 
 hr {

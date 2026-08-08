@@ -37,4 +37,18 @@ institutions play in that gap.
 
 You can download my updated CV <a href="/assets/pdf/cv.pdf" target="_blank" rel="noopener">here</a>.
 
-Feel free to reach out to me at pi2100 [at] nyu [dot] edu.
+Feel free to reach out to me at <span id="contact-email">pi2100 [at] nyu [dot] edu</span>.
+
+<script>
+  // The address is never written out in the page source — a scraper reading the
+  // HTML only sees "pi2100 [at] nyu [dot] edu". The link is assembled in the
+  // browser; with JS off the obfuscated text simply stays as plain text.
+  (function () {
+    var el = document.getElementById("contact-email");
+    if (!el) return;
+    var link = document.createElement("a");
+    link.href = "mailto:" + "pi2100" + "@" + "nyu" + "." + "edu";
+    link.textContent = el.textContent;
+    el.parentNode.replaceChild(link, el);
+  })();
+</script>
