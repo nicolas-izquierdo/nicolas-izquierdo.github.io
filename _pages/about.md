@@ -32,8 +32,8 @@ from the [Juan Linz Institute](https://www.uc3m.es/ss/Satellite/UC3MInstituciona
 My research interests lie in the political economy of democratic
 representation in Europe and North America. I am interested in why the economic
 preferences of some groups translate into policy while others do not, and in
-the role that organized interests (especially labor unions) and electoral
-institutions play in that gap.
+the role that organized interests and electoral institutions play in
+increasing or shrinking that gap.
 
 You can download my updated CV <a href="/assets/pdf/cv.pdf" target="_blank" rel="noopener">here</a>.
 
