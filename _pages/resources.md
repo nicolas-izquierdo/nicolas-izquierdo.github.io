@@ -21,13 +21,10 @@ hide_title: true
   {% assign items = site.data.resources | where: "category", cat %}
   {% if items.size > 0 %}
 <h2 class="resources-section-heading mt-5 mb-3">{{ label }}</h2>
-<div class="resources-grid">
+<ul class="resources-list">
   {% for item in items %}
-  <a class="resources-card" href="{{ item.url }}" target="_blank" rel="noopener"
-    ><span class="resources-card-title">{{ item.title }}</span
-    ><i class="fa-solid fa-arrow-up-right-from-square resources-ext-icon"></i
-  ></a>
+  <li><a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }}</a></li>
   {% endfor %}
-</div>
+</ul>
   {% endif %}
 {% endfor %}
