@@ -1,0 +1,87 @@
+# Resources for labor politics and comparative political economy research
+# Categories: data, reading, archives
+
+- category: data
+  title: UnionStats
+  url: https://www.unionstats.com
+  tags: [union density, United States, time series]
+
+- category: data
+  title: Labour Rights Indicators (ITUC)
+  url: https://www.ituc-csi.org/global-rights-index
+  tags: [labor rights, comparative, index]
+
+- category: data
+  title: HBS Historical Union Membership (Hirsch & Macpherson)
+  url: https://www.unionstats.com
+  tags: [union density, United States, historical]
+
+- category: data
+  title: BLS Work Stoppages
+  url: https://www.bls.gov/web/wkstp/monthly-listing.htm
+  tags: [strikes, United States, time series]
+
+- category: data
+  title: Cornell ILR Strike Tracker
+  url: https://striketracker.ilr.cornell.edu
+  tags: [strikes, United States, real-time]
+
+- category: data
+  title: AFL-CIO Strike Map
+  url: https://aflcio.org/strike-map
+  tags: [strikes, United States, visualization]
+
+- category: data
+  title: Strikemap
+  url: https://www.strikemap.org
+  tags: [strikes, global, crowdsourced]
+
+- category: data
+  title: DOL OLMS Union Financial Reports
+  url: https://www.dol.gov/agencies/olms/public-disclosure-room
+  tags: [union finances, United States, transparency]
+
+- category: data
+  title: NCSL State Labor Legislation Database
+  url: https://www.ncsl.org/labor-and-employment
+  tags: [labor law, United States, subnational]
+
+- category: reading
+  title: IZA World of Labor
+  url: https://wol.iza.org
+  tags: [labor economics, policy, comparative]
+
+- category: reading
+  title: NBER Labor Studies
+  url: https://www.nber.org/programs-projects/programs-working-groups/labor-studies
+  tags: [labor economics, working papers, United States]
+
+- category: reading
+  title: W.E. Upjohn Institute
+  url: https://www.upjohn.org/research-highlights
+  tags: [employment policy, nonpartisan, United States]
+
+- category: reading
+  title: OECD Employment and Labour
+  url: https://www.oecd.org/en/topics/employment.html
+  tags: [comparative, international, institutions]
+
+- category: archives
+  title: Labour Movement Newspapers (UK)
+  url: https://www.britishnewspaperarchive.co.uk
+  tags: [labor press, United Kingdom, historical]
+
+- category: archives
+  title: TUC Library Collections
+  url: https://www.tuc.org.uk/tuc-library-collections
+  tags: [trade unions, United Kingdom, primary sources]
+
+- category: archives
+  title: Salford Working Class Movement Library
+  url: https://www.wcml.org.uk
+  tags: [labor history, United Kingdom, archive]
+
+- category: archives
+  title: AFL Records at the Library of Congress
+  url: https://www.loc.gov/collections/american-federation-of-labor-records/
+  tags: [AFL, United States, labor history]
