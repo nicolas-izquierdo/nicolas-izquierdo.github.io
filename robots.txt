@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://nicolas-izquierdo.github.io/sitemap.xml
