@@ -42,11 +42,6 @@ ninja.data = [{
           description: "U.S. House &amp; Senate · 1967–2025",
           section: "Projects",handler: () => {
               window.location.href = "/projects/afl_cio_scoreboards/";
-            },},{id: "projects-spanish-constitutional-court-amparo-dataset",
-          title: 'Spanish Constitutional Court Amparo Dataset',
-          description: "Spain · 1980–2025 · 7,434 rulings",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/constitutional_court/";
             },},{
         id: 'social-cv',
         title: 'CV',
