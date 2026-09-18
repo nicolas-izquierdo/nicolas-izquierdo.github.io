@@ -28,8 +28,15 @@ layout: default
           <aside class="about-sidebar">
             <ul class="about-contact-icons">
               {% if site.data.socials.email %}
+                {% comment %}
+                  The address never appears in the page source: user and domain are split into
+                  data attributes and joined by the script below, exactly like the contact
+                  link in about.md. Without JS the icon points at the contact text instead.
+                {% endcomment %}
+                {% assign email_parts = site.data.socials.email | split: '@' %}
+                {% assign domain_parts = email_parts[1] | split: '.' %}
                 <li>
-                  <a href="mailto:{{ site.data.socials.email }}" title="Email">
+                  <a href="#contact-email" id="sidebar-email" data-u="{{ email_parts[0] }}" data-d="{{ domain_parts[0] }}" data-t="{{ domain_parts[1] }}" title="Email">
                     <i class="fa-solid fa-envelope"></i>
                   </a>
                 </li>
@@ -62,6 +69,12 @@ layout: default
               </li>
             </ul>
           </aside>
+          <script>
+            (function () {
+              var a = document.getElementById("sidebar-email");
+              if (a) { a.href = "mailto:" + a.getAttribute("data-u") + "@" + a.getAttribute("data-d") + "." + a.getAttribute("data-t"); }
+            })();
+          </script>
         {% endif %}
         <!-- Text + photo: flex row, vertically centered on a shared midline -->
         <div class="about-flex">

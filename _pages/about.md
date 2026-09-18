@@ -35,7 +35,7 @@ preferences of some groups translate into policy while others do not, and in
 the role that organized interests and electoral institutions play in
 increasing or shrinking that gap.
 
-You can download my updated CV <a href="/assets/pdf/cv.pdf" target="_blank" rel="noopener">here</a>.
+You can download my updated CV <a href="/assets/pdf/cv.pdf" target="_blank" rel="noopener" data-no-instant>here</a>.
 
 Feel free to reach out to me at <span id="contact-email">pi2100 [at] nyu [dot] edu</span>.
 

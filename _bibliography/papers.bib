@@ -1,9 +1,9 @@
 % Bibliography for nicolas-izquierdo.github.io
-% Add entries here. Fields used by al-folio:
-%   abbr, bibtex_show, pdf, html, url, note, category
-% Category values used for grouping on the Research page:
-%   encyclopedia  → rendered under "Encyclopedia Entries"
-%   working_paper → rendered under "Working Papers"
+% Fields used by al-folio: abbr, bibtex_show, pdf, html, url, note, category.
+% The Research page renders Book Chapters with an explicit incollection query.
+% Working papers were retired on 2026-09-18. To bring them back, add an unpublished-type
+% entry here and restore the Working Papers heading and query in _pages/research.md.
+% Keep this comment free of at-signs and braces: bibtex-ruby lexes them even inside comments.
 
 @incollection{izquierdo_malapportionment_forthcoming,
   author    = {Izquierdo, Nicol{\'a}s and Riera, Pedro},
@@ -14,15 +14,5 @@
   html      = {https://www.e-elgar.com/shop/gbp/elgar-encyclopedia-of-political-representation-9781035324811.html},
   preview   = {9781035324811.webp},
   category  = {encyclopedia},
-  bibtex_show = {true}
-}
-
-@unpublished{izquierdo_vaw_wp,
-  author   = {Izquierdo, Nicol{\'a}s},
-  title    = {Do Voters Respond to Violence Against Women?},
-  year     = {2025},
-  note     = {Working paper},
-  pdf      = {WP_voters_VAW.pdf},
-  category = {working_paper},
   bibtex_show = {true}
 }

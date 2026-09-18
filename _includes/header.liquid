@@ -88,7 +88,7 @@
                 <li class="nav-item {% if parent_link != '' and page.url contains parent_link %}active{% endif %}">
                   {%- if p.external_url -%}
                     <!-- SPEC choice: external_url opens PDF directly in a new tab (used for CV) -->
-                    <a class="nav-link" href="{{ p.external_url | relative_url }}" target="_blank" rel="noopener">{{- p.title }}</a>
+                    <a class="nav-link" href="{{ p.external_url | relative_url }}" target="_blank" rel="noopener" data-no-instant>{{- p.title }}</a>
                   {%- else -%}
                     {%- if p.permalink contains '://' -%}
                       {%- assign url = p.permalink -%}

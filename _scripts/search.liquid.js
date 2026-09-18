@@ -299,6 +299,8 @@ ninja.data = [
           {%- assign social_title = social[0] | capitalize -%}
           {%- capture social_url %}"{{ social[1].url }}"{% endcapture -%}
       {%- endcase -%}
+      {%- comment -%} email is skipped: it would put the address (percent-encoded, trivially reversible) into search-data.js {%- endcomment -%}
+      {%- unless social[0] == "email" -%}
       {
         id: '{{ social_id }}',
         title: '{{ social_title }}',
@@ -307,6 +309,7 @@ ninja.data = [
           window.open({{ social_url }}, "_blank");
         },
       },
+      {%- endunless -%}
     {%- endfor -%}
   {%- endif -%}
   {%- if site.enable_darkmode -%}

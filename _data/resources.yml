@@ -2,19 +2,14 @@
 # Categories: data, reading, archives
 
 - category: data
-  title: UnionStats
+  title: UnionStats (Hirsch, Macpherson & Even)
   url: https://www.unionstats.com
-  tags: [union density, United States, time series]
+  tags: [union density, United States, time series, historical]
 
 - category: data
   title: Labour Rights Indicators (ITUC)
   url: https://www.ituc-csi.org/global-rights-index
   tags: [labor rights, comparative, index]
-
-- category: data
-  title: HBS Historical Union Membership (Hirsch & Macpherson)
-  url: https://www.unionstats.com
-  tags: [union density, United States, historical]
 
 - category: data
   title: BLS Work Stoppages
@@ -73,7 +68,7 @@
 
 - category: archives
   title: TUC Library Collections
-  url: https://www.tuc.org.uk/tuc-library-collections
+  url: https://libguides.londonmet.ac.uk/special-collections/TUC
   tags: [trade unions, United Kingdom, primary sources]
 
 - category: archives

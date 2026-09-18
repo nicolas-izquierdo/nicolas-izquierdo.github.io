@@ -29,10 +29,7 @@ back_to_top: true # set to false to disable the back to top button
 # repo color theme
 repo_theme_light: default # https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
 repo_theme_dark: dark # https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
-repo_trophies:
-  enabled: true
-  theme_light: flat # https://github.com/ryo-ma/github-profile-trophy
-  theme_dark: gitdimmed # https://github.com/ryo-ma/github-profile-trophy
+# repo_trophies removed together with _data/repositories.yml and _includes/repository/ (template samples, no page used them).
 
 # External service URLs for repository page
 # To use a different instance or service for displaying GitHub stats and trophies,
@@ -68,7 +65,7 @@ max_width: 930px
 # see https://schema.org/docs/faq.html for more information
 serve_og_meta: true # Include Open Graph meta tags in the HTML head
 serve_schema_org: true # Include Schema.org in the HTML head
-og_image: # The site-wide (default for all links) Open Graph preview image
+og_image: https://nicolas-izquierdo.github.io/assets/img/og_image.jpg # 800x800 JPEG derived from prof_pic.png (absolute URL required by scrapers)
 
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification
@@ -89,8 +86,7 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: al-folio # blog_name will be displayed in your blog page
-blog_description: a simple whitespace theme for academics
+# blog_name / blog_description removed: template samples, no consumer (blog pages were deleted).
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 
@@ -119,7 +115,6 @@ giscus:
   lang: en
 
 # Disqus comments (DEPRECATED)
-disqus_shortname: al-folio # put your disqus shortname
 # https://help.disqus.com/en/articles/1717111-what-s-a-shortname
 
 # External sources.
@@ -259,8 +254,8 @@ jekyll-archives:
   books:
     enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
 
-display_tags: ["formatting", "images", "links", "math", "code", "blockquotes"] # these tags will be displayed on the front page of your blog
-display_categories: ["external-services"] # these categories will be displayed on the front page of your blog
+display_tags: [] # no blog
+display_categories: [] # no blog
 
 # -----------------------------------------------------------------------------
 # Jekyll Scholar
@@ -399,13 +394,13 @@ enable_openpanel_analytics: false # enables Openpanel analytics (https://openpan
 enable_google_verification: false # enables google site verification
 enable_bing_verification: false # enables bing site verification
 enable_cookie_consent: false # enables GDPR-compliant cookie consent dialog (https://github.com/orestbida/cookieconsent)
-enable_masonry: true # enables automatic project cards arrangement
-enable_math: true # enables math typesetting (uses MathJax)
+enable_masonry: false # OFF: no page uses a .grid masonry layout; /data/ is a plain Bootstrap row. Turning it on ships ~30 KB of JS to every page for nothing.
+enable_math: false # OFF: no page has math. ON would load 1.2 MB of MathJax plus the cdnjs polyfill on EVERY page; if a page ever needs math, gate it per page in scripts.liquid rather than flipping this globally.
 enable_tooltips: false # enables automatic tooltip links generated for each section titles on pages and posts
 enable_darkmode: false # always light theme
 enable_navbar_social: false # enables displaying social links in the navbar on the about page
 enable_project_categories: true # enables categorization of projects into multiple categories
-enable_medium_zoom: true # enables image zoom feature (as on medium.com)
+enable_medium_zoom: true # loaded only on pages with `medium_zoom: true` in front matter (scripts.liquid) — currently just /research/
 enable_progressbar: true # enables a horizontal progress bar linked to the vertical scroll position
 enable_video_embedding: false # enables video embedding for bibtex entries. If false, the button opens the video link in a new window.
 
@@ -653,20 +648,4 @@ third_party_libraries:
 # Get external JSON data
 # -----------------------------------------------------------------------------
 
-jekyll_get_json:
-  - data: resume
-    json: assets/json/resume.json # it can also be an url
-
-jsonresume:
-  - basics
-  - work
-  - education
-  - publications
-  - projects
-  - volunteer
-  - awards
-  - certificates
-  - skills
-  - languages
-  - interests
-  - references
+# jekyll_get_json / jsonresume removed: assets/json/resume.json was the Einstein sample and nothing rendered it.
