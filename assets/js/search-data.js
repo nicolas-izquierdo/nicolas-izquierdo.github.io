@@ -39,7 +39,7 @@ ninja.data = [{
           },
         },{id: "projects-afl-cio-legislative-scoreboards",
           title: 'AFL-CIO Legislative Scoreboards',
-          description: "U.S. House · 1980–2025",
+          description: "U.S. House &amp; Senate · 1967–2025",
           section: "Projects",handler: () => {
               window.location.href = "/projects/afl_cio_scoreboards/";
             },},{id: "projects-spanish-constitutional-court-amparo-dataset",
