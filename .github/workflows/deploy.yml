@@ -38,41 +38,53 @@ on:
 permissions:
   contents: write
 
+# Two quick pushes must not deploy over each other; the later one waits its turn.
+concurrency:
+  group: deploy-site
+  cancel-in-progress: false
+
+# Every action is pinned to a full commit SHA (the tag is only a comment): a tag can
+# be moved by whoever controls the action's repo, a commit cannot. This job holds
+# contents:write, so an unpinned action is a supply-chain foothold. To update, look
+# up the new release's commit and replace both the SHA and the comment.
 jobs:
   deploy:
     # available images: https://github.com/actions/runner-images#available-images
-    # Pinned: ubuntu-latest moved to 26.04 in Oct 2026, which only ships the latest
-    # patch of each Ruby series, so the pinned 3.3.5 below fails to install there.
+    # Pinned rather than ubuntu-latest so a runner migration cannot change the build
+    # underneath us (ubuntu-latest moved to 26.04 in Oct 2026 and broke Ruby 3.3.5).
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
       - name: Setup Ruby 💎
-        uses: ruby/setup-ruby@v1
+        uses: ruby/setup-ruby@b3aaceaef7e0ee231b499e7b5f49c03fc1d32199 # v1.338.0
         with:
-          ruby-version: "3.3.5"
+          # Same series as the local Docker image (Ruby 4.0.1), which produced
+          # Gemfile.lock. "4.0" takes the newest 4.0.x patch, so security fixes
+          # arrive automatically and a runner that only ships latest patches works.
+          ruby-version: "4.0"
           bundler-cache: true
-      - name: Setup Python 🐍
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.13"
       # NOTE: upstream al-folio runs fjogeleit/yaml-update-action@main here to inject
       # giscus.repo into _config.yml. Removed deliberately: it is a third-party action
       # pinned to a MUTABLE branch, executing with contents:write on every deploy — a
       # supply-chain foothold if that repo is ever compromised. It is also pointless
       # here, since giscus comments are disabled. Do not restore it.
+      # Python + nbconvert (upstream's "Setup Python" step) were removed too: they only
+      # serve Jupyter notebook pages, and this site has none.
       - name: Install and Build 🔧
         run: |
           sudo apt-get update && sudo apt-get install -y imagemagick
-          pip3 install --upgrade nbconvert
           export JEKYLL_ENV=production
           bundle exec jekyll build
       - name: Purge unused CSS 🧹
+        # Version pinned: an unpinned global install runs whatever was published
+        # most recently. 8.0.0 is the version that built the site through 2026-11.
         run: |
-          npm install -g purgecss
+          npm install -g purgecss@8.0.0
           purgecss -c purgecss.config.js
       - name: Deploy 🚀
-        if: github.event_name != 'pull_request'
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: JamesIves/github-pages-deploy-action@fa24774553152dd7873cd16ebd8d959b010c5445 # v4.9.0
         with:
           folder: _site
