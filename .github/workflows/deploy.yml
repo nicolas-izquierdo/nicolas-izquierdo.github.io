@@ -80,9 +80,10 @@ jobs:
           bundle exec jekyll build
       - name: Purge unused CSS 🧹
         # Version pinned: an unpinned global install runs whatever was published
-        # most recently. 8.0.0 is the version that built the site through 2026-11.
+        # most recently. 9.x needs Node >= 22.12 (the ubuntu-24.04 runner has it) and,
+        # unlike 8.x, keeps root-level pseudo-class rules such as :host and :disabled.
         run: |
-          npm install -g purgecss@8.0.0
+          npm install -g purgecss@9.1.0
           purgecss -c purgecss.config.js
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@fa24774553152dd7873cd16ebd8d959b010c5445 # v4.9.0
