@@ -30,13 +30,6 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/data/";
           },
-        },{id: "nav-labor",
-          title: "labor",
-          description: "",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/labor/";
-          },
         },{id: "projects-afl-cio-legislative-scorecards",
           title: 'AFL-CIO Legislative Scorecards',
           description: "U.S. House &amp; Senate · 1967–2025",
