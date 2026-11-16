@@ -12,7 +12,7 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
 }
 
-// Nav section links (about, research, cv, data, labor) — +0.5pt over the 1rem base
+// Nav section links (about, research, cv, data) — +0.5pt over the 1rem base
 .navbar-nav .nav-item .nav-link {
   font-size: calc(1rem + 0.5pt);
 }
@@ -331,27 +331,6 @@ html[data-theme="dark"] .hero-hasenclever {
   object-position: center center;
   display: block;
   cursor: zoom-in;
-}
-
-// -----------------------------------------------------------------------------
-// Resources page — one plain list per section
-// -----------------------------------------------------------------------------
-
-.resources-section-heading {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--global-theme-color);
-  border-bottom: 2px solid var(--global-divider-color);
-  padding-bottom: 0.35rem;
-}
-
-.resources-list {
-  margin-bottom: 0;
-  padding-left: 1.15rem;
-
-  li {
-    margin-bottom: 0.3rem;
-  }
 }
 
 // -----------------------------------------------------------------------------
